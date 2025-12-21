@@ -14,78 +14,81 @@ const About = () => {
       title: t.about.timeline.graduation.title,
       description: t.about.timeline.graduation.description,
       icon: FaGraduationCap,
-      color: 'from-blue-500 to-blue-600',
+      gradient: 'from-blue-500 to-cyan-500',
     },
     {
       year: t.about.timeline.kuwait.year,
       title: t.about.timeline.kuwait.title,
       description: t.about.timeline.kuwait.description,
       icon: FaBriefcase,
-      color: 'from-purple-500 to-purple-600',
+      gradient: 'from-purple-500 to-pink-500',
     },
     {
       year: t.about.timeline.usa.year,
       title: t.about.timeline.usa.title,
       description: t.about.timeline.usa.description,
       icon: FaGraduationCap,
-      color: 'from-indigo-500 to-indigo-600',
+      gradient: 'from-indigo-500 to-purple-500',
     },
     {
       year: t.about.timeline.dubai.year,
       title: t.about.timeline.dubai.title,
       description: t.about.timeline.dubai.description,
       icon: FaBriefcase,
-      color: 'from-pink-500 to-pink-600',
+      gradient: 'from-pink-500 to-rose-500',
     },
     {
       year: t.about.timeline.freelance.year,
       title: t.about.timeline.freelance.title,
       description: t.about.timeline.freelance.description,
       icon: FaGlobe,
-      color: 'from-green-500 to-green-600',
+      gradient: 'from-green-500 to-emerald-500',
     },
   ]
 
   const skills = [
-    { name: 'Web Development', level: 95 },
-    { name: 'Mobile Apps', level: 90 },
-    { name: 'IoT & Embedded Systems', level: 85 },
-    { name: 'Java & Python', level: 92 },
-    { name: 'Network Engineering', level: 88 },
-    { name: 'Cloud Solutions', level: 87 },
-    { name: 'Cyber Security', level: 85 },
-    { name: 'UI/UX Design', level: 80 },
+    { name: 'Web Development', level: 95, icon: FaCode, gradient: 'from-blue-500 to-cyan-500' },
+    { name: 'Mobile Apps', level: 90, icon: FaCode, gradient: 'from-purple-500 to-pink-500' },
+    { name: 'IoT & Embedded Systems', level: 85, icon: FaCode, gradient: 'from-green-500 to-emerald-500' },
+    { name: 'Java & Python', level: 92, icon: FaCode, gradient: 'from-orange-500 to-red-500' },
+    { name: 'Network Engineering', level: 88, icon: FaCode, gradient: 'from-cyan-500 to-blue-500' },
+    { name: 'Cloud Solutions', level: 87, icon: FaCode, gradient: 'from-sky-500 to-blue-500' },
+    { name: 'Cyber Security', level: 85, icon: FaCode, gradient: 'from-red-500 to-pink-500' },
+    { name: 'UI/UX Design', level: 80, icon: FaCode, gradient: 'from-pink-500 to-rose-500' },
   ]
 
   return (
     <section id="about" className="py-20 px-6 relative">
-      <div className="container mx-auto">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-4">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-6">
             {t.about.title}
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
             {t.about.subtitle}
           </p>
         </motion.div>
 
-        {/* Timeline */}
-        <div className="max-w-4xl mx-auto mb-20">
+        {/* Enhanced Timeline */}
+        <div className="max-w-5xl mx-auto mb-20">
           <div className="relative">
-            <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 opacity-20`}></div>
+            <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-30`}></div>
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: (language === 'ar' ? (index % 2 === 0 ? -50 : 50) : (index % 2 === 0 ? 50 : -50)) }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className={`relative mb-12 flex items-center ${
+                transition={{ delay: index * 0.15 }}
+                className={`relative mb-16 flex items-center ${
                   language === 'ar' 
                     ? (index % 2 === 0 ? 'flex-row-reverse' : 'flex-row')
                     : (index % 2 === 0 ? 'flex-row' : 'flex-row-reverse')
@@ -95,17 +98,25 @@ const About = () => {
                   ? (index % 2 === 0 ? 'text-left' : 'text-right')
                   : (index % 2 === 0 ? 'text-left' : 'text-right')
                 }`}>
-                  <div className={`glass rounded-2xl p-6 bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20 transition-all`}>
-                    <div className="flex items-center gap-4 mb-3">
-                      <item.icon className="text-2xl text-white" />
-                      <span className="text-purple-400 font-bold">{item.year}</span>
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    className={`relative group`}
+                  >
+                    <div className={`absolute -inset-1 bg-gradient-to-r ${item.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
+                    <div className={`relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 transition-all`}>
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`p-3 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg`}>
+                          <item.icon className="text-2xl text-white" />
+                        </div>
+                        <span className="text-purple-400 font-bold text-lg">{item.year}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold mb-3 text-white">{item.title}</h3>
+                      <p className="text-gray-300 leading-relaxed">{item.description}</p>
                     </div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-300">{item.description}</p>
-                  </div>
+                  </motion.div>
                 </div>
-                <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center glow z-10`}>
-                  <item.icon className="text-white text-xl" />
+                <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-20 h-20 rounded-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg shadow-purple-500/50 z-10 border-4 border-black/50`}>
+                  <item.icon className="text-white text-2xl" />
                 </div>
                 <div className="w-1/2"></div>
               </motion.div>
@@ -113,58 +124,75 @@ const About = () => {
           </div>
         </div>
 
-        {/* Skills */}
+        {/* Enhanced Skills */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">
+          <h3 className="text-4xl font-bold text-center mb-16 gradient-text">
             {t.about.skills.title}
           </h3>
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="glass rounded-xl p-4"
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group relative"
               >
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-white font-semibold">{skill.name}</span>
-                  <span className="text-purple-400 font-bold">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-800 rounded-full h-3 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    className="h-full bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full"
-                  />
+                <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
+                <div className="relative glass backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className={`p-2 rounded-lg bg-gradient-to-br ${skill.gradient}`}>
+                        <skill.icon className="text-lg text-white" />
+                      </div>
+                      <span className="text-white font-semibold text-lg">{skill.name}</span>
+                    </div>
+                    <span className="text-purple-400 font-bold text-lg">{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-800/50 rounded-full h-3 overflow-hidden backdrop-blur-sm">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${skill.level}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
+                      className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg`}
+                    />
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Additional Info */}
+        {/* Enhanced Teaching Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 max-w-4xl mx-auto"
+          className="mt-20 max-w-4xl mx-auto"
         >
-          <div className="glass rounded-2xl p-8 text-center">
-            <FaChalkboardTeacher className="text-4xl text-purple-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">{t.about.teaching.title}</h3>
-            <p className="text-gray-300">
-              {t.about.teaching.description}
-            </p>
-          </div>
+          <motion.div
+            whileHover={{ scale: 1.02, y: -5 }}
+            className="relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
+            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-3xl p-10 text-center hover:border-purple-500/50 transition-all">
+              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-6 shadow-lg">
+                <FaChalkboardTeacher className="text-4xl text-white" />
+              </div>
+              <h3 className="text-3xl font-bold mb-4 gradient-text">{t.about.teaching.title}</h3>
+              <p className="text-gray-300 text-lg leading-relaxed">
+                {t.about.teaching.description}
+              </p>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

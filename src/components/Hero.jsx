@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaCode, FaRocket, FaBrain } from 'react-icons/fa'
+import { FaCode, FaRocket, FaBrain, FaLaptopCode, FaMobileAlt, FaMicrochip } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -30,14 +30,39 @@ const Hero = () => {
     },
   }
 
+  const services = [
+    { 
+      icon: FaLaptopCode, 
+      text: 'Web Development',
+      gradient: 'from-blue-500 to-cyan-500',
+      delay: 0
+    },
+    { 
+      icon: FaMobileAlt, 
+      text: 'Mobile Apps',
+      gradient: 'from-purple-500 to-pink-500',
+      delay: 0.1
+    },
+    { 
+      icon: FaMicrochip, 
+      text: 'AI & IoT',
+      gradient: 'from-indigo-500 to-purple-500',
+      delay: 0.2
+    },
+  ]
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Animated Background */}
+      {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-cyan-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-3000"></div>
       </div>
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] opacity-30"></div>
 
       <motion.div
         variants={containerVariants}
@@ -45,63 +70,81 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-6 text-center relative z-10"
       >
-        <motion.div variants={itemVariants} className="mb-6">
+        <motion.div variants={itemVariants} className="mb-8">
           <motion.span
-            className="inline-block px-4 py-2 glass rounded-full text-sm mb-4"
-            whileHover={{ scale: 1.05 }}
+            className="inline-flex items-center gap-2 px-6 py-3 glass rounded-full text-sm mb-4 backdrop-blur-xl border border-white/10"
+            whileHover={{ scale: 1.05, borderColor: 'rgba(139, 92, 246, 0.5)' }}
           >
+            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
             {t.hero.subtitle}
           </motion.span>
         </motion.div>
 
         <motion.h1
           variants={itemVariants}
-          className="text-6xl md:text-8xl font-bold mb-6 gradient-text leading-tight"
+          className="text-6xl md:text-8xl lg:text-9xl font-bold mb-8 gradient-text leading-tight"
         >
           {t.hero.title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
+          className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
         >
           {t.hero.description}
         </motion.p>
 
+        {/* Enhanced Services Cards */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap justify-center gap-6 mb-12"
+          className="flex flex-wrap justify-center gap-8 mb-16"
         >
-          {[
-            { icon: FaCode, text: 'Web Development' },
-            { icon: FaRocket, text: 'Mobile Apps' },
-            { icon: FaBrain, text: 'AI & IoT' },
-          ].map((item, index) => (
+          {services.map((service, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="glass p-4 rounded-xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: service.delay }}
+              whileHover={{ scale: 1.1, y: -10 }}
+              className="relative group"
             >
-              <item.icon className="text-3xl text-purple-400 mb-2 mx-auto" />
-              <p className="text-sm text-gray-300">{item.text}</p>
+              <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity`}></div>
+              <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-8 min-w-[200px] hover:border-purple-500/50 transition-all">
+                <div className={`flex flex-col items-center justify-center mb-4`}>
+                  <div className={`p-4 rounded-xl bg-gradient-to-br ${service.gradient} mb-4 shadow-lg`}>
+                    <service.icon className="text-4xl text-white" />
+                  </div>
+                  <p className="text-base font-semibold text-white">{service.text}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex gap-4 justify-center">
+        {/* Enhanced CTA Buttons */}
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-6 justify-center">
           <motion.a
             href="#projects"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(99, 102, 241, 0.4)' }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold glow"
+            className="group relative px-10 py-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full font-semibold text-lg overflow-hidden"
           >
-            {t.hero.viewProjects}
+            <span className="relative z-10 flex items-center gap-2">
+              {t.hero.viewProjects}
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.5 }}
+              >
+                →
+              </motion.span>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </motion.a>
           <motion.a
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 glass rounded-full font-semibold border border-purple-500"
+            className="px-10 py-5 glass backdrop-blur-xl border-2 border-purple-500/50 rounded-full font-semibold text-lg hover:border-purple-400 hover:bg-white/10 transition-all"
           >
             {t.hero.contactMe}
           </motion.a>
