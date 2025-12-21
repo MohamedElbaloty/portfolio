@@ -1,8 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaCode, FaRocket, FaBrain } from 'react-icons/fa'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 const Hero = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -45,7 +50,7 @@ const Hero = () => {
             className="inline-block px-4 py-2 glass rounded-full text-sm mb-4"
             whileHover={{ scale: 1.05 }}
           >
-            مطور Full Stack & مهندس برمجيات
+            {t.hero.subtitle}
           </motion.span>
         </motion.div>
 
@@ -53,16 +58,14 @@ const Hero = () => {
           variants={itemVariants}
           className="text-6xl md:text-8xl font-bold mb-6 gradient-text leading-tight"
         >
-          محمد عزت
+          {t.hero.title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
           className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
         >
-          أبدع حلول برمجية متقدمة | مواقع ويب | تطبيقات موبايل | مشاريع IoT | 
-          <br />
-          تدريس ومساعدة طلاب الهندسة
+          {t.hero.description}
         </motion.p>
 
         <motion.div
@@ -92,7 +95,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold glow"
           >
-            شاهد مشاريعي
+            {t.hero.viewProjects}
           </motion.a>
           <motion.a
             href="#contact"
@@ -100,14 +103,12 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 glass rounded-full font-semibold border border-purple-500"
           >
-            تواصل معي
+            {t.hero.contactMe}
           </motion.a>
         </motion.div>
       </motion.div>
-
     </section>
   )
 }
 
 export default Hero
-

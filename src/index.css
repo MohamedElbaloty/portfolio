@@ -15,6 +15,17 @@ body {
   overflow-x: hidden;
 }
 
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
 html {
   scroll-behavior: smooth;
 }

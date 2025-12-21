@@ -1,19 +1,24 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 const Contact = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const contactInfo = [
     {
       icon: FaWhatsapp,
-      label: 'واتساب',
+      label: t.contact.whatsapp,
       value: '+201128384787',
       link: 'https://wa.me/201128384787',
       color: 'from-green-500 to-green-600',
     },
     {
       icon: FaEnvelope,
-      label: 'البريد الإلكتروني',
+      label: t.contact.email,
       value: 'mo7amed_3ezat@hotmail.com',
       link: 'mailto:mo7amed_3ezat@hotmail.com',
       color: 'from-blue-500 to-blue-600',
@@ -30,12 +35,10 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-4">
-            تواصل معي
+            {t.contact.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            هل لديك مشروع تريد تنفيذه؟ أو تريد حجز خدمة معينة؟ 
-            <br />
-            تواصل معي الآن وسأكون سعيداً لمساعدتك!
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -74,24 +77,22 @@ const Contact = () => {
           className="mt-12 text-center"
         >
           <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">خدماتي</h3>
-            <div className="grid md:grid-cols-2 gap-4 text-right">
+            <h3 className="text-2xl font-bold mb-4">{t.contact.services.title}</h3>
+            <div className={`grid md:grid-cols-2 gap-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
               <div className="space-y-2">
-                <p className="text-gray-300">✓ تطوير مواقع ويب احترافية</p>
-                <p className="text-gray-300">✓ تطبيقات Android و iOS</p>
-                <p className="text-gray-300">✓ مشاريع Arduino و Raspberry Pi</p>
-                <p className="text-gray-300">✓ برمجة Java و Python</p>
+                {t.contact.services.list.slice(0, 4).map((service, index) => (
+                  <p key={index} className="text-gray-300">✓ {service}</p>
+                ))}
               </div>
               <div className="space-y-2">
-                <p className="text-gray-300">✓ شبكات Cisco</p>
-                <p className="text-gray-300">✓ حلول Cloud</p>
-                <p className="text-gray-300">✓ Cyber Security</p>
-                <p className="text-gray-300">✓ Digital & UX Design</p>
+                {t.contact.services.list.slice(4).map((service, index) => (
+                  <p key={index} className="text-gray-300">✓ {service}</p>
+                ))}
               </div>
             </div>
             <div className="mt-6 pt-6 border-t border-gray-700">
               <p className="text-gray-400">
-                كما أقدم خدمات التدريس ومساعدة طلاب الهندسة في مشاريع التخرج
+                {t.contact.teachingNote}
               </p>
             </div>
           </div>
@@ -102,4 +103,3 @@ const Contact = () => {
 }
 
 export default Contact
-

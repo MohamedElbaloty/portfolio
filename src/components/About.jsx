@@ -1,41 +1,46 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { FaGraduationCap, FaBriefcase, FaGlobe, FaCode, FaChalkboardTeacher } from 'react-icons/fa'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 const About = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
+
   const timeline = [
     {
-      year: '2015',
-      title: 'التخرج',
-      description: 'تخرجت من كلية الحسابات والمعلومات - جامعة المنصورة',
+      year: t.about.timeline.graduation.year,
+      title: t.about.timeline.graduation.title,
+      description: t.about.timeline.graduation.description,
       icon: FaGraduationCap,
       color: 'from-blue-500 to-blue-600',
     },
     {
-      year: '2015 - 2018',
-      title: 'الكويت',
-      description: 'عملت بالبرمجة وتدريس البرمجيات',
+      year: t.about.timeline.kuwait.year,
+      title: t.about.timeline.kuwait.title,
+      description: t.about.timeline.kuwait.description,
       icon: FaBriefcase,
       color: 'from-purple-500 to-purple-600',
     },
     {
-      year: '2018',
-      title: 'الولايات المتحدة',
-      description: 'سافرت لأمريكا وسجلت كورسات Computer Science بجامعة Maharishi',
+      year: t.about.timeline.usa.year,
+      title: t.about.timeline.usa.title,
+      description: t.about.timeline.usa.description,
       icon: FaGraduationCap,
       color: 'from-indigo-500 to-indigo-600',
     },
     {
-      year: '2018 - الحاضر',
-      title: 'دبي - الإمارات',
-      description: 'عملت بمشاريع برمجية متعددة',
+      year: t.about.timeline.dubai.year,
+      title: t.about.timeline.dubai.title,
+      description: t.about.timeline.dubai.description,
       icon: FaBriefcase,
       color: 'from-pink-500 to-pink-600',
     },
     {
-      year: 'الحاضر',
-      title: 'مستقل',
-      description: 'أعمل على مشاريع لشركات في منطقة الخليج (خصوصاً السعودية) وبرمجة أنظمة لشركات في أوروبا والمغرب',
+      year: t.about.timeline.freelance.year,
+      title: t.about.timeline.freelance.title,
+      description: t.about.timeline.freelance.description,
       icon: FaGlobe,
       color: 'from-green-500 to-green-600',
     },
@@ -62,29 +67,34 @@ const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-4">
-            عني
+            {t.about.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            مطور Full Stack محترف مع خبرة واسعة في تطوير البرمجيات والأنظمة
+            {t.about.subtitle}
           </p>
         </motion.div>
 
         {/* Timeline */}
         <div className="max-w-4xl mx-auto mb-20">
           <div className="relative">
-            <div className="absolute right-1/2 transform translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 opacity-20"></div>
+            <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500 opacity-20`}></div>
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                initial={{ opacity: 0, x: (language === 'ar' ? (index % 2 === 0 ? -50 : 50) : (index % 2 === 0 ? 50 : -50)) }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
                 className={`relative mb-12 flex items-center ${
-                  index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
+                  language === 'ar' 
+                    ? (index % 2 === 0 ? 'flex-row-reverse' : 'flex-row')
+                    : (index % 2 === 0 ? 'flex-row' : 'flex-row-reverse')
                 }`}
               >
-                <div className={`w-1/2 ${index % 2 === 0 ? 'text-left' : 'text-right'}`}>
+                <div className={`w-1/2 ${language === 'ar' 
+                  ? (index % 2 === 0 ? 'text-left' : 'text-right')
+                  : (index % 2 === 0 ? 'text-left' : 'text-right')
+                }`}>
                   <div className={`glass rounded-2xl p-6 bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20 transition-all`}>
                     <div className="flex items-center gap-4 mb-3">
                       <item.icon className="text-2xl text-white" />
@@ -94,7 +104,7 @@ const About = () => {
                     <p className="text-gray-300">{item.description}</p>
                   </div>
                 </div>
-                <div className="absolute right-1/2 transform translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center glow z-10">
+                <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center glow z-10`}>
                   <item.icon className="text-white text-xl" />
                 </div>
                 <div className="w-1/2"></div>
@@ -111,13 +121,13 @@ const About = () => {
           className="max-w-4xl mx-auto"
         >
           <h3 className="text-3xl font-bold text-center mb-12 gradient-text">
-            المهارات التقنية
+            {t.about.skills.title}
           </h3>
           <div className="space-y-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: -50 }}
+                initial={{ opacity: 0, x: language === 'ar' ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
@@ -150,9 +160,9 @@ const About = () => {
         >
           <div className="glass rounded-2xl p-8 text-center">
             <FaChalkboardTeacher className="text-4xl text-purple-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">تدريس ومساعدة طلاب الهندسة</h3>
+            <h3 className="text-2xl font-bold mb-4">{t.about.teaching.title}</h3>
             <p className="text-gray-300">
-              أقدم خدمات التدريس ومساعدة طلاب الهندسة في مشاريع التخرج بجامعات الخليج
+              {t.about.teaching.description}
             </p>
           </div>
         </motion.div>
@@ -162,4 +172,3 @@ const About = () => {
 }
 
 export default About
-

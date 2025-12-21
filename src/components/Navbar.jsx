@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaGlobe } from 'react-icons/fa'
+import { useLanguage } from '../contexts/LanguageContext'
+import { translations } from '../translations'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { language, toggleLanguage } = useLanguage()
+  const t = translations[language]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,10 +19,10 @@ const Navbar = () => {
   }, [])
 
   const navItems = [
-    { name: 'الرئيسية', href: '#home' },
-    { name: 'عني', href: '#about' },
-    { name: 'المشاريع', href: '#projects' },
-    { name: 'التواصل', href: '#contact' },
+    { name: t.nav.home, href: '#home' },
+    { name: t.nav.about, href: '#about' },
+    { name: t.nav.projects, href: '#projects' },
+    { name: t.nav.contact, href: '#contact' },
   ]
 
   return (
@@ -34,11 +38,11 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           className="text-2xl font-bold gradient-text"
         >
-          محمد عزت
+          {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
         </motion.div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex gap-8 items-center">
           {navItems.map((item, index) => (
             <motion.a
               key={item.name}
@@ -52,15 +56,37 @@ const Navbar = () => {
               {item.name}
             </motion.a>
           ))}
+          {/* Language Toggle */}
+          <motion.button
+            onClick={toggleLanguage}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="glass px-4 py-2 rounded-full flex items-center gap-2 text-white hover:text-purple-400 transition-colors"
+            title={language === 'en' ? 'Switch to Arabic' : 'التبديل إلى الإنجليزية'}
+          >
+            <FaGlobe />
+            <span>{language === 'en' ? 'AR' : 'EN'}</span>
+          </motion.button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-white text-2xl"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <motion.button
+            onClick={toggleLanguage}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="glass px-3 py-2 rounded-full flex items-center gap-2 text-white"
+          >
+            <FaGlobe />
+            <span>{language === 'en' ? 'AR' : 'EN'}</span>
+          </motion.button>
+          <button
+            className="text-white text-2xl"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -87,4 +113,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
