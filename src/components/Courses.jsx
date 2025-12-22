@@ -51,20 +51,6 @@ const Courses = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
       <div className="container mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <div className="inline-flex items-center gap-3 mb-4">
-            <FaGraduationCap className="text-4xl sm:text-5xl text-purple-400" />
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text">
-              {data.title}
-            </h2>
-          </div>
-        </motion.div>
-
         {/* Courses Categories */}
         <div className="max-w-6xl mx-auto space-y-6">
           {data.categories.map((category, categoryIndex) => {
@@ -88,17 +74,17 @@ const Courses = () => {
                     onClick={() => setExpandedCategory(isExpanded ? null : categoryIndex)}
                     className="w-full p-4 sm:p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
                   >
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-1">
                       <div className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg`}>
                         <Icon className="text-2xl sm:text-3xl text-white" />
                       </div>
-                      <div className="text-right">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                      <div className="flex-1 flex items-center justify-between">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white">
                           {category.name}
                         </h3>
-                        <p className="text-gray-400 text-sm">
-                          {category.courses.length} {language === 'en' ? 'Courses' : 'كورسات'}
-                        </p>
+                        <span className="text-purple-400 font-semibold text-base sm:text-lg ml-4">
+                          {category.courses.length} {language === 'en' ? 'courses' : 'كورسات'}
+                        </span>
                       </div>
                     </div>
                     <motion.div
