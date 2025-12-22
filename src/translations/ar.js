@@ -2,9 +2,10 @@ export const ar = {
   // Navbar
   nav: {
     home: 'الرئيسية',
-    about: 'عني',
-    courses: 'الكورسات',
+    skills: 'المهارات التقنية',
     projects: 'المشاريع',
+    courses: 'الكورسات',
+    about: 'عني',
     contact: 'التواصل',
   },
   

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaBriefcase, FaGlobe, FaCode, FaChalkboardTeacher, FaUniversity, FaLaptopCode, FaMobileAlt, FaMicrochip, FaNetworkWired, FaCloud, FaShieldAlt, FaPalette } from 'react-icons/fa'
+import { FaGraduationCap, FaBriefcase, FaGlobe, FaChalkboardTeacher, FaUniversity } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -46,16 +46,6 @@ const About = () => {
     },
   ]
 
-  const skills = [
-    { name: 'Web Development', level: 95, icon: FaLaptopCode, gradient: 'from-blue-500 to-cyan-500' },
-    { name: 'Mobile Apps', level: 90, icon: FaMobileAlt, gradient: 'from-purple-500 to-pink-500' },
-    { name: 'IoT & Embedded Systems', level: 85, icon: FaMicrochip, gradient: 'from-green-500 to-emerald-500' },
-    { name: 'Java & Python', level: 92, icon: FaCode, gradient: 'from-orange-500 to-red-500' },
-    { name: 'Network Engineering', level: 88, icon: FaNetworkWired, gradient: 'from-cyan-500 to-blue-500' },
-    { name: 'Cloud Solutions', level: 87, icon: FaCloud, gradient: 'from-sky-500 to-blue-500' },
-    { name: 'Cyber Security', level: 85, icon: FaShieldAlt, gradient: 'from-red-500 to-pink-500' },
-    { name: 'UI/UX Design', level: 80, icon: FaPalette, gradient: 'from-pink-500 to-rose-500' },
-  ]
 
   return (
     <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
@@ -120,53 +110,6 @@ const About = () => {
             ))}
           </div>
         </div>
-
-        {/* Enhanced Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-5xl mx-auto"
-        >
-          <h3 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 gradient-text">
-            {t.about.skills.title}
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="group relative"
-              >
-                <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
-                <div className="relative glass backdrop-blur-xl border border-white/10 rounded-xl p-4 sm:p-6 hover:border-purple-500/50 transition-all">
-                  <div className="flex items-center justify-between mb-3 sm:mb-4">
-                    <div className="flex items-center gap-2 sm:gap-3">
-                      <div className={`p-2 rounded-lg bg-gradient-to-br ${skill.gradient} flex-shrink-0`}>
-                        <skill.icon className="text-base sm:text-lg text-white" />
-                      </div>
-                      <span className="text-white font-semibold text-sm sm:text-lg">{skill.name}</span>
-                    </div>
-                    <span className="text-purple-400 font-bold text-sm sm:text-lg">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-gray-800/50 rounded-full h-2 sm:h-3 overflow-hidden backdrop-blur-sm">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
-                      className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg`}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
         {/* Enhanced Teaching Section */}
         <motion.div

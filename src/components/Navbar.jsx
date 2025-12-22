@@ -22,9 +22,10 @@ const Navbar = () => {
 
   const navItems = [
     { name: t.nav.home, href: '#home' },
-    { name: t.nav.about, href: '#about' },
-    { name: t.nav.courses, href: '#courses' },
+    { name: t.nav.skills, href: '#skills' },
     { name: t.nav.projects, href: '#projects' },
+    { name: t.nav.courses, href: '#courses' },
+    { name: t.nav.about, href: '#about' },
     { name: t.nav.contact, href: '#contact' },
   ]
 

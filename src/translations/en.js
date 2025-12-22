@@ -2,9 +2,10 @@ export const en = {
   // Navbar
   nav: {
     home: 'Home',
-    about: 'About',
-    courses: 'Courses',
+    skills: 'Technical Skills',
     projects: 'Projects',
+    courses: 'Courses',
+    about: 'About',
     contact: 'Contact',
   },
   
