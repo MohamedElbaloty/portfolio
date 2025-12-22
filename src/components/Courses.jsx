@@ -7,6 +7,7 @@ import {
   FaNetworkWired, 
   FaMicrochip,
   FaGraduationCap,
+  FaChalkboardTeacher,
   FaChevronDown,
   FaChevronUp
 } from 'react-icons/fa'
@@ -61,12 +62,10 @@ const Courses = () => {
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text">
               {data.title}
             </h2>
+            <FaChalkboardTeacher className="text-3xl sm:text-4xl text-purple-400" />
           </div>
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4 mb-2">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             {data.subtitle}
-          </p>
-          <p className="text-purple-400 text-sm sm:text-base font-semibold">
-            {data.university}
           </p>
         </motion.div>
 
@@ -176,4 +175,3 @@ const Courses = () => {
 }
 
 export default Courses
-

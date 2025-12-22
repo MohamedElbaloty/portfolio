@@ -11,23 +11,33 @@ import {
   FaCog,
   FaBolt,
   FaGlobe,
-  FaServer
+  FaServer,
+  FaPalette,
+  FaShieldAlt,
+  FaMicrochip
 } from 'react-icons/fa'
 
 const AnimatedBackground = () => {
-  // Floating Tech Icons
+  // Floating Tech Icons - Increased and more vertical movement
   const techIcons = [
-    { icon: FaCode, delay: 0, x: '10%', y: '20%', duration: 20 },
-    { icon: FaLaptopCode, delay: 2, x: '80%', y: '15%', duration: 25 },
-    { icon: FaMobileAlt, delay: 4, x: '15%', y: '70%', duration: 18 },
-    { icon: FaCloud, delay: 1, x: '85%', y: '60%', duration: 22 },
-    { icon: FaDatabase, delay: 3, x: '20%', y: '40%', duration: 24 },
-    { icon: FaNetworkWired, delay: 5, x: '75%', y: '35%', duration: 20 },
-    { icon: FaRocket, delay: 1.5, x: '50%', y: '10%', duration: 15 },
-    { icon: FaCog, delay: 3.5, x: '60%', y: '80%', duration: 30 },
-    { icon: FaBolt, delay: 2.5, x: '30%', y: '55%', duration: 16 },
-    { icon: FaGlobe, delay: 4.5, x: '70%', y: '25%', duration: 19 },
-    { icon: FaServer, delay: 1.2, x: '25%', y: '85%', duration: 23 },
+    { icon: FaCode, delay: 0, x: '10%', y: '20%', duration: 18, yRange: [-80, 80] },
+    { icon: FaLaptopCode, delay: 2, x: '80%', y: '15%', duration: 22, yRange: [-70, 70] },
+    { icon: FaMobileAlt, delay: 4, x: '15%', y: '70%', duration: 16, yRange: [-90, 90] },
+    { icon: FaCloud, delay: 1, x: '85%', y: '60%', duration: 20, yRange: [-75, 75] },
+    { icon: FaDatabase, delay: 3, x: '20%', y: '40%', duration: 21, yRange: [-85, 85] },
+    { icon: FaNetworkWired, delay: 5, x: '75%', y: '35%', duration: 19, yRange: [-65, 65] },
+    { icon: FaRocket, delay: 1.5, x: '50%', y: '10%', duration: 14, yRange: [-100, 100] },
+    { icon: FaCog, delay: 3.5, x: '60%', y: '80%', duration: 28, yRange: [-95, 95] },
+    { icon: FaBolt, delay: 2.5, x: '30%', y: '55%', duration: 15, yRange: [-80, 80] },
+    { icon: FaGlobe, delay: 4.5, x: '70%', y: '25%', duration: 17, yRange: [-70, 70] },
+    { icon: FaServer, delay: 1.2, x: '25%', y: '85%', duration: 23, yRange: [-90, 90] },
+    { icon: FaPalette, delay: 0.8, x: '45%', y: '30%', duration: 19, yRange: [-75, 75] },
+    { icon: FaShieldAlt, delay: 3.2, x: '55%', y: '65%', duration: 24, yRange: [-85, 85] },
+    { icon: FaMicrochip, delay: 2.8, x: '40%', y: '50%', duration: 20, yRange: [-80, 80] },
+    { icon: FaCode, delay: 4.2, x: '90%', y: '45%', duration: 18, yRange: [-70, 70] },
+    { icon: FaLaptopCode, delay: 1.8, x: '5%', y: '60%', duration: 22, yRange: [-90, 90] },
+    { icon: FaCloud, delay: 3.8, x: '65%', y: '20%', duration: 21, yRange: [-75, 75] },
+    { icon: FaDatabase, delay: 2.2, x: '35%', y: '75%', duration: 25, yRange: [-85, 85] },
   ]
 
   // Animated Shapes
@@ -116,7 +126,7 @@ const AnimatedBackground = () => {
         ))}
       </svg>
 
-      {/* Floating Tech Icons */}
+      {/* Floating Tech Icons - Enhanced with more vertical movement */}
       {techIcons.map((item, index) => (
         <motion.div
           key={index}
@@ -130,8 +140,8 @@ const AnimatedBackground = () => {
             opacity: [0.3, 0.6, 0.3],
             scale: [0.8, 1.2, 0.8],
             rotate: [0, 360],
-            y: [0, -30, 0],
-            x: [0, 20, 0],
+            y: [0, item.yRange[0], item.yRange[1], 0],
+            x: [0, 15, -15, 0],
           }}
           transition={{
             duration: item.duration,
@@ -216,6 +226,7 @@ const AnimatedBackground = () => {
             opacity: [0.2, 0.5, 0.2],
             scale: [0.9, 1.1, 0.9],
             rotate: [0, 5, -5, 0],
+            y: [0, -30, 30, 0],
           }}
           transition={{
             duration: element.duration,
@@ -325,7 +336,7 @@ const AnimatedBackground = () => {
             top: snippet.y,
           }}
           animate={{
-            y: [0, -20, 0],
+            y: [0, -40, 40, 0],
             opacity: [0.15, 0.3, 0.15],
           }}
           transition={{

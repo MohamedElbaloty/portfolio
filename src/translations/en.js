@@ -53,7 +53,7 @@ export const en = {
     },
     teaching: {
       title: 'Teaching & Helping Engineering Students',
-      description: 'I provide teaching services and help engineering students with graduation projects at Gulf universities',
+      description: 'I provide teaching services and help engineering students with graduation projects and teaching subjects',
     },
   },
   

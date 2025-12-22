@@ -3,8 +3,7 @@
 export const coursesData = {
   en: {
     title: 'Courses & Teaching',
-    subtitle: 'Teaching Computer Science courses at AUM University - Kuwait',
-    university: 'AUM University - Kuwait',
+    subtitle: 'Teaching Computer Science courses and helping engineering students with graduation projects',
     categories: [
       {
         name: 'Programming Languages',
@@ -90,8 +89,7 @@ export const coursesData = {
   },
   ar: {
     title: 'الكورسات والتدريس',
-    subtitle: 'تدريس مواد علوم الحاسب بجامعة AUM - الكويت',
-    university: 'جامعة AUM - الكويت',
+    subtitle: 'تدريس مواد علوم الحاسب ومساعدة طلاب الهندسة في مشاريع التخرج',
     categories: [
       {
         name: 'لغات البرمجة',
