@@ -4,24 +4,41 @@ export const coursesData = {
   en: {
     title: 'Courses',
     categories: [
+      // Put Computer Science Fundamentals first
       {
-        name: 'Web Development',
+        name: 'Computer Science Fundamentals',
         courses: [
           {
-            name: 'Professional Web Development',
-            description: 'Comprehensive web development course covering frontend and backend technologies, modern frameworks, responsive design, and best practices.',
-            topics: ['HTML5 & CSS3', 'JavaScript & ES6+', 'React & Vue.js', 'Node.js & Express', 'RESTful APIs', 'Database Integration', 'Deployment & DevOps']
+            name: 'Data Structures',
+            description: 'In-depth study of data structures including arrays, linked lists, stacks, queues, trees, graphs, and their implementations.',
+            topics: ['Arrays & Lists', 'Stacks & Queues', 'Trees & Binary Trees', 'Graphs', 'Hash Tables', 'Sorting Algorithms', 'Search Algorithms']
           },
           {
-            name: 'Full Stack Development',
-            description: 'Complete full-stack development course covering both client-side and server-side technologies for building modern web applications.',
-            topics: ['Frontend Frameworks', 'Backend Development', 'API Design', 'Authentication & Security', 'Database Management', 'Cloud Deployment']
+            name: 'Object-Oriented Programming (OOP)',
+            description: 'Comprehensive OOP course covering classes, objects, inheritance, polymorphism, encapsulation, and design patterns.',
+            topics: ['Classes & Objects', 'Inheritance', 'Polymorphism', 'Encapsulation', 'Abstraction', 'Design Patterns', 'UML']
+          },
+          {
+            name: 'Algorithms',
+            description: 'Algorithm design and analysis course covering complexity analysis, sorting, searching, dynamic programming, and graph algorithms.',
+            topics: ['Algorithm Analysis', 'Sorting Algorithms', 'Search Algorithms', 'Dynamic Programming', 'Greedy Algorithms', 'Graph Algorithms', 'Complexity Theory']
+          },
+          {
+            name: 'Computer Architecture',
+            description: 'Computer organization and architecture course covering CPU design, memory systems, I/O systems, and parallel processing.',
+            topics: ['CPU Design', 'Memory Systems', 'Cache Memory', 'I/O Systems', 'Assembly Language', 'Parallel Processing', 'Pipelining']
           }
         ]
       },
       {
-        name: 'Mobile Development',
+        // Merged Web + Mobile into one category
+        name: 'Web & Mobile Development',
         courses: [
+          {
+            name: 'Full Stack Development',
+            description: 'Complete full-stack development course covering both client-side and server-side technologies for building modern web applications.',
+            topics: ['Frontend Frameworks', 'Backend Development', 'API Design', 'Authentication & Security', 'Database Management', 'Cloud Deployment']
+          },
           {
             name: 'Android Development',
             description: 'Complete Android app development course covering Java/Kotlin, Android SDK, UI/UX design, and publishing apps to Google Play Store.',
@@ -71,31 +88,6 @@ export const coursesData = {
             name: 'Java Programming',
             description: 'Complete Java programming course from basics to advanced concepts including GUI development and enterprise applications.',
             topics: ['Java Fundamentals', 'OOP Concepts', 'Collections', 'Exception Handling', 'Swing/AWT', 'JDBC', 'Multithreading']
-          }
-        ]
-      },
-      {
-        name: 'Computer Science Fundamentals',
-        courses: [
-          {
-            name: 'Data Structures',
-            description: 'In-depth study of data structures including arrays, linked lists, stacks, queues, trees, graphs, and their implementations.',
-            topics: ['Arrays & Lists', 'Stacks & Queues', 'Trees & Binary Trees', 'Graphs', 'Hash Tables', 'Sorting Algorithms', 'Search Algorithms']
-          },
-          {
-            name: 'Object-Oriented Programming (OOP)',
-            description: 'Comprehensive OOP course covering classes, objects, inheritance, polymorphism, encapsulation, and design patterns.',
-            topics: ['Classes & Objects', 'Inheritance', 'Polymorphism', 'Encapsulation', 'Abstraction', 'Design Patterns', 'UML']
-          },
-          {
-            name: 'Algorithms',
-            description: 'Algorithm design and analysis course covering complexity analysis, sorting, searching, dynamic programming, and graph algorithms.',
-            topics: ['Algorithm Analysis', 'Sorting Algorithms', 'Search Algorithms', 'Dynamic Programming', 'Greedy Algorithms', 'Graph Algorithms', 'Complexity Theory']
-          },
-          {
-            name: 'Computer Architecture',
-            description: 'Computer organization and architecture course covering CPU design, memory systems, I/O systems, and parallel processing.',
-            topics: ['CPU Design', 'Memory Systems', 'Cache Memory', 'I/O Systems', 'Assembly Language', 'Parallel Processing', 'Pipelining']
           }
         ]
       },
@@ -185,24 +177,41 @@ export const coursesData = {
   ar: {
     title: 'الكورسات',
     categories: [
+      // أولاً: أساسيات علوم الحاسب
       {
-        name: 'تطوير الويب',
+        name: 'أساسيات علوم الحاسب',
         courses: [
           {
-            name: 'تطوير الويب الاحترافي',
-            description: 'دورة شاملة في تطوير الويب تغطي تقنيات الواجهة الأمامية والخلفية، الأطر الحديثة، التصميم المتجاوب، وأفضل الممارسات.',
-            topics: ['HTML5 & CSS3', 'JavaScript & ES6+', 'React & Vue.js', 'Node.js & Express', 'RESTful APIs', 'تكامل قواعد البيانات', 'النشر و DevOps']
+            name: 'هياكل البيانات',
+            description: 'دراسة متعمقة لهياكل البيانات بما في ذلك المصفوفات، القوائم المرتبطة، المكدسات، الطوابير، الأشجار، الرسوم البيانية، وتنفيذها.',
+            topics: ['المصفوفات والقوائم', 'المكدسات والطوابير', 'الأشجار', 'الرسوم البيانية', 'جداول التجزئة', 'خوارزميات الترتيب', 'خوارزميات البحث']
           },
           {
-            name: 'تطوير Full Stack',
-            description: 'دورة كاملة في تطوير Full Stack تغطي تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات الويب الحديثة.',
-            topics: ['أطر الواجهة الأمامية', 'تطوير الخلفية', 'تصميم API', 'المصادقة والأمان', 'إدارة قواعد البيانات', 'النشر السحابي']
+            name: 'البرمجة الكائنية (OOP)',
+            description: 'دورة شاملة في البرمجة الكائنية تغطي الفئات، الكائنات، الوراثة، تعدد الأشكال، التغليف، وأنماط التصميم.',
+            topics: ['الفئات والكائنات', 'الوراثة', 'تعدد الأشكال', 'التغليف', 'التجريد', 'أنماط التصميم', 'UML']
+          },
+          {
+            name: 'الخوارزميات',
+            description: 'دورة تصميم وتحليل الخوارزميات تغطي تحليل التعقيد، الترتيب، البحث، البرمجة الديناميكية، وخوارزميات الرسوم البيانية.',
+            topics: ['تحليل الخوارزميات', 'خوارزميات الترتيب', 'خوارزميات البحث', 'البرمجة الديناميكية', 'الخوارزميات الجشعة', 'خوارزميات الرسوم البيانية', 'نظرية التعقيد']
+          },
+          {
+            name: 'معمارية الحاسوب',
+            description: 'دورة تنظيم ومعمارية الحاسوب تغطي تصميم المعالج، أنظمة الذاكرة، أنظمة الإدخال/الإخراج، والمعالجة المتوازية.',
+            topics: ['تصميم المعالج', 'أنظمة الذاكرة', 'ذاكرة التخزين المؤقت', 'أنظمة I/O', 'لغة التجميع', 'المعالجة المتوازية', 'Pipeline']
           }
         ]
       },
       {
-        name: 'تطوير التطبيقات',
+        // دمج تطوير الويب والموبايل في كارت واحد
+        name: 'تطوير الويب والموبايل',
         courses: [
+          {
+            name: 'تطوير Full Stack',
+            description: 'دورة كاملة في تطوير Full Stack تغطي تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات الويب الحديثة.',
+            topics: ['أطر الواجهة الأمامية', 'تطوير الخلفية', 'تصميم API', 'المصادقة والأمان', 'إدارة قواعد البيانات', 'النشر السحابي']
+          },
           {
             name: 'تطوير Android',
             description: 'دورة كاملة في تطوير تطبيقات Android تغطي Java/Kotlin، Android SDK، تصميم UI/UX، ونشر التطبيقات على Google Play Store.',
@@ -252,31 +261,6 @@ export const coursesData = {
             name: 'برمجة Java',
             description: 'دورة كاملة في برمجة Java من الأساسيات إلى المفاهيم المتقدمة بما في ذلك تطوير واجهات المستخدم والتطبيقات المؤسسية.',
             topics: ['أساسيات Java', 'مفاهيم OOP', 'Collections', 'معالجة الأخطاء', 'Swing/AWT', 'JDBC', 'Multithreading']
-          }
-        ]
-      },
-      {
-        name: 'أساسيات علوم الحاسب',
-        courses: [
-          {
-            name: 'هياكل البيانات',
-            description: 'دراسة متعمقة لهياكل البيانات بما في ذلك المصفوفات، القوائم المرتبطة، المكدسات، الطوابير، الأشجار، الرسوم البيانية، وتنفيذها.',
-            topics: ['المصفوفات والقوائم', 'المكدسات والطوابير', 'الأشجار', 'الرسوم البيانية', 'جداول التجزئة', 'خوارزميات الترتيب', 'خوارزميات البحث']
-          },
-          {
-            name: 'البرمجة الكائنية (OOP)',
-            description: 'دورة شاملة في البرمجة الكائنية تغطي الفئات، الكائنات، الوراثة، تعدد الأشكال، التغليف، وأنماط التصميم.',
-            topics: ['الفئات والكائنات', 'الوراثة', 'تعدد الأشكال', 'التغليف', 'التجريد', 'أنماط التصميم', 'UML']
-          },
-          {
-            name: 'الخوارزميات',
-            description: 'دورة تصميم وتحليل الخوارزميات تغطي تحليل التعقيد، الترتيب، البحث، البرمجة الديناميكية، وخوارزميات الرسوم البيانية.',
-            topics: ['تحليل الخوارزميات', 'خوارزميات الترتيب', 'خوارزميات البحث', 'البرمجة الديناميكية', 'الخوارزميات الجشعة', 'خوارزميات الرسوم البيانية', 'نظرية التعقيد']
-          },
-          {
-            name: 'معمارية الحاسوب',
-            description: 'دورة تنظيم ومعمارية الحاسوب تغطي تصميم المعالج، أنظمة الذاكرة، أنظمة الإدخال/الإخراج، والمعالجة المتوازية.',
-            topics: ['تصميم المعالج', 'أنظمة الذاكرة', 'ذاكرة التخزين المؤقت', 'أنظمة I/O', 'لغة التجميع', 'المعالجة المتوازية', 'Pipeline']
           }
         ]
       },

@@ -26,10 +26,8 @@ const Courses = () => {
   const [expandedCategory, setExpandedCategory] = useState(null)
 
   const categoryIcons = {
-    'Web Development': FaLaptopCode,
-    'تطوير الويب': FaLaptopCode,
-    'Mobile Development': FaMobileAlt,
-    'تطوير التطبيقات': FaMobileAlt,
+    'Web & Mobile Development': FaLaptopCode,
+    'تطوير الويب والموبايل': FaLaptopCode,
     'IoT & Embedded Systems': FaMicrochip,
     'إنترنت الأشياء والأنظمة المدمجة': FaMicrochip,
     'Programming Languages': FaCode,
@@ -49,10 +47,8 @@ const Courses = () => {
   }
 
   const categoryGradients = {
-    'Web Development': 'from-blue-500 to-cyan-500',
-    'تطوير الويب': 'from-blue-500 to-cyan-500',
-    'Mobile Development': 'from-purple-500 to-pink-500',
-    'تطوير التطبيقات': 'from-purple-500 to-pink-500',
+    'Web & Mobile Development': 'from-blue-500 to-cyan-500',
+    'تطوير الويب والموبايل': 'from-blue-500 to-cyan-500',
     'IoT & Embedded Systems': 'from-green-500 to-emerald-500',
     'إنترنت الأشياء والأنظمة المدمجة': 'from-green-500 to-emerald-500',
     'Programming Languages': 'from-blue-500 to-cyan-500',
