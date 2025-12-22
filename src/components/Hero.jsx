@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud, FaPhotoVideo, FaVideo, FaProjectDiagram } from 'react-icons/fa'
+import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud, FaPhotoVideo, FaVideo, FaCogs } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -41,7 +41,7 @@ const Hero = () => {
     { name: t.about.skills.cloudSolutions, icon: FaCloud, color: 'text-sky-400' },
     { name: t.about.skills.motionGraphics, icon: FaPhotoVideo, color: 'text-fuchsia-400' },
     { name: t.about.skills.aiVideoProduction, icon: FaVideo, color: 'text-violet-400' },
-    { name: t.about.skills.automationWorkflows, icon: FaProjectDiagram, color: 'text-amber-400' },
+    { name: t.about.skills.automationWorkflows, icon: FaCogs, color: 'text-amber-400' },
   ]
 
   return (
