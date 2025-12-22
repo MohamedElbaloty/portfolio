@@ -13,7 +13,8 @@ import {
   FaPlay,
   FaTools,
   FaList,
-  FaBriefcase
+  FaBriefcase,
+  FaMapMarkerAlt
 } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -267,6 +268,14 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
     triggerOnce: true,
   })
 
+  const marketMeta = {
+    sa: { emoji: '🇸🇦', color: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
+    ma: { emoji: '🇲🇦', color: 'bg-red-500/15 text-red-300 border-red-500/30' },
+    eg: { emoji: '🇪🇬', color: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
+    kw: { emoji: '🇰🇼', color: 'bg-sky-500/15 text-sky-300 border-sky-500/30' },
+  }
+  const market = project.marketKey ? marketMeta[project.marketKey] : null
+
   return (
     <motion.div
       ref={ref}
@@ -321,9 +330,20 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
         
         {/* Content */}
         <div className="p-4 sm:p-6">
-          <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors">
-            {project.title}
-          </h3>
+          <div className="flex items-start justify-between gap-2 mb-2 sm:mb-3">
+            <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+              {project.title}
+            </h3>
+            {project.market && market && (
+              <span
+                className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full border text-[10px] sm:text-xs whitespace-nowrap ${market.color}`}
+              >
+                <span className="text-[11px] sm:text-sm leading-none">{market.emoji}</span>
+                <FaMapMarkerAlt className="opacity-90" />
+                <span className="font-semibold">{project.market}</span>
+              </span>
+            )}
+          </div>
           <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
             {project.description}
           </p>
@@ -345,6 +365,13 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
 
 const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }) => {
   const [showVideo, setShowVideo] = useState(false)
+  const marketMeta = {
+    sa: { emoji: '🇸🇦', color: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
+    ma: { emoji: '🇲🇦', color: 'bg-red-500/15 text-red-300 border-red-500/30' },
+    eg: { emoji: '🇪🇬', color: 'bg-amber-500/15 text-amber-300 border-amber-500/30' },
+    kw: { emoji: '🇰🇼', color: 'bg-sky-500/15 text-sky-300 border-sky-500/30' },
+  }
+  const market = project?.marketKey ? marketMeta[project.marketKey] : null
 
   return (
     <motion.div
@@ -409,7 +436,16 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
 
         {/* Content */}
         <div className="p-6 sm:p-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 gradient-text">{project.title}</h2>
+          <div className="flex flex-wrap items-center gap-2 mb-4 sm:mb-6">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text">{project.title}</h2>
+            {project.market && market && (
+              <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs sm:text-sm ${market.color}`}>
+                <span className="text-sm sm:text-base leading-none">{market.emoji}</span>
+                <FaMapMarkerAlt className="opacity-90" />
+                <span className="font-semibold">{project.market}</span>
+              </span>
+            )}
+          </div>
           
           {/* Tabs */}
           <div className="flex flex-wrap gap-2 mb-6 border-b border-gray-700">
