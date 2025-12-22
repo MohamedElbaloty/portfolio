@@ -17,6 +17,12 @@ export const en = {
     viewProjects: 'View My Projects',
     contactMe: 'Contact Me',
   },
+
+  // Footer
+  footer: {
+    rights: '© {year} Mohamed Ezzat. All rights reserved.',
+    built: 'Built with React + Vite',
+  },
   
   // About
   about: {

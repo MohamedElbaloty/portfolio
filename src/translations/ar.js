@@ -17,6 +17,12 @@ export const ar = {
     viewProjects: 'شاهد مشاريعي',
     contactMe: 'تواصل معي',
   },
+
+  // Footer
+  footer: {
+    rights: '© {year} محمد عزت. جميع الحقوق محفوظة.',
+    built: 'تم التطوير باستخدام React + Vite',
+  },
   
   // About
   about: {

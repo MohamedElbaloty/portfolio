@@ -7,6 +7,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Navbar from './components/Navbar'
 import AnimatedBackground from './components/AnimatedBackground'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Courses />
       <About />
       <Contact />
+      <Footer />
     </div>
   )
 }
