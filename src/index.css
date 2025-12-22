@@ -132,8 +132,8 @@ html {
 /* Signature (colored via gradient + runtime alpha mask) */
 .signature-mark {
   display: inline-block;
-  height: 40px;          /* bigger by default */
-  width: 220px;
+  height: 52px;
+  width: 280px;
   background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: left center;
@@ -152,8 +152,8 @@ html {
 
 @media (min-width: 640px) {
   .signature-mark {
-    height: 48px;
-    width: 260px;
+    height: 64px;
+    width: 340px;
   }
 }
 
