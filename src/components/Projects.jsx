@@ -216,6 +216,7 @@ const Projects = () => {
                   index={index}
                   onSelect={setSelectedProject}
                   t={t}
+                  isMobile={isMobile}
                 />
               )
             })}
@@ -262,7 +263,7 @@ const Projects = () => {
   )
 }
 
-const ProjectCard = ({ project, index, onSelect, t }) => {
+const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -302,14 +303,36 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
         {/* Image Container */}
         <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
           <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}></div>
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            onError={(e) => {
-              e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
-            }}
-          />
+          {(() => {
+            const isBusinessAutomation =
+              isMobile &&
+              project.category === 'production' &&
+              (project.title === 'Business Automation & Workflow' || (project.tools || []).includes('n8n'))
+
+            if (isBusinessAutomation) {
+              return (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-contain bg-black/10 p-2"
+                  onError={(e) => {
+                    e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
+                  }}
+                />
+              )
+            }
+
+            return (
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                onError={(e) => {
+                  e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
+                }}
+              />
+            )
+          })()}
           {/* Market badge - pinned on the image (top-right) so title never wraps */}
           {project.market && market && (
             <div className={`absolute ${cornerClass} z-10 pointer-events-none`}>
@@ -351,17 +374,34 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
         
         {/* Content */}
         <div className="p-4 sm:p-6">
-          <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors">
-            {project.title}
-          </h3>
+          {(() => {
+            const isMrRobot = isMobile && project.title === 'Mr Robot Academy'
+            return (
+              <h3
+                className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors ${
+                  isMrRobot ? 'text-base whitespace-nowrap' : ''
+                }`}
+              >
+                {project.title}
+              </h3>
+            )
+          })()}
           <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
             {project.description}
           </p>
-          <div className="flex flex-wrap gap-1.5 sm:gap-2">
+          <div
+            className={`flex gap-1.5 sm:gap-2 ${
+              isMobile && project.title === 'Emaar Group' ? 'flex-nowrap' : 'flex-wrap'
+            }`}
+          >
             {(project.tags || project.tools || []).slice(0, 3).map((tag, i) => (
               <span
                 key={i}
-                className="px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-[10px] sm:text-xs text-purple-300 border border-purple-500/30"
+                className={`bg-purple-500/20 backdrop-blur-sm rounded-full text-purple-300 border border-purple-500/30 whitespace-nowrap ${
+                  isMobile && project.title === 'Emaar Group'
+                    ? 'px-1.5 py-0.5 text-[10px] leading-none'
+                    : 'px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs'
+                }`}
               >
                 {tag}
               </span>
