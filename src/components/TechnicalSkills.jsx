@@ -52,18 +52,18 @@ const TechnicalSkills = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="glass backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 hover:border-purple-500/50 transition-all"
+                className="glass backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 lg:p-6 hover:border-purple-500/50 transition-all"
               >
-                <div className="flex items-center justify-between mb-3 sm:mb-4">
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className={`p-2 sm:p-3 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg`}>
-                      <skill.icon className="text-base sm:text-lg text-white" />
+                <div className="flex items-center justify-between mb-2 sm:mb-3 lg:mb-4">
+                  <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-1 min-w-0">
+                    <div className={`p-1.5 sm:p-2 lg:p-3 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg flex-shrink-0`}>
+                      <skill.icon className="text-xs sm:text-base lg:text-lg text-white" />
                     </div>
-                    <span className="text-white font-semibold text-sm sm:text-lg">{skill.name}</span>
+                    <span className="text-white font-semibold text-xs sm:text-sm lg:text-lg truncate">{skill.name}</span>
                   </div>
-                  <span className="text-purple-400 font-bold text-sm sm:text-lg">{skill.level}%</span>
+                  <span className="text-purple-400 font-bold text-xs sm:text-sm lg:text-lg flex-shrink-0 ml-1 sm:ml-2">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-800/50 rounded-full h-2 sm:h-3 overflow-hidden backdrop-blur-sm">
+                <div className="w-full bg-gray-800/50 rounded-full h-1.5 sm:h-2 lg:h-3 overflow-hidden backdrop-blur-sm">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
