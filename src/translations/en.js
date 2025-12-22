@@ -51,6 +51,14 @@ export const en = {
     },
     skills: {
       title: 'Technical Skills',
+      webDev: 'Web Development',
+      mobileApps: 'Mobile Apps',
+      iotEmbedded: 'IoT & Embedded Systems',
+      javaPython: 'Java & Python',
+      networkEng: 'Network Engineering',
+      cloudSolutions: 'Cloud Solutions',
+      cyberSecurity: 'Cyber Security',
+      uiUxDesign: 'UI/UX Design',
     },
     teaching: {
       subtitle: 'Courses & Teaching',

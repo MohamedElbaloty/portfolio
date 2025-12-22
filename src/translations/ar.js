@@ -51,6 +51,14 @@ export const ar = {
     },
     skills: {
       title: 'المهارات التقنية',
+      webDev: 'تطوير الويب',
+      mobileApps: 'تطبيقات الموبايل',
+      iotEmbedded: 'إنترنت الأشياء والأنظمة المدمجة',
+      javaPython: 'Java و Python',
+      networkEng: 'هندسة الشبكات',
+      cloudSolutions: 'الحلول السحابية',
+      cyberSecurity: 'الأمن السيبراني',
+      uiUxDesign: 'تصميم واجهة المستخدم',
     },
     teaching: {
       subtitle: 'الكورسات والتدريس',
