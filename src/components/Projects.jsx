@@ -275,6 +275,15 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
     kw: { emoji: '🇰🇼', color: 'bg-sky-500/15 text-sky-300 border-sky-500/30' },
   }
   const market = project.marketKey ? marketMeta[project.marketKey] : null
+  const corner = project.badgeCorner || 'tr'
+  const cornerClass =
+    corner === 'tl'
+      ? 'top-3 left-3'
+      : corner === 'bl'
+        ? 'bottom-3 left-3'
+        : corner === 'br'
+          ? 'bottom-3 right-3'
+          : 'top-3 right-3'
 
   return (
     <motion.div
@@ -303,7 +312,7 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
           />
           {/* Market badge - pinned on the image (top-right) so title never wraps */}
           {project.market && market && (
-            <div className="absolute top-3 right-3 z-10 pointer-events-none">
+            <div className={`absolute ${cornerClass} z-10 pointer-events-none`}>
               <span
                 className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full border text-[10px] sm:text-xs whitespace-nowrap backdrop-blur-md bg-black/35 ${market.color}`}
               >
