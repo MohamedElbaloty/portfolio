@@ -42,6 +42,8 @@ const Courses = () => {
     'الحوسبة السحابية': FaCloud,
     'Cyber Security': FaShieldAlt,
     'الأمن السيبراني': FaShieldAlt,
+    'Computer Engineering': FaMicrochip,
+    'هندسة الحاسب': FaMicrochip,
     'Digital Design': FaMicrochip,
     'التصميم الرقمي': FaMicrochip,
   }
@@ -63,6 +65,8 @@ const Courses = () => {
     'الحوسبة السحابية': 'from-sky-500 to-blue-500',
     'Cyber Security': 'from-red-500 to-pink-500',
     'الأمن السيبراني': 'from-red-500 to-pink-500',
+    'Computer Engineering': 'from-indigo-500 to-purple-500',
+    'هندسة الحاسب': 'from-indigo-500 to-purple-500',
     'Digital Design': 'from-indigo-500 to-purple-500',
     'التصميم الرقمي': 'from-indigo-500 to-purple-500',
   }

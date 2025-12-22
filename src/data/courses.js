@@ -22,11 +22,6 @@ export const coursesData = {
             name: 'Algorithms',
             description: 'Algorithm design and analysis course covering complexity analysis, sorting, searching, dynamic programming, and graph algorithms.',
             topics: ['Algorithm Analysis', 'Sorting Algorithms', 'Search Algorithms', 'Dynamic Programming', 'Greedy Algorithms', 'Graph Algorithms', 'Complexity Theory']
-          },
-          {
-            name: 'Computer Architecture',
-            description: 'Computer organization and architecture course covering CPU design, memory systems, I/O systems, and parallel processing.',
-            topics: ['CPU Design', 'Memory Systems', 'Cache Memory', 'I/O Systems', 'Assembly Language', 'Parallel Processing', 'Pipelining']
           }
         ]
       },
@@ -158,7 +153,7 @@ export const coursesData = {
       },
       // UI/UX Design category removed by user request
       {
-        name: 'Digital Design',
+        name: 'Computer Engineering',
         courses: [
           {
             name: 'Digital Design',
@@ -169,6 +164,11 @@ export const coursesData = {
             name: 'ASIC Design',
             description: 'Application-Specific Integrated Circuit design course covering VHDL/Verilog, synthesis, and ASIC implementation.',
             topics: ['VHDL/Verilog', 'RTL Design', 'Synthesis', 'Place & Route', 'Timing Analysis', 'ASIC Flow', 'FPGA Implementation']
+          },
+          {
+            name: 'Computer Architecture',
+            description: 'Computer organization and architecture course covering CPU design, memory systems, I/O systems, and parallel processing.',
+            topics: ['CPU Design', 'Memory Systems', 'Cache Memory', 'I/O Systems', 'Assembly Language', 'Parallel Processing', 'Pipelining']
           }
         ]
       }
@@ -195,11 +195,6 @@ export const coursesData = {
             name: 'الخوارزميات',
             description: 'دورة تصميم وتحليل الخوارزميات تغطي تحليل التعقيد، الترتيب، البحث، البرمجة الديناميكية، وخوارزميات الرسوم البيانية.',
             topics: ['تحليل الخوارزميات', 'خوارزميات الترتيب', 'خوارزميات البحث', 'البرمجة الديناميكية', 'الخوارزميات الجشعة', 'خوارزميات الرسوم البيانية', 'نظرية التعقيد']
-          },
-          {
-            name: 'معمارية الحاسوب',
-            description: 'دورة تنظيم ومعمارية الحاسوب تغطي تصميم المعالج، أنظمة الذاكرة، أنظمة الإدخال/الإخراج، والمعالجة المتوازية.',
-            topics: ['تصميم المعالج', 'أنظمة الذاكرة', 'ذاكرة التخزين المؤقت', 'أنظمة I/O', 'لغة التجميع', 'المعالجة المتوازية', 'Pipeline']
           }
         ]
       },
@@ -331,7 +326,7 @@ export const coursesData = {
       },
       // قسم تصميم واجهة المستخدم تمت إزالته بطلب المستخدم
       {
-        name: 'التصميم الرقمي',
+        name: 'هندسة الحاسب',
         courses: [
           {
             name: 'التصميم الرقمي',
@@ -342,6 +337,11 @@ export const coursesData = {
             name: 'تصميم ASIC',
             description: 'دورة تصميم الدوائر المتكاملة الخاصة بالتطبيقات تغطي VHDL/Verilog، التركيب، وتنفيذ ASIC.',
             topics: ['VHDL/Verilog', 'تصميم RTL', 'التركيب', 'Place & Route', 'تحليل التوقيت', 'تدفق ASIC', 'تنفيذ FPGA']
+          },
+          {
+            name: 'معمارية الحاسوب',
+            description: 'دورة تنظيم ومعمارية الحاسوب تغطي تصميم المعالج، أنظمة الذاكرة، أنظمة الإدخال/الإخراج، والمعالجة المتوازية.',
+            topics: ['تصميم المعالج', 'أنظمة الذاكرة', 'ذاكرة التخزين المؤقت', 'أنظمة I/O', 'لغة التجميع', 'المعالجة المتوازية', 'Pipeline']
           }
         ]
       }
