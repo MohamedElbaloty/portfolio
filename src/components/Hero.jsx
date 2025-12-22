@@ -33,7 +33,7 @@ const Hero = () => {
   const services = []
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-12 sm:pt-8 lg:pt-10">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-4 sm:pt-8 lg:pt-10">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -49,7 +49,7 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container mx-auto px-4 sm:px-6 text-center relative z-10"
+        className="container mx-auto px-4 sm:px-6 text-center relative z-10 -mt-8 sm:mt-0"
       >
         <motion.h1
           variants={itemVariants}
