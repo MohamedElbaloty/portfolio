@@ -5,6 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext'
 import { useTheme } from '../contexts/ThemeContext'
 import { translations } from '../translations'
 import Avatar from './Avatar'
+import Signature from './Signature'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -45,9 +46,13 @@ const Navbar = () => {
             alt={language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
             size="small"
           />
-          <span className="text-xl sm:text-2xl font-bold gradient-text signature-text">
-            {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
-          </span>
+          {language === 'en' ? (
+            <Signature className="h-8 sm:h-10 w-auto" />
+          ) : (
+            <span className="text-xl sm:text-2xl font-bold gradient-text">
+              {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
+            </span>
+          )}
         </motion.div>
 
         {/* Desktop Menu */}
