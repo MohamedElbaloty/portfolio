@@ -98,6 +98,9 @@ const Courses = () => {
                   <FaGraduationCap className="text-3xl sm:text-4xl text-white" />
                 </div>
                 <p className="text-purple-400 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{t.about.teaching.subtitle}</p>
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4">
+                  {t.about.teaching.description}
+                </p>
               </div>
             </div>
           </motion.div>
