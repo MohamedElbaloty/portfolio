@@ -72,11 +72,6 @@ const Projects = () => {
   const allProjects = [...productionProjects, ...academicProjects]
 
   const categories = [
-    { id: 'all', name: t.projects.categories.all, icon: FaCode, color: 'from-indigo-500 to-purple-500' },
-    { id: 'web', name: t.projects.categories.web, icon: FaGlobe, color: 'from-blue-500 to-cyan-500' },
-    { id: 'mobile', name: t.projects.categories.mobile, icon: FaMobileAlt, color: 'from-purple-500 to-pink-500' },
-    { id: 'iot', name: t.projects.categories.iot, icon: FaMicrochip, color: 'from-green-500 to-emerald-500' },
-    { id: 'programming', name: t.projects.categories.programming, icon: FaCode, color: 'from-orange-500 to-red-500' },
     { id: 'network', name: t.projects.categories.network, icon: FaNetworkWired, color: 'from-cyan-500 to-blue-500' },
     { id: 'cloud', name: t.projects.categories.cloud, icon: FaCloud, color: 'from-sky-500 to-blue-500' },
     { id: 'security', name: t.projects.categories.security, icon: FaShieldAlt, color: 'from-red-500 to-pink-500' },
