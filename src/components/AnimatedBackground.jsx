@@ -9,7 +9,9 @@ import {
   FaNetworkWired,
   FaRocket,
   FaCog,
-  FaBolt
+  FaBolt,
+  FaGlobe,
+  FaServer
 } from 'react-icons/fa'
 
 const AnimatedBackground = () => {
@@ -24,6 +26,8 @@ const AnimatedBackground = () => {
     { icon: FaRocket, delay: 1.5, x: '50%', y: '10%', duration: 15 },
     { icon: FaCog, delay: 3.5, x: '60%', y: '80%', duration: 30 },
     { icon: FaBolt, delay: 2.5, x: '30%', y: '55%', duration: 16 },
+    { icon: FaGlobe, delay: 4.5, x: '70%', y: '25%', duration: 19 },
+    { icon: FaServer, delay: 1.2, x: '25%', y: '85%', duration: 23 },
   ]
 
   // Animated Shapes
@@ -33,6 +37,18 @@ const AnimatedBackground = () => {
     { type: 'triangle', size: 180, x: '8%', y: '80%', duration: 18, delay: 4 },
     { type: 'circle', size: 120, x: '92%', y: '75%', duration: 22, delay: 1 },
     { type: 'square', size: 100, x: '50%', y: '5%', duration: 25, delay: 3 },
+    { type: 'hexagon', size: 140, x: '45%', y: '90%', duration: 17, delay: 2.5 },
+    { type: 'diamond', size: 130, x: '88%', y: '45%', duration: 21, delay: 1.5 },
+  ]
+
+  // Code Brackets and Tags
+  const codeElements = [
+    { text: '< />', x: '12%', y: '30%', delay: 0, duration: 12 },
+    { text: '{ }', x: '78%', y: '45%', delay: 1, duration: 14 },
+    { text: '[ ]', x: '22%', y: '60%', delay: 2, duration: 13 },
+    { text: '( )', x: '82%', y: '30%', delay: 1.5, duration: 15 },
+    { text: '</>', x: '35%', y: '25%', delay: 0.5, duration: 11 },
+    { text: '{}', x: '65%', y: '70%', delay: 2.5, duration: 16 },
   ]
 
   return (
@@ -169,6 +185,46 @@ const AnimatedBackground = () => {
               </svg>
             </div>
           )}
+          {shape.type === 'hexagon' && (
+            <div className="w-full h-full">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <polygon
+                  points="50,5 90,25 90,75 50,95 10,75 10,25"
+                  fill="none"
+                  stroke="rgba(99, 102, 241, 0.2)"
+                  strokeWidth="2"
+                />
+              </svg>
+            </div>
+          )}
+          {shape.type === 'diamond' && (
+            <div className="w-full h-full border-2 border-pink-500/20" style={{ transform: 'rotate(45deg)' }}></div>
+          )}
+        </motion.div>
+      ))}
+
+      {/* Animated Code Brackets and Tags */}
+      {codeElements.map((element, index) => (
+        <motion.div
+          key={index}
+          className="absolute font-mono text-purple-400/25 text-3xl sm:text-4xl lg:text-5xl font-bold"
+          style={{
+            left: element.x,
+            top: element.y,
+          }}
+          animate={{
+            opacity: [0.2, 0.5, 0.2],
+            scale: [0.9, 1.1, 0.9],
+            rotate: [0, 5, -5, 0],
+          }}
+          transition={{
+            duration: element.duration,
+            repeat: Infinity,
+            delay: element.delay,
+            ease: "easeInOut",
+          }}
+        >
+          {element.text}
         </motion.div>
       ))}
 
@@ -194,37 +250,13 @@ const AnimatedBackground = () => {
         />
       ))}
 
-      {/* Floating Particles */}
-      {[...Array(50)].map((_, i) => (
-        <motion.div
-          key={`particle-${i}`}
-          className="absolute w-1 h-1 bg-purple-400 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -100, 0],
-            x: [0, Math.random() * 50 - 25, 0],
-            opacity: [0, 0.8, 0],
-            scale: [0, 1.5, 0],
-          }}
-          transition={{
-            duration: 5 + Math.random() * 5,
-            repeat: Infinity,
-            delay: Math.random() * 5,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
-      {/* Animated Connection Lines */}
+      {/* Animated Connection Lines - Enhanced */}
       <svg className="absolute inset-0 w-full h-full opacity-10">
-        {[...Array(8)].map((_, i) => {
-          const x1 = Math.random() * 100
-          const y1 = Math.random() * 100
-          const x2 = Math.random() * 100
-          const y2 = Math.random() * 100
+        {[...Array(12)].map((_, i) => {
+          const x1 = 10 + (i % 4) * 25
+          const y1 = 15 + Math.floor(i / 4) * 30
+          const x2 = x1 + 20
+          const y2 = y1 + 25
           
           return (
             <motion.line
@@ -234,16 +266,16 @@ const AnimatedBackground = () => {
               x2={`${x2}%`}
               y2={`${y2}%`}
               stroke="#8b5cf6"
-              strokeWidth="1"
+              strokeWidth="1.5"
               initial={{ pathLength: 0, opacity: 0 }}
               animate={{
                 pathLength: [0, 1, 0],
-                opacity: [0, 0.3, 0],
+                opacity: [0, 0.4, 0],
               }}
               transition={{
-                duration: 4,
+                duration: 5,
                 repeat: Infinity,
-                delay: i * 0.5,
+                delay: i * 0.3,
                 ease: "easeInOut",
               }}
             />
@@ -251,29 +283,59 @@ const AnimatedBackground = () => {
         })}
       </svg>
 
-      {/* Pulsing Orbs */}
-      {[...Array(6)].map((_, i) => (
+      {/* Pulsing Orbs - Enhanced */}
+      {[...Array(8)].map((_, i) => (
         <motion.div
           key={`orb-${i}`}
           className="absolute rounded-full"
           style={{
-            left: `${20 + i * 15}%`,
-            top: `${30 + (i % 2) * 40}%`,
-            width: 100 + i * 20,
-            height: 100 + i * 20,
+            left: `${15 + i * 12}%`,
+            top: `${20 + (i % 3) * 30}%`,
+            width: 80 + i * 15,
+            height: 80 + i * 15,
           }}
           animate={{
-            scale: [1, 1.5, 1],
-            opacity: [0.1, 0.3, 0.1],
+            scale: [1, 1.6, 1],
+            opacity: [0.08, 0.25, 0.08],
           }}
           transition={{
-            duration: 3 + i * 0.5,
+            duration: 4 + i * 0.3,
             repeat: Infinity,
-            delay: i * 0.4,
+            delay: i * 0.3,
             ease: "easeInOut",
           }}
         >
-          <div className="w-full h-full rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 blur-xl"></div>
+          <div className="w-full h-full rounded-full bg-gradient-to-r from-purple-500/20 via-indigo-500/20 to-pink-500/20 blur-2xl"></div>
+        </motion.div>
+      ))}
+
+      {/* Floating Code Snippets */}
+      {[
+        { text: 'const', x: '18%', y: '50%' },
+        { text: 'function', x: '72%', y: '35%' },
+        { text: 'return', x: '40%', y: '65%' },
+        { text: 'import', x: '55%', y: '20%' },
+        { text: 'export', x: '28%', y: '75%' },
+      ].map((snippet, index) => (
+        <motion.div
+          key={index}
+          className="absolute font-mono text-indigo-400/20 text-xs sm:text-sm lg:text-base"
+          style={{
+            left: snippet.x,
+            top: snippet.y,
+          }}
+          animate={{
+            y: [0, -20, 0],
+            opacity: [0.15, 0.3, 0.15],
+          }}
+          transition={{
+            duration: 6 + index,
+            repeat: Infinity,
+            delay: index * 0.8,
+            ease: "easeInOut",
+          }}
+        >
+          {snippet.text}
         </motion.div>
       ))}
     </div>
@@ -281,4 +343,3 @@ const AnimatedBackground = () => {
 }
 
 export default AnimatedBackground
-
