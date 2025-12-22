@@ -161,11 +161,6 @@ export const coursesData = {
             name: 'Ethical Hacking & Penetration Testing',
             description: 'Learn ethical hacking techniques, penetration testing methodologies, and security assessment tools.',
             topics: ['Kali Linux', 'Metasploit Framework', 'Network Scanning', 'Web Application Security', 'Social Engineering', 'Security Auditing']
-          },
-          {
-            name: 'Network Security & Firewalls',
-            description: 'Advanced network security course focusing on firewall configuration, intrusion detection, and network defense.',
-            topics: ['Firewall Technologies', 'IDS/IPS Systems', 'Network Monitoring', 'VPN Configuration', 'Security Policies', 'Threat Intelligence']
           }
         ]
       },
@@ -366,11 +361,6 @@ export const coursesData = {
             name: 'الاختراق الأخلاقي واختبار الاختراق',
             description: 'تعلم تقنيات الاختراق الأخلاقي، منهجيات اختبار الاختراق، وأدوات تقييم الأمان.',
             topics: ['Kali Linux', 'إطار Metasploit', 'فحص الشبكة', 'أمان تطبيقات الويب', 'الهندسة الاجتماعية', 'تدقيق الأمان']
-          },
-          {
-            name: 'أمن الشبكات والجدران النارية',
-            description: 'دورة متقدمة في أمن الشبكات تركز على تكوين الجدران النارية، كشف التسلل، والدفاع عن الشبكة.',
-            topics: ['تقنيات الجدران النارية', 'أنظمة IDS/IPS', 'مراقبة الشبكة', 'تكوين VPN', 'سياسات الأمان', 'استخبارات التهديدات']
           }
         ]
       },
