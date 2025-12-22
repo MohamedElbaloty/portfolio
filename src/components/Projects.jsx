@@ -9,8 +9,7 @@ import {
   FaCloud, 
   FaShieldAlt, 
   FaPalette,
-  FaExternalLinkAlt,
-  FaGithub
+  FaExternalLinkAlt
 } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -162,7 +161,7 @@ const Projects = () => {
     : projects.filter(p => p.category === selectedCategory)
 
   return (
-    <section id="projects" className="py-20 px-6 relative">
+    <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
@@ -171,12 +170,12 @@ const Projects = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-4 sm:mb-6">
             {t.projects.title}
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             {t.projects.subtitle}
           </p>
         </motion.div>
@@ -186,7 +185,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-4 mb-16"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 lg:mb-16"
         >
           {categories.map((category) => (
             <motion.button
@@ -194,13 +193,13 @@ const Projects = () => {
               onClick={() => setSelectedCategory(category.id)}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className={`group relative flex items-center gap-3 px-6 py-3 rounded-full transition-all overflow-hidden ${
+              className={`group relative flex items-center gap-2 sm:gap-3 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-full transition-all overflow-hidden text-xs sm:text-sm ${
                 selectedCategory === category.id
                   ? 'bg-gradient-to-r ' + category.color + ' shadow-lg shadow-purple-500/50'
                   : 'glass backdrop-blur-xl border border-white/10 hover:border-white/30'
               }`}
             >
-              <category.icon className={`text-lg ${selectedCategory === category.id ? 'text-white' : 'text-purple-400'}`} />
+              <category.icon className={`text-sm sm:text-lg ${selectedCategory === category.id ? 'text-white' : 'text-purple-400'}`} />
               <span className={`font-medium ${selectedCategory === category.id ? 'text-white' : 'text-gray-300'}`}>
                 {category.name}
               </span>
@@ -211,7 +210,7 @@ const Projects = () => {
         {/* Enhanced Projects Grid */}
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
         >
           <AnimatePresence>
             {filteredProjects.map((project, index) => (
@@ -262,7 +261,7 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
       
       <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden h-full hover:border-purple-500/50 transition-all">
         {/* Image Container */}
-        <div className="relative h-64 overflow-hidden">
+        <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
           <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}></div>
           <img
             src={project.image}
@@ -276,10 +275,10 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   whileHover={{ scale: 1.05 }}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+                  className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
                 >
-                  <FaExternalLinkAlt className="text-white text-sm" />
-                  <span className="text-white text-sm font-medium">{t.projects.viewSite}</span>
+                  <FaExternalLinkAlt className="text-white text-xs sm:text-sm" />
+                  <span className="text-white text-xs sm:text-sm font-medium">{t.projects.viewSite}</span>
                 </motion.div>
               )}
             </div>
@@ -287,18 +286,18 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
         </div>
         
         {/* Content */}
-        <div className="p-6">
-          <h3 className="text-xl font-bold mb-3 text-white group-hover:text-purple-400 transition-colors">
+        <div className="p-4 sm:p-6">
+          <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors">
             {project.title}
           </h3>
-          <p className="text-gray-400 text-sm mb-4 leading-relaxed">
+          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
             {project.tags.map((tag, i) => (
               <span
                 key={i}
-                className="px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs text-purple-300 border border-purple-500/30"
+                className="px-2 sm:px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs text-purple-300 border border-purple-500/30"
               >
                 {tag}
               </span>
@@ -316,7 +315,7 @@ const ProjectModal = ({ project, onClose, t }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/90 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-sm"
       onClick={onClose}
     >
       <motion.div
@@ -327,7 +326,7 @@ const ProjectModal = ({ project, onClose, t }) => {
         className="glass backdrop-blur-xl border border-white/20 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
       >
         <div className="relative">
-          <div className={`h-64 bg-gradient-to-br ${project.gradient} relative`}>
+          <div className={`h-48 sm:h-64 bg-gradient-to-br ${project.gradient} relative`}>
             <img
               src={project.image}
               alt={project.title}
@@ -335,20 +334,20 @@ const ProjectModal = ({ project, onClose, t }) => {
             />
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 w-12 h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-white text-xl"
+              className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-white text-lg sm:text-xl"
             >
               ✕
             </button>
           </div>
         </div>
-        <div className="p-8">
-          <h2 className="text-4xl font-bold mb-4 gradient-text">{project.title}</h2>
-          <p className="text-gray-300 mb-6 text-lg leading-relaxed">{project.description}</p>
-          <div className="flex flex-wrap gap-3 mb-8">
+        <div className="p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 gradient-text">{project.title}</h2>
+          <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg leading-relaxed">{project.description}</p>
+          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
             {project.tags.map((tag, i) => (
               <span
                 key={i}
-                className="px-4 py-2 bg-purple-500/20 backdrop-blur-sm rounded-full text-sm text-purple-300 border border-purple-500/30"
+                className="px-3 sm:px-4 py-1 sm:py-2 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
               >
                 {tag}
               </span>
@@ -361,7 +360,7 @@ const ProjectModal = ({ project, onClose, t }) => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
             >
               <FaExternalLinkAlt />
               {t.projects.viewSite}

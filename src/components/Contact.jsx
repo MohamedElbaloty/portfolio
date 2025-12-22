@@ -26,23 +26,26 @@ const Contact = () => {
   ]
 
   return (
-    <section id="contact" className="py-20 px-6 relative">
-      <div className="container mx-auto">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold gradient-text mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-4 sm:mb-6">
             {t.contact.title}
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             {t.contact.subtitle}
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
           {contactInfo.map((item, index) => (
             <motion.a
               key={index}
@@ -54,17 +57,17 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className={`glass rounded-2xl p-8 text-center group cursor-pointer bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20 transition-all`}
+              className={`glass rounded-2xl p-6 sm:p-8 text-center group cursor-pointer bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20 transition-all border border-white/10 hover:border-purple-500/50`}
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
                 className="inline-block mb-4"
               >
-                <item.icon className="text-5xl text-white" />
+                <item.icon className="text-4xl sm:text-5xl text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-2">{item.label}</h3>
-              <p className="text-gray-300">{item.value}</p>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{item.label}</h3>
+              <p className="text-gray-300 text-sm sm:text-base break-all">{item.value}</p>
             </motion.a>
           ))}
         </div>
@@ -74,24 +77,24 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="mt-12 text-center"
+          className="mt-10 sm:mt-12 text-center"
         >
-          <div className="glass rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">{t.contact.services.title}</h3>
-            <div className={`grid md:grid-cols-2 gap-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
+          <div className="glass rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto border border-white/10">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.contact.services.title}</h3>
+            <div className={`grid sm:grid-cols-2 gap-3 sm:gap-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
               <div className="space-y-2">
                 {t.contact.services.list.slice(0, 4).map((service, index) => (
-                  <p key={index} className="text-gray-300">✓ {service}</p>
+                  <p key={index} className="text-gray-300 text-sm sm:text-base">✓ {service}</p>
                 ))}
               </div>
               <div className="space-y-2">
                 {t.contact.services.list.slice(4).map((service, index) => (
-                  <p key={index} className="text-gray-300">✓ {service}</p>
+                  <p key={index} className="text-gray-300 text-sm sm:text-base">✓ {service}</p>
                 ))}
               </div>
             </div>
-            <div className="mt-6 pt-6 border-t border-gray-700">
-              <p className="text-gray-400">
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-700">
+              <p className="text-gray-400 text-sm sm:text-base">
                 {t.contact.teachingNote}
               </p>
             </div>

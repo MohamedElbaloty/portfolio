@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaBriefcase, FaGlobe, FaCode, FaChalkboardTeacher } from 'react-icons/fa'
+import { FaGraduationCap, FaBriefcase, FaGlobe, FaCode, FaChalkboardTeacher, FaUniversity, FaLaptopCode, FaMobileAlt, FaMicrochip, FaNetworkWired, FaCloud, FaShieldAlt, FaPalette } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -27,7 +27,7 @@ const About = () => {
       year: t.about.timeline.usa.year,
       title: t.about.timeline.usa.title,
       description: t.about.timeline.usa.description,
-      icon: FaGraduationCap,
+      icon: FaUniversity,
       gradient: 'from-indigo-500 to-purple-500',
     },
     {
@@ -47,18 +47,18 @@ const About = () => {
   ]
 
   const skills = [
-    { name: 'Web Development', level: 95, icon: FaCode, gradient: 'from-blue-500 to-cyan-500' },
-    { name: 'Mobile Apps', level: 90, icon: FaCode, gradient: 'from-purple-500 to-pink-500' },
-    { name: 'IoT & Embedded Systems', level: 85, icon: FaCode, gradient: 'from-green-500 to-emerald-500' },
+    { name: 'Web Development', level: 95, icon: FaLaptopCode, gradient: 'from-blue-500 to-cyan-500' },
+    { name: 'Mobile Apps', level: 90, icon: FaMobileAlt, gradient: 'from-purple-500 to-pink-500' },
+    { name: 'IoT & Embedded Systems', level: 85, icon: FaMicrochip, gradient: 'from-green-500 to-emerald-500' },
     { name: 'Java & Python', level: 92, icon: FaCode, gradient: 'from-orange-500 to-red-500' },
-    { name: 'Network Engineering', level: 88, icon: FaCode, gradient: 'from-cyan-500 to-blue-500' },
-    { name: 'Cloud Solutions', level: 87, icon: FaCode, gradient: 'from-sky-500 to-blue-500' },
-    { name: 'Cyber Security', level: 85, icon: FaCode, gradient: 'from-red-500 to-pink-500' },
-    { name: 'UI/UX Design', level: 80, icon: FaCode, gradient: 'from-pink-500 to-rose-500' },
+    { name: 'Network Engineering', level: 88, icon: FaNetworkWired, gradient: 'from-cyan-500 to-blue-500' },
+    { name: 'Cloud Solutions', level: 87, icon: FaCloud, gradient: 'from-sky-500 to-blue-500' },
+    { name: 'Cyber Security', level: 85, icon: FaShieldAlt, gradient: 'from-red-500 to-pink-500' },
+    { name: 'UI/UX Design', level: 80, icon: FaPalette, gradient: 'from-pink-500 to-rose-500' },
   ]
 
   return (
-    <section id="about" className="py-20 px-6 relative">
+    <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
@@ -67,20 +67,20 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-4 sm:mb-6">
             {t.about.title}
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             {t.about.subtitle}
           </p>
         </motion.div>
 
         {/* Enhanced Timeline */}
-        <div className="max-w-5xl mx-auto mb-20">
+        <div className="max-w-5xl mx-auto mb-12 sm:mb-16 lg:mb-20">
           <div className="relative">
-            <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-30`}></div>
+            <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-0.5 sm:w-1 h-full bg-gradient-to-b from-purple-500 via-pink-500 to-indigo-500 opacity-30`}></div>
             {timeline.map((item, index) => (
               <motion.div
                 key={index}
@@ -88,37 +88,34 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className={`relative mb-16 flex items-center ${
+                className={`relative mb-12 sm:mb-16 flex flex-col sm:flex-row items-center ${
                   language === 'ar' 
-                    ? (index % 2 === 0 ? 'flex-row-reverse' : 'flex-row')
-                    : (index % 2 === 0 ? 'flex-row' : 'flex-row-reverse')
+                    ? (index % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row')
+                    : (index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse')
                 }`}
               >
-                <div className={`w-1/2 ${language === 'ar' 
-                  ? (index % 2 === 0 ? 'text-left' : 'text-right')
-                  : (index % 2 === 0 ? 'text-left' : 'text-right')
-                }`}>
+                <div className={`w-full sm:w-1/2 ${language === 'ar' 
+                  ? (index % 2 === 0 ? 'text-left sm:text-left' : 'text-right sm:text-right')
+                  : (index % 2 === 0 ? 'text-left sm:text-left' : 'text-right sm:text-right')
+                } px-4 sm:px-0`}>
                   <motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
                     className={`relative group`}
                   >
                     <div className={`absolute -inset-1 bg-gradient-to-r ${item.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
-                    <div className={`relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 transition-all`}>
-                      <div className="flex items-center gap-4 mb-4">
-                        <div className={`p-3 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg`}>
-                          <item.icon className="text-2xl text-white" />
+                    <div className={`relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 hover:border-purple-500/50 transition-all`}>
+                      <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                        <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg flex-shrink-0`}>
+                          <item.icon className="text-lg sm:text-2xl text-white" />
                         </div>
-                        <span className="text-purple-400 font-bold text-lg">{item.year}</span>
+                        <span className="text-purple-400 font-bold text-base sm:text-lg">{item.year}</span>
                       </div>
-                      <h3 className="text-2xl font-bold mb-3 text-white">{item.title}</h3>
-                      <p className="text-gray-300 leading-relaxed">{item.description}</p>
+                      <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-white">{item.title}</h3>
+                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                 </div>
-                <div className={`absolute ${language === 'ar' ? 'right' : 'left'}-1/2 transform translate-x-1/2 w-20 h-20 rounded-full bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg shadow-purple-500/50 z-10 border-4 border-black/50`}>
-                  <item.icon className="text-white text-2xl" />
-                </div>
-                <div className="w-1/2"></div>
+                <div className="hidden sm:block w-1/2"></div>
               </motion.div>
             ))}
           </div>
@@ -131,10 +128,10 @@ const About = () => {
           viewport={{ once: true }}
           className="max-w-5xl mx-auto"
         >
-          <h3 className="text-4xl font-bold text-center mb-16 gradient-text">
+          <h3 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 lg:mb-16 gradient-text">
             {t.about.skills.title}
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
@@ -146,17 +143,17 @@ const About = () => {
                 className="group relative"
               >
                 <div className={`absolute -inset-1 bg-gradient-to-r ${skill.gradient} rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
-                <div className="relative glass backdrop-blur-xl border border-white/10 rounded-xl p-6 hover:border-purple-500/50 transition-all">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg bg-gradient-to-br ${skill.gradient}`}>
-                        <skill.icon className="text-lg text-white" />
+                <div className="relative glass backdrop-blur-xl border border-white/10 rounded-xl p-4 sm:p-6 hover:border-purple-500/50 transition-all">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div className={`p-2 rounded-lg bg-gradient-to-br ${skill.gradient} flex-shrink-0`}>
+                        <skill.icon className="text-base sm:text-lg text-white" />
                       </div>
-                      <span className="text-white font-semibold text-lg">{skill.name}</span>
+                      <span className="text-white font-semibold text-sm sm:text-lg">{skill.name}</span>
                     </div>
-                    <span className="text-purple-400 font-bold text-lg">{skill.level}%</span>
+                    <span className="text-purple-400 font-bold text-sm sm:text-lg">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-gray-800/50 rounded-full h-3 overflow-hidden backdrop-blur-sm">
+                  <div className="w-full bg-gray-800/50 rounded-full h-2 sm:h-3 overflow-hidden backdrop-blur-sm">
                     <motion.div
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.level}%` }}
@@ -176,19 +173,19 @@ const About = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 max-w-4xl mx-auto"
+          className="mt-12 sm:mt-16 lg:mt-20 max-w-4xl mx-auto"
         >
           <motion.div
             whileHover={{ scale: 1.02, y: -5 }}
             className="relative group"
           >
             <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-3xl p-10 text-center hover:border-purple-500/50 transition-all">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-6 shadow-lg">
-                <FaChalkboardTeacher className="text-4xl text-white" />
+            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 text-center hover:border-purple-500/50 transition-all">
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 sm:mb-6 shadow-lg">
+                <FaChalkboardTeacher className="text-3xl sm:text-4xl text-white" />
               </div>
-              <h3 className="text-3xl font-bold mb-4 gradient-text">{t.about.teaching.title}</h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 gradient-text">{t.about.teaching.title}</h3>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4">
                 {t.about.teaching.description}
               </p>
             </div>
