@@ -1,9 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud, FaShieldAlt, FaPalette, FaVideo, FaRobot } from 'react-icons/fa'
+import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
-import MobileRobotWalker from './MobileRobotWalker'
 
 const Hero = () => {
   const { language } = useLanguage()
@@ -52,9 +51,8 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-4 sm:px-6 text-center relative z-10 -mt-8 sm:mt-0"
       >
-        {/* Title: keep the REAL name styling; robot walks above it on mobile (EN only). */}
+        {/* Title: name only (no robot animation). */}
         <div className="relative px-4 mb-2 sm:mb-3 lg:mb-4">
-          {language === 'en' && <MobileRobotWalker className="absolute inset-0" />}
           <motion.h1
             variants={itemVariants}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold gradient-text leading-tight"
