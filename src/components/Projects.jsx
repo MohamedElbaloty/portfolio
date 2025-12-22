@@ -119,7 +119,7 @@ const Projects = () => {
             onClick={() => setSelectedCategory('production')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-6 py-3 rounded-full font-semibold transition-all ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all ${
               selectedCategory === 'production' || selectedCategory === 'all'
                 ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
                 : 'glass border border-white/10 text-gray-300 hover:border-purple-500/50'
@@ -131,7 +131,7 @@ const Projects = () => {
             onClick={() => setSelectedCategory('academic')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-6 py-3 rounded-full font-semibold transition-all ${
+            className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-sm sm:text-base transition-all ${
               selectedCategory === 'academic'
                 ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
                 : 'glass border border-white/10 text-gray-300 hover:border-purple-500/50'
