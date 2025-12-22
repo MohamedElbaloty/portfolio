@@ -22,6 +22,21 @@ export const coursesData = {
             name: 'Algorithms',
             description: 'Algorithm design and analysis course covering complexity analysis, sorting, searching, dynamic programming, and graph algorithms.',
             topics: ['Algorithm Analysis', 'Sorting Algorithms', 'Search Algorithms', 'Dynamic Programming', 'Greedy Algorithms', 'Graph Algorithms', 'Complexity Theory']
+          },
+          {
+            name: 'Compiler Design',
+            description: 'Introduction to compiler design covering lexical analysis, parsing, semantic analysis, code generation, and optimization.',
+            topics: ['Lexical Analysis', 'Parsing', 'Syntax Trees', 'Semantic Analysis', 'Intermediate Code', 'Code Generation', 'Optimization']
+          },
+          {
+            name: 'Operating Systems',
+            description: 'Fundamentals of operating systems including processes, threads, scheduling, memory management, file systems, and synchronization.',
+            topics: ['Processes & Threads', 'CPU Scheduling', 'Deadlocks', 'Memory Management', 'Virtual Memory', 'File Systems', 'Synchronization']
+          },
+          {
+            name: 'Software Engineering',
+            description: 'Comprehensive software engineering course covering requirements, design, testing, maintenance, and software development life cycle.',
+            topics: ['Software Process Models', 'Requirements Engineering', 'System Design', 'Testing', 'Maintenance', 'Agile Methods', 'Project Management']
           }
         ]
       },
@@ -200,6 +215,21 @@ export const coursesData = {
             name: 'الخوارزميات',
             description: 'دورة تصميم وتحليل الخوارزميات تغطي تحليل التعقيد، الترتيب، البحث، البرمجة الديناميكية، وخوارزميات الرسوم البيانية.',
             topics: ['تحليل الخوارزميات', 'خوارزميات الترتيب', 'خوارزميات البحث', 'البرمجة الديناميكية', 'الخوارزميات الجشعة', 'خوارزميات الرسوم البيانية', 'نظرية التعقيد']
+          },
+          {
+            name: 'تصميم المترجمات',
+            description: 'مقدمة في تصميم المترجمات تغطي التحليل المعجمي، التحليل النحوي، التحليل الدلالي، وتوليد وتحسين الكود.',
+            topics: ['التحليل المعجمي', 'التحليل النحوي', 'أشجار البناء النحوي', 'التحليل الدلالي', 'الكود الوسيط', 'توليد الكود', 'تحسين الكود']
+          },
+          {
+            name: 'أنظمة التشغيل',
+            description: 'أساسيات أنظمة التشغيل بما في ذلك العمليات، الخيوط، الجدولة، إدارة الذاكرة، أنظمة الملفات، والتزامن.',
+            topics: ['العمليات والخيوط', 'جدولة المعالج', 'حالات الجمود', 'إدارة الذاكرة', 'الذاكرة الافتراضية', 'أنظمة الملفات', 'التزامن']
+          },
+          {
+            name: 'هندسة البرمجيات',
+            description: 'دورة شاملة في هندسة البرمجيات تغطي المتطلبات، التصميم، الاختبار، الصيانة، ودورة حياة تطوير البرمجيات.',
+            topics: ['نماذج عملية تطوير البرمجيات', 'هندسة المتطلبات', 'تصميم الأنظمة', 'الاختبار', 'الصيانة', 'الأساليب الرشيقة Agile', 'إدارة المشاريع البرمجية']
           }
         ]
       },
