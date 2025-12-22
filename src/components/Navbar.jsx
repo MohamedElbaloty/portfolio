@@ -47,7 +47,7 @@ const Navbar = () => {
             size="small"
           />
           {language === 'en' ? (
-            <span className="relative overflow-visible flex-shrink-0 w-[170px] sm:w-[190px]">
+            <span className="relative overflow-visible flex-shrink-0 w-[150px] sm:w-[180px]">
               <Signature />
             </span>
           ) : (
