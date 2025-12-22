@@ -243,11 +243,11 @@ html {
 /* Faster marquee on mobile */
 @media (max-width: 640px) {
   .marquee-content {
-    animation: marquee 25s linear infinite;
+    animation: marquee 18s linear infinite;
   }
   
   [dir="rtl"] .marquee-content {
-    animation: marquee-rtl 25s linear infinite;
+    animation: marquee-rtl 18s linear infinite;
   }
 }
 
