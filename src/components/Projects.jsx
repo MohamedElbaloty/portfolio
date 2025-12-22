@@ -159,6 +159,7 @@ const Projects = () => {
               setActiveTab('description')
             }}
             t={t}
+            language={language}
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
@@ -250,7 +251,7 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
   )
 }
 
-const ProjectModal = ({ project, onClose, t, activeTab, setActiveTab }) => {
+const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }) => {
   const [showVideo, setShowVideo] = useState(false)
 
   return (
