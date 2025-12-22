@@ -73,7 +73,7 @@ export const en = {
   projects: {
     title: 'My Projects',
     subtitle: 'A collection of my best professional work and projects',
-    productionProjects: 'Production Projects',
+    productionProjects: 'Business Projects',
     academicProjects: 'Academic Projects',
     categories: {
       all: 'All',

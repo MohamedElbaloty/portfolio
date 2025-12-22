@@ -73,7 +73,7 @@ export const ar = {
   projects: {
     title: 'مشاريعي',
     subtitle: 'مجموعة من أفضل أعمالي ومشاريعي الاحترافية',
-    productionProjects: 'مشاريع إنتاجية',
+    productionProjects: 'مشاريع تجارية',
     academicProjects: 'مشاريع أكاديمية',
     categories: {
       all: 'الكل',
