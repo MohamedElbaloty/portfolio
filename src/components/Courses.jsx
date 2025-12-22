@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   FaCode, 
@@ -25,16 +25,6 @@ const Courses = () => {
   const data = coursesData[language] || coursesData.en
   const [expandedCategory, setExpandedCategory] = useState(null)
   const [showAllCourses, setShowAllCourses] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 640)
-    }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
 
   const categoryIcons = {
     'Web & Mobile Development': FaLaptopCode,
@@ -112,7 +102,7 @@ const Courses = () => {
             </div>
           </motion.div>
           {data.categories.map((category, categoryIndex) => {
-            if (isMobile && !showAllCourses && categoryIndex >= 5) {
+            if (!showAllCourses && categoryIndex >= 5) {
               return null
             }
             const Icon = categoryIcons[category.name] || FaCode
@@ -207,13 +197,13 @@ const Courses = () => {
                       ))}
                     </div>
 
-      {/* More button for courses - Mobile only */}
+      {/* More button for courses */}
       {data.categories.length > 5 && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center mt-6 sm:hidden"
+          className="flex justify-center mt-6"
         >
           <motion.button
             onClick={() => setShowAllCourses(!showAllCourses)}
