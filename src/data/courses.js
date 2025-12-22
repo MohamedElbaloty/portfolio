@@ -88,8 +88,7 @@ export const coursesData = {
     ]
   },
   ar: {
-    title: 'الكورسات والتدريس',
-    subtitle: 'تدريس مواد علوم الحاسب ومساعدة طلاب الهندسة في مشاريع التخرج',
+    title: 'الكورسات',
     categories: [
       {
         name: 'لغات البرمجة',

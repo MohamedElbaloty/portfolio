@@ -52,6 +52,7 @@ export const en = {
       title: 'Technical Skills',
     },
     teaching: {
+      subtitle: 'Courses & Teaching',
       title: 'Teaching & Helping Engineering Students',
       description: 'I provide teaching services and help engineering students with graduation projects and teaching subjects',
     },
