@@ -450,9 +450,6 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
 
             {activeTab === 'tools' && project.tools && (
               <div>
-                <h3 className="text-xl font-bold mb-4 text-white">
-                  {language === 'en' ? 'Technologies Used' : 'التقنيات المستخدمة'}
-                </h3>
                 <div className="flex flex-wrap gap-3">
                   {project.tools.map((tool, i) => (
                     <span
@@ -469,9 +466,9 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
           </div>
 
           {/* Tags */}
-          {(project.tags || project.tools) && (
+          {project.tags && project.tags.length > 0 && (
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
-              {(project.tags || project.tools || []).map((tag, i) => (
+              {project.tags.map((tag, i) => (
                 <span
                   key={i}
                   className="px-3 sm:px-4 py-1 sm:py-2 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
