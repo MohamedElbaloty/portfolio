@@ -58,7 +58,7 @@ const TechnicalSkills = () => {
                     </div>
                     <span className="text-white font-semibold text-xs sm:text-sm lg:text-lg truncate">{skill.name}</span>
                   </div>
-                  <span className="text-purple-400 font-bold text-xs sm:text-sm lg:text-lg flex-shrink-0 ml-1 sm:ml-2">{skill.level}%</span>
+                  <span className="hidden sm:inline text-purple-400 font-bold text-xs sm:text-sm lg:text-lg flex-shrink-0 ml-1 sm:ml-2">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-gray-800/50 rounded-full h-1.5 sm:h-2 lg:h-3 overflow-hidden backdrop-blur-sm relative">
                   <motion.div

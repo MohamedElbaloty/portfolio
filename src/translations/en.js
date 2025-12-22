@@ -25,7 +25,7 @@ export const en = {
     timeline: {
       graduation: {
         year: '2015',
-        title: 'Graduation',
+        title: 'Egypt',
         description: 'Graduated from Faculty of Computers and Information - Mansoura University',
       },
       kuwait: {
@@ -46,7 +46,7 @@ export const en = {
       freelance: {
         year: 'Present',
         title: 'Freelancer',
-        description: 'Working on projects for companies in the Gulf region and developing systems for companies in Europe and Morocco. Mansoura University, Egypt',
+        description: 'Working on projects for companies in the Gulf region and developing systems for companies in Europe and Morocco',
       },
     },
     skills: {
