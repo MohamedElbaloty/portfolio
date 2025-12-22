@@ -47,7 +47,7 @@ const Navbar = () => {
             size="small"
           />
           {language === 'en' ? (
-            <Signature className="h-8 sm:h-10 w-[170px] sm:w-[210px] flex-shrink-0" />
+            <Signature className="flex-shrink-0" />
           ) : (
             <span className="text-xl sm:text-2xl font-bold gradient-text">
               {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
