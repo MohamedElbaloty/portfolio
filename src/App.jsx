@@ -1,6 +1,5 @@
 import React from 'react'
 import Hero from './components/Hero'
-import TechnicalSkills from './components/TechnicalSkills'
 import Projects from './components/Projects'
 import Courses from './components/Courses'
 import About from './components/About'

@@ -27,16 +27,6 @@ const TechnicalSkills = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
       <div className="container mx-auto relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12 lg:mb-16"
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-4 sm:mb-4 lg:mb-6">
-            {t.about.skills.title}
-          </h2>
-        </motion.div>
 
         {/* Skills Grid */}
         <motion.div
@@ -54,25 +44,34 @@ const TechnicalSkills = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ scale: 1.02, y: -5 }}
-                className="glass backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 lg:p-6 hover:border-purple-500/50 transition-all"
+                className="glass backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 lg:p-6 hover:border-purple-500/50 transition-all group relative overflow-hidden"
               >
+                {/* Background Glow on Hover */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-10 blur-2xl transition-opacity duration-500`}></div>
+                <div className="relative z-10">
                 <div className="flex items-center justify-between mb-2 sm:mb-3 lg:mb-4">
                   <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-1 min-w-0">
-                    <div className={`p-1.5 sm:p-2 lg:p-3 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg flex-shrink-0`}>
-                      <skill.icon className="text-xs sm:text-base lg:text-lg text-white" />
+                    <div className={`relative p-1.5 sm:p-2 lg:p-3 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg flex-shrink-0 group/icon`}>
+                      {/* Glow Effect */}
+                      <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${skill.gradient} opacity-0 group-hover/icon:opacity-75 blur-xl transition-opacity duration-300`}></div>
+                      <skill.icon className="relative text-xs sm:text-base lg:text-lg text-white drop-shadow-lg group-hover/icon:scale-110 transition-transform duration-300" />
                     </div>
                     <span className="text-white font-semibold text-xs sm:text-sm lg:text-lg truncate">{skill.name}</span>
                   </div>
                   <span className="text-purple-400 font-bold text-xs sm:text-sm lg:text-lg flex-shrink-0 ml-1 sm:ml-2">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-gray-800/50 rounded-full h-1.5 sm:h-2 lg:h-3 overflow-hidden backdrop-blur-sm">
+                <div className="w-full bg-gray-800/50 rounded-full h-1.5 sm:h-2 lg:h-3 overflow-hidden backdrop-blur-sm relative">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
-                    className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg`}
-                  />
+                    className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg relative`}
+                  >
+                    {/* Shine Effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full animate-shimmer`}></div>
+                  </motion.div>
+                </div>
                 </div>
               </motion.div>
             ))}

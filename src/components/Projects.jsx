@@ -71,12 +71,7 @@ const Projects = () => {
   // For category filtering, keep all projects
   const allProjects = [...productionProjects, ...academicProjects]
 
-  const categories = [
-    { id: 'network', name: t.projects.categories.network, icon: FaNetworkWired, color: 'from-cyan-500 to-blue-500' },
-    { id: 'cloud', name: t.projects.categories.cloud, icon: FaCloud, color: 'from-sky-500 to-blue-500' },
-    { id: 'security', name: t.projects.categories.security, icon: FaShieldAlt, color: 'from-red-500 to-pink-500' },
-    { id: 'design', name: t.projects.categories.design, icon: FaPalette, color: 'from-pink-500 to-rose-500' },
-  ]
+  const categories = []
 
   const getFilteredProjects = () => {
     if (selectedCategory === 'production') {
@@ -147,6 +142,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Enhanced Category Filter */}
+        {categories.length > 0 && (
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -172,6 +168,7 @@ const Projects = () => {
             </motion.button>
           ))}
         </motion.div>
+        )}
 
         {/* Enhanced Projects Grid */}
         <motion.div

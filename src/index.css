@@ -197,6 +197,20 @@ html {
   animation-delay: 4s;
 }
 
+/* Shimmer Animation for Progress Bars */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
 /* Responsive Text Colors */
 .light .text-white {
   color: #1a1a1a;
