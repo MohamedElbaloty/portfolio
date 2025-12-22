@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud, FaShieldAlt, FaPalette } from 'react-icons/fa'
+import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud, FaShieldAlt, FaPalette, FaVideo, FaRobot } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -17,6 +17,8 @@ const TechnicalSkills = () => {
     { name: t.about.skills.cloudSolutions, level: 87, icon: FaCloud, gradient: 'from-sky-500 to-blue-500' },
     { name: t.about.skills.cyberSecurity, level: 85, icon: FaShieldAlt, gradient: 'from-red-500 to-pink-500' },
     { name: t.about.skills.uiUxDesign, level: 80, icon: FaPalette, gradient: 'from-pink-500 to-rose-500' },
+    { name: t.about.skills.aiVideoProduction, level: 90, icon: FaVideo, gradient: 'from-rose-500 to-pink-500' },
+    { name: t.about.skills.automation, level: 88, icon: FaRobot, gradient: 'from-cyan-500 to-blue-500' },
   ]
 
   return (

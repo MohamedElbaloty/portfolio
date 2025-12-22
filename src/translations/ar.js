@@ -59,6 +59,8 @@ export const ar = {
       cloudSolutions: 'الحلول السحابية',
       cyberSecurity: 'الأمن السيبراني',
       uiUxDesign: 'تصميم واجهة المستخدم',
+      aiVideoProduction: 'إنتاج فيديوهات دعائية بالذكاء الاصطناعي',
+      automation: 'أتمتة الأعمال والذكاء الاصطناعي',
     },
     teaching: {
       subtitle: 'الكورسات والتدريس',
@@ -71,6 +73,8 @@ export const ar = {
   projects: {
     title: 'مشاريعي',
     subtitle: 'مجموعة من أفضل أعمالي ومشاريعي الاحترافية',
+    productionProjects: 'مشاريع إنتاجية',
+    academicProjects: 'مشاريع أكاديمية',
     categories: {
       all: 'الكل',
       web: 'مواقع ويب',

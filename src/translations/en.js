@@ -59,6 +59,8 @@ export const en = {
       cloudSolutions: 'Cloud Solutions',
       cyberSecurity: 'Cyber Security',
       uiUxDesign: 'UI/UX Design',
+      aiVideoProduction: 'AI Video Production',
+      automation: 'Business Automation & AI',
     },
     teaching: {
       subtitle: 'Courses & Teaching',
@@ -71,6 +73,8 @@ export const en = {
   projects: {
     title: 'My Projects',
     subtitle: 'A collection of my best professional work and projects',
+    productionProjects: 'Production Projects',
+    academicProjects: 'Academic Projects',
     categories: {
       all: 'All',
       web: 'Web Development',

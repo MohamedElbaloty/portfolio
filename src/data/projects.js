@@ -88,6 +88,46 @@ export const projectsData = {
         'Contact: Multiple contact methods and forms',
         'Language Toggle: Switch between Arabic and English'
       ]
+    },
+    {
+      id: 5,
+      title: 'AI Video Production',
+      category: 'production',
+      description: 'Creating professional promotional videos for companies using AI technology without the need for real filming.',
+      fullDescription: 'I specialize in creating high-quality promotional and marketing videos for companies using advanced AI video generation technology. This service eliminates the need for expensive video production equipment, actors, and filming locations. Using AI tools, I can create professional videos with realistic avatars, voiceovers, animations, and visual effects. Services include product promotion videos, company introductions, social media content, and marketing campaigns.',
+      tools: ['AI Video Generation', 'Synthesia', 'D-ID', 'Runway ML', 'Adobe After Effects', 'Premiere Pro', 'AI Voice Synthesis', 'Motion Graphics'],
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+      video: null,
+      link: null,
+      gradient: 'from-rose-500 to-pink-500',
+      videoSteps: [
+        'Client Consultation: Understanding video requirements and objectives',
+        'Script Writing: Creating engaging scripts and storyboards',
+        'AI Avatar Selection: Choosing appropriate AI presenters',
+        'Video Generation: Creating videos using AI platforms',
+        'Post-Production: Editing, effects, and final touches',
+        'Delivery: Providing final video in multiple formats'
+      ]
+    },
+    {
+      id: 6,
+      title: 'Business Automation & Workflow',
+      category: 'production',
+      description: 'Creating automation solutions for companies similar to n8n, streamlining business processes and workflows.',
+      fullDescription: 'I develop custom automation solutions for businesses to streamline their operations and workflows. Similar to n8n, I create automated systems that connect different services, APIs, and platforms to automate repetitive tasks, data processing, notifications, and business logic. Solutions include CRM automation, email marketing automation, data synchronization between systems, automated reporting, social media management, and custom workflow automation tailored to specific business needs.',
+      tools: ['n8n', 'Zapier', 'Make (Integromat)', 'Python', 'Node.js', 'API Integration', 'Webhooks', 'Database Automation', 'Cloud Functions'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      video: null,
+      link: null,
+      gradient: 'from-cyan-500 to-blue-500',
+      videoSteps: [
+        'Business Analysis: Understanding current processes and pain points',
+        'Automation Design: Planning automated workflows and integrations',
+        'System Integration: Connecting APIs, databases, and services',
+        'Workflow Development: Building automated processes',
+        'Testing & Optimization: Ensuring reliability and efficiency',
+        'Deployment & Monitoring: Launching and maintaining automation systems'
+      ]
     }
   ],
   ar: [
@@ -176,6 +216,46 @@ export const projectsData = {
         'الشهادات: آراء العملاء وملاحظاتهم',
         'اتصل بنا: طرق اتصال متعددة ونماذج',
         'تبديل اللغة: التبديل بين العربية والإنجليزية'
+      ]
+    },
+    {
+      id: 5,
+      title: 'إنتاج فيديوهات دعائية بالذكاء الاصطناعي',
+      category: 'production',
+      description: 'إنشاء فيديوهات دعائية احترافية للشركات باستخدام تقنية الذكاء الاصطناعي دون الحاجة للتصوير الحقيقي.',
+      fullDescription: 'أتخصص في إنشاء فيديوهات دعائية وتسويقية عالية الجودة للشركات باستخدام تقنيات الذكاء الاصطناعي المتقدمة. هذه الخدمة تلغي الحاجة لمعدات إنتاج فيديو باهظة الثمن، ممثلين، ومواقع تصوير. باستخدام أدوات الذكاء الاصطناعي، يمكنني إنشاء فيديوهات احترافية مع شخصيات واقعية، تعليق صوتي، رسوم متحركة، وتأثيرات بصرية. الخدمات تشمل فيديوهات ترويج المنتجات، تعريف بالشركات، محتوى وسائل التواصل الاجتماعي، وحملات تسويقية.',
+      tools: ['AI Video Generation', 'Synthesia', 'D-ID', 'Runway ML', 'Adobe After Effects', 'Premiere Pro', 'AI Voice Synthesis', 'Motion Graphics'],
+      image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=600&fit=crop',
+      video: null,
+      link: null,
+      gradient: 'from-rose-500 to-pink-500',
+      videoSteps: [
+        'استشارة العميل: فهم متطلبات وأهداف الفيديو',
+        'كتابة السيناريو: إنشاء سيناريوهات وقصص مصورة جذابة',
+        'اختيار الشخصية: اختيار مقدمين بالذكاء الاصطناعي مناسبين',
+        'إنشاء الفيديو: إنشاء الفيديوهات باستخدام منصات الذكاء الاصطناعي',
+        'ما بعد الإنتاج: التحرير، التأثيرات، واللمسات النهائية',
+        'التسليم: تقديم الفيديو النهائي بصيغ متعددة'
+      ]
+    },
+    {
+      id: 6,
+      title: 'أتمتة الأعمال وسير العمل',
+      category: 'production',
+      description: 'إنشاء حلول أتمتة للشركات مشابهة لـ n8n، لتبسيط العمليات التجارية وسير العمل.',
+      fullDescription: 'أطور حلول أتمتة مخصصة للشركات لتبسيط عملياتها وسير العمل. مشابه لـ n8n، أنشئ أنظمة آلية تربط بين خدمات، APIs، ومنصات مختلفة لأتمتة المهام المتكررة، معالجة البيانات، الإشعارات، والمنطق التجاري. الحلول تشمل أتمتة CRM، أتمتة التسويق عبر البريد الإلكتروني، مزامنة البيانات بين الأنظمة، التقارير الآلية، إدارة وسائل التواصل الاجتماعي، وأتمتة سير العمل المخصصة حسب احتياجات العمل المحددة.',
+      tools: ['n8n', 'Zapier', 'Make (Integromat)', 'Python', 'Node.js', 'API Integration', 'Webhooks', 'Database Automation', 'Cloud Functions'],
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      video: null,
+      link: null,
+      gradient: 'from-cyan-500 to-blue-500',
+      videoSteps: [
+        'تحليل الأعمال: فهم العمليات الحالية ونقاط الألم',
+        'تصميم الأتمتة: تخطيط سير العمل الآلي والتكاملات',
+        'تكامل الأنظمة: ربط APIs، قواعد البيانات، والخدمات',
+        'تطوير سير العمل: بناء العمليات الآلية',
+        'الاختبار والتحسين: ضمان الموثوقية والكفاءة',
+        'النشر والمراقبة: إطلاق وصيانة أنظمة الأتمتة'
       ]
     }
   ]

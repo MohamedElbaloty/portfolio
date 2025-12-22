@@ -22,13 +22,16 @@ import { projectsData } from '../data/projects'
 const Projects = () => {
   const { language } = useLanguage()
   const t = translations[language]
-  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [selectedCategory, setSelectedCategory] = useState('production')
   const [selectedProject, setSelectedProject] = useState(null)
   const [activeTab, setActiveTab] = useState('description') // description, tools, video
 
   // Get projects based on language
   const webProjects = projectsData[language] || projectsData.en
-  const otherProjects = [
+  
+  // Separate production and academic projects
+  const productionProjects = webProjects.filter(p => p.category === 'web' || p.category === 'production')
+  const academicProjects = [
     {
       id: 5,
       title: language === 'en' ? 'Task Management App' : 'تطبيق إدارة المهام',
@@ -65,7 +68,8 @@ const Projects = () => {
     }
   ]
 
-  const allProjects = [...webProjects, ...otherProjects]
+  // For category filtering, keep all projects
+  const allProjects = [...productionProjects, ...academicProjects]
 
   const categories = [
     { id: 'all', name: t.projects.categories.all, icon: FaCode, color: 'from-indigo-500 to-purple-500' },
@@ -79,9 +83,20 @@ const Projects = () => {
     { id: 'design', name: t.projects.categories.design, icon: FaPalette, color: 'from-pink-500 to-rose-500' },
   ]
 
-  const filteredProjects = selectedCategory === 'all' 
-    ? allProjects 
-    : allProjects.filter(p => p.category === selectedCategory)
+  const getFilteredProjects = () => {
+    if (selectedCategory === 'production') {
+      return productionProjects
+    }
+    if (selectedCategory === 'academic') {
+      return academicProjects
+    }
+    if (selectedCategory === 'all') {
+      return allProjects
+    }
+    return allProjects.filter(p => p.category === selectedCategory)
+  }
+  
+  const filteredProjects = getFilteredProjects()
 
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
@@ -101,6 +116,39 @@ const Projects = () => {
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             {t.projects.subtitle}
           </p>
+        </motion.div>
+
+        {/* Production vs Academic Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center gap-4 mb-8 sm:mb-12"
+        >
+          <motion.button
+            onClick={() => setSelectedCategory('production')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              selectedCategory === 'production' || selectedCategory === 'all'
+                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
+                : 'glass border border-white/10 text-gray-300 hover:border-purple-500/50'
+            }`}
+          >
+            {t.projects.productionProjects}
+          </motion.button>
+          <motion.button
+            onClick={() => setSelectedCategory('academic')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`px-6 py-3 rounded-full font-semibold transition-all ${
+              selectedCategory === 'academic'
+                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
+                : 'glass border border-white/10 text-gray-300 hover:border-purple-500/50'
+            }`}
+          >
+            {t.projects.academicProjects}
+          </motion.button>
         </motion.div>
 
         {/* Enhanced Category Filter */}
