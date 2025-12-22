@@ -301,6 +301,18 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
               e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
             }}
           />
+          {/* Market badge - pinned on the image (top-right) so title never wraps */}
+          {project.market && market && (
+            <div className="absolute top-3 right-3 z-10 pointer-events-none">
+              <span
+                className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full border text-[10px] sm:text-xs whitespace-nowrap backdrop-blur-md bg-black/35 ${market.color}`}
+              >
+                <span className="text-[11px] sm:text-sm leading-none">{market.emoji}</span>
+                <FaMapMarkerAlt className="opacity-90" />
+                <span className="font-semibold">{project.market}</span>
+              </span>
+            </div>
+          )}
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 flex-wrap">
@@ -330,20 +342,9 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
         
         {/* Content */}
         <div className="p-4 sm:p-6">
-          <div className="flex items-start justify-between gap-2 mb-2 sm:mb-3">
-            <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
-              {project.title}
-            </h3>
-            {project.market && market && (
-              <span
-                className={`inline-flex items-center gap-1.5 px-2 py-1 rounded-full border text-[10px] sm:text-xs whitespace-nowrap ${market.color}`}
-              >
-                <span className="text-[11px] sm:text-sm leading-none">{market.emoji}</span>
-                <FaMapMarkerAlt className="opacity-90" />
-                <span className="font-semibold">{project.market}</span>
-              </span>
-            )}
-          </div>
+          <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors">
+            {project.title}
+          </h3>
           <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
             {project.description}
           </p>
