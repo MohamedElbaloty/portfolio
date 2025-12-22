@@ -97,7 +97,7 @@ const Hero = () => {
         {/* Enhanced Services Cards */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-8 mb-12 sm:mb-16 px-4 max-w-4xl mx-auto"
+          className="hidden sm:grid grid-cols-3 gap-2 sm:gap-4 lg:gap-8 mb-12 sm:mb-16 px-4 max-w-4xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
@@ -122,7 +122,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Enhanced CTA Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-row gap-3 sm:gap-4 lg:gap-6 justify-center px-4 flex-wrap">
+        <motion.div variants={itemVariants} className="hidden sm:flex flex-row gap-3 sm:gap-4 lg:gap-6 justify-center px-4 flex-wrap">
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(99, 102, 241, 0.4)' }}

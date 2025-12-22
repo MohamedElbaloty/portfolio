@@ -235,11 +235,11 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
           <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
             {project.description}
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2">
             {(project.tags || project.tools || []).slice(0, 3).map((tag, i) => (
               <span
                 key={i}
-                className="px-2 sm:px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs text-purple-300 border border-purple-500/30"
+                className="px-1.5 sm:px-2 lg:px-3 py-0.5 sm:py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-[10px] sm:text-xs text-purple-300 border border-purple-500/30"
               >
                 {tag}
               </span>
