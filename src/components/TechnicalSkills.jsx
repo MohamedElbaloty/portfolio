@@ -22,7 +22,7 @@ const TechnicalSkills = () => {
   ]
 
   return (
-    <section id="skills" className="pt-2 sm:pt-4 lg:pt-6 pb-6 sm:pb-12 lg:pb-16 px-4 sm:px-6 relative">
+    <section id="skills" className="pt-0 sm:pt-1 lg:pt-2 pb-6 sm:pb-12 lg:pb-16 px-4 sm:px-6 relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       

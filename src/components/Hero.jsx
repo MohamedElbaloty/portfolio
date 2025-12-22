@@ -62,14 +62,14 @@ const Hero = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-2 sm:mb-3 lg:mb-4 gradient-text leading-tight px-4"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-1 sm:mb-2 lg:mb-2 gradient-text leading-tight px-4"
         >
           {t.hero.title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2 sm:mb-4 lg:mb-6 max-w-4xl mx-auto leading-relaxed px-4"
+          className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-0 sm:mb-2 lg:mb-3 max-w-4xl mx-auto leading-relaxed px-4"
         >
           {t.hero.description}
         </motion.p>
