@@ -34,7 +34,7 @@ export const ar = {
         description: 'عملت بالبرمجة وتدريس البرمجيات',
       },
       usa: {
-        year: '2018',
+        year: '2019',
         title: 'الولايات المتحدة',
         description: 'سافرت لأمريكا وسجلت كورسات Computer Science بجامعة Maharishi',
       },

@@ -34,7 +34,7 @@ export const en = {
         description: 'Worked in programming and teaching software development',
       },
       usa: {
-        year: '2018',
+        year: '2019',
         title: 'United States',
         description: 'Traveled to America and enrolled in Computer Science courses at Maharishi University',
       },
