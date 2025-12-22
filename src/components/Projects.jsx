@@ -201,7 +201,7 @@ const Projects = () => {
         {/* Enhanced Projects Grid */}
         <motion.div
           layout
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-5 sm:gap-4 lg:gap-6"
         >
           <AnimatePresence>
             {filteredProjects.map((project, index) => {
