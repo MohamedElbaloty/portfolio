@@ -47,7 +47,7 @@ const Navbar = () => {
             size="small"
           />
           {language === 'en' ? (
-            <span className="relative overflow-visible flex-shrink-0 w-[150px] sm:w-[180px]">
+            <span className="relative overflow-visible flex-shrink-0 w-[140px] sm:w-[180px] mr-1">
               <Signature />
             </span>
           ) : (
@@ -96,32 +96,32 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-2">
+        <div className="md:hidden flex items-center gap-1.5 ml-3">
           <motion.button
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="glass px-4 py-2.5 rounded-full flex items-center justify-center text-white"
+            className="glass px-3 py-2 rounded-full flex items-center justify-center text-white"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
+            {theme === 'dark' ? <FaSun className="text-base" /> : <FaMoon className="text-base" />}
           </motion.button>
           <motion.button
             onClick={toggleLanguage}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="glass px-4 py-2.5 rounded-full flex items-center gap-2 text-white text-sm"
+            className="glass px-3 py-2 rounded-full flex items-center gap-1.5 text-white text-sm"
             aria-label="Toggle language"
           >
-            <FaGlobe className="text-lg" />
-            <span className="text-base leading-none">{language === 'en' ? 'AR' : 'EN'}</span>
+            <FaGlobe className="text-base" />
+            <span className="text-sm leading-none">{language === 'en' ? 'AR' : 'EN'}</span>
           </motion.button>
           <button
             className="glass px-4 py-2.5 rounded-full text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
+            {isMobileMenuOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
           </button>
         </div>
       </div>
