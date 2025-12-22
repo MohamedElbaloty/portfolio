@@ -4,6 +4,7 @@ import { FaBars, FaTimes, FaGlobe, FaMoon, FaSun } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { useTheme } from '../contexts/ThemeContext'
 import { translations } from '../translations'
+import Avatar from './Avatar'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -39,9 +40,16 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="text-xl sm:text-2xl font-bold gradient-text"
+          className="flex items-center gap-2 sm:gap-3"
         >
-          {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
+          <Avatar 
+            src="/avatar.jfif" 
+            alt={language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
+            size="small"
+          />
+          <span className="text-xl sm:text-2xl font-bold gradient-text">
+            {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
+          </span>
         </motion.div>
 
         {/* Desktop Menu */}
