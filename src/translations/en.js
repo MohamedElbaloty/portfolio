@@ -3,6 +3,7 @@ export const en = {
   nav: {
     home: 'Home',
     about: 'About',
+    courses: 'Courses',
     projects: 'Projects',
     contact: 'Contact',
   },

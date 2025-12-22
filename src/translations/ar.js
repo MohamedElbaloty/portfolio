@@ -3,6 +3,7 @@ export const ar = {
   nav: {
     home: 'الرئيسية',
     about: 'عني',
+    courses: 'الكورسات',
     projects: 'المشاريع',
     contact: 'التواصل',
   },
