@@ -2,8 +2,7 @@
 
 export const coursesData = {
   en: {
-    title: 'Courses & Teaching',
-    subtitle: 'Teaching Computer Science courses and helping engineering students with graduation projects',
+    title: 'Courses',
     categories: [
       {
         name: 'Programming Languages',
