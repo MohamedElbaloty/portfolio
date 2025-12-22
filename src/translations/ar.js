@@ -12,7 +12,7 @@ export const ar = {
   // Hero
   hero: {
     title: 'محمد عزت',
-    subtitle: 'مطور Full Stack & مهندس برمجيات',
+    subtitle: 'مهندس حلول رقمية ومدرّس',
     description: 'حلول برمجية متقدمة احترافية | مواقع ويب | تطبيقات موبايل | مشاريع IoT | تدريس ومساعدة طلاب الهندسة |',
     viewProjects: 'شاهد مشاريعي',
     contactMe: 'تواصل معي',
