@@ -39,9 +39,9 @@ export const en = {
         description: 'Traveled to America and enrolled in Computer Science courses at Maharishi University',
       },
       dubai: {
-        year: '2020 - Present',
+        year: '2020 - 2024',
         title: 'Dubai - UAE',
-        description: 'Worked on various software and business projects',
+        description: 'Worked on various business projects',
       },
       freelance: {
         year: 'Present',

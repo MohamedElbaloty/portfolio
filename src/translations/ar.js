@@ -39,9 +39,9 @@ export const ar = {
         description: 'سافرت لأمريكا وسجلت كورسات Computer Science بجامعة Maharishi',
       },
       dubai: {
-        year: '2020 - الحاضر',
+        year: '2020 - 2024',
         title: 'دبي - الإمارات',
-        description: 'عملت بمشاريع برمجية وتجارية متعددة',
+        description: 'عملت بمشاريع تجارية متعددة',
       },
       freelance: {
         year: 'الحاضر',
