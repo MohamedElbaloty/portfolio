@@ -60,8 +60,8 @@ const Hero = () => {
 
         <motion.div variants={itemVariants} className="mb-1 sm:mb-2 lg:mb-3">
           <motion.span
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 glass rounded-full text-xs sm:text-sm mb-1 sm:mb-2 backdrop-blur-xl border border-white/10"
-            whileHover={{ scale: 1.05, borderColor: 'rgba(139, 92, 246, 0.5)' }}
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm mb-1 sm:mb-2"
+            whileHover={{ scale: 1.05 }}
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
             {t.hero.subtitle}

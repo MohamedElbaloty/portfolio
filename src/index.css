@@ -240,6 +240,17 @@ html {
   align-items: center;
 }
 
+/* Faster marquee on mobile */
+@media (max-width: 640px) {
+  .marquee-content {
+    animation: marquee 25s linear infinite;
+  }
+  
+  [dir="rtl"] .marquee-content {
+    animation: marquee-rtl 25s linear infinite;
+  }
+}
+
 .marquee-content:hover {
   animation-play-state: paused;
 }
