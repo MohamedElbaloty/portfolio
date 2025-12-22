@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { FaGraduationCap, FaBriefcase, FaGlobe, FaChalkboardTeacher, FaUniversity } from 'react-icons/fa'
+import { FaGraduationCap, FaBriefcase, FaGlobe, FaUniversity } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 
@@ -111,30 +111,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Enhanced Teaching Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 sm:mt-16 lg:mt-20 max-w-4xl mx-auto"
-        >
-          <motion.div
-            whileHover={{ scale: 1.02, y: -5 }}
-            className="relative group"
-          >
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 text-center hover:border-purple-500/50 transition-all">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 sm:mb-6 shadow-lg">
-                <FaGraduationCap className="text-3xl sm:text-4xl text-white" />
-              </div>
-              <p className="text-purple-400 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{t.about.teaching.subtitle}</p>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 gradient-text">{t.about.teaching.title}</h3>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4">
-                {t.about.teaching.description}
-              </p>
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   )
