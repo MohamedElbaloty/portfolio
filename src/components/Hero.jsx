@@ -97,7 +97,7 @@ const Hero = () => {
         {/* Enhanced Services Cards */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 px-4"
+          className="grid grid-cols-3 gap-2 sm:gap-4 lg:gap-8 mb-12 sm:mb-16 px-4 max-w-4xl mx-auto"
         >
           {services.map((service, index) => (
             <motion.div
@@ -109,12 +109,12 @@ const Hero = () => {
               className="relative group"
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity`}></div>
-              <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 lg:p-8 min-w-[140px] sm:min-w-[180px] lg:min-w-[200px] hover:border-purple-500/50 transition-all">
-                <div className={`flex flex-col items-center justify-center mb-2 sm:mb-4`}>
-                  <div className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br ${service.gradient} mb-3 sm:mb-4 shadow-lg`}>
-                    <service.icon className="text-2xl sm:text-3xl lg:text-4xl text-white" />
+              <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-3 sm:p-4 lg:p-8 hover:border-purple-500/50 transition-all">
+                <div className={`flex flex-col items-center justify-center mb-1 sm:mb-2 lg:mb-4`}>
+                  <div className={`p-2 sm:p-3 lg:p-4 rounded-xl bg-gradient-to-br ${service.gradient} mb-2 sm:mb-3 lg:mb-4 shadow-lg`}>
+                    <service.icon className="text-xl sm:text-2xl lg:text-4xl text-white" />
                   </div>
-                  <p className="text-sm sm:text-base font-semibold text-white text-center">{service.text}</p>
+                  <p className="text-xs sm:text-sm lg:text-base font-semibold text-white text-center leading-tight">{service.text}</p>
                 </div>
               </div>
             </motion.div>
@@ -122,18 +122,20 @@ const Hero = () => {
         </motion.div>
 
         {/* Enhanced CTA Buttons */}
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-4 sm:gap-6 justify-center px-4">
+        <motion.div variants={itemVariants} className="flex flex-row gap-3 sm:gap-4 lg:gap-6 justify-center px-4 flex-wrap">
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(99, 102, 241, 0.4)' }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full font-semibold text-sm sm:text-base lg:text-lg overflow-hidden"
+            className="group relative px-4 sm:px-6 lg:px-10 py-2.5 sm:py-3 lg:py-5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full font-semibold text-xs sm:text-sm lg:text-lg overflow-hidden flex-1 sm:flex-none min-w-[140px] sm:min-w-0"
           >
-            <span className="relative z-10 flex items-center gap-2">
-              {t.hero.viewProjects}
+            <span className="relative z-10 flex items-center justify-center gap-1 sm:gap-2">
+              <span className="hidden sm:inline">{t.hero.viewProjects}</span>
+              <span className="sm:hidden">Projects</span>
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5 }}
+                className="hidden sm:inline"
               >
                 →
               </motion.span>
@@ -144,9 +146,10 @@ const Hero = () => {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 glass backdrop-blur-xl border-2 border-purple-500/50 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:border-purple-400 hover:bg-white/10 transition-all"
+            className="px-4 sm:px-6 lg:px-10 py-2.5 sm:py-3 lg:py-5 glass backdrop-blur-xl border-2 border-purple-500/50 rounded-full font-semibold text-xs sm:text-sm lg:text-lg hover:border-purple-400 hover:bg-white/10 transition-all flex-1 sm:flex-none min-w-[140px] sm:min-w-0"
           >
-            {t.hero.contactMe}
+            <span className="hidden sm:inline">{t.hero.contactMe}</span>
+            <span className="sm:hidden">Contact</span>
           </motion.a>
         </motion.div>
       </motion.div>
