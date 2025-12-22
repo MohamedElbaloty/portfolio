@@ -367,12 +367,4 @@ html {
   right: 0;
 }
 
-/* Project card description: clamp to 2 lines consistently (avoid "hidden words" mid-line). */
-.project-desc-clamp {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  line-height: 1.25rem;
-  min-height: calc(1.25rem * 2);
-}
+

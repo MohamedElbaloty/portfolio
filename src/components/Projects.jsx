@@ -364,7 +364,7 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
               </h3>
             )
           })()}
-          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed project-desc-clamp">
+          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-snug min-h-[2.5rem] sm:min-h-0">
             {project.description}
           </p>
           <div
