@@ -78,34 +78,34 @@ const About = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className={`relative mb-12 sm:mb-16 flex flex-col sm:flex-row items-center ${
+                className={`relative mb-8 sm:mb-16 flex flex-row items-center ${
                   language === 'ar' 
-                    ? (index % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row')
-                    : (index % 2 === 0 ? 'sm:flex-row' : 'sm:flex-row-reverse')
+                    ? (index % 2 === 0 ? 'flex-row-reverse' : 'flex-row')
+                    : (index % 2 === 0 ? 'flex-row' : 'flex-row-reverse')
                 }`}
               >
-                <div className={`w-full sm:w-1/2 ${language === 'ar' 
-                  ? (index % 2 === 0 ? 'text-left sm:text-left' : 'text-right sm:text-right')
-                  : (index % 2 === 0 ? 'text-left sm:text-left' : 'text-right sm:text-right')
-                } px-4 sm:px-0`}>
+                <div className={`w-1/2 ${language === 'ar' 
+                  ? (index % 2 === 0 ? 'text-right' : 'text-left')
+                  : (index % 2 === 0 ? 'text-left' : 'text-right')
+                } px-2 sm:px-0`}>
                   <motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
                     className={`relative group`}
                   >
-                    <div className={`absolute -inset-1 bg-gradient-to-r ${item.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
-                    <div className={`relative glass backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 hover:border-purple-500/50 transition-all`}>
-                      <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                        <div className={`p-2 sm:p-3 rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg flex-shrink-0`}>
-                          <item.icon className="text-lg sm:text-2xl text-white" />
+                    <div className={`absolute -inset-1 bg-gradient-to-r ${item.gradient} rounded-xl sm:rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
+                    <div className={`relative glass backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-6 hover:border-purple-500/50 transition-all`}>
+                      <div className="flex items-center gap-2 sm:gap-4 mb-2 sm:mb-4">
+                        <div className={`p-1.5 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${item.gradient} shadow-lg flex-shrink-0`}>
+                          <item.icon className="text-sm sm:text-2xl text-white" />
                         </div>
-                        <span className="text-purple-400 font-bold text-base sm:text-lg">{item.year}</span>
+                        <span className="text-purple-400 font-bold text-xs sm:text-lg">{item.year}</span>
                       </div>
-                      <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-white">{item.title}</h3>
-                      <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{item.description}</p>
+                      <h3 className="text-sm sm:text-2xl font-bold mb-1 sm:mb-3 text-white">{item.title}</h3>
+                      <p className="text-gray-300 text-[10px] sm:text-base leading-tight sm:leading-relaxed">{item.description}</p>
                     </div>
                   </motion.div>
                 </div>
-                <div className="hidden sm:block w-1/2"></div>
+                <div className="w-1/2"></div>
               </motion.div>
             ))}
           </div>

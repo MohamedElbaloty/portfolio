@@ -45,7 +45,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:gap-8 max-w-4xl mx-auto">
           {contactInfo.map((item, index) => (
             <motion.a
               key={index}
@@ -57,17 +57,17 @@ const Contact = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
               whileHover={{ scale: 1.05, y: -10 }}
-              className={`glass rounded-2xl p-6 sm:p-8 text-center group cursor-pointer bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20 transition-all border border-white/10 hover:border-purple-500/50`}
+              className={`glass rounded-xl sm:rounded-2xl p-3 sm:p-6 lg:p-8 text-center group cursor-pointer bg-gradient-to-br ${item.color} bg-opacity-10 hover:bg-opacity-20 transition-all border border-white/10 hover:border-purple-500/50`}
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.5 }}
-                className="inline-block mb-4"
+                className="inline-block mb-2 sm:mb-4"
               >
-                <item.icon className="text-4xl sm:text-5xl text-white" />
+                <item.icon className="text-2xl sm:text-4xl lg:text-5xl text-white" />
               </motion.div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">{item.label}</h3>
-              <p className="text-gray-300 text-sm sm:text-base break-all">{item.value}</p>
+              <h3 className="text-xs sm:text-lg lg:text-xl font-bold mb-1 sm:mb-2">{item.label}</h3>
+              <p className="text-gray-300 text-[10px] sm:text-sm lg:text-base break-all leading-tight sm:leading-normal">{item.value}</p>
             </motion.a>
           ))}
         </div>
