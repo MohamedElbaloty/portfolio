@@ -68,22 +68,12 @@ const Hero = () => {
           </motion.span>
         </motion.div>
 
-        {/* Marquee - Desktop: Text, Mobile: Skills Cards */}
+        {/* Marquee - Mobile: Skills Cards Only */}
         <motion.div
           variants={itemVariants}
-          className="mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full mt-4 sm:mt-6"
+          className="mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full mt-4 sm:mt-6 block sm:hidden"
         >
           <div className="marquee-container glass rounded-full py-3 sm:py-4 px-4 backdrop-blur-xl border border-white/10">
-            {/* Desktop: Text Marquee */}
-            <div className="hidden sm:block marquee-content">
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 whitespace-nowrap font-medium">
-                {t.hero.description}
-              </span>
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 whitespace-nowrap ml-8 font-medium">
-                {t.hero.description}
-              </span>
-            </div>
-
             {/* Mobile: Skills Cards Marquee */}
             <div className="block sm:hidden marquee-content">
               {[
