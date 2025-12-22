@@ -5,6 +5,61 @@ export const coursesData = {
     title: 'Courses',
     categories: [
       {
+        name: 'Web Development',
+        courses: [
+          {
+            name: 'Professional Web Development',
+            description: 'Comprehensive web development course covering frontend and backend technologies, modern frameworks, responsive design, and best practices.',
+            topics: ['HTML5 & CSS3', 'JavaScript & ES6+', 'React & Vue.js', 'Node.js & Express', 'RESTful APIs', 'Database Integration', 'Deployment & DevOps']
+          },
+          {
+            name: 'Full Stack Development',
+            description: 'Complete full-stack development course covering both client-side and server-side technologies for building modern web applications.',
+            topics: ['Frontend Frameworks', 'Backend Development', 'API Design', 'Authentication & Security', 'Database Management', 'Cloud Deployment']
+          }
+        ]
+      },
+      {
+        name: 'Mobile Development',
+        courses: [
+          {
+            name: 'Android Development',
+            description: 'Complete Android app development course covering Java/Kotlin, Android SDK, UI/UX design, and publishing apps to Google Play Store.',
+            topics: ['Android Studio', 'Java/Kotlin', 'Activities & Fragments', 'Material Design', 'SQLite Database', 'REST APIs', 'Google Play Publishing']
+          },
+          {
+            name: 'iOS Development',
+            description: 'Comprehensive iOS app development course covering Swift, Xcode, UIKit, SwiftUI, and publishing apps to Apple App Store.',
+            topics: ['Swift Programming', 'Xcode IDE', 'UIKit & SwiftUI', 'Core Data', 'Networking', 'App Store Publishing']
+          },
+          {
+            name: 'Cross-Platform Mobile Development',
+            description: 'Learn to build mobile apps for both Android and iOS using React Native or Flutter frameworks.',
+            topics: ['React Native', 'Flutter', 'Dart Programming', 'State Management', 'Native Modules', 'App Deployment']
+          }
+        ]
+      },
+      {
+        name: 'IoT & Embedded Systems',
+        courses: [
+          {
+            name: 'Arduino Programming',
+            description: 'Complete Arduino course covering microcontroller programming, sensors, actuators, and building IoT projects.',
+            topics: ['Arduino IDE', 'C/C++ Programming', 'Sensors & Actuators', 'Serial Communication', 'LCD Displays', 'Motor Control', 'IoT Projects']
+          },
+          {
+            name: 'Raspberry Pi Projects',
+            description: 'Comprehensive Raspberry Pi course covering Linux, Python programming, GPIO control, and building embedded systems.',
+            topics: ['Raspberry Pi Setup', 'Linux Commands', 'Python Programming', 'GPIO Control', 'Camera Module', 'Home Automation', 'Robotics']
+          },
+          {
+            name: 'Embedded Systems Design',
+            description: 'Advanced embedded systems course covering microcontroller architecture, real-time systems, and hardware-software integration.',
+            topics: ['Microcontroller Architecture', 'Real-Time Systems', 'Interrupts & Timers', 'Communication Protocols', 'PCB Design', 'Firmware Development']
+          }
+        ]
+      },
+      {
         name: 'Programming Languages',
         courses: [
           {
@@ -66,6 +121,71 @@ export const coursesData = {
             name: 'Computer Networks',
             description: 'Comprehensive networking course covering network protocols, TCP/IP, routing, switching, and network security.',
             topics: ['OSI Model', 'TCP/IP', 'Routing Protocols', 'Switching', 'Network Security', 'Wireless Networks', 'Network Administration']
+          },
+          {
+            name: 'Cisco Networks',
+            description: 'Complete Cisco networking course covering CCNA topics, router and switch configuration, network design, and troubleshooting.',
+            topics: ['CCNA Fundamentals', 'Router Configuration', 'Switch Configuration', 'VLANs & Trunking', 'OSPF & EIGRP', 'Network Troubleshooting', 'Cisco Packet Tracer']
+          },
+          {
+            name: 'Network Security',
+            description: 'Advanced network security course covering firewalls, VPNs, intrusion detection, and network defense strategies.',
+            topics: ['Firewall Configuration', 'VPN Technologies', 'Intrusion Detection', 'Network Monitoring', 'Security Policies', 'Penetration Testing']
+          }
+        ]
+      },
+      {
+        name: 'Cloud Computing',
+        courses: [
+          {
+            name: 'Cloud Solutions & Architecture',
+            description: 'Comprehensive cloud computing course covering AWS, Azure, GCP, cloud architecture design, and deployment strategies.',
+            topics: ['AWS Services', 'Azure Platform', 'Google Cloud', 'Cloud Architecture', 'Containerization', 'Serverless Computing', 'Cloud Security']
+          },
+          {
+            name: 'DevOps & Cloud Deployment',
+            description: 'Learn DevOps practices, CI/CD pipelines, container orchestration, and cloud deployment automation.',
+            topics: ['Docker & Kubernetes', 'CI/CD Pipelines', 'Infrastructure as Code', 'Monitoring & Logging', 'Cloud Automation', 'Microservices']
+          }
+        ]
+      },
+      {
+        name: 'Cyber Security',
+        courses: [
+          {
+            name: 'Cyber Security Fundamentals',
+            description: 'Comprehensive cybersecurity course covering threats, vulnerabilities, security controls, and defense strategies.',
+            topics: ['Security Threats', 'Vulnerability Assessment', 'Encryption & Cryptography', 'Access Control', 'Security Policies', 'Incident Response']
+          },
+          {
+            name: 'Ethical Hacking & Penetration Testing',
+            description: 'Learn ethical hacking techniques, penetration testing methodologies, and security assessment tools.',
+            topics: ['Kali Linux', 'Metasploit Framework', 'Network Scanning', 'Web Application Security', 'Social Engineering', 'Security Auditing']
+          },
+          {
+            name: 'Network Security & Firewalls',
+            description: 'Advanced network security course focusing on firewall configuration, intrusion detection, and network defense.',
+            topics: ['Firewall Technologies', 'IDS/IPS Systems', 'Network Monitoring', 'VPN Configuration', 'Security Policies', 'Threat Intelligence']
+          }
+        ]
+      },
+      {
+        name: 'UI/UX Design',
+        courses: [
+          {
+            name: 'User Interface (UI) Design',
+            description: 'Complete UI design course covering design principles, color theory, typography, and creating beautiful interfaces.',
+            topics: ['Design Principles', 'Color Theory', 'Typography', 'Layout Design', 'Icon Design', 'Design Tools (Figma, Adobe XD)', 'Prototyping']
+          },
+          {
+            name: 'User Experience (UX) Design',
+            description: 'Comprehensive UX design course covering user research, wireframing, usability testing, and creating user-centered designs.',
+            topics: ['User Research', 'Personas & User Stories', 'Wireframing', 'Information Architecture', 'Usability Testing', 'Design Thinking', 'Accessibility']
+          },
+          {
+            name: 'Digital Design & Graphics',
+            description: 'Learn digital design fundamentals, graphic design principles, and creating visual content for web and mobile.',
+            topics: ['Graphic Design Basics', 'Adobe Creative Suite', 'Logo Design', 'Brand Identity', 'Web Graphics', 'Mobile UI Design', 'Animation']
           }
         ]
       },
@@ -89,6 +209,61 @@ export const coursesData = {
   ar: {
     title: 'الكورسات',
     categories: [
+      {
+        name: 'تطوير الويب',
+        courses: [
+          {
+            name: 'تطوير الويب الاحترافي',
+            description: 'دورة شاملة في تطوير الويب تغطي تقنيات الواجهة الأمامية والخلفية، الأطر الحديثة، التصميم المتجاوب، وأفضل الممارسات.',
+            topics: ['HTML5 & CSS3', 'JavaScript & ES6+', 'React & Vue.js', 'Node.js & Express', 'RESTful APIs', 'تكامل قواعد البيانات', 'النشر و DevOps']
+          },
+          {
+            name: 'تطوير Full Stack',
+            description: 'دورة كاملة في تطوير Full Stack تغطي تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات الويب الحديثة.',
+            topics: ['أطر الواجهة الأمامية', 'تطوير الخلفية', 'تصميم API', 'المصادقة والأمان', 'إدارة قواعد البيانات', 'النشر السحابي']
+          }
+        ]
+      },
+      {
+        name: 'تطوير التطبيقات',
+        courses: [
+          {
+            name: 'تطوير Android',
+            description: 'دورة كاملة في تطوير تطبيقات Android تغطي Java/Kotlin، Android SDK، تصميم UI/UX، ونشر التطبيقات على Google Play Store.',
+            topics: ['Android Studio', 'Java/Kotlin', 'Activities & Fragments', 'Material Design', 'قاعدة بيانات SQLite', 'REST APIs', 'نشر Google Play']
+          },
+          {
+            name: 'تطوير iOS',
+            description: 'دورة شاملة في تطوير تطبيقات iOS تغطي Swift، Xcode، UIKit، SwiftUI، ونشر التطبيقات على Apple App Store.',
+            topics: ['برمجة Swift', 'Xcode IDE', 'UIKit & SwiftUI', 'Core Data', 'الشبكات', 'نشر App Store']
+          },
+          {
+            name: 'تطوير التطبيقات متعددة المنصات',
+            description: 'تعلم بناء تطبيقات موبايل لكل من Android و iOS باستخدام React Native أو Flutter.',
+            topics: ['React Native', 'Flutter', 'برمجة Dart', 'إدارة الحالة', 'الوحدات الأصلية', 'نشر التطبيقات']
+          }
+        ]
+      },
+      {
+        name: 'إنترنت الأشياء والأنظمة المدمجة',
+        courses: [
+          {
+            name: 'برمجة Arduino',
+            description: 'دورة كاملة في Arduino تغطي برمجة المتحكمات الدقيقة، المستشعرات، المشغلات، وبناء مشاريع IoT.',
+            topics: ['Arduino IDE', 'برمجة C/C++', 'المستشعرات والمشغلات', 'الاتصال التسلسلي', 'شاشات LCD', 'التحكم بالمحركات', 'مشاريع IoT']
+          },
+          {
+            name: 'مشاريع Raspberry Pi',
+            description: 'دورة شاملة في Raspberry Pi تغطي Linux، برمجة Python، التحكم بـ GPIO، وبناء الأنظمة المدمجة.',
+            topics: ['إعداد Raspberry Pi', 'أوامر Linux', 'برمجة Python', 'التحكم بـ GPIO', 'وحدة الكاميرا', 'الأتمتة المنزلية', 'الروبوتات']
+          },
+          {
+            name: 'تصميم الأنظمة المدمجة',
+            description: 'دورة متقدمة في الأنظمة المدمجة تغطي معمارية المتحكمات الدقيقة، الأنظمة في الوقت الفعلي، وتكامل الأجهزة والبرمجيات.',
+            topics: ['معمارية المتحكمات الدقيقة', 'الأنظمة في الوقت الفعلي', 'المقاطعات والعدادات', 'بروتوكولات الاتصال', 'تصميم PCB', 'تطوير البرامج الثابتة']
+          }
+        ]
+      },
       {
         name: 'لغات البرمجة',
         courses: [
@@ -151,6 +326,71 @@ export const coursesData = {
             name: 'شبكات الحاسوب',
             description: 'دورة شاملة في الشبكات تغطي بروتوكولات الشبكة، TCP/IP، التوجيه، التبديل، وأمن الشبكات.',
             topics: ['نموذج OSI', 'TCP/IP', 'بروتوكولات التوجيه', 'التبديل', 'أمن الشبكات', 'الشبكات اللاسلكية', 'إدارة الشبكات']
+          },
+          {
+            name: 'شبكات Cisco',
+            description: 'دورة كاملة في شبكات Cisco تغطي مواضيع CCNA، تكوين الموجهات والمبدلات، تصميم الشبكات، واستكشاف الأخطاء.',
+            topics: ['أساسيات CCNA', 'تكوين الموجهات', 'تكوين المبدلات', 'VLANs & Trunking', 'OSPF & EIGRP', 'استكشاف أخطاء الشبكة', 'Cisco Packet Tracer']
+          },
+          {
+            name: 'أمن الشبكات',
+            description: 'دورة متقدمة في أمن الشبكات تغطي الجدران النارية، VPNs، كشف التسلل، واستراتيجيات الدفاع عن الشبكة.',
+            topics: ['تكوين الجدران النارية', 'تقنيات VPN', 'كشف التسلل', 'مراقبة الشبكة', 'سياسات الأمان', 'اختبار الاختراق']
+          }
+        ]
+      },
+      {
+        name: 'الحوسبة السحابية',
+        courses: [
+          {
+            name: 'الحلول والبنية السحابية',
+            description: 'دورة شاملة في الحوسبة السحابية تغطي AWS، Azure، GCP، تصميم البنية السحابية، واستراتيجيات النشر.',
+            topics: ['خدمات AWS', 'منصة Azure', 'Google Cloud', 'البنية السحابية', 'الحاويات', 'الحوسبة بدون خوادم', 'الأمان السحابي']
+          },
+          {
+            name: 'DevOps والنشر السحابي',
+            description: 'تعلم ممارسات DevOps، خطوط CI/CD، تنسيق الحاويات، وأتمتة النشر السحابي.',
+            topics: ['Docker & Kubernetes', 'خطوط CI/CD', 'البنية التحتية كرمز', 'المراقبة والتسجيل', 'أتمتة السحابة', 'الخدمات الصغيرة']
+          }
+        ]
+      },
+      {
+        name: 'الأمن السيبراني',
+        courses: [
+          {
+            name: 'أساسيات الأمن السيبراني',
+            description: 'دورة شاملة في الأمن السيبراني تغطي التهديدات، الثغرات، ضوابط الأمان، واستراتيجيات الدفاع.',
+            topics: ['تهديدات الأمان', 'تقييم الثغرات', 'التشفير', 'التحكم في الوصول', 'سياسات الأمان', 'الاستجابة للحوادث']
+          },
+          {
+            name: 'الاختراق الأخلاقي واختبار الاختراق',
+            description: 'تعلم تقنيات الاختراق الأخلاقي، منهجيات اختبار الاختراق، وأدوات تقييم الأمان.',
+            topics: ['Kali Linux', 'إطار Metasploit', 'فحص الشبكة', 'أمان تطبيقات الويب', 'الهندسة الاجتماعية', 'تدقيق الأمان']
+          },
+          {
+            name: 'أمن الشبكات والجدران النارية',
+            description: 'دورة متقدمة في أمن الشبكات تركز على تكوين الجدران النارية، كشف التسلل، والدفاع عن الشبكة.',
+            topics: ['تقنيات الجدران النارية', 'أنظمة IDS/IPS', 'مراقبة الشبكة', 'تكوين VPN', 'سياسات الأمان', 'استخبارات التهديدات']
+          }
+        ]
+      },
+      {
+        name: 'تصميم واجهة المستخدم',
+        courses: [
+          {
+            name: 'تصميم واجهة المستخدم (UI)',
+            description: 'دورة كاملة في تصميم UI تغطي مبادئ التصميم، نظرية الألوان، الطباعة، وإنشاء واجهات جميلة.',
+            topics: ['مبادئ التصميم', 'نظرية الألوان', 'الطباعة', 'تصميم التخطيط', 'تصميم الأيقونات', 'أدوات التصميم (Figma, Adobe XD)', 'النماذج الأولية']
+          },
+          {
+            name: 'تصميم تجربة المستخدم (UX)',
+            description: 'دورة شاملة في تصميم UX تغطي أبحاث المستخدم، التخطيط السلكي، اختبار قابلية الاستخدام، وإنشاء تصميمات تركز على المستخدم.',
+            topics: ['أبحاث المستخدم', 'الشخصيات وقصص المستخدم', 'التخطيط السلكي', 'هندسة المعلومات', 'اختبار قابلية الاستخدام', 'التفكير التصميمي', 'إمكانية الوصول']
+          },
+          {
+            name: 'التصميم الرقمي والرسوميات',
+            description: 'تعلم أساسيات التصميم الرقمي، مبادئ التصميم الجرافيكي، وإنشاء المحتوى المرئي للويب والموبايل.',
+            topics: ['أساسيات التصميم الجرافيكي', 'Adobe Creative Suite', 'تصميم الشعارات', 'هوية العلامة التجارية', 'رسوميات الويب', 'تصميم UI للموبايل', 'الرسوم المتحركة']
           }
         ]
       },
