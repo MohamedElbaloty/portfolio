@@ -64,8 +64,10 @@ export const en = {
       cloudSolutions: 'Cloud Solutions',
       cyberSecurity: 'Cyber Security',
       uiUxDesign: 'UI/UX Design',
+      motionGraphics: '2D&3D Motion Graphics',
       aiVideoProduction: 'AI Video Production',
       automation: 'Business Automation & AI',
+      automationWorkflows: 'Business & Automation Workflows',
     },
     teaching: {
       subtitle: 'Courses & Teaching',

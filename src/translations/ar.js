@@ -64,8 +64,10 @@ export const ar = {
       cloudSolutions: 'الحلول السحابية',
       cyberSecurity: 'الأمن السيبراني',
       uiUxDesign: 'تصميم واجهة المستخدم',
+      motionGraphics: 'موشن جرافيك 2D & 3D',
       aiVideoProduction: 'إنتاج فيديوهات دعائية بالذكاء الاصطناعي',
       automation: 'أتمتة الأعمال والذكاء الاصطناعي',
+      automationWorkflows: 'أتمتة الأعمال ومسارات العمل',
     },
     teaching: {
       subtitle: 'الكورسات والتدريس',
