@@ -52,15 +52,23 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-4 sm:px-6 text-center relative z-10 -mt-8 sm:mt-0"
       >
-        {/* Mobile-only experiment: 3D robot collects & rebuilds the name letters (EN only) */}
-        {language === 'en' && <MobileRobotLetterAnim text={t.hero.title} />}
-
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-2 sm:mb-3 lg:mb-4 gradient-text leading-tight px-4"
-        >
-          {t.hero.title}
-        </motion.h1>
+        {/* Title: On mobile (EN), the 3D robot animation overlays the title area (no extra card). */}
+        <div className="relative px-4 mb-2 sm:mb-3 lg:mb-4">
+          {language === 'en' && (
+            <MobileRobotLetterAnim
+              text={t.hero.title}
+              className="absolute inset-0"
+            />
+          )}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold gradient-text leading-tight"
+          >
+            {/* Keep layout height, but hide the real text on mobile when EN animation is shown */}
+            <span className={language === 'en' ? 'sm:inline hidden' : ''}>{t.hero.title}</span>
+            {language === 'en' && <span className="sm:hidden opacity-0">{t.hero.title}</span>}
+          </motion.h1>
+        </div>
 
         <motion.div variants={itemVariants} className="mb-1 sm:mb-2 lg:mb-3">
           <motion.span

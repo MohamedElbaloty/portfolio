@@ -1,6 +1,6 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, useRef, useEffect } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrthographicCamera, Text } from '@react-three/drei'
+import { OrthographicCamera } from '@react-three/drei'
 import * as THREE from 'three'
 
 function easeInOut(t) {
@@ -23,10 +23,10 @@ function makeScatter(i) {
   return new THREE.Vector3(x, y, z)
 }
 
-function Robot({ x }) {
-  // Simple robot built from primitives
+const Robot = React.forwardRef(function Robot(_props, ref) {
+  // Simple robot built from primitives (more visible on mobile)
   return (
-    <group position={[x, -0.08, 0]}>
+    <group ref={ref} position={[0, -0.06, 0]} scale={[1.15, 1.15, 1.15]}>
       {/* legs */}
       <mesh position={[-0.06, -0.18, 0]}>
         <boxGeometry args={[0.06, 0.12, 0.06]} />
@@ -43,6 +43,16 @@ function Robot({ x }) {
         <meshStandardMaterial color="#e5e7eb" metalness={0.2} roughness={0.35} />
       </mesh>
 
+      {/* arms */}
+      <mesh position={[-0.16, 0.02, 0]}>
+        <boxGeometry args={[0.06, 0.14, 0.06]} />
+        <meshStandardMaterial color="#d1d5db" metalness={0.2} roughness={0.4} />
+      </mesh>
+      <mesh position={[0.16, 0.02, 0]}>
+        <boxGeometry args={[0.06, 0.14, 0.06]} />
+        <meshStandardMaterial color="#d1d5db" metalness={0.2} roughness={0.4} />
+      </mesh>
+
       {/* backpack */}
       <mesh position={[-0.16, 0.02, -0.02]}>
         <boxGeometry args={[0.10, 0.16, 0.10]} />
@@ -55,6 +65,16 @@ function Robot({ x }) {
         <meshStandardMaterial color="#f3f4f6" metalness={0.2} roughness={0.35} />
       </mesh>
 
+      {/* antenna */}
+      <mesh position={[0, 0.30, 0]}>
+        <cylinderGeometry args={[0.01, 0.01, 0.08, 10]} />
+        <meshStandardMaterial color="#9ca3af" metalness={0.4} roughness={0.4} />
+      </mesh>
+      <mesh position={[0, 0.34, 0]}>
+        <sphereGeometry args={[0.02, 16, 16]} />
+        <meshStandardMaterial color="#ec4899" emissive="#ec4899" emissiveIntensity={0.6} />
+      </mesh>
+
       {/* visor */}
       <mesh position={[0, 0.19, 0.08]}>
         <boxGeometry args={[0.14, 0.06, 0.02]} />
@@ -62,6 +82,33 @@ function Robot({ x }) {
       </mesh>
     </group>
   )
+})
+
+function useLetterTexture(ch) {
+  return useMemo(() => {
+    const size = 96
+    const canvas = document.createElement('canvas')
+    canvas.width = size
+    canvas.height = size
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return null
+
+    ctx.clearRect(0, 0, size, size)
+    ctx.font = '700 56px Inter, system-ui, -apple-system, Segoe UI, sans-serif'
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+
+    // glow
+    ctx.shadowColor = 'rgba(139,92,246,0.55)'
+    ctx.shadowBlur = 14
+    ctx.fillStyle = '#ffffff'
+    ctx.fillText(ch, size / 2, size / 2 + 2)
+
+    const tex = new THREE.CanvasTexture(canvas)
+    tex.anisotropy = 1
+    tex.needsUpdate = true
+    return tex
+  }, [ch])
 }
 
 function Scene({ text }) {
@@ -92,7 +139,7 @@ function Scene({ text }) {
     return { raw, list, startX, endX }
   }, [text])
 
-  const robot = useMemo(() => ({ x: chars.startX }), [chars.startX])
+  const robotRef = useRef()
 
   useFrame(({ clock }) => {
     const t = clock.getElapsedTime()
@@ -113,15 +160,28 @@ function Scene({ text }) {
     } else {
       robotX = chars.startX
     }
+    if (robotRef.current) {
+      robotRef.current.position.x = robotX
+      // bob while walking
+      robotRef.current.position.y = -0.06 + Math.sin(t * 10) * 0.01
 
-    robot.x = robotX
+      // acrobatic flip after collecting
+      if (local >= 5.6 && local <= 7.2) {
+        const p = easeInOut(clamp01((local - 5.6) / 1.6))
+        robotRef.current.rotation.z = p * Math.PI * 2
+        robotRef.current.rotation.x = Math.sin(p * Math.PI) * 0.35
+      } else {
+        robotRef.current.rotation.z = 0
+        robotRef.current.rotation.x = 0
+      }
+    }
   })
 
   return (
     <>
-      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={160} />
-      <ambientLight intensity={0.9} />
-      <directionalLight position={[2, 3, 4]} intensity={0.9} />
+      <OrthographicCamera makeDefault position={[0, 0, 5]} zoom={140} />
+      <ambientLight intensity={1.0} />
+      <directionalLight position={[2, 3, 4]} intensity={1.1} />
 
       {/* letters */}
       {chars.list.map((c) => (
@@ -137,13 +197,14 @@ function Scene({ text }) {
         />
       ))}
 
-      <Robot x={robot.x} />
+      <Robot ref={robotRef} />
     </>
   )
 }
 
 function Letter({ ch, x, index, total, startX, endX, scatter }) {
-  const ref = React.useRef()
+  const ref = useRef()
+  const tex = useLetterTexture(ch)
 
   const basePos = useMemo(() => new THREE.Vector3(x, 0.02, 0), [x])
   const bagPos = useMemo(() => {
@@ -202,38 +263,33 @@ function Letter({ ch, x, index, total, startX, endX, scatter }) {
 
     ref.current.position.copy(pos)
     ref.current.scale.setScalar(scale)
-    ref.current.material.opacity = opacity
-    ref.current.material.transparent = true
+    if (ref.current.material) {
+      ref.current.material.opacity = opacity
+      ref.current.material.transparent = true
+    }
   })
 
   return (
-    <Text
-      ref={ref}
-      fontSize={0.14}
-      color="#e5e7eb"
-      anchorX="center"
-      anchorY="middle"
-      outlineWidth={0.004}
-      outlineColor="rgba(139,92,246,0.35)"
-    >
-      {ch}
-    </Text>
+    <sprite ref={ref} scale={[0.22, 0.22, 1]}>
+      <spriteMaterial
+        map={tex || undefined}
+        transparent
+        opacity={1}
+        depthWrite={false}
+      />
+    </sprite>
   )
 }
 
-const MobileRobotLetterAnim = ({ text = 'Mohamed Ezzat' }) => {
+const MobileRobotLetterAnim = ({ text = 'Mohamed Ezzat', className = '' }) => {
   return (
-    <div className="sm:hidden w-full flex justify-center mb-1">
-      <div className="glass border border-white/10 rounded-2xl px-3 py-2">
-        <div className="w-[340px] h-[86px]">
-          <Canvas
-            dpr={[1, 1.25]}
-            gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
-          >
-            <Scene text={text} />
-          </Canvas>
-        </div>
-      </div>
+    <div className={`sm:hidden w-full h-[92px] ${className}`} style={{ pointerEvents: 'none' }}>
+      <Canvas
+        dpr={[1, 1.25]}
+        gl={{ antialias: true, alpha: true, powerPreference: 'low-power' }}
+      >
+        <Scene text={text} />
+      </Canvas>
     </div>
   )
 }
