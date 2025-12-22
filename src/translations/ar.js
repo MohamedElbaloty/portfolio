@@ -21,7 +21,6 @@ export const ar = {
   // Footer
   footer: {
     rights: '© {year} محمد عزت. جميع الحقوق محفوظة.',
-    built: 'تم التطوير باستخدام React + Vite',
   },
   
   // About

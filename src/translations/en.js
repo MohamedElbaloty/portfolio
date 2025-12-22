@@ -21,7 +21,6 @@ export const en = {
   // Footer
   footer: {
     rights: '© {year} Mohamed Ezzat. All rights reserved.',
-    built: 'Built with React + Vite',
   },
   
   // About

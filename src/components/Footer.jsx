@@ -15,9 +15,6 @@ const Footer = () => {
           <p className="text-gray-300 text-xs sm:text-sm text-center sm:text-left">
             {t.footer.rights.replace('{year}', String(year))}
           </p>
-          <p className="text-gray-400 text-[11px] sm:text-xs text-center sm:text-right">
-            {t.footer.built}
-          </p>
         </div>
       </div>
     </footer>
