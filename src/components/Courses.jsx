@@ -83,6 +83,24 @@ const Courses = () => {
       <div className="container mx-auto relative z-10">
         {/* Courses Categories */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+          {/* Teaching Section - First Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0 }}
+            className="relative group col-span-1 sm:col-span-2"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
+            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
+              <div className="p-6 sm:p-10 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 sm:mb-6 shadow-lg">
+                  <FaGraduationCap className="text-3xl sm:text-4xl text-white" />
+                </div>
+                <p className="text-purple-400 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{t.about.teaching.subtitle}</p>
+              </div>
+            </div>
+          </motion.div>
           {data.categories.map((category, categoryIndex) => {
             const Icon = categoryIcons[category.name] || FaCode
             const gradient = categoryGradients[category.name] || 'from-purple-500 to-pink-500'
