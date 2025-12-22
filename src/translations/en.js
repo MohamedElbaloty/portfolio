@@ -13,7 +13,7 @@ export const en = {
   hero: {
     title: 'Mohamed Ezzat',
     subtitle: 'Full Stack Developer & Software Engineer',
-    description: 'Crafting advanced software solutions | Web Development | Mobile Apps | IoT Projects | Teaching & helping engineering students',
+    description: 'Professional advanced software solutions | Web Development | Mobile Apps | IoT Projects | Teaching & helping engineering students |',
     viewProjects: 'View My Projects',
     contactMe: 'Contact Me',
   },

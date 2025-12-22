@@ -273,27 +273,27 @@ html {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 50px;
+  width: 60px;
   z-index: 1;
   pointer-events: none;
 }
 
 .dark .marquee-container::before {
-  background: linear-gradient(to right, #0a0a0a, transparent);
+  background: linear-gradient(to right, rgba(10, 10, 10, 0.95), rgba(99, 102, 241, 0.1), transparent);
   left: 0;
 }
 
 .dark .marquee-container::after {
-  background: linear-gradient(to left, #0a0a0a, transparent);
+  background: linear-gradient(to left, rgba(10, 10, 10, 0.95), rgba(139, 92, 246, 0.1), transparent);
   right: 0;
 }
 
 .light .marquee-container::before {
-  background: linear-gradient(to right, rgba(248, 249, 250, 0.7), transparent);
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.95), rgba(99, 102, 241, 0.1), transparent);
   left: 0;
 }
 
 .light .marquee-container::after {
-  background: linear-gradient(to left, rgba(248, 249, 250, 0.7), transparent);
+  background: linear-gradient(to left, rgba(248, 249, 250, 0.95), rgba(139, 92, 246, 0.1), transparent);
   right: 0;
 }
