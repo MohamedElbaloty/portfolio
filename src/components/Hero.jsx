@@ -52,7 +52,7 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="relative min-h-0 sm:min-h-screen flex items-start sm:items-center justify-center overflow-hidden pt-2 sm:pt-16 lg:pt-20 pb-4 sm:pb-0">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-16 lg:pt-20">
       {/* Enhanced Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
@@ -68,11 +68,11 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="container mx-auto px-4 sm:px-6 text-center relative z-10 py-4 sm:py-0"
+        className="container mx-auto px-4 sm:px-6 text-center relative z-10"
       >
-        <motion.div variants={itemVariants} className="mb-2 sm:mb-6 lg:mb-8">
+        <motion.div variants={itemVariants} className="mb-4 sm:mb-6 lg:mb-8">
           <motion.span
-            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 glass rounded-full text-xs sm:text-sm mb-2 sm:mb-4 backdrop-blur-xl border border-white/10"
+            className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 glass rounded-full text-xs sm:text-sm mb-3 sm:mb-4 backdrop-blur-xl border border-white/10"
             whileHover={{ scale: 1.05, borderColor: 'rgba(139, 92, 246, 0.5)' }}
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -82,14 +82,14 @@ const Hero = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-2 sm:mb-6 lg:mb-8 gradient-text leading-tight px-4"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-4 sm:mb-6 lg:mb-8 gradient-text leading-tight px-4"
         >
           {t.hero.title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-2 sm:mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
+          className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-6 sm:mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed px-4"
         >
           {t.hero.description}
         </motion.p>
