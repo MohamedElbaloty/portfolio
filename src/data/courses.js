@@ -164,26 +164,7 @@ export const coursesData = {
           }
         ]
       },
-      {
-        name: 'UI/UX Design',
-        courses: [
-          {
-            name: 'User Interface (UI) Design',
-            description: 'Complete UI design course covering design principles, color theory, typography, and creating beautiful interfaces.',
-            topics: ['Design Principles', 'Color Theory', 'Typography', 'Layout Design', 'Icon Design', 'Design Tools (Figma, Adobe XD)', 'Prototyping']
-          },
-          {
-            name: 'User Experience (UX) Design',
-            description: 'Comprehensive UX design course covering user research, wireframing, usability testing, and creating user-centered designs.',
-            topics: ['User Research', 'Personas & User Stories', 'Wireframing', 'Information Architecture', 'Usability Testing', 'Design Thinking', 'Accessibility']
-          },
-          {
-            name: 'Digital Design & Graphics',
-            description: 'Learn digital design fundamentals, graphic design principles, and creating visual content for web and mobile.',
-            topics: ['Graphic Design Basics', 'Adobe Creative Suite', 'Logo Design', 'Brand Identity', 'Web Graphics', 'Mobile UI Design', 'Animation']
-          }
-        ]
-      },
+      // UI/UX Design category removed by user request
       {
         name: 'Digital Design',
         courses: [
@@ -364,26 +345,7 @@ export const coursesData = {
           }
         ]
       },
-      {
-        name: 'تصميم واجهة المستخدم',
-        courses: [
-          {
-            name: 'تصميم واجهة المستخدم (UI)',
-            description: 'دورة كاملة في تصميم UI تغطي مبادئ التصميم، نظرية الألوان، الطباعة، وإنشاء واجهات جميلة.',
-            topics: ['مبادئ التصميم', 'نظرية الألوان', 'الطباعة', 'تصميم التخطيط', 'تصميم الأيقونات', 'أدوات التصميم (Figma, Adobe XD)', 'النماذج الأولية']
-          },
-          {
-            name: 'تصميم تجربة المستخدم (UX)',
-            description: 'دورة شاملة في تصميم UX تغطي أبحاث المستخدم، التخطيط السلكي، اختبار قابلية الاستخدام، وإنشاء تصميمات تركز على المستخدم.',
-            topics: ['أبحاث المستخدم', 'الشخصيات وقصص المستخدم', 'التخطيط السلكي', 'هندسة المعلومات', 'اختبار قابلية الاستخدام', 'التفكير التصميمي', 'إمكانية الوصول']
-          },
-          {
-            name: 'التصميم الرقمي والرسوميات',
-            description: 'تعلم أساسيات التصميم الرقمي، مبادئ التصميم الجرافيكي، وإنشاء المحتوى المرئي للويب والموبايل.',
-            topics: ['أساسيات التصميم الجرافيكي', 'Adobe Creative Suite', 'تصميم الشعارات', 'هوية العلامة التجارية', 'رسوميات الويب', 'تصميم UI للموبايل', 'الرسوم المتحركة']
-          }
-        ]
-      },
+      // قسم تصميم واجهة المستخدم تمت إزالته بطلب المستخدم
       {
         name: 'التصميم الرقمي',
         courses: [
