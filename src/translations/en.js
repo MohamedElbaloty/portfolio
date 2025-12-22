@@ -73,7 +73,7 @@ export const en = {
   projects: {
     title: 'My Projects',
     subtitle: 'A collection of my best professional work and projects',
-    cardDescription: 'For companies or computer science students',
+    cardDescription: 'For companies or students studying software and computer-related subjects, whether Computer Science, Computer Engineering, Artificial Intelligence, or Cyber Security',
     productionProjects: 'Business Projects',
     academicProjects: 'Academic Projects',
     categories: {
