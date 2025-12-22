@@ -20,7 +20,7 @@ const TechnicalSkills = () => {
   ]
 
   return (
-    <section id="skills" className="py-4 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 relative -mt-4 sm:mt-0">
+    <section id="skills" className="py-6 sm:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 relative">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
@@ -29,9 +29,9 @@ const TechnicalSkills = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-6 sm:mb-12 lg:mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-2 sm:mb-4 lg:mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold gradient-text mb-4 sm:mb-4 lg:mb-6">
             {t.about.skills.title}
           </h2>
         </motion.div>
