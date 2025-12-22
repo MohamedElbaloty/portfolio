@@ -33,3 +33,4 @@ python scripts/fix_avatar.py public/avatar.jfif public/avatar-fixed.jfif
 - قد تحتاج لتعديل الإحداثيات حسب صورتك
 - احتفظ بنسخة احتياطية من الصورة الأصلية
 
+

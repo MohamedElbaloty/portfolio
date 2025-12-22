@@ -56,3 +56,4 @@ if __name__ == "__main__":
     
     create_thumbnail(input_path)
 
+
