@@ -96,32 +96,32 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center gap-1.5 ml-3">
+        <div className="md:hidden flex items-center gap-1 ml-3">
           <motion.button
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="glass px-3 py-2 rounded-full flex items-center justify-center text-white"
+            className="glass px-2.5 py-2 rounded-full flex items-center justify-center text-white"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <FaSun className="text-base" /> : <FaMoon className="text-base" />}
+            {theme === 'dark' ? <FaSun className="text-sm" /> : <FaMoon className="text-sm" />}
           </motion.button>
           <motion.button
             onClick={toggleLanguage}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="glass px-3 py-2 rounded-full flex items-center gap-1.5 text-white text-sm"
+            className="glass px-2.5 py-2 rounded-full flex items-center gap-1 text-white text-sm"
             aria-label="Toggle language"
           >
-            <FaGlobe className="text-base" />
-            <span className="text-sm leading-none">{language === 'en' ? 'AR' : 'EN'}</span>
+            <FaGlobe className="text-sm" />
+            <span className="text-xs leading-none">{language === 'en' ? 'AR' : 'EN'}</span>
           </motion.button>
           <button
-            className="glass px-4 py-2.5 rounded-full text-white"
+            className="glass px-3 py-2 rounded-full text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+            {isMobileMenuOpen ? <FaTimes className="text-lg" /> : <FaBars className="text-lg" />}
           </button>
         </div>
       </div>

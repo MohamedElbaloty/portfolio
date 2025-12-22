@@ -6,7 +6,8 @@ const Avatar = ({ src, alt = 'Profile', size = 'small' }) => {
   const { theme } = useTheme()
   
   const sizeClasses = {
-    small: 'w-8 h-8 sm:w-10 sm:h-10',
+    // Slightly larger "small" for navbar
+    small: 'w-9 h-9 sm:w-11 sm:h-11',
     medium: 'w-12 h-12',
     large: 'w-16 h-16'
   }
