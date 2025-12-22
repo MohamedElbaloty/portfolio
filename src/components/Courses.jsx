@@ -82,7 +82,7 @@ const Courses = () => {
       
       <div className="container mx-auto relative z-10">
         {/* Courses Categories */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6">
           {/* Teaching Section - First Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -124,17 +124,17 @@ const Courses = () => {
                   {/* Category Header */}
                   <button
                     onClick={() => setExpandedCategory(isExpanded ? null : categoryIndex)}
-                    className="w-full p-3 sm:p-4 lg:p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+                    className="w-full p-2 sm:p-4 lg:p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
                   >
-                    <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-1 min-w-0">
-                      <div className={`p-2 sm:p-3 lg:p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg flex-shrink-0`}>
-                        <Icon className="text-lg sm:text-2xl lg:text-3xl text-white" />
+                    <div className="flex items-center gap-1.5 sm:gap-3 lg:gap-4 flex-1 min-w-0">
+                      <div className={`p-1.5 sm:p-3 lg:p-4 rounded-lg sm:rounded-xl bg-gradient-to-br ${gradient} shadow-lg flex-shrink-0`}>
+                        <Icon className="text-sm sm:text-2xl lg:text-3xl text-white" />
                       </div>
-                      <div className="flex-1 flex items-center justify-between min-w-0">
-                        <h3 className="text-sm sm:text-xl lg:text-2xl font-bold text-white truncate">
+                      <div className="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between min-w-0 gap-1 sm:gap-0">
+                        <h3 className="text-xs sm:text-xl lg:text-2xl font-bold text-white truncate">
                           {category.name}
                         </h3>
-                        <span className="text-purple-400 font-semibold text-xs sm:text-base lg:text-lg ml-2 sm:ml-4 flex-shrink-0">
+                        <span className="text-purple-400 font-semibold text-[10px] sm:text-base lg:text-lg sm:ml-2 lg:ml-4 flex-shrink-0">
                           {category.courses.length} {language === 'en' ? 'courses' : 'كورسات'}
                         </span>
                       </div>
