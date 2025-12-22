@@ -304,11 +304,16 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
         <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
           <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}></div>
           {(() => {
+            const isContain = project.imageFit === 'contain'
             return (
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                className={
+                  isContain
+                    ? 'w-full h-full object-contain bg-black/10 p-2'
+                    : 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
+                }
                 onError={(e) => {
                   e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
                 }}
