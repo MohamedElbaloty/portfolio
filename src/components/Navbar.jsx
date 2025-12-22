@@ -101,46 +101,59 @@ const Navbar = () => {
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="glass px-3 py-2 rounded-full flex items-center justify-center text-white"
+            className="glass px-4 py-2.5 rounded-full flex items-center justify-center text-white"
+            aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <FaSun /> : <FaMoon />}
+            {theme === 'dark' ? <FaSun className="text-lg" /> : <FaMoon className="text-lg" />}
           </motion.button>
           <motion.button
             onClick={toggleLanguage}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="glass px-3 py-2 rounded-full flex items-center gap-1 text-white text-sm"
+            className="glass px-4 py-2.5 rounded-full flex items-center gap-2 text-white text-sm"
+            aria-label="Toggle language"
           >
-            <FaGlobe />
-            <span>{language === 'en' ? 'AR' : 'EN'}</span>
+            <FaGlobe className="text-lg" />
+            <span className="text-base leading-none">{language === 'en' ? 'AR' : 'EN'}</span>
           </motion.button>
           <button
-            className="text-white text-xl"
+            className="glass px-4 py-2.5 rounded-full text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
-            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+            {isMobileMenuOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden glass mt-4 mx-4 rounded-lg p-4"
-        >
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block py-2 text-white hover:text-purple-400 transition-colors"
-            >
-              {item.name}
-            </a>
-          ))}
-        </motion.div>
+        <div className="md:hidden">
+          {/* Click outside to close */}
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
+
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="relative z-50 glass mt-4 mx-4 rounded-lg p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-2 text-white hover:text-purple-400 transition-colors text-base"
+              >
+                {item.name}
+              </a>
+            ))}
+          </motion.div>
+        </div>
       )}
     </motion.nav>
   )
