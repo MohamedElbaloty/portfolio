@@ -78,6 +78,7 @@ export const en = {
       sahlat: 'Integrated e-commerce platform',
       miral: 'Fashion and modeling showcase website',
       robot: 'Educational platform for robotics and programming',
+      emaar: 'Emaar Group corporate website - Kuwait',
       taskApp: 'Android and iOS task management app',
       weatherApp: 'Weather forecasting app with modern interface',
       smartHome: 'Home automation system using Arduino and Raspberry Pi',

@@ -9,7 +9,8 @@ import {
   FaCloud, 
   FaShieldAlt, 
   FaPalette,
-  FaExternalLinkAlt
+  FaExternalLinkAlt,
+  FaPlay
 } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -39,7 +40,8 @@ const Projects = () => {
       title: 'Sahlat.sa',
       category: 'web',
       description: t.projects.projectDescriptions.sahlat,
-      image: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=Sahlat.sa',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_1',
       link: 'https://sahlat.sa',
       tags: ['React', 'Node.js', 'MongoDB'],
       gradient: 'from-blue-500 to-cyan-500',
@@ -49,7 +51,8 @@ const Projects = () => {
       title: 'Miral Models',
       category: 'web',
       description: t.projects.projectDescriptions.miral,
-      image: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Miral+Models',
+      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_2',
       link: 'https://miralmodels.com',
       tags: ['Vue.js', 'PHP', 'MySQL'],
       gradient: 'from-purple-500 to-pink-500',
@@ -59,98 +62,120 @@ const Projects = () => {
       title: 'Mr Robot Academy',
       category: 'web',
       description: t.projects.projectDescriptions.robot,
-      image: 'https://via.placeholder.com/600x400/ec4899/ffffff?text=Mr+Robot+Academy',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_3',
       link: 'https://mrrobotacademy.com',
       tags: ['React', 'Express', 'PostgreSQL'],
       gradient: 'from-indigo-500 to-purple-500',
     },
     {
       id: 4,
+      title: 'Emaar Group',
+      category: 'web',
+      description: t.projects.projectDescriptions.emaar,
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_4',
+      link: 'https://emaargroup.com.kw',
+      tags: ['React', 'Node.js', 'MongoDB'],
+      gradient: 'from-emerald-500 to-teal-500',
+    },
+    {
+      id: 5,
       title: language === 'en' ? 'Task Management App' : 'تطبيق إدارة المهام',
       category: 'mobile',
       description: t.projects.projectDescriptions.taskApp,
-      image: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=Mobile+App+1',
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_5',
       tags: ['React Native', 'Firebase'],
       gradient: 'from-purple-500 to-pink-500',
     },
     {
-      id: 5,
+      id: 6,
       title: language === 'en' ? 'Smart Weather App' : 'تطبيق الطقس الذكي',
       category: 'mobile',
       description: t.projects.projectDescriptions.weatherApp,
-      image: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Mobile+App+2',
+      image: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_6',
       tags: ['Flutter', 'API Integration'],
       gradient: 'from-cyan-500 to-blue-500',
     },
     {
-      id: 6,
+      id: 7,
       title: language === 'en' ? 'Smart Home System' : 'نظام منزل ذكي',
       category: 'iot',
       description: t.projects.projectDescriptions.smartHome,
-      image: 'https://via.placeholder.com/600x400/ec4899/ffffff?text=Smart+Home',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_7',
       tags: ['Arduino', 'Raspberry Pi', 'Python'],
       gradient: 'from-green-500 to-emerald-500',
     },
     {
-      id: 7,
+      id: 8,
       title: language === 'en' ? 'Environmental Monitoring' : 'نظام مراقبة بيئية',
       category: 'iot',
       description: t.projects.projectDescriptions.monitoring,
-      image: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=IoT+Project',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_8',
       tags: ['Arduino', 'Sensors', 'IoT'],
       gradient: 'from-teal-500 to-green-500',
     },
     {
-      id: 8,
+      id: 9,
       title: language === 'en' ? 'Database Management System' : 'نظام إدارة قاعدة بيانات',
       category: 'programming',
       description: t.projects.projectDescriptions.database,
-      image: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Java+Project',
+      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_9',
       tags: ['Java', 'MySQL', 'Swing'],
       gradient: 'from-orange-500 to-red-500',
     },
     {
-      id: 9,
+      id: 10,
       title: language === 'en' ? 'AI Data Analysis' : 'تحليل البيانات بالذكاء الاصطناعي',
       category: 'programming',
       description: t.projects.projectDescriptions.aiAnalysis,
-      image: 'https://via.placeholder.com/600x400/ec4899/ffffff?text=Python+AI',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_10',
       tags: ['Python', 'Machine Learning', 'Pandas'],
       gradient: 'from-red-500 to-pink-500',
     },
     {
-      id: 10,
+      id: 11,
       title: language === 'en' ? 'Enterprise Network' : 'شبكة Enterprise متكاملة',
       category: 'network',
       description: t.projects.projectDescriptions.enterprise,
-      image: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=Cisco+Network',
+      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_11',
       tags: ['Cisco', 'Routing', 'Switching'],
       gradient: 'from-cyan-500 to-blue-500',
     },
     {
-      id: 11,
+      id: 12,
       title: language === 'en' ? 'Cloud Architecture' : 'بنية Cloud Architecture',
       category: 'cloud',
       description: t.projects.projectDescriptions.cloudArch,
-      image: 'https://via.placeholder.com/600x400/8b5cf6/ffffff?text=Cloud+Project',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_12',
       tags: ['AWS', 'Docker', 'Kubernetes'],
       gradient: 'from-sky-500 to-blue-500',
     },
     {
-      id: 12,
+      id: 13,
       title: language === 'en' ? 'Network Security System' : 'نظام حماية الشبكات',
       category: 'security',
       description: t.projects.projectDescriptions.networkSecurity,
-      image: 'https://via.placeholder.com/600x400/ec4899/ffffff?text=Cyber+Security',
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_13',
       tags: ['Penetration Testing', 'Firewall', 'Encryption'],
       gradient: 'from-red-500 to-orange-500',
     },
     {
-      id: 13,
+      id: 14,
       title: language === 'en' ? 'Modern UI Design' : 'تصميم واجهة مستخدم حديثة',
       category: 'design',
       description: t.projects.projectDescriptions.uiDesign,
-      image: 'https://via.placeholder.com/600x400/6366f1/ffffff?text=UX+Design',
+      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_14',
       tags: ['Figma', 'UI/UX', 'Prototyping'],
       gradient: 'from-pink-500 to-rose-500',
     },
@@ -267,10 +292,23 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            onError={(e) => {
+              e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
+            }}
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute bottom-4 left-4 right-4">
+            <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">
+              {project.video && (
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-red-500/80 backdrop-blur-md rounded-full border border-white/20"
+                >
+                  <FaPlay className="text-white text-xs sm:text-sm" />
+                  <span className="text-white text-xs sm:text-sm font-medium">{t.projects.video}</span>
+                </motion.div>
+              )}
               {project.link && (
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
@@ -310,6 +348,8 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
 }
 
 const ProjectModal = ({ project, onClose, t }) => {
+  const [showVideo, setShowVideo] = useState(false)
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -326,19 +366,48 @@ const ProjectModal = ({ project, onClose, t }) => {
         className="glass backdrop-blur-xl border border-white/20 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
       >
         <div className="relative">
-          <div className={`h-48 sm:h-64 bg-gradient-to-br ${project.gradient} relative`}>
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover mix-blend-overlay opacity-80"
-            />
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-white text-lg sm:text-xl"
-            >
-              ✕
-            </button>
-          </div>
+          {showVideo && project.video ? (
+            <div className="relative w-full h-0 pb-[56.25%] bg-black">
+              <iframe
+                src={project.video}
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={project.title}
+              ></iframe>
+            </div>
+          ) : (
+            <div className={`h-48 sm:h-64 bg-gradient-to-br ${project.gradient} relative`}>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover mix-blend-overlay opacity-80"
+                onError={(e) => {
+                  e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
+                }}
+              />
+              {project.video && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setShowVideo(true)
+                  }}
+                  className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/70 transition-colors group"
+                >
+                  <div className="w-20 h-20 rounded-full bg-red-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <FaPlay className="text-white text-2xl ml-1" />
+                  </div>
+                </button>
+              )}
+            </div>
+          )}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 w-10 h-10 sm:w-12 sm:h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-white text-lg sm:text-xl z-10"
+          >
+            ✕
+          </button>
         </div>
         <div className="p-6 sm:p-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 gradient-text">{project.title}</h2>
@@ -353,19 +422,35 @@ const ProjectModal = ({ project, onClose, t }) => {
               </span>
             ))}
           </div>
-          {project.link && (
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
-            >
-              <FaExternalLinkAlt />
-              {t.projects.viewSite}
-            </motion.a>
-          )}
+          <div className="flex flex-wrap gap-4">
+            {project.link && (
+              <motion.a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+              >
+                <FaExternalLinkAlt />
+                {t.projects.viewSite}
+              </motion.a>
+            )}
+            {project.video && !showVideo && (
+              <motion.button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setShowVideo(true)
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-pink-600 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:shadow-lg hover:shadow-red-500/50 transition-all"
+              >
+                <FaPlay />
+                {t.projects.video}
+              </motion.button>
+            )}
+          </div>
         </div>
       </motion.div>
     </motion.div>
