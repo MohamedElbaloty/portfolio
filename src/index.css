@@ -129,7 +129,33 @@ html {
   background-clip: text;
 }
 
-/* signature handled via SVG component (`src/components/Signature.jsx`) */
+/* Signature image (PNG) colored with theme gradient */
+.signature-mark {
+  display: inline-block;
+  height: 32px;
+  width: 160px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+  -webkit-mask-image: url('/signature.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: left center;
+  -webkit-mask-size: contain;
+  mask-image: url('/signature.png');
+  mask-repeat: no-repeat;
+  mask-position: left center;
+  mask-size: contain;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.25));
+}
+
+.light .signature-mark {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #db2777);
+}
+
+@media (min-width: 640px) {
+  .signature-mark {
+    height: 40px;
+    width: 190px;
+  }
+}
 
 /* Glow Effect */
 .glow {
