@@ -68,13 +68,14 @@ const Hero = () => {
           </motion.span>
         </motion.div>
 
-        {/* Marquee - Desktop Only */}
+        {/* Marquee - Desktop: Text, Mobile: Skills Cards */}
         <motion.div
           variants={itemVariants}
-          className="hidden sm:block mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full mt-4 sm:mt-6"
+          className="mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full mt-4 sm:mt-6"
         >
           <div className="marquee-container glass rounded-full py-3 sm:py-4 px-4 backdrop-blur-xl border border-white/10">
-            <div className="marquee-content">
+            {/* Desktop: Text Marquee */}
+            <div className="hidden sm:block marquee-content">
               <span className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 whitespace-nowrap font-medium">
                 {t.hero.description}
               </span>
@@ -82,54 +83,75 @@ const Hero = () => {
                 {t.hero.description}
               </span>
             </div>
-          </div>
-        </motion.div>
 
-        {/* Skills Cards - Mobile Only */}
-        <motion.div
-          variants={itemVariants}
-          className="block sm:hidden w-full mt-6"
-        >
-          <div className="grid grid-cols-2 gap-3 max-w-md mx-auto">
-            {[
-              { name: t.about.skills.webDev, level: 95, icon: FaLaptopCode, gradient: 'from-blue-500 to-cyan-500' },
-              { name: t.about.skills.mobileApps, level: 90, icon: FaMobileAlt, gradient: 'from-purple-500 to-pink-500' },
-              { name: t.about.skills.iotEmbedded, level: 85, icon: FaMicrochip, gradient: 'from-green-500 to-emerald-500' },
-              { name: t.about.skills.javaPython, level: 92, icon: FaCode, gradient: 'from-orange-500 to-red-500' },
-            ].map((skill, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.03, y: -3 }}
-                className="glass backdrop-blur-xl border border-white/10 rounded-xl p-3 hover:border-purple-500/50 transition-all group relative overflow-hidden"
-              >
-                {/* Background Glow on Hover */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-15 blur-xl transition-opacity duration-500`}></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className={`relative p-2 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg group/icon`}>
-                      <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${skill.gradient} opacity-0 group-hover/icon:opacity-75 blur-lg transition-opacity duration-300`}></div>
-                      <skill.icon className="relative text-sm text-white drop-shadow-lg group-hover/icon:scale-110 transition-transform duration-300" />
+            {/* Mobile: Skills Cards Marquee */}
+            <div className="block sm:hidden marquee-content">
+              {[
+                { name: t.about.skills.webDev, level: 95, icon: FaLaptopCode, gradient: 'from-blue-500 to-cyan-500' },
+                { name: t.about.skills.mobileApps, level: 90, icon: FaMobileAlt, gradient: 'from-purple-500 to-pink-500' },
+                { name: t.about.skills.iotEmbedded, level: 85, icon: FaMicrochip, gradient: 'from-green-500 to-emerald-500' },
+                { name: t.about.skills.javaPython, level: 92, icon: FaCode, gradient: 'from-orange-500 to-red-500' },
+                { name: t.about.skills.networkEng, level: 88, icon: FaNetworkWired, gradient: 'from-cyan-500 to-blue-500' },
+                { name: t.about.skills.cloudSolutions, level: 87, icon: FaCloud, gradient: 'from-sky-500 to-blue-500' },
+              ].map((skill, index) => (
+                <div key={index} className="inline-flex mx-2">
+                  <div className="glass backdrop-blur-xl border border-white/20 rounded-xl p-2.5 min-w-[140px] group relative overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-15 blur-xl transition-opacity duration-500`}></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className={`relative p-1.5 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg`}>
+                          <skill.icon className="relative text-xs text-white drop-shadow-lg" />
+                        </div>
+                        <span className="text-white font-semibold text-[10px] truncate flex-1">{skill.name}</span>
+                      </div>
+                      <div className="w-full bg-gray-800/50 rounded-full h-1 overflow-hidden backdrop-blur-sm relative">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
+                          className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg relative`}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full animate-shimmer"></div>
+                        </motion.div>
+                      </div>
                     </div>
-                    <span className="text-white font-semibold text-xs truncate flex-1">{skill.name}</span>
-                  </div>
-                  <div className="w-full bg-gray-800/50 rounded-full h-1.5 overflow-hidden backdrop-blur-sm relative">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.level}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: index * 0.1, ease: 'easeOut' }}
-                      className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg relative`}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full animate-shimmer"></div>
-                    </motion.div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+              ))}
+              {/* Duplicate for seamless loop */}
+              {[
+                { name: t.about.skills.webDev, level: 95, icon: FaLaptopCode, gradient: 'from-blue-500 to-cyan-500' },
+                { name: t.about.skills.mobileApps, level: 90, icon: FaMobileAlt, gradient: 'from-purple-500 to-pink-500' },
+                { name: t.about.skills.iotEmbedded, level: 85, icon: FaMicrochip, gradient: 'from-green-500 to-emerald-500' },
+                { name: t.about.skills.javaPython, level: 92, icon: FaCode, gradient: 'from-orange-500 to-red-500' },
+                { name: t.about.skills.networkEng, level: 88, icon: FaNetworkWired, gradient: 'from-cyan-500 to-blue-500' },
+                { name: t.about.skills.cloudSolutions, level: 87, icon: FaCloud, gradient: 'from-sky-500 to-blue-500' },
+              ].map((skill, index) => (
+                <div key={`dup-${index}`} className="inline-flex mx-2">
+                  <div className="glass backdrop-blur-xl border border-white/20 rounded-xl p-2.5 min-w-[140px] group relative overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${skill.gradient} opacity-0 group-hover:opacity-15 blur-xl transition-opacity duration-500`}></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className={`relative p-1.5 rounded-lg bg-gradient-to-br ${skill.gradient} shadow-lg`}>
+                          <skill.icon className="relative text-xs text-white drop-shadow-lg" />
+                        </div>
+                        <span className="text-white font-semibold text-[10px] truncate flex-1">{skill.name}</span>
+                      </div>
+                      <div className="w-full bg-gray-800/50 rounded-full h-1 overflow-hidden backdrop-blur-sm relative">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1.5, delay: (index + 6) * 0.1, ease: 'easeOut' }}
+                          className={`h-full bg-gradient-to-r ${skill.gradient} rounded-full shadow-lg relative`}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent rounded-full animate-shimmer"></div>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </motion.div>
 
