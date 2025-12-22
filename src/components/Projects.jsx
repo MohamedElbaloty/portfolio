@@ -292,34 +292,25 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1 }}
-      whileHover={{ y: -15, scale: 1.02 }}
+      whileHover={isMobile ? undefined : { y: -15, scale: 1.02 }}
       className="group relative cursor-pointer"
       onClick={() => onSelect(project)}
     >
       {/* Glow Effect */}
       <div className={`absolute -inset-1 bg-gradient-to-r ${project.gradient} rounded-2xl blur opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
       
-      <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden h-full hover:border-purple-500/50 transition-all">
+      <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all h-[360px] sm:h-auto flex flex-col">
         {/* Image Container */}
         <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
           <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}></div>
-          {(() => {
-            const isContain = project.imageFit === 'contain'
-            return (
-              <img
-                src={project.image}
-                alt={project.title}
-                className={
-                  isContain
-                    ? 'w-full h-full object-contain bg-black/10 p-2'
-                    : 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
-                }
-                onError={(e) => {
-                  e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
-                }}
-              />
-            )
-          })()}
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            onError={(e) => {
+              e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
+            }}
+          />
           {/* Market badge - pinned on the image (top-right) so title never wraps */}
           {project.market && market && (
             <div className={`absolute ${cornerClass} z-10 pointer-events-none`}>
@@ -360,7 +351,7 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
         </div>
         
         {/* Content */}
-        <div className="p-4 sm:p-6">
+        <div className="p-4 sm:p-6 flex-1 flex flex-col">
           {(() => {
             const isMrRobot = isMobile && project.title === 'Mr Robot Academy'
             return (
@@ -373,11 +364,11 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
               </h3>
             )
           })()}
-          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">
+          <p className="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed overflow-hidden h-10 sm:h-auto">
             {project.description}
           </p>
           <div
-            className={`flex gap-1.5 sm:gap-2 ${
+            className={`flex gap-1.5 sm:gap-2 mt-auto ${
               isMobile && project.title === 'Emaar Group' ? 'flex-nowrap' : 'flex-wrap'
             }`}
           >
