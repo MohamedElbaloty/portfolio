@@ -384,19 +384,6 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
                 {language === 'en' ? 'Tools & Technologies' : 'الأدوات والتقنيات'}
               </button>
             )}
-            {project.videoSteps && (
-              <button
-                onClick={() => setActiveTab('video')}
-                className={`px-4 py-2 rounded-t-lg transition-all flex items-center gap-2 ${
-                  activeTab === 'video'
-                    ? 'bg-purple-500/20 text-purple-300 border-b-2 border-purple-500'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                <FaList className="text-sm" />
-                {language === 'en' ? 'Video Steps' : 'خطوات الفيديو'}
-              </button>
-            )}
           </div>
 
           {/* Tab Content */}
@@ -427,23 +414,6 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
               </div>
             )}
 
-            {activeTab === 'video' && project.videoSteps && (
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-white">
-                  {language === 'en' ? 'Video Walkthrough Steps' : 'خطوات شرح الفيديو'}
-                </h3>
-                <div className="space-y-3">
-                  {project.videoSteps.map((step, i) => (
-                    <div key={i} className="flex items-start gap-3 glass p-4 rounded-lg">
-                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
-                        {i + 1}
-                      </div>
-                      <p className="text-gray-300 text-sm sm:text-base flex-1">{step}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           {/* Tags */}

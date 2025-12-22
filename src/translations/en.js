@@ -39,14 +39,14 @@ export const en = {
         description: 'Traveled to America and enrolled in Computer Science courses at Maharishi University',
       },
       dubai: {
-        year: '2018 - Present',
+        year: '2020 - Present',
         title: 'Dubai - UAE',
-        description: 'Worked on various software projects',
+        description: 'Worked on various software and business projects',
       },
       freelance: {
         year: 'Present',
         title: 'Freelancer',
-        description: 'Working on projects for companies in the Gulf region (especially Saudi Arabia) and developing systems for companies in Europe and Morocco',
+        description: 'Working on projects for companies in the Gulf region and developing systems for companies in Europe and Morocco. Mansoura University, Egypt',
       },
     },
     skills: {
