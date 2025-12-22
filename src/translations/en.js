@@ -76,6 +76,8 @@ export const en = {
     cardDescription: 'For companies or students studying CS, Engineering, AI, or Cyber Security',
     productionProjects: 'Business Projects',
     academicProjects: 'Academic Projects',
+    more: 'More',
+    showLess: 'Show Less',
     categories: {
       all: 'All',
       web: 'Web Development',

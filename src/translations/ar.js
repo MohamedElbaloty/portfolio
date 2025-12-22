@@ -76,6 +76,8 @@ export const ar = {
     cardDescription: 'للشركات أو للطلاب الذين يدرسون علوم الحاسب، الهندسة، الذكاء الاصطناعي، أو الأمن السيبراني',
     productionProjects: 'مشاريع تجارية',
     academicProjects: 'مشاريع أكاديمية',
+    more: 'المزيد',
+    showLess: 'عرض أقل',
     categories: {
       all: 'الكل',
       web: 'مواقع ويب',

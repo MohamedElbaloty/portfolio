@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   FaGlobe, 
@@ -26,6 +26,17 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('production')
   const [selectedProject, setSelectedProject] = useState(null)
   const [activeTab, setActiveTab] = useState('description') // description, tools, video
+  const [showAllMobile, setShowAllMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Get projects based on language
   const webProjects = projectsData[language] || projectsData.en
@@ -126,7 +137,10 @@ const Projects = () => {
           className="flex justify-center gap-4 mb-8 sm:mb-12"
         >
           <motion.button
-            onClick={() => setSelectedCategory('production')}
+            onClick={() => {
+              setSelectedCategory('production')
+              setShowAllMobile(false)
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-base transition-all ${
@@ -138,7 +152,10 @@ const Projects = () => {
             {t.projects.productionProjects}
           </motion.button>
           <motion.button
-            onClick={() => setSelectedCategory('academic')}
+            onClick={() => {
+              setSelectedCategory('academic')
+              setShowAllMobile(false)
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-base transition-all ${
@@ -186,17 +203,42 @@ const Projects = () => {
           className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6"
         >
           <AnimatePresence>
-            {filteredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-                index={index}
-                onSelect={setSelectedProject}
-                t={t}
-              />
-            ))}
+            {filteredProjects.map((project, index) => {
+              // On mobile, show only first 4 projects unless showAllMobile is true
+              if (isMobile && !showAllMobile && index >= 4) {
+                return null
+              }
+              return (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                  onSelect={setSelectedProject}
+                  t={t}
+                />
+              )
+            })}
           </AnimatePresence>
         </motion.div>
+
+        {/* More Button - Mobile Only */}
+        {filteredProjects.length > 4 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-6 sm:hidden"
+          >
+            <motion.button
+              onClick={() => setShowAllMobile(!showAllMobile)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all"
+            >
+              {showAllMobile ? t.projects.showLess : t.projects.more}
+            </motion.button>
+          </motion.div>
+        )}
       </div>
 
       {/* Enhanced Project Modal */}
