@@ -81,8 +81,13 @@ export const coursesData = {
           },
           {
             name: 'Java Programming',
-            description: 'Complete Java programming course from basics to advanced concepts including GUI development and enterprise applications.',
-            topics: ['Java Fundamentals', 'OOP Concepts', 'Collections', 'Exception Handling', 'Swing/AWT', 'JDBC', 'Multithreading']
+            description: 'Complete Java programming course from basics to advanced concepts including GUI development and enterprise applications. Also covers C# and PHP basics for backend and desktop development.',
+            topics: ['Java Fundamentals', 'OOP Concepts', 'Collections', 'Exception Handling', 'Swing/AWT', 'JDBC', 'Multithreading', 'C# Basics', 'PHP Basics']
+          },
+          {
+            name: 'Web Programming Fundamentals',
+            description: 'Practical web programming course covering HTML, CSS, JavaScript, Bootstrap, and jQuery to build modern responsive websites.',
+            topics: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Responsive Design', 'Form Handling']
           }
         ]
       },
@@ -254,8 +259,13 @@ export const coursesData = {
           },
           {
             name: 'برمجة Java',
-            description: 'دورة كاملة في برمجة Java من الأساسيات إلى المفاهيم المتقدمة بما في ذلك تطوير واجهات المستخدم والتطبيقات المؤسسية.',
-            topics: ['أساسيات Java', 'مفاهيم OOP', 'Collections', 'معالجة الأخطاء', 'Swing/AWT', 'JDBC', 'Multithreading']
+            description: 'دورة كاملة في برمجة Java من الأساسيات إلى المفاهيم المتقدمة بما في ذلك تطوير واجهات المستخدم والتطبيقات المؤسسية، مع مقدمة في C# و PHP للتطوير الخلفي وسطح المكتب.',
+            topics: ['أساسيات Java', 'مفاهيم OOP', 'Collections', 'معالجة الأخطاء', 'Swing/AWT', 'JDBC', 'Multithreading', 'أساسيات C#', 'أساسيات PHP']
+          },
+          {
+            name: 'أساسيات برمجة الويب',
+            description: 'دورة عملية في برمجة الويب تغطي HTML و CSS و JavaScript و Bootstrap و jQuery لبناء مواقع ويب عصرية ومتجاوبة.',
+            topics: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'تصميم متجاوب', 'التعامل مع النماذج']
           }
         ]
       },
