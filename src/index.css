@@ -143,7 +143,7 @@ html {
   mask-repeat: no-repeat;
   mask-position: left center;
   mask-size: contain;
-  transform: scale(2.2) translateY(1px);
+  transform: scale(1.9) translateY(1px);
   transform-origin: left center;
   will-change: transform;
   pointer-events: none;
@@ -160,7 +160,7 @@ html {
   .signature-mark {
     height: 38px;
     width: 190px;
-    transform: scale(2.4) translateY(1px);
+    transform: scale(2.1) translateY(1px);
   }
 }
 
