@@ -124,17 +124,17 @@ const Courses = () => {
                   {/* Category Header */}
                   <button
                     onClick={() => setExpandedCategory(isExpanded ? null : categoryIndex)}
-                    className="w-full p-4 sm:p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
+                    className="w-full p-3 sm:p-4 lg:p-6 flex items-center justify-between hover:bg-white/5 transition-colors"
                   >
-                    <div className="flex items-center gap-4 flex-1">
-                      <div className={`p-3 sm:p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg`}>
-                        <Icon className="text-2xl sm:text-3xl text-white" />
+                    <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-1 min-w-0">
+                      <div className={`p-2 sm:p-3 lg:p-4 rounded-xl bg-gradient-to-br ${gradient} shadow-lg flex-shrink-0`}>
+                        <Icon className="text-lg sm:text-2xl lg:text-3xl text-white" />
                       </div>
-                      <div className="flex-1 flex items-center justify-between">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white">
+                      <div className="flex-1 flex items-center justify-between min-w-0">
+                        <h3 className="text-sm sm:text-xl lg:text-2xl font-bold text-white truncate">
                           {category.name}
                         </h3>
-                        <span className="text-purple-400 font-semibold text-base sm:text-lg ml-4">
+                        <span className="text-purple-400 font-semibold text-xs sm:text-base lg:text-lg ml-2 sm:ml-4 flex-shrink-0">
                           {category.courses.length} {language === 'en' ? 'courses' : 'كورسات'}
                         </span>
                       </div>
