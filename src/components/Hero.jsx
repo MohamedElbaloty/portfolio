@@ -67,12 +67,21 @@ const Hero = () => {
           {t.hero.title}
         </motion.h1>
 
-        <motion.p
+        <motion.div
           variants={itemVariants}
-          className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-0 sm:mb-0 lg:mb-1 max-w-4xl mx-auto leading-relaxed px-4"
+          className="mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full"
         >
-          {t.hero.description}
-        </motion.p>
+          <div className="marquee-container">
+            <div className="marquee-content">
+              <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 whitespace-nowrap">
+                {t.hero.description}
+              </span>
+              <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 whitespace-nowrap ml-8">
+                {t.hero.description}
+              </span>
+            </div>
+          </div>
+        </motion.div>
 
       </motion.div>
     </section>
