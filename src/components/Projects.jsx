@@ -101,6 +101,30 @@ const Projects = () => {
   
   const filteredProjects = getFilteredProjects()
 
+  // Mobile-only order tweak:
+  // Make the last row (2 cols) show: [2D&3D Animation, AI Video Production]
+  // and move Business Automation & Workflow to be the last card.
+  const getMobileOrderedProjects = (projects) => {
+    if (!isMobile) return projects
+
+    const isTargetProduction = (p) =>
+      p?.category === 'production' && (p?.id === 5 || p?.id === 6 || p?.id === 7)
+
+    const aiVideoIdx = projects.findIndex((p) => p?.category === 'production' && p?.id === 5)
+    if (aiVideoIdx === -1) return projects
+
+    const animation = projects.find((p) => p?.category === 'production' && p?.id === 7)
+    const aiVideo = projects.find((p) => p?.category === 'production' && p?.id === 5)
+    const automation = projects.find((p) => p?.category === 'production' && p?.id === 6)
+    if (!animation || !aiVideo || !automation) return projects
+
+    const before = projects.slice(0, aiVideoIdx).filter((p) => !isTargetProduction(p))
+    const after = projects.slice(aiVideoIdx).filter((p) => !isTargetProduction(p))
+    return [...before, animation, aiVideo, automation, ...after]
+  }
+
+  const displayProjects = getMobileOrderedProjects(filteredProjects)
+
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
       {/* Background Pattern */}
@@ -204,7 +228,7 @@ const Projects = () => {
           className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-3 gap-y-5 sm:gap-4 lg:gap-6"
         >
           <AnimatePresence>
-            {filteredProjects.map((project, index) => {
+            {displayProjects.map((project, index) => {
               // On mobile, show only first 4 projects unless showAllMobile is true
               if (isMobile && !showAllMobile && index >= 4) {
                 return null
