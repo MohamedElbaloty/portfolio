@@ -10,17 +10,62 @@ import {
   FaShieldAlt, 
   FaPalette,
   FaExternalLinkAlt,
-  FaPlay
+  FaPlay,
+  FaTools,
+  FaList
 } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
+import { projectsData } from '../data/projects'
 
 const Projects = () => {
   const { language } = useLanguage()
   const t = translations[language]
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedProject, setSelectedProject] = useState(null)
+  const [activeTab, setActiveTab] = useState('description') // description, tools, video
+
+  // Get projects based on language
+  const webProjects = projectsData[language] || projectsData.en
+  const otherProjects = [
+    {
+      id: 5,
+      title: language === 'en' ? 'Task Management App' : 'تطبيق إدارة المهام',
+      category: 'mobile',
+      description: t.projects.projectDescriptions.taskApp,
+      fullDescription: language === 'en' 
+        ? 'A comprehensive task management application for Android and iOS platforms. Features include task creation, categorization, priority settings, deadline reminders, team collaboration, file attachments, and progress tracking.'
+        : 'تطبيق شامل لإدارة المهام لمنصات Android و iOS. يتضمن إنشاء المهام، التصنيف، إعدادات الأولوية، تذكيرات المواعيد النهائية، التعاون الجماعي، مرفقات الملفات، وتتبع التقدم.',
+      tools: ['React Native', 'Firebase', 'Redux', 'Expo', 'Push Notifications'],
+      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_5',
+      tags: ['React Native', 'Firebase'],
+      gradient: 'from-purple-500 to-pink-500',
+      videoSteps: language === 'en' 
+        ? ['App Overview', 'Task Creation', 'Categories & Filters', 'Team Collaboration', 'Notifications']
+        : ['نظرة عامة على التطبيق', 'إنشاء المهام', 'الفئات والفلترة', 'التعاون الجماعي', 'الإشعارات']
+    },
+    {
+      id: 6,
+      title: language === 'en' ? 'Smart Weather App' : 'تطبيق الطقس الذكي',
+      category: 'mobile',
+      description: t.projects.projectDescriptions.weatherApp,
+      fullDescription: language === 'en'
+        ? 'A modern weather forecasting application with real-time updates, 7-day forecasts, weather maps, location-based services, and beautiful UI animations.'
+        : 'تطبيق تنبؤ بالطقس حديث مع تحديثات فورية، توقعات لـ 7 أيام، خرائط الطقس، خدمات قائمة على الموقع، وحركات واجهة جميلة.',
+      tools: ['Flutter', 'Dart', 'Weather API', 'Google Maps API', 'Location Services'],
+      image: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&h=600&fit=crop',
+      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_6',
+      tags: ['Flutter', 'API Integration'],
+      gradient: 'from-cyan-500 to-blue-500',
+      videoSteps: language === 'en'
+        ? ['Home Screen', 'Location Search', '7-Day Forecast', 'Weather Maps', 'Settings']
+        : ['الشاشة الرئيسية', 'بحث الموقع', 'توقعات 7 أيام', 'خرائط الطقس', 'الإعدادات']
+    }
+  ]
+
+  const allProjects = [...webProjects, ...otherProjects]
 
   const categories = [
     { id: 'all', name: t.projects.categories.all, icon: FaCode, color: 'from-indigo-500 to-purple-500' },
@@ -34,156 +79,9 @@ const Projects = () => {
     { id: 'design', name: t.projects.categories.design, icon: FaPalette, color: 'from-pink-500 to-rose-500' },
   ]
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Sahlat.sa',
-      category: 'web',
-      description: t.projects.projectDescriptions.sahlat,
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_1',
-      link: 'https://sahlat.sa',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      gradient: 'from-blue-500 to-cyan-500',
-    },
-    {
-      id: 2,
-      title: 'Miral Models',
-      category: 'web',
-      description: t.projects.projectDescriptions.miral,
-      image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_2',
-      link: 'https://miralmodels.com',
-      tags: ['Vue.js', 'PHP', 'MySQL'],
-      gradient: 'from-purple-500 to-pink-500',
-    },
-    {
-      id: 3,
-      title: 'Mr Robot Academy',
-      category: 'web',
-      description: t.projects.projectDescriptions.robot,
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_3',
-      link: 'https://mrrobotacademy.com',
-      tags: ['React', 'Express', 'PostgreSQL'],
-      gradient: 'from-indigo-500 to-purple-500',
-    },
-    {
-      id: 4,
-      title: 'Emaar Group',
-      category: 'web',
-      description: t.projects.projectDescriptions.emaar,
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_4',
-      link: 'https://emaargroup.com.kw',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      gradient: 'from-emerald-500 to-teal-500',
-    },
-    {
-      id: 5,
-      title: language === 'en' ? 'Task Management App' : 'تطبيق إدارة المهام',
-      category: 'mobile',
-      description: t.projects.projectDescriptions.taskApp,
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_5',
-      tags: ['React Native', 'Firebase'],
-      gradient: 'from-purple-500 to-pink-500',
-    },
-    {
-      id: 6,
-      title: language === 'en' ? 'Smart Weather App' : 'تطبيق الطقس الذكي',
-      category: 'mobile',
-      description: t.projects.projectDescriptions.weatherApp,
-      image: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_6',
-      tags: ['Flutter', 'API Integration'],
-      gradient: 'from-cyan-500 to-blue-500',
-    },
-    {
-      id: 7,
-      title: language === 'en' ? 'Smart Home System' : 'نظام منزل ذكي',
-      category: 'iot',
-      description: t.projects.projectDescriptions.smartHome,
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_7',
-      tags: ['Arduino', 'Raspberry Pi', 'Python'],
-      gradient: 'from-green-500 to-emerald-500',
-    },
-    {
-      id: 8,
-      title: language === 'en' ? 'Environmental Monitoring' : 'نظام مراقبة بيئية',
-      category: 'iot',
-      description: t.projects.projectDescriptions.monitoring,
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_8',
-      tags: ['Arduino', 'Sensors', 'IoT'],
-      gradient: 'from-teal-500 to-green-500',
-    },
-    {
-      id: 9,
-      title: language === 'en' ? 'Database Management System' : 'نظام إدارة قاعدة بيانات',
-      category: 'programming',
-      description: t.projects.projectDescriptions.database,
-      image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_9',
-      tags: ['Java', 'MySQL', 'Swing'],
-      gradient: 'from-orange-500 to-red-500',
-    },
-    {
-      id: 10,
-      title: language === 'en' ? 'AI Data Analysis' : 'تحليل البيانات بالذكاء الاصطناعي',
-      category: 'programming',
-      description: t.projects.projectDescriptions.aiAnalysis,
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_10',
-      tags: ['Python', 'Machine Learning', 'Pandas'],
-      gradient: 'from-red-500 to-pink-500',
-    },
-    {
-      id: 11,
-      title: language === 'en' ? 'Enterprise Network' : 'شبكة Enterprise متكاملة',
-      category: 'network',
-      description: t.projects.projectDescriptions.enterprise,
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_11',
-      tags: ['Cisco', 'Routing', 'Switching'],
-      gradient: 'from-cyan-500 to-blue-500',
-    },
-    {
-      id: 12,
-      title: language === 'en' ? 'Cloud Architecture' : 'بنية Cloud Architecture',
-      category: 'cloud',
-      description: t.projects.projectDescriptions.cloudArch,
-      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_12',
-      tags: ['AWS', 'Docker', 'Kubernetes'],
-      gradient: 'from-sky-500 to-blue-500',
-    },
-    {
-      id: 13,
-      title: language === 'en' ? 'Network Security System' : 'نظام حماية الشبكات',
-      category: 'security',
-      description: t.projects.projectDescriptions.networkSecurity,
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_13',
-      tags: ['Penetration Testing', 'Firewall', 'Encryption'],
-      gradient: 'from-red-500 to-orange-500',
-    },
-    {
-      id: 14,
-      title: language === 'en' ? 'Modern UI Design' : 'تصميم واجهة مستخدم حديثة',
-      category: 'design',
-      description: t.projects.projectDescriptions.uiDesign,
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_14',
-      tags: ['Figma', 'UI/UX', 'Prototyping'],
-      gradient: 'from-pink-500 to-rose-500',
-    },
-  ]
-
   const filteredProjects = selectedCategory === 'all' 
-    ? projects 
-    : projects.filter(p => p.category === selectedCategory)
+    ? allProjects 
+    : allProjects.filter(p => p.category === selectedCategory)
 
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 relative">
@@ -256,8 +154,13 @@ const Projects = () => {
         {selectedProject && (
           <ProjectModal
             project={selectedProject}
-            onClose={() => setSelectedProject(null)}
+            onClose={() => {
+              setSelectedProject(null)
+              setActiveTab('description')
+            }}
             t={t}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
           />
         )}
       </AnimatePresence>
@@ -298,7 +201,7 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2">
+            <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 flex-wrap">
               {project.video && (
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
@@ -332,7 +235,7 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
             {project.description}
           </p>
           <div className="flex flex-wrap gap-2">
-            {project.tags.map((tag, i) => (
+            {(project.tags || project.tools || []).slice(0, 3).map((tag, i) => (
               <span
                 key={i}
                 className="px-2 sm:px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs text-purple-300 border border-purple-500/30"
@@ -347,7 +250,7 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
   )
 }
 
-const ProjectModal = ({ project, onClose, t }) => {
+const ProjectModal = ({ project, onClose, t, activeTab, setActiveTab }) => {
   const [showVideo, setShowVideo] = useState(false)
 
   return (
@@ -355,7 +258,7 @@ const ProjectModal = ({ project, onClose, t }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
     >
       <motion.div
@@ -363,8 +266,9 @@ const ProjectModal = ({ project, onClose, t }) => {
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.8, opacity: 0, y: 50 }}
         onClick={(e) => e.stopPropagation()}
-        className="glass backdrop-blur-xl border border-white/20 rounded-3xl max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+        className="glass backdrop-blur-xl border border-white/20 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl my-8"
       >
+        {/* Header with Image/Video */}
         <div className="relative">
           {showVideo && project.video ? (
             <div className="relative w-full h-0 pb-[56.25%] bg-black">
@@ -409,19 +313,113 @@ const ProjectModal = ({ project, onClose, t }) => {
             ✕
           </button>
         </div>
+
+        {/* Content */}
         <div className="p-6 sm:p-8">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 gradient-text">{project.title}</h2>
-          <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg leading-relaxed">{project.description}</p>
-          <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
-            {project.tags.map((tag, i) => (
-              <span
-                key={i}
-                className="px-3 sm:px-4 py-1 sm:py-2 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 gradient-text">{project.title}</h2>
+          
+          {/* Tabs */}
+          <div className="flex flex-wrap gap-2 mb-6 border-b border-gray-700">
+            <button
+              onClick={() => setActiveTab('description')}
+              className={`px-4 py-2 rounded-t-lg transition-all ${
+                activeTab === 'description'
+                  ? 'bg-purple-500/20 text-purple-300 border-b-2 border-purple-500'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              {language === 'en' ? 'Description' : 'الوصف'}
+            </button>
+            {project.tools && (
+              <button
+                onClick={() => setActiveTab('tools')}
+                className={`px-4 py-2 rounded-t-lg transition-all flex items-center gap-2 ${
+                  activeTab === 'tools'
+                    ? 'bg-purple-500/20 text-purple-300 border-b-2 border-purple-500'
+                    : 'text-gray-400 hover:text-white'
+                }`}
               >
-                {tag}
-              </span>
-            ))}
+                <FaTools className="text-sm" />
+                {language === 'en' ? 'Tools & Technologies' : 'الأدوات والتقنيات'}
+              </button>
+            )}
+            {project.videoSteps && (
+              <button
+                onClick={() => setActiveTab('video')}
+                className={`px-4 py-2 rounded-t-lg transition-all flex items-center gap-2 ${
+                  activeTab === 'video'
+                    ? 'bg-purple-500/20 text-purple-300 border-b-2 border-purple-500'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                <FaList className="text-sm" />
+                {language === 'en' ? 'Video Steps' : 'خطوات الفيديو'}
+              </button>
+            )}
           </div>
+
+          {/* Tab Content */}
+          <div className="mb-6">
+            {activeTab === 'description' && (
+              <div>
+                <p className="text-gray-300 mb-4 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  {project.fullDescription || project.description}
+                </p>
+              </div>
+            )}
+
+            {activeTab === 'tools' && project.tools && (
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  {language === 'en' ? 'Technologies Used' : 'التقنيات المستخدمة'}
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {project.tools.map((tool, i) => (
+                    <span
+                      key={i}
+                      className="px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm rounded-full text-sm text-purple-300 border border-purple-500/30"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'video' && project.videoSteps && (
+              <div>
+                <h3 className="text-xl font-bold mb-4 text-white">
+                  {language === 'en' ? 'Video Walkthrough Steps' : 'خطوات شرح الفيديو'}
+                </h3>
+                <div className="space-y-3">
+                  {project.videoSteps.map((step, i) => (
+                    <div key={i} className="flex items-start gap-3 glass p-4 rounded-lg">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <p className="text-gray-300 text-sm sm:text-base flex-1">{step}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Tags */}
+          {(project.tags || project.tools) && (
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+              {(project.tags || project.tools || []).map((tag, i) => (
+                <span
+                  key={i}
+                  className="px-3 sm:px-4 py-1 sm:py-2 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {/* Action Buttons */}
           <div className="flex flex-wrap gap-4">
             {project.link && (
               <motion.a
