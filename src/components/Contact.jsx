@@ -71,35 +71,6 @@ const Contact = () => {
             </motion.a>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-10 sm:mt-12 text-center"
-        >
-          <div className="glass rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto border border-white/10">
-            <h3 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">{t.contact.services.title}</h3>
-            <div className={`grid sm:grid-cols-2 gap-3 sm:gap-4 ${language === 'ar' ? 'text-right' : 'text-left'}`}>
-              <div className="space-y-2">
-                {t.contact.services.list.slice(0, 4).map((service, index) => (
-                  <p key={index} className="text-gray-300 text-sm sm:text-base">✓ {service}</p>
-                ))}
-              </div>
-              <div className="space-y-2">
-                {t.contact.services.list.slice(4).map((service, index) => (
-                  <p key={index} className="text-gray-300 text-sm sm:text-base">✓ {service}</p>
-                ))}
-              </div>
-            </div>
-            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-700">
-              <p className="text-gray-400 text-sm sm:text-base">
-                {t.contact.teachingNote}
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )
