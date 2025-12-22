@@ -64,7 +64,15 @@ const Contact = () => {
                 transition={{ duration: 0.5 }}
                 className="inline-block mb-2 sm:mb-4"
               >
-                <item.icon className="text-2xl sm:text-4xl lg:text-5xl text-white" />
+                <item.icon
+                  className={`text-2xl sm:text-4xl lg:text-5xl ${
+                    item.label === t.contact.whatsapp
+                      ? 'text-[#25D366]'
+                      : item.label === t.contact.email
+                        ? 'text-[#0078D4]'
+                        : 'text-white'
+                  }`}
+                />
               </motion.div>
               <h3 className="text-xs sm:text-lg lg:text-xl font-bold mb-1 sm:mb-2">{item.label}</h3>
               <p className="text-gray-300 text-[10px] sm:text-sm lg:text-base break-all leading-tight sm:leading-normal">{item.value}</p>
