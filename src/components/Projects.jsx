@@ -302,29 +302,17 @@ const ProjectCard = ({ project, index, onSelect, t }) => {
         {/* Image Container */}
         <div className="relative h-48 sm:h-56 lg:h-64 overflow-hidden">
           <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`}></div>
-          {project.imageLayout === 'framed' ? (
-            <>
-              {/* Blurred cover background */}
+          {project.imageFit === 'contain' ? (
+            <div className="absolute inset-0 p-5 sm:p-6">
               <img
                 src={project.image}
                 alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover scale-110 blur-sm opacity-75"
+                className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
                 }}
               />
-              {/* Foreground image zoomed-out (contain) so badge doesn't cover key subject */}
-              <div className="absolute inset-0 p-4 sm:p-5">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
-                  }}
-                />
-              </div>
-            </>
+            </div>
           ) : (
             <img
               src={project.image}
