@@ -12,7 +12,8 @@ import {
   FaExternalLinkAlt,
   FaPlay,
   FaTools,
-  FaList
+  FaList,
+  FaBriefcase
 } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -106,6 +107,31 @@ const Projects = () => {
           <p className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto px-4">
             {t.projects.subtitle}
           </p>
+        </motion.div>
+
+        {/* Projects Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0 }}
+          className="relative group max-w-4xl mx-auto mb-8 sm:mb-12"
+        >
+          <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
+          <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
+            <div className="p-6 sm:p-10 text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 mb-4 sm:mb-6 shadow-lg">
+                <FaBriefcase className="text-3xl sm:text-4xl text-white" />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 gradient-text">{t.projects.title}</h3>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4 mb-2">
+                {t.projects.subtitle}
+              </p>
+              <p className="text-purple-400 text-sm sm:text-base font-semibold">
+                {t.projects.cardDescription}
+              </p>
+            </div>
+          </div>
         </motion.div>
 
         {/* Production vs Academic Tabs */}

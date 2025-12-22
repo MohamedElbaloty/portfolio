@@ -73,6 +73,7 @@ export const ar = {
   projects: {
     title: 'مشاريعي',
     subtitle: 'مجموعة من أفضل أعمالي ومشاريعي الاحترافية',
+    cardDescription: 'للشركات أو لطلاب علوم الحاسب',
     productionProjects: 'مشاريع تجارية',
     academicProjects: 'مشاريع أكاديمية',
     categories: {
