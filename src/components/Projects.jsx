@@ -110,11 +110,8 @@ const Projects = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500 mb-4 sm:mb-6 shadow-lg">
                 <FaBriefcase className="text-3xl sm:text-4xl text-white" />
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3 gradient-text">{t.projects.title}</h3>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4 mb-2">
-                {t.projects.subtitle}
-              </p>
-              <p className="text-purple-400 text-sm sm:text-base font-semibold">
+              <p className="text-purple-400 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{t.projects.subtitle}</p>
+              <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4">
                 {t.projects.cardDescription}
               </p>
             </div>
