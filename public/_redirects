@@ -1,0 +1,3 @@
+# Redirect avatar.jfif to HTML viewer when opened directly
+/avatar.jfif /avatar-viewer.html 200
+

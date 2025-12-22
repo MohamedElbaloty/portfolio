@@ -14,7 +14,7 @@ const Avatar = ({ src, alt = 'Profile', size = 'small' }) => {
   return (
     <motion.div
       whileHover={{ scale: 1.1 }}
-      className={`${sizeClasses[size]} relative rounded-full overflow-hidden`}
+      className={`${sizeClasses[size]} relative rounded-full overflow-hidden flex-shrink-0`}
     >
       {/* Gradient Border */}
       <div className={`absolute inset-0 rounded-full p-[2px] ${
@@ -22,13 +22,21 @@ const Avatar = ({ src, alt = 'Profile', size = 'small' }) => {
           ? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500' 
           : 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600'
       }`}>
-        <div className={`w-full h-full rounded-full ${
+        <div className={`w-full h-full rounded-full overflow-hidden ${
           theme === 'dark' ? 'bg-[#0a0a0a]' : 'bg-white'
         }`}>
           <img
             src={src || '/avatar.jfif'}
             alt={alt}
-            className="w-full h-full object-cover rounded-full"
+            className="w-full h-full object-cover rounded-full max-w-full max-h-full"
+            style={{ 
+              maxWidth: '100%', 
+              maxHeight: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              pointerEvents: 'none'
+            }}
+            loading="lazy"
             onError={(e) => {
               // Fallback to gradient circle if image not found
               e.target.style.display = 'none'
