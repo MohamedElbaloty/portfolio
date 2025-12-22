@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { 
   FaCode, 
@@ -24,6 +24,17 @@ const Courses = () => {
   const t = translations[language]
   const data = coursesData[language] || coursesData.en
   const [expandedCategory, setExpandedCategory] = useState(null)
+  const [showAllCourses, setShowAllCourses] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const categoryIcons = {
     'Web & Mobile Development': FaLaptopCode,
@@ -101,6 +112,9 @@ const Courses = () => {
             </div>
           </motion.div>
           {data.categories.map((category, categoryIndex) => {
+            if (isMobile && !showAllCourses && categoryIndex >= 5) {
+              return null
+            }
             const Icon = categoryIcons[category.name] || FaCode
             const gradient = categoryGradients[category.name] || 'from-purple-500 to-pink-500'
             const isExpanded = expandedCategory === categoryIndex
@@ -192,6 +206,25 @@ const Courses = () => {
                         </motion.div>
                       ))}
                     </div>
+
+      {/* More button for courses - Mobile only */}
+      {data.categories.length > 5 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-6 sm:hidden"
+        >
+          <motion.button
+            onClick={() => setShowAllCourses(!showAllCourses)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all"
+          >
+            {showAllCourses ? t.projects.showLess : t.projects.more}
+          </motion.button>
+        </motion.div>
+      )}
                   </motion.div>
                 </div>
               </motion.div>

@@ -45,7 +45,7 @@ const Navbar = () => {
             alt={language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
             size="small"
           />
-          <span className="text-xl sm:text-2xl font-bold gradient-text">
+          <span className="text-xl sm:text-2xl font-bold gradient-text signature-text">
             {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}
           </span>
         </motion.div>
