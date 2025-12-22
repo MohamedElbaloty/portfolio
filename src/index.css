@@ -229,12 +229,19 @@ html {
   overflow: hidden;
   width: 100%;
   position: relative;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .marquee-content {
   display: inline-flex;
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
   white-space: nowrap;
+  align-items: center;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marquee {
@@ -247,7 +254,7 @@ html {
 }
 
 [dir="rtl"] .marquee-content {
-  animation: marquee-rtl 30s linear infinite;
+  animation: marquee-rtl 40s linear infinite;
 }
 
 @keyframes marquee-rtl {
@@ -257,4 +264,36 @@ html {
   100% {
     transform: translateX(50%);
   }
+}
+
+/* Gradient fade effect on marquee edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.dark .marquee-container::before {
+  background: linear-gradient(to right, #0a0a0a, transparent);
+  left: 0;
+}
+
+.dark .marquee-container::after {
+  background: linear-gradient(to left, #0a0a0a, transparent);
+  right: 0;
+}
+
+.light .marquee-container::before {
+  background: linear-gradient(to right, rgba(248, 249, 250, 0.7), transparent);
+  left: 0;
+}
+
+.light .marquee-container::after {
+  background: linear-gradient(to left, rgba(248, 249, 250, 0.7), transparent);
+  right: 0;
 }

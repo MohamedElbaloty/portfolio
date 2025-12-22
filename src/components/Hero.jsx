@@ -69,14 +69,14 @@ const Hero = () => {
 
         <motion.div
           variants={itemVariants}
-          className="mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full"
+          className="mb-0 sm:mb-0 lg:mb-1 overflow-hidden w-full mt-4 sm:mt-6"
         >
-          <div className="marquee-container">
+          <div className="marquee-container glass rounded-full py-3 sm:py-4 px-4 backdrop-blur-xl border border-white/10">
             <div className="marquee-content">
-              <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 whitespace-nowrap">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 whitespace-nowrap font-medium">
                 {t.hero.description}
               </span>
-              <span className="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-300 whitespace-nowrap ml-8">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 whitespace-nowrap ml-8 font-medium">
                 {t.hero.description}
               </span>
             </div>
