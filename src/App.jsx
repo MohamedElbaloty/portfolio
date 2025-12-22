@@ -4,12 +4,12 @@ import About from './components/About'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Navbar from './components/Navbar'
-import FloatingParticles from './components/FloatingParticles'
+import AnimatedBackground from './components/AnimatedBackground'
 
 function App() {
   return (
     <div className="relative min-h-screen">
-      <FloatingParticles />
+      <AnimatedBackground />
       <Navbar />
       <Hero />
       <About />
