@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="flex items-center gap-2 sm:gap-3"
+          className="flex items-center gap-2 sm:gap-3 min-w-0"
         >
           <Avatar 
             src="/avatar.jfif" 
@@ -47,7 +47,9 @@ const Navbar = () => {
             size="small"
           />
           {language === 'en' ? (
-            <Signature className="flex-shrink-0" />
+            <span className="relative overflow-visible flex-shrink-0 w-[170px] sm:w-[190px]">
+              <Signature />
+            </span>
           ) : (
             <span className="text-xl sm:text-2xl font-bold gradient-text">
               {language === 'en' ? 'Mohamed Ezzat' : 'محمد عزت'}

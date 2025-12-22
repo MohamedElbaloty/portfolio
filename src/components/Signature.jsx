@@ -33,6 +33,12 @@ const Signature = ({ className = '' }) => {
 
       // Build alpha mask from luminance: white bg -> alpha 0, dark ink -> alpha 255
       // Keep anti-aliasing by mapping near-white pixels to low alpha.
+      let minX = canvas.width
+      let minY = canvas.height
+      let maxX = 0
+      let maxY = 0
+      const alphaThreshold = 12
+
       for (let i = 0; i < data.length; i += 4) {
         const r = data[i]
         const g = data[i + 1]
@@ -60,9 +66,41 @@ const Signature = ({ className = '' }) => {
         data[i + 1] = 255
         data[i + 2] = 255
         data[i + 3] = alpha
+
+        // Track bounds of visible ink for cropping
+        if (alpha > alphaThreshold) {
+          const px = (i / 4) % canvas.width
+          const py = Math.floor(i / 4 / canvas.width)
+          if (px < minX) minX = px
+          if (py < minY) minY = py
+          if (px > maxX) maxX = px
+          if (py > maxY) maxY = py
+        }
       }
 
       ctx.putImageData(imageData, 0, 0)
+
+      // Crop around ink to remove empty margins (lets us scale visually without pushing layout)
+      const pad = 10
+      const hasInk = minX <= maxX && minY <= maxY
+      if (hasInk) {
+        const cropX = Math.max(0, minX - pad)
+        const cropY = Math.max(0, minY - pad)
+        const cropW = Math.min(canvas.width - cropX, (maxX - minX + 1) + pad * 2)
+        const cropH = Math.min(canvas.height - cropY, (maxY - minY + 1) + pad * 2)
+
+        const cropped = document.createElement('canvas')
+        cropped.width = cropW
+        cropped.height = cropH
+        const cctx = cropped.getContext('2d')
+        if (cctx) {
+          cctx.putImageData(ctx.getImageData(cropX, cropY, cropW, cropH), 0, 0)
+          const url = cropped.toDataURL('image/png')
+          if (!cancelled) setMaskUrl(url)
+          return
+        }
+      }
+
       const url = canvas.toDataURL('image/png')
       if (!cancelled) setMaskUrl(url)
     }

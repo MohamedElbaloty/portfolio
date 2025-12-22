@@ -132,8 +132,10 @@ html {
 /* Signature (colored via gradient + runtime alpha mask) */
 .signature-mark {
   display: inline-block;
-  height: 56px;          /* bigger by default */
-  width: 300px;
+  /* Keep a small layout footprint so navbar items don't shift,
+     then scale visually to make the signature "very big". */
+  height: 34px;
+  width: 170px;
   background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: left center;
@@ -141,6 +143,10 @@ html {
   mask-repeat: no-repeat;
   mask-position: left center;
   mask-size: contain;
+  transform: scale(2.2) translateY(1px);
+  transform-origin: left center;
+  will-change: transform;
+  pointer-events: none;
   filter:
     drop-shadow(0 0 10px rgba(139, 92, 246, 0.35))
     drop-shadow(0 0 2px rgba(236, 72, 153, 0.25));
@@ -152,8 +158,9 @@ html {
 
 @media (min-width: 640px) {
   .signature-mark {
-    height: 68px;
-    width: 360px;
+    height: 38px;
+    width: 190px;
+    transform: scale(2.4) translateY(1px);
   }
 }
 
