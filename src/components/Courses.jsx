@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
   FaCode, 
@@ -25,6 +25,14 @@ const Courses = () => {
   const data = coursesData[language] || coursesData.en
   const [expandedCategory, setExpandedCategory] = useState(null)
   const [showAllCourses, setShowAllCourses] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 640)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const categoryIcons = {
     'Web & Mobile Development': FaLaptopCode,
@@ -102,9 +110,8 @@ const Courses = () => {
             </div>
           </motion.div>
           {data.categories.map((category, categoryIndex) => {
-            if (!showAllCourses && categoryIndex >= 5) {
-              return null
-            }
+            // Only limit cards on mobile (up to Databases), the rest is shown via "More"
+            if (isMobile && !showAllCourses && categoryIndex >= 5) return null
             const Icon = categoryIcons[category.name] || FaCode
             const gradient = categoryGradients[category.name] || 'from-purple-500 to-pink-500'
             const isExpanded = expandedCategory === categoryIndex
@@ -196,31 +203,31 @@ const Courses = () => {
                         </motion.div>
                       ))}
                     </div>
-
-      {/* More button for courses */}
-      {data.categories.length > 5 && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex justify-center mt-6"
-        >
-          <motion.button
-            onClick={() => setShowAllCourses(!showAllCourses)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all"
-          >
-            {showAllCourses ? t.projects.showLess : t.projects.more}
-          </motion.button>
-        </motion.div>
-      )}
                   </motion.div>
                 </div>
               </motion.div>
             )
           })}
         </div>
+
+        {/* More / Show Less button - Mobile only (appears right under Databases as it's the last visible card) */}
+        {isMobile && data.categories.length > 5 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex justify-center mt-6"
+          >
+            <motion.button
+              onClick={() => setShowAllCourses(!showAllCourses)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-full font-semibold text-sm bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg hover:shadow-xl transition-all"
+            >
+              {showAllCourses ? t.projects.showLess : t.projects.more}
+            </motion.button>
+          </motion.div>
+        )}
       </div>
     </section>
   )
