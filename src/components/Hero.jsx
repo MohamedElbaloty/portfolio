@@ -50,6 +50,13 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-4 sm:px-6 text-center relative z-10"
       >
+        <motion.h1
+          variants={itemVariants}
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-2 sm:mb-3 lg:mb-4 gradient-text leading-tight px-4"
+        >
+          {t.hero.title}
+        </motion.h1>
+
         <motion.div variants={itemVariants} className="mb-1 sm:mb-2 lg:mb-3">
           <motion.span
             className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 glass rounded-full text-xs sm:text-sm mb-1 sm:mb-2 backdrop-blur-xl border border-white/10"
@@ -59,13 +66,6 @@ const Hero = () => {
             {t.hero.subtitle}
           </motion.span>
         </motion.div>
-
-        <motion.h1
-          variants={itemVariants}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-0 sm:mb-1 lg:mb-1 gradient-text leading-tight px-4"
-        >
-          {t.hero.title}
-        </motion.h1>
 
         <motion.div
           variants={itemVariants}
