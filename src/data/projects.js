@@ -97,6 +97,18 @@ export const projectsData = {
         'Testing & Optimization: Ensuring reliability and efficiency',
         'Deployment & Monitoring: Launching and maintaining automation systems'
       ]
+    },
+    {
+      id: 7,
+      title: '2D&3D Animation',
+      category: 'production',
+      description: 'Creating professional 2D & 3D animations for brands, products, and marketing campaigns.',
+      fullDescription: 'I create high-quality 2D and 3D animations for companies to enhance branding and marketing. This includes logo animations, explainer videos, product showcases, motion graphics, and social media animations. The workflow covers concept and storyboard, design, animation, lighting/rendering (for 3D), sound/voiceover coordination, and final delivery in multiple formats.',
+      tools: ['After Effects', 'Blender', 'Cinema 4D', 'Illustrator', 'Premiere Pro', 'Motion Graphics', '3D Lighting', 'Rendering'],
+      image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&h=600&q=80',
+      video: null,
+      link: null,
+      gradient: 'from-fuchsia-500 to-violet-500'
     }
   ],
   ar: [
@@ -195,6 +207,18 @@ export const projectsData = {
         'الاختبار والتحسين: ضمان الموثوقية والكفاءة',
         'النشر والمراقبة: إطلاق وصيانة أنظمة الأتمتة'
       ]
+    },
+    {
+      id: 7,
+      title: 'رسوم متحركة 2D & 3D',
+      category: 'production',
+      description: 'إنشاء رسوم متحركة احترافية ثنائية وثلاثية الأبعاد للعلامات التجارية والمنتجات والحملات التسويقية.',
+      fullDescription: 'أقدّم خدمات إنتاج رسوم متحركة 2D و3D للشركات لتعزيز الهوية البصرية والتسويق. تشمل: أنيميشن الشعار، فيديوهات شرح، عروض المنتجات، موشن جرافيك، ورسوم منصات التواصل. العمل يشمل الفكرة والستوري بورد، التصميم، التحريك، الإضاءة والرندر (للـ 3D)، وتجهيز النسخ النهائية بصيغ متعددة.',
+      tools: ['After Effects', 'Blender', 'Cinema 4D', 'Illustrator', 'Premiere Pro', 'Motion Graphics', '3D Lighting', 'Rendering'],
+      image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&h=600&q=80',
+      video: null,
+      link: null,
+      gradient: 'from-fuchsia-500 to-violet-500'
     }
   ]
 }
