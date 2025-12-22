@@ -53,33 +53,30 @@ const Courses = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       
       <div className="container mx-auto relative z-10">
-        {/* Teaching Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto mb-12 sm:mb-16"
-        >
-          <motion.div
-            whileHover={{ scale: 1.02, y: -5 }}
-            className="relative group"
-          >
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
-            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 text-center hover:border-purple-500/50 transition-all">
-              <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 sm:mb-6 shadow-lg">
-                <FaGraduationCap className="text-3xl sm:text-4xl text-white" />
-              </div>
-              <p className="text-purple-400 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{t.about.teaching.subtitle}</p>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 gradient-text">{t.about.teaching.title}</h3>
-              <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4">
-                {t.about.teaching.description}
-              </p>
-            </div>
-          </motion.div>
-        </motion.div>
-
         {/* Courses Categories */}
         <div className="max-w-6xl mx-auto space-y-6">
+          {/* Teaching Section - First Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0 }}
+            className="relative group"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity"></div>
+            <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
+              <div className="p-6 sm:p-10 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mb-4 sm:mb-6 shadow-lg">
+                  <FaGraduationCap className="text-3xl sm:text-4xl text-white" />
+                </div>
+                <p className="text-purple-400 text-2xl sm:text-3xl lg:text-4xl font-bold mb-2">{t.about.teaching.subtitle}</p>
+                <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 gradient-text">{t.about.teaching.title}</h3>
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed px-4">
+                  {t.about.teaching.description}
+                </p>
+              </div>
+            </div>
+          </motion.div>
           {data.categories.map((category, categoryIndex) => {
             const Icon = categoryIcons[category.name] || FaCode
             const gradient = categoryGradients[category.name] || 'from-purple-500 to-pink-500'
