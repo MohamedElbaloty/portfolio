@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FaLaptopCode, FaMobileAlt, FaMicrochip, FaCode, FaNetworkWired, FaCloud, FaShieldAlt, FaPalette, FaVideo, FaRobot } from 'react-icons/fa'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
+import MobileRobotLetterAnim from './MobileRobotLetterAnim'
 
 const Hero = () => {
   const { language } = useLanguage()
@@ -51,6 +52,9 @@ const Hero = () => {
         animate="visible"
         className="container mx-auto px-4 sm:px-6 text-center relative z-10 -mt-8 sm:mt-0"
       >
+        {/* Mobile-only experiment: 3D robot collects & rebuilds the name letters (EN only) */}
+        {language === 'en' && <MobileRobotLetterAnim text={t.hero.title} />}
+
         <motion.h1
           variants={itemVariants}
           className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-2 sm:mb-3 lg:mb-4 gradient-text leading-tight px-4"
