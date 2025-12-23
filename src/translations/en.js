@@ -81,7 +81,7 @@ export const en = {
     title: 'My Projects',
     subtitle: 'My Projects',
     cardDescription: 'For companies or students studying CS, Engineering, AI, or Cyber Security',
-    productionProjects: 'Business Projects',
+    productionProjects: 'Corporate Projects',
     academicProjects: 'Academic Projects',
     more: 'More',
     showLess: 'Show Less',

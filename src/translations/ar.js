@@ -81,7 +81,7 @@ export const ar = {
     title: 'مشاريعي',
     subtitle: 'مشاريعي',
     cardDescription: 'للشركات أو للطلاب الذين يدرسون علوم الحاسب، الهندسة، الذكاء الاصطناعي، أو الأمن السيبراني',
-    productionProjects: 'مشاريع تجارية',
+    productionProjects: 'مشاريع مؤسسية',
     academicProjects: 'مشاريع أكاديمية',
     more: 'المزيد',
     showLess: 'عرض أقل',
