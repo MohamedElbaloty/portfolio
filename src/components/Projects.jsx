@@ -426,7 +426,6 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile, language }) => {
               ))}
             </div>
           </div>
-          </div>
         </div>
       </motion.div>
     )
