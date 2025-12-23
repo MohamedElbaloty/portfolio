@@ -422,14 +422,15 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile, language }) => {
                 }`}
               >
                 {tag}
-              </span>
-            ))}
+                </span>
+              ))}
+            </div>
+          </div>
           </div>
         </div>
-      </div>
-    </motion.div>
-  )
-}
+      </motion.div>
+    )
+  }
 
 const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }) => {
   const [showVideo, setShowVideo] = useState(false)
@@ -739,7 +740,8 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
   const [showVideo, setShowVideo] = useState(false)
 
   if (selectedSubProject) {
-    const currentVideo = selectedSubProject.videos[selectedVideoIndex]
+    const hasVideos = selectedSubProject.videos && selectedSubProject.videos.length > 0
+    const currentVideo = hasVideos ? selectedSubProject.videos[selectedVideoIndex] : null
     return (
       <motion.div
         initial={{ opacity: 0 }}
@@ -774,7 +776,25 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
             </button>
           </div>
 
+          {/* Workflow Image */}
+          {selectedSubProject.image && (
+            <div className="p-4 sm:p-6 pb-0">
+              <div className="relative w-full h-64 sm:h-80 rounded-xl overflow-hidden mb-6">
+                <img
+                  src={selectedSubProject.image}
+                  alt={selectedSubProject.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              </div>
+            </div>
+          )}
+
           {/* Video Player */}
+          {hasVideos && (
           <div className="p-4 sm:p-6">
             <div className="relative w-full h-0 pb-[56.25%] bg-black rounded-xl overflow-hidden mb-6">
               {showVideo && currentVideo ? (
@@ -823,8 +843,11 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
                 </div>
               </div>
             )}
+          </div>
+          )}
 
-            {/* Description */}
+          {/* Description */}
+          <div className="p-4 sm:p-6">
             <div className="mb-6">
               <h3 className="text-lg font-semibold text-white mb-3">
                 {language === 'en' ? 'Description' : 'الوصف'}
@@ -848,6 +871,27 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
                     >
                       {tool}
                     </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Benefits */}
+            {selectedSubProject.benefits && selectedSubProject.benefits.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                  <span className="text-2xl">✨</span>
+                  {language === 'en' ? 'Benefits for Your Company' : 'الفوائد لشركتك'}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {selectedSubProject.benefits.map((benefit, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 p-3 bg-gradient-to-r from-green-500/10 to-emerald-500/10 backdrop-blur-sm rounded-lg border border-green-500/20"
+                    >
+                      <span className="text-green-400 text-lg mt-0.5">✓</span>
+                      <p className="text-gray-300 text-sm leading-relaxed">{benefit}</p>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -903,16 +947,28 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
               >
                 <div className={`absolute -inset-1 bg-gradient-to-r ${subProject.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
                 <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
-                  {/* Header with gradient */}
+                  {/* Header with image or gradient */}
                   <div className={`h-32 bg-gradient-to-br ${subProject.gradient} relative overflow-hidden`}>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <FaPlay className="text-white text-4xl sm:text-5xl opacity-50" />
-                    </div>
+                    {subProject.image ? (
+                      <>
+                        <img
+                          src={subProject.image}
+                          alt={subProject.title}
+                          className="w-full h-full object-cover opacity-80"
+                          onError={(e) => {
+                            e.target.style.display = 'none'
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                      </>
+                    ) : null}
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center gap-2">
-                        <span className="bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs sm:text-sm font-medium">
-                          {subProject.videos?.length || 0} {language === 'en' ? 'Videos' : 'فيديو'}
-                        </span>
+                        {subProject.videos && subProject.videos.length > 0 && (
+                          <span className="bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs sm:text-sm font-medium">
+                            {subProject.videos.length} {language === 'en' ? 'Videos' : 'فيديو'}
+                          </span>
+                        )}
                       </div>
                     </div>
                   </div>

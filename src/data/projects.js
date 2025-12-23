@@ -118,65 +118,90 @@ export const projectsData = {
           title: 'CRM Automation Workflow',
           description: 'Automated CRM workflows for lead management, customer follow-ups, and data synchronization.',
           fullDescription: 'Custom CRM automation workflows that streamline lead management, automate customer follow-ups, sync data between CRM systems, and trigger actions based on customer behavior. These workflows help businesses maintain consistent communication, reduce manual data entry, and improve customer relationship management efficiency.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['n8n', 'Zapier', 'API Integration', 'Webhooks', 'CRM APIs', 'Database Automation'],
-          videos: [
-            '/businessautomation/crm-workflow-1.mp4',
-            '/businessautomation/crm-workflow-2.mp4',
-            '/businessautomation/crm-workflow-3.mp4'
-          ],
-          gradient: 'from-blue-500 to-cyan-500'
+          videos: [],
+          gradient: 'from-blue-500 to-cyan-500',
+          benefits: [
+            'Reduce manual data entry by up to 80%',
+            'Improve lead response time from hours to seconds',
+            'Ensure consistent customer follow-ups automatically',
+            'Sync data across multiple CRM systems in real-time',
+            'Increase sales team productivity by 40%',
+            'Reduce human errors in customer data management'
+          ]
         },
         {
           id: 'email-marketing',
           title: 'Email Marketing Automation',
           description: 'Automated email campaigns, segmentation, and personalized marketing workflows.',
           fullDescription: 'Automated email marketing workflows that handle campaign management, customer segmentation, personalized content delivery, and automated follow-ups. These workflows integrate with email platforms, CRM systems, and analytics tools to create seamless marketing automation pipelines.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['Make (Integromat)', 'Zapier', 'Email APIs', 'Marketing Automation', 'Data Segmentation', 'Analytics Integration'],
-          videos: [
-            '/businessautomation/email-marketing-1.mp4',
-            '/businessautomation/email-marketing-2.mp4',
-            '/businessautomation/email-marketing-3.mp4'
-          ],
-          gradient: 'from-purple-500 to-pink-500'
+          videos: [],
+          gradient: 'from-purple-500 to-pink-500',
+          benefits: [
+            'Send personalized emails to thousands of customers automatically',
+            'Increase email open rates by 30-50% through segmentation',
+            'Save 15+ hours per week on campaign management',
+            'Automatically trigger follow-up emails based on customer behavior',
+            'Track and analyze campaign performance in real-time',
+            'Reduce email marketing costs by 60%'
+          ]
         },
         {
           id: 'data-sync',
           title: 'Data Synchronization Workflows',
           description: 'Automated data synchronization between multiple systems and platforms.',
           fullDescription: 'Workflows that automatically synchronize data between different systems, databases, and platforms. These solutions ensure data consistency across systems, handle real-time updates, manage data transformations, and maintain data integrity across multiple platforms.',
+          image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['n8n', 'Python', 'Node.js', 'Database Automation', 'API Integration', 'Data Transformation', 'ETL Processes'],
-          videos: [
-            '/businessautomation/data-sync-1.mp4',
-            '/businessautomation/data-sync-2.mp4',
-            '/businessautomation/data-sync-3.mp4'
-          ],
-          gradient: 'from-green-500 to-emerald-500'
+          videos: [],
+          gradient: 'from-green-500 to-emerald-500',
+          benefits: [
+            'Eliminate duplicate data entry across systems',
+            'Ensure data consistency across all platforms in real-time',
+            'Reduce data errors by 90% through automated validation',
+            'Save 20+ hours per week on manual data synchronization',
+            'Improve decision-making with up-to-date data',
+            'Reduce IT support tickets related to data issues by 70%'
+          ]
         },
         {
           id: 'automated-reporting',
           title: 'Automated Reporting & Analytics',
           description: 'Automated report generation, data aggregation, and analytics workflows.',
           fullDescription: 'Automated reporting workflows that collect data from multiple sources, aggregate information, generate reports, and distribute them to stakeholders. These workflows handle scheduled reporting, real-time analytics, data visualization, and automated insights delivery.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['Python', 'Node.js', 'Cloud Functions', 'Data Aggregation', 'Report Generation', 'Analytics APIs', 'Scheduled Tasks'],
-          videos: [
-            '/businessautomation/reporting-1.mp4',
-            '/businessautomation/reporting-2.mp4',
-            '/businessautomation/reporting-3.mp4'
-          ],
-          gradient: 'from-orange-500 to-red-500'
+          videos: [],
+          gradient: 'from-orange-500 to-red-500',
+          benefits: [
+            'Generate reports automatically without manual work',
+            'Deliver reports to stakeholders on schedule',
+            'Save 10+ hours per week on report creation',
+            'Access real-time analytics and insights instantly',
+            'Make data-driven decisions faster',
+            'Reduce reporting errors by 95%'
+          ]
         },
         {
           id: 'social-media',
           title: 'Social Media Management Automation',
           description: 'Automated social media posting, content scheduling, and engagement workflows.',
           fullDescription: 'Automated social media management workflows that handle content scheduling, cross-platform posting, engagement tracking, and analytics. These workflows integrate with multiple social media platforms, content management systems, and analytics tools to streamline social media operations.',
+          image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['Zapier', 'Make (Integromat)', 'Social Media APIs', 'Content Scheduling', 'Analytics Integration', 'Multi-platform Management'],
-          videos: [
-            '/businessautomation/social-media-1.mp4',
-            '/businessautomation/social-media-2.mp4',
-            '/businessautomation/social-media-3.mp4'
-          ],
-          gradient: 'from-indigo-500 to-purple-500'
+          videos: [],
+          gradient: 'from-indigo-500 to-purple-500',
+          benefits: [
+            'Post to multiple platforms simultaneously',
+            'Schedule content weeks in advance automatically',
+            'Save 12+ hours per week on social media management',
+            'Increase engagement through optimal posting times',
+            'Track performance across all platforms in one place',
+            'Respond to mentions and messages automatically'
+          ]
         }
       ],
       videoSteps: [
@@ -383,65 +408,90 @@ export const projectsData = {
           title: 'أتمتة سير عمل CRM',
           description: 'سير عمل أتمتة CRM لإدارة العملاء المحتملين، متابعة العملاء، ومزامنة البيانات.',
           fullDescription: 'سير عمل أتمتة CRM مخصصة لتبسيط إدارة العملاء المحتملين، أتمتة متابعة العملاء، مزامنة البيانات بين أنظمة CRM، وتفعيل الإجراءات بناءً على سلوك العميل. هذه السير تساعد الشركات في الحفاظ على التواصل المستمر، تقليل إدخال البيانات اليدوي، وتحسين كفاءة إدارة علاقات العملاء.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['n8n', 'Zapier', 'API Integration', 'Webhooks', 'CRM APIs', 'Database Automation'],
-          videos: [
-            '/businessautomation/crm-workflow-1.mp4',
-            '/businessautomation/crm-workflow-2.mp4',
-            '/businessautomation/crm-workflow-3.mp4'
-          ],
-          gradient: 'from-blue-500 to-cyan-500'
+          videos: [],
+          gradient: 'from-blue-500 to-cyan-500',
+          benefits: [
+            'تقليل إدخال البيانات اليدوي بنسبة تصل إلى 80%',
+            'تحسين وقت الاستجابة للعملاء المحتملين من ساعات إلى ثوانٍ',
+            'ضمان متابعة العملاء تلقائياً وبشكل مستمر',
+            'مزامنة البيانات بين أنظمة CRM متعددة في الوقت الفعلي',
+            'زيادة إنتاجية فريق المبيعات بنسبة 40%',
+            'تقليل الأخطاء البشرية في إدارة بيانات العملاء'
+          ]
         },
         {
           id: 'email-marketing',
           title: 'أتمتة التسويق عبر البريد الإلكتروني',
           description: 'حملات بريد إلكتروني آلية، التقسيم، وسير عمل التسويق المخصص.',
           fullDescription: 'سير عمل أتمتة التسويق عبر البريد الإلكتروني التي تدير الحملات، تقسيم العملاء، توصيل المحتوى المخصص، والمتابعة الآلية. هذه السير تتكامل مع منصات البريد الإلكتروني، أنظمة CRM، وأدوات التحليلات لإنشاء خطوط تسويق آلي سلسة.',
+          image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['Make (Integromat)', 'Zapier', 'Email APIs', 'Marketing Automation', 'Data Segmentation', 'Analytics Integration'],
-          videos: [
-            '/businessautomation/email-marketing-1.mp4',
-            '/businessautomation/email-marketing-2.mp4',
-            '/businessautomation/email-marketing-3.mp4'
-          ],
-          gradient: 'from-purple-500 to-pink-500'
+          videos: [],
+          gradient: 'from-purple-500 to-pink-500',
+          benefits: [
+            'إرسال رسائل بريد إلكتروني مخصصة لآلاف العملاء تلقائياً',
+            'زيادة معدل فتح الرسائل بنسبة 30-50% من خلال التقسيم',
+            'توفير 15+ ساعة أسبوعياً في إدارة الحملات',
+            'تفعيل رسائل المتابعة تلقائياً بناءً على سلوك العميل',
+            'تتبع وتحليل أداء الحملات في الوقت الفعلي',
+            'تقليل تكاليف التسويق عبر البريد الإلكتروني بنسبة 60%'
+          ]
         },
         {
           id: 'data-sync',
           title: 'سير عمل مزامنة البيانات',
           description: 'مزامنة بيانات آلية بين أنظمة ومنصات متعددة.',
           fullDescription: 'سير عمل تقوم بمزامنة البيانات تلقائياً بين أنظمة، قواعد بيانات، ومنصات مختلفة. هذه الحلول تضمن اتساق البيانات عبر الأنظمة، تتعامل مع التحديثات الفورية، تدير تحويلات البيانات، وتحافظ على سلامة البيانات عبر منصات متعددة.',
+          image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['n8n', 'Python', 'Node.js', 'Database Automation', 'API Integration', 'Data Transformation', 'ETL Processes'],
-          videos: [
-            '/businessautomation/data-sync-1.mp4',
-            '/businessautomation/data-sync-2.mp4',
-            '/businessautomation/data-sync-3.mp4'
-          ],
-          gradient: 'from-green-500 to-emerald-500'
+          videos: [],
+          gradient: 'from-green-500 to-emerald-500',
+          benefits: [
+            'إلغاء إدخال البيانات المكررة بين الأنظمة',
+            'ضمان اتساق البيانات عبر جميع المنصات في الوقت الفعلي',
+            'تقليل أخطاء البيانات بنسبة 90% من خلال التحقق الآلي',
+            'توفير 20+ ساعة أسبوعياً في المزامنة اليدوية',
+            'تحسين اتخاذ القرارات ببيانات محدثة',
+            'تقليل تذاكر دعم IT المتعلقة بمشاكل البيانات بنسبة 70%'
+          ]
         },
         {
           id: 'automated-reporting',
           title: 'التقارير الآلية والتحليلات',
           description: 'إنشاء تقارير آلية، تجميع البيانات، وسير عمل التحليلات.',
           fullDescription: 'سير عمل التقارير الآلية التي تجمع البيانات من مصادر متعددة، تجمع المعلومات، تولد التقارير، وتوزعها على أصحاب المصلحة. هذه السير تتعامل مع التقارير المجدولة، التحليلات الفورية، تصور البيانات، وتوصيل الرؤى الآلية.',
+          image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['Python', 'Node.js', 'Cloud Functions', 'Data Aggregation', 'Report Generation', 'Analytics APIs', 'Scheduled Tasks'],
-          videos: [
-            '/businessautomation/reporting-1.mp4',
-            '/businessautomation/reporting-2.mp4',
-            '/businessautomation/reporting-3.mp4'
-          ],
-          gradient: 'from-orange-500 to-red-500'
+          videos: [],
+          gradient: 'from-orange-500 to-red-500',
+          benefits: [
+            'إنشاء التقارير تلقائياً بدون عمل يدوي',
+            'توصيل التقارير لأصحاب المصلحة في المواعيد المحددة',
+            'توفير 10+ ساعات أسبوعياً في إنشاء التقارير',
+            'الوصول للتحليلات والرؤى في الوقت الفعلي',
+            'اتخاذ قرارات قائمة على البيانات بشكل أسرع',
+            'تقليل أخطاء التقارير بنسبة 95%'
+          ]
         },
         {
           id: 'social-media',
           title: 'أتمتة إدارة وسائل التواصل الاجتماعي',
           description: 'نشر وسائل التواصل الاجتماعي الآلي، جدولة المحتوى، وسير عمل التفاعل.',
           fullDescription: 'سير عمل أتمتة إدارة وسائل التواصل الاجتماعي التي تدير جدولة المحتوى، النشر عبر المنصات، تتبع التفاعل، والتحليلات. هذه السير تتكامل مع منصات وسائل التواصل الاجتماعي المتعددة، أنظمة إدارة المحتوى، وأدوات التحليلات لتبسيط عمليات وسائل التواصل الاجتماعي.',
+          image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&h=600&q=80',
           tools: ['Zapier', 'Make (Integromat)', 'Social Media APIs', 'Content Scheduling', 'Analytics Integration', 'Multi-platform Management'],
-          videos: [
-            '/businessautomation/social-media-1.mp4',
-            '/businessautomation/social-media-2.mp4',
-            '/businessautomation/social-media-3.mp4'
-          ],
-          gradient: 'from-indigo-500 to-purple-500'
+          videos: [],
+          gradient: 'from-indigo-500 to-purple-500',
+          benefits: [
+            'النشر على منصات متعددة في نفس الوقت',
+            'جدولة المحتوى لأسابيع مقدماً تلقائياً',
+            'توفير 12+ ساعة أسبوعياً في إدارة وسائل التواصل',
+            'زيادة التفاعل من خلال أوقات النشر المثلى',
+            'تتبع الأداء عبر جميع المنصات في مكان واحد',
+            'الرد على الإشارات والرسائل تلقائياً'
+          ]
         }
       ],
       videoSteps: [
