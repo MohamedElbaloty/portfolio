@@ -144,6 +144,66 @@ const Projects = () => {
       videoSteps: language === 'en'
         ? ['System Design', 'LoRa Shield Integration', 'Arduino Programming', 'Sender Node Setup', 'Receiver Node Setup', 'LCD Interface', 'Audio System Integration', 'Cryptography Implementation', 'CRC Error Detection', 'Long-Range Testing', 'Power Consumption Optimization', 'Emergency Communication Protocol']
         : ['تصميم النظام', 'تكامل LoRa Shield', 'برمجة Arduino', 'إعداد عقدة المرسل', 'إعداد عقدة المستقبل', 'واجهة LCD', 'تكامل النظام الصوتي', 'تنفيذ التشفير', 'كشف الأخطاء CRC', 'اختبار المدى الطويل', 'تحسين استهلاك الطاقة', 'بروتوكول اتصال الطوارئ']
+    },
+    {
+      id: 10,
+      title: language === 'en' ? 'Raspberry Pi Assistive Technology System' : 'نظام تقنيات مساعدة بـ Raspberry Pi للمكفوفين والصم والبكم',
+      category: 'iot',
+      description: language === 'en'
+        ? 'Comprehensive assistive technology system using Raspberry Pi to help visually impaired, deaf, and mute individuals with daily tasks and communication.'
+        : 'نظام تقنيات مساعدة شامل باستخدام Raspberry Pi لمساعدة المكفوفين والصم والبكم في المهام اليومية والتواصل.',
+      fullDescription: language === 'en'
+        ? 'An innovative assistive technology system built with Raspberry Pi to support individuals with visual, hearing, and speech impairments. The system integrates multiple modules including computer vision for object recognition and text-to-speech conversion for the visually impaired, speech recognition and visual alerts for the deaf, and text-to-speech and gesture recognition for mute individuals. The system uses cameras, microphones, speakers, LCD displays, and various sensors to create an inclusive communication and assistance platform. Features include real-time object detection, OCR (Optical Character Recognition) for reading text aloud, sign language recognition, voice commands, and haptic feedback. The modular design allows customization based on individual needs, making it adaptable for different assistive scenarios. Developed using Python, OpenCV, TensorFlow, and various Raspberry Pi GPIO modules.',
+        : 'نظام تقنيات مساعدة مبتكر مبني باستخدام Raspberry Pi لدعم الأفراد ذوي الإعاقات البصرية والسمعية والنطقية. يدمج النظام عدة وحدات تشمل الرؤية الحاسوبية للتعرف على الأشياء وتحويل النص إلى كلام للمكفوفين، التعرف على الكلام والتنبيهات البصرية للصم، وتحويل النص إلى كلام والتعرف على الإيماءات للأبكم. يستخدم النظام كاميرات، ميكروفونات، مكبرات صوت، شاشات LCD، ومستشعرات متنوعة لإنشاء منصة تواصل ومساعدة شاملة. المميزات تشمل كشف الأشياء في الوقت الفعلي، OCR (التعرف الضوئي على الأحرف) لقراءة النص بصوت عالٍ، التعرف على لغة الإشارة، الأوامر الصوتية، والتغذية الراجعة اللمسية. التصميم الوحداتي يسمح بالتخصيص حسب احتياجات الفرد، مما يجعله قابلاً للتكيف مع سيناريوهات مساعدة مختلفة. تم التطوير باستخدام Python، OpenCV، TensorFlow، ووحدات GPIO متنوعة لـ Raspberry Pi.',
+      tools: ['Raspberry Pi', 'Python', 'OpenCV', 'TensorFlow', 'Computer Vision', 'Text-to-Speech', 'Speech Recognition', 'OCR', 'Sign Language Recognition', 'GPIO', 'Camera Module', 'Microphone', 'Speaker', 'LCD Display', 'Haptic Feedback', 'Assistive Technology'],
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80',
+      video: null,
+      tags: ['Raspberry Pi', 'Assistive Technology', 'AI'],
+      gradient: 'from-blue-500 to-indigo-500',
+      schematic: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=800&q=80',
+      videoSteps: language === 'en'
+        ? ['System Architecture Design', 'Raspberry Pi Setup', 'Camera Integration', 'Computer Vision Module', 'Text-to-Speech Implementation', 'Speech Recognition Setup', 'Sign Language Recognition', 'LCD Display Integration', 'Haptic Feedback System', 'User Interface Development', 'Testing with Users', 'Performance Optimization']
+        : ['تصميم بنية النظام', 'إعداد Raspberry Pi', 'تكامل الكاميرا', 'وحدة الرؤية الحاسوبية', 'تنفيذ تحويل النص إلى كلام', 'إعداد التعرف على الكلام', 'التعرف على لغة الإشارة', 'تكامل شاشة LCD', 'نظام التغذية الراجعة اللمسية', 'تطوير واجهة المستخدم', 'الاختبار مع المستخدمين', 'تحسين الأداء']
+    },
+    {
+      id: 11,
+      title: language === 'en' ? 'Intelligent Chatbot System' : 'نظام شات بوت ذكي',
+      category: 'ai',
+      description: language === 'en'
+        ? 'Advanced conversational AI chatbot system with natural language processing, context awareness, and multi-language support for various applications.'
+        : 'نظام شات بوت ذكي متقدم مع معالجة اللغة الطبيعية، الوعي السياقي، ودعم متعدد اللغات لتطبيقات متنوعة.',
+      fullDescription: language === 'en'
+        ? 'A sophisticated chatbot system designed to provide intelligent conversational experiences across multiple domains. The chatbot utilizes advanced natural language processing (NLP) techniques, machine learning models, and context-aware algorithms to understand user intent and generate appropriate responses. The system supports multiple languages, can handle complex queries, maintain conversation context, and learn from interactions. Features include intent recognition, entity extraction, sentiment analysis, multi-turn conversations, knowledge base integration, and API connectivity for real-time information retrieval. The chatbot can be deployed for customer service, educational assistance, healthcare support, e-commerce, and various other applications. Built using Python, NLP libraries (NLTK, spaCy), machine learning frameworks (TensorFlow, PyTorch), and integrated with databases and APIs. The system includes a user-friendly web interface and can be extended with voice interaction capabilities.',
+        : 'نظام شات بوت متطور مصمم لتوفير تجارب محادثة ذكية عبر مجالات متعددة. يستخدم الشات بوت تقنيات معالجة اللغة الطبيعية (NLP) المتقدمة، نماذج التعلم الآلي، وخوارزميات واعية سياقياً لفهم نية المستخدم وتوليد ردود مناسبة. يدعم النظام عدة لغات، يمكنه التعامل مع الاستفسارات المعقدة، الحفاظ على سياق المحادثة، والتعلم من التفاعلات. المميزات تشمل التعرف على النية، استخراج الكيانات، تحليل المشاعر، محادثات متعددة الجولات، تكامل قاعدة المعرفة، واتصال API لاسترجاع المعلومات في الوقت الفعلي. يمكن نشر الشات بوت لخدمة العملاء، المساعدة التعليمية، الدعم الصحي، التجارة الإلكترونية، وتطبيقات متنوعة أخرى. مبني باستخدام Python، مكتبات NLP (NLTK، spaCy)، أطر عمل التعلم الآلي (TensorFlow، PyTorch)، ومتكامل مع قواعد البيانات وAPIs. يتضمن النظام واجهة ويب سهلة الاستخدام ويمكن توسيعه بقدرات التفاعل الصوتي.',
+      tools: ['Python', 'Natural Language Processing (NLP)', 'Machine Learning', 'TensorFlow', 'PyTorch', 'NLTK', 'spaCy', 'Intent Recognition', 'Entity Extraction', 'Sentiment Analysis', 'Context Management', 'API Integration', 'Database Integration', 'Web Interface', 'RESTful API', 'Chatbot Framework'],
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=600&q=80',
+      video: null,
+      tags: ['Chatbot', 'AI', 'NLP'],
+      gradient: 'from-purple-500 to-pink-500',
+      schematic: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=800&q=80',
+      videoSteps: language === 'en'
+        ? ['Requirements Analysis', 'NLP Model Selection', 'Training Data Collection', 'Intent Classification Model', 'Entity Extraction Setup', 'Context Management System', 'Response Generation', 'Knowledge Base Integration', 'API Development', 'Web Interface Design', 'Testing & Validation', 'Deployment & Monitoring']
+        : ['تحليل المتطلبات', 'اختيار نموذج NLP', 'جمع بيانات التدريب', 'نموذج تصنيف النية', 'إعداد استخراج الكيانات', 'نظام إدارة السياق', 'توليد الردود', 'تكامل قاعدة المعرفة', 'تطوير API', 'تصميم واجهة الويب', 'الاختبار والتحقق', 'النشر والمراقبة']
+    },
+    {
+      id: 12,
+      title: language === 'en' ? 'AI-Powered Plant Disease Detection System' : 'نظام كشف أمراض النباتات بالذكاء الاصطناعي',
+      category: 'ai',
+      description: language === 'en'
+        ? 'Agricultural AI system that analyzes plant images to detect diseases and predict potential health issues, helping farmers improve crop management.'
+        : 'نظام ذكاء اصطناعي زراعي يحلل صور النباتات للكشف عن الأمراض والتنبؤ بالمشاكل الصحية المحتملة، يساعد المزارعين على تحسين إدارة المحاصيل.',
+      fullDescription: language === 'en'
+        ? 'An intelligent agricultural technology system that leverages computer vision and deep learning to identify plant diseases and predict potential health issues from leaf and plant images. The system allows farmers and agricultural professionals to upload images of plants through a web interface, and the AI model analyzes the images to detect various diseases, nutrient deficiencies, pest damage, and other health issues. The system provides detailed diagnosis reports, treatment recommendations, and preventive measures. Built using convolutional neural networks (CNN) trained on extensive datasets of healthy and diseased plant images, the system can identify multiple crop diseases across different plant species. Features include real-time image processing, disease classification, severity assessment, treatment suggestions, and historical tracking of plant health. The web application provides an intuitive interface for image upload, results visualization, and access to agricultural knowledge base. Developed using Python, TensorFlow/Keras for deep learning, OpenCV for image processing, Flask/FastAPI for backend, and modern web technologies for the frontend. The system helps reduce crop losses, optimize pesticide usage, and improve overall agricultural productivity.',
+        : 'نظام تقني زراعي ذكي يستفيد من الرؤية الحاسوبية والتعلم العميق لتحديد أمراض النباتات والتنبؤ بالمشاكل الصحية المحتملة من صور الأوراق والنباتات. يسمح النظام للمزارعين والمهنيين الزراعيين برفع صور النباتات عبر واجهة ويب، ويحلل نموذج الذكاء الاصطناعي الصور للكشف عن أمراض متنوعة، نقص العناصر الغذائية، أضرار الآفات، ومشاكل صحية أخرى. يوفر النظام تقارير تشخيص مفصلة، توصيات العلاج، وإجراءات وقائية. مبني باستخدام الشبكات العصبية التلافيفية (CNN) المدربة على مجموعات بيانات واسعة من صور النباتات الصحية والمريضة، يمكن للنظام تحديد أمراض محاصيل متعددة عبر أنواع نباتية مختلفة. المميزات تشمل معالجة الصور في الوقت الفعلي، تصنيف الأمراض، تقييم الشدة، اقتراحات العلاج، وتتبع تاريخي لصحة النبات. يوفر التطبيق الويب واجهة بديهية لرفع الصور، تصور النتائج، والوصول إلى قاعدة المعرفة الزراعية. تم التطوير باستخدام Python، TensorFlow/Keras للتعلم العميق، OpenCV لمعالجة الصور، Flask/FastAPI للواجهة الخلفية، وتقنيات ويب حديثة للواجهة الأمامية. يساعد النظام في تقليل خسائر المحاصيل، تحسين استخدام المبيدات، وتحسين الإنتاجية الزراعية بشكل عام.',
+      tools: ['Python', 'Deep Learning', 'Convolutional Neural Networks (CNN)', 'TensorFlow', 'Keras', 'OpenCV', 'Image Processing', 'Flask', 'FastAPI', 'Computer Vision', 'Agricultural AI', 'Disease Classification', 'Web Development', 'Image Classification', 'Machine Learning', 'Data Science'],
+      image: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&h=600&q=80',
+      video: null,
+      tags: ['Agriculture', 'AI', 'Computer Vision'],
+      gradient: 'from-green-500 to-emerald-500',
+      schematic: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800&q=80',
+      videoSteps: language === 'en'
+        ? ['Dataset Collection', 'Image Preprocessing', 'CNN Architecture Design', 'Model Training', 'Disease Classification', 'Image Upload Interface', 'Real-time Processing', 'Results Visualization', 'Treatment Recommendations', 'Knowledge Base Integration', 'Performance Evaluation', 'Deployment']
+        : ['جمع مجموعة البيانات', 'المعالجة المسبقة للصور', 'تصميم بنية CNN', 'تدريب النموذج', 'تصنيف الأمراض', 'واجهة رفع الصور', 'المعالجة في الوقت الفعلي', 'تصور النتائج', 'توصيات العلاج', 'تكامل قاعدة المعرفة', 'تقييم الأداء', 'النشر']
     }
   ]
 
