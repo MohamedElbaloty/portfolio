@@ -1216,23 +1216,10 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
               >
                 <div className={`absolute -inset-1 bg-gradient-to-r ${subProject.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
                 <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
-                  {/* Header with thumbnail from saved image or video or gradient */}
+                  {/* Header with thumbnail from video or image or gradient */}
                   <div className={`h-32 bg-gradient-to-br ${subProject.gradient} relative overflow-hidden`}>
-                    {/* Priority: 1. Saved thumbnail, 2. Image (if exists), 3. Gradient fallback */}
-                    {subProject.thumbnail ? (
-                      <>
-                        <img
-                          src={subProject.thumbnail}
-                          alt={subProject.title}
-                          className="w-full h-full object-cover"
-                          onError={(e) => {
-                            // Fallback to gradient if thumbnail fails to load
-                            e.target.style.display = 'none'
-                          }}
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                      </>
-                    ) : subProject.image ? (
+                    {/* Priority: 1. Image (if exists), 2. Video thumbnail (if videos exist), 3. Gradient */}
+                    {subProject.image ? (
                       <>
                         <img
                           src={subProject.image}
@@ -1244,6 +1231,8 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       </>
+                    ) : subProject.videos && subProject.videos.length > 0 ? (
+                      <SubProjectThumbnail videos={subProject.videos} gradient={subProject.gradient} />
                     ) : null}
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center gap-2">
