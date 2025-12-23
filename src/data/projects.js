@@ -240,6 +240,7 @@ export const projectsData = {
             '/logo animation/5.mp4',
             '/logo animation/6.mp4'
           ],
+          thumbnail: '/animationthumbnails/logo-animation.jpg',
           gradient: 'from-blue-500 to-cyan-500'
         },
         {
@@ -258,6 +259,7 @@ export const projectsData = {
             '/2D3DAnimation/وزارة الطاقة.mp4',
             '/2D3DAnimation/وزارة النقل والخدمات اللوجيستيه.mp4'
           ],
+          thumbnail: '/animationthumbnails/motion-graphics.jpg',
           gradient: 'from-purple-500 to-pink-500'
         },
         {
@@ -273,6 +275,7 @@ export const projectsData = {
             '/conferenceeventscreenmotion/الشركة السعوديه للكهرباء.mp4',
             '/conferenceeventscreenmotion/ايفنت الامن البيئي.mp4'
           ],
+          thumbnail: '/animationthumbnails/conference-motion.jpg',
           gradient: 'from-indigo-500 to-purple-500'
         },
         {
@@ -286,6 +289,7 @@ export const projectsData = {
             '/paperstyleanimation/جمعية القران بالزلفى.mp4',
             '/paperstyleanimation/هيئة فنون الطهي.mp4'
           ],
+          thumbnail: '/animationthumbnails/paper-animation.jpg',
           gradient: 'from-pink-500 to-rose-500'
         }
       ]
@@ -530,6 +534,7 @@ export const projectsData = {
             '/logo animation/5.mp4',
             '/logo animation/6.mp4'
           ],
+          thumbnail: '/animationthumbnails/logo-animation.jpg',
           gradient: 'from-blue-500 to-cyan-500'
         },
         {
@@ -548,6 +553,7 @@ export const projectsData = {
             '/2D3DAnimation/وزارة الطاقة.mp4',
             '/2D3DAnimation/وزارة النقل والخدمات اللوجيستيه.mp4'
           ],
+          thumbnail: '/animationthumbnails/motion-graphics.jpg',
           gradient: 'from-purple-500 to-pink-500'
         },
         {
@@ -563,6 +569,7 @@ export const projectsData = {
             '/conferenceeventscreenmotion/الشركة السعوديه للكهرباء.mp4',
             '/conferenceeventscreenmotion/ايفنت الامن البيئي.mp4'
           ],
+          thumbnail: '/animationthumbnails/conference-motion.jpg',
           gradient: 'from-indigo-500 to-purple-500'
         },
         {
@@ -576,6 +583,7 @@ export const projectsData = {
             '/paperstyleanimation/جمعية القران بالزلفى.mp4',
             '/paperstyleanimation/هيئة فنون الطهي.mp4'
           ],
+          thumbnail: '/animationthumbnails/paper-animation.jpg',
           gradient: 'from-pink-500 to-rose-500'
         }
       ]

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Animation Thumbnails</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .container {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #6366f1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #4f46e5;
+        }
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+        }
+        .thumbnail-preview {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .thumbnail-preview img {
+            max-width: 200px;
+            border: 2px solid #6366f1;
+            border-radius: 5px;
+        }
+        .status {
+            margin: 10px 0;
+            padding: 10px;
+            background: #333;
+            border-radius: 5px;
+        }
+        .success { color: #10b981; }
+        .error { color: #ef4444; }
+        .info { color: #3b82f6; }
+    </style>
+</head>
+<body>
+    <h1>🎬 Generate Animation Thumbnails</h1>
+    <div class="container">
+        <p>This tool will extract thumbnails from animation videos and allow you to download them.</p>
+        <button id="generateAll">Generate All Thumbnails</button>
+        <div id="status"></div>
+    </div>
+    
+    <div id="thumbnails" class="container"></div>
+
+    <script>
+        const subProjects = {
+            "logo-animation": [
+                "/logo animation/1.mp4",
+                "/logo animation/2.mp4",
+                "/logo animation/3.mp4",
+                "/logo animation/4.mp4",
+                "/logo animation/5.mp4",
+                "/logo animation/6.mp4"
+            ],
+            "motion-graphics": [
+                "/2D3DAnimation/المنصة التطوعية.mp4",
+                "/2D3DAnimation/سابل.mp4",
+                "/2D3DAnimation/ملم.mp4",
+                "/2D3DAnimation/ناجز.mp4",
+                "/2D3DAnimation/هيئة كفاءة الانفاق.mp4",
+                "/2D3DAnimation/وزارة البلديات والاسكان.mp4",
+                "/2D3DAnimation/وزارة الطاقة.mp4",
+                "/2D3DAnimation/وزارة النقل والخدمات اللوجيستيه.mp4"
+            ],
+            "conference-motion": [
+                "/conferenceeventscreenmotion/classeraeventvideo.mp4",
+                "/conferenceeventscreenmotion/أبشر اعمال reel جناح وزارة الداخلية.mp4",
+                "/conferenceeventscreenmotion/اعلان مسابقة منقية.mp4",
+                "/conferenceeventscreenmotion/الشركة السعوديه للكهرباء.mp4",
+                "/conferenceeventscreenmotion/ايفنت الامن البيئي.mp4"
+            ],
+            "paper-animation": [
+                "/paperstyleanimation/اعلان سوشال ميديا شاورما جليلة.mp4",
+                "/paperstyleanimation/جمعية القران بالزلفى.mp4",
+                "/paperstyleanimation/هيئة فنون الطهي.mp4"
+            ]
+        };
+
+        function updateStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            statusDiv.innerHTML = `<div class="status ${type}">${message}</div>`;
+        }
+
+        function extractThumbnail(videoPath, subProjectId) {
+            return new Promise((resolve, reject) => {
+                const video = document.createElement('video');
+                video.preload = 'metadata';
+                video.muted = true;
+                video.crossOrigin = 'anonymous';
+                video.src = videoPath;
+
+                const timesToTry = [0.5, 1.0, 2.0, 3.0, 4.0];
+                let bestCanvas = null;
+                let bestBrightness = 0;
+                let attempts = 0;
+
+                const tryTime = (timeIndex) => {
+                    if (timeIndex >= timesToTry.length) {
+                        if (bestCanvas) {
+                            resolve(bestCanvas);
+                        } else {
+                            reject(new Error('Could not extract frame'));
+                        }
+                        return;
+                    }
+
+                    const time = timesToTry[timeIndex];
+                    video.currentTime = time;
+
+                    const checkFrame = () => {
+                        try {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = video.videoWidth || 640;
+                            canvas.height = video.videoHeight || 360;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+                            // Calculate brightness
+                            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                            let brightness = 0;
+                            for (let i = 0; i < imageData.data.length; i += 4) {
+                                brightness += (imageData.data[i] + imageData.data[i + 1] + imageData.data[i + 2]) / 3;
+                            }
+                            brightness /= (imageData.data.length / 4);
+
+                            if (brightness > 30 && brightness > bestBrightness) {
+                                bestCanvas = canvas;
+                                bestBrightness = brightness;
+                            }
+
+                            attempts++;
+                            if (bestBrightness > 30 || attempts >= timesToTry.length) {
+                                if (bestCanvas) {
+                                    resolve(bestCanvas);
+                                } else {
+                                    tryTime(timeIndex + 1);
+                                }
+                            } else {
+                                tryTime(timeIndex + 1);
+                            }
+                        } catch (e) {
+                            tryTime(timeIndex + 1);
+                        }
+                    };
+
+                    video.addEventListener('seeked', checkFrame, { once: true });
+                    setTimeout(() => {
+                        if (attempts < timeIndex + 1) {
+                            tryTime(timeIndex + 1);
+                        }
+                    }, 1000);
+                };
+
+                video.addEventListener('loadedmetadata', () => {
+                    tryTime(0);
+                });
+
+                video.addEventListener('error', (e) => {
+                    reject(new Error('Video load error'));
+                });
+            });
+        }
+
+        function downloadCanvas(canvas, filename) {
+            canvas.toBlob((blob) => {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.click();
+                URL.revokeObjectURL(url);
+            }, 'image/jpeg', 0.85);
+        }
+
+        async function generateThumbnail(subProjectId, videoPath) {
+            try {
+                updateStatus(`Processing ${subProjectId}...`, 'info');
+                const canvas = await extractThumbnail(videoPath, subProjectId);
+                
+                // Resize to standard size
+                const resizedCanvas = document.createElement('canvas');
+                const ctx = resizedCanvas.getContext('2d');
+                const aspectRatio = canvas.width / canvas.height;
+                
+                if (aspectRatio > 1.5) {
+                    resizedCanvas.width = 640;
+                    resizedCanvas.height = 640 / aspectRatio;
+                } else {
+                    resizedCanvas.height = 360;
+                    resizedCanvas.width = 360 * aspectRatio;
+                }
+                
+                ctx.drawImage(canvas, 0, 0, resizedCanvas.width, resizedCanvas.height);
+                
+                // Display preview
+                const previewDiv = document.createElement('div');
+                previewDiv.className = 'thumbnail-preview';
+                previewDiv.innerHTML = `
+                    <img src="${resizedCanvas.toDataURL('image/jpeg', 0.85)}" alt="${subProjectId}">
+                    <p>${subProjectId}</p>
+                    <button onclick="downloadCanvas(this.previousElementSibling.previousElementSibling, '${subProjectId}.jpg')">Download</button>
+                `;
+                document.getElementById('thumbnails').appendChild(previewDiv);
+                
+                // Auto download
+                downloadCanvas(resizedCanvas, `${subProjectId}.jpg`);
+                
+                return true;
+            } catch (e) {
+                updateStatus(`Error processing ${subProjectId}: ${e.message}`, 'error');
+                return false;
+            }
+        }
+
+        async function generateAll() {
+            const button = document.getElementById('generateAll');
+            button.disabled = true;
+            document.getElementById('thumbnails').innerHTML = '';
+            
+            updateStatus('Starting thumbnail generation...', 'info');
+            
+            for (const [subProjectId, videos] of Object.entries(subProjects)) {
+                if (videos.length > 0) {
+                    await generateThumbnail(subProjectId, videos[0]);
+                    await new Promise(resolve => setTimeout(resolve, 500)); // Small delay
+                }
+            }
+            
+            updateStatus('✅ All thumbnails generated! Check downloads folder.', 'success');
+            button.disabled = false;
+        }
+
+        document.getElementById('generateAll').addEventListener('click', generateAll);
+    </script>
+</body>
+</html>
+
