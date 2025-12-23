@@ -637,6 +637,103 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
   )
 }
 
+// Video Thumbnail Component
+const VideoThumbnail = ({ videoSrc, gradient, isSelected, onClick }) => {
+  const [thumbnail, setThumbnail] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const videoRef = React.useRef(null)
+
+  React.useEffect(() => {
+    const video = document.createElement('video')
+    video.preload = 'metadata'
+    video.muted = true
+    video.playsInline = true
+    video.src = videoSrc
+    
+    const handleLoadedMetadata = () => {
+      try {
+        // Try to get frame at 1 second or at 10% of duration
+        const seekTime = Math.min(1, video.duration * 0.1)
+        video.currentTime = seekTime
+      } catch (e) {
+        setLoading(false)
+      }
+    }
+    
+    const handleSeeked = () => {
+      try {
+        const canvas = document.createElement('canvas')
+        canvas.width = video.videoWidth || 320
+        canvas.height = video.videoHeight || 180
+        const ctx = canvas.getContext('2d')
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+        setThumbnail(canvas.toDataURL('image/jpeg', 0.8))
+        setLoading(false)
+      } catch (e) {
+        console.error('Error generating thumbnail:', e)
+        setLoading(false)
+      }
+    }
+    
+    const handleError = () => {
+      setLoading(false)
+    }
+
+    video.addEventListener('loadedmetadata', handleLoadedMetadata)
+    video.addEventListener('seeked', handleSeeked)
+    video.addEventListener('error', handleError)
+    
+    // Load video
+    video.load()
+
+    return () => {
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata)
+      video.removeEventListener('seeked', handleSeeked)
+      video.removeEventListener('error', handleError)
+    }
+  }, [videoSrc])
+
+  return (
+    <motion.button
+      onClick={onClick}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all ${
+        isSelected
+          ? 'border-purple-500 shadow-lg shadow-purple-500/50'
+          : 'border-white/10 hover:border-white/30'
+      }`}
+    >
+      {thumbnail ? (
+        <>
+          <img
+            src={thumbnail}
+            alt="Video thumbnail"
+            className="w-full h-full object-cover"
+            onError={() => setThumbnail(null)}
+          />
+          <div className="absolute inset-0 bg-black/20 hover:bg-black/10 transition-colors flex items-center justify-center">
+            <div className="w-12 h-12 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:scale-110 transition-transform">
+              <FaPlay className="text-purple-600 text-lg ml-1" />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-80`}></div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            {loading ? (
+              <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+            ) : (
+              <FaPlay className="text-white text-xl sm:text-2xl" />
+            )}
+          </div>
+        </>
+      )}
+    </motion.button>
+  )
+}
+
 // Sub Projects Modal Component
 const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, setSelectedSubProject, selectedVideoIndex, setSelectedVideoIndex }) => {
   const [showVideo, setShowVideo] = useState(false)
@@ -712,30 +809,16 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
                   {selectedSubProject.videos.map((video, index) => (
-                    <motion.button
+                    <VideoThumbnail
                       key={index}
+                      videoSrc={video}
+                      gradient={selectedSubProject.gradient}
+                      isSelected={index === selectedVideoIndex}
                       onClick={() => {
                         setSelectedVideoIndex(index)
                         setShowVideo(true)
                       }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all ${
-                        index === selectedVideoIndex
-                          ? 'border-purple-500 shadow-lg shadow-purple-500/50'
-                          : 'border-white/10 hover:border-white/30'
-                      }`}
-                    >
-                      <div className={`absolute inset-0 bg-gradient-to-br ${selectedSubProject.gradient} opacity-80`}></div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <FaPlay className="text-white text-xl sm:text-2xl" />
-                      </div>
-                      <div className="absolute bottom-2 left-2 right-2">
-                        <span className="text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2 py-1 rounded">
-                          {language === 'en' ? `Video ${index + 1}` : `فيديو ${index + 1}`}
-                        </span>
-                      </div>
-                    </motion.button>
+                    />
                   ))}
                 </div>
               </div>
