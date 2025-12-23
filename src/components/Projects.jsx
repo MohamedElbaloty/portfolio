@@ -136,11 +136,11 @@ const Projects = () => {
         ? 'A comprehensive FPGA design project implementing multiple control systems from scratch using Verilog HDL. The project includes a tank level control system for monitoring and managing liquid levels in storage tanks, and a temperature control system for precise temperature monitoring and regulation. Both systems feature modular architecture where each component is designed and tested independently. The designs include custom memory modules, counters, 7-segment displays for output visualization, sensor interfaces, and complete pin assignments for the Altera Cyclone IV board. All modules are thoroughly tested using Verilog testbenches written from scratch. The project demonstrates proficiency in hardware description languages, FPGA development workflows, digital circuit design, control systems, and hardware verification methodologies. Developed using Quartus Prime for synthesis and simulation.'
         : 'مشروع تصميم FPGA شامل ينفذ عدة أنظمة تحكم من الصفر باستخدام Verilog HDL. يتضمن المشروع نظام تحكم في مستوى الخزانات لمراقبة وإدارة مستويات السوائل في خزانات التخزين، ونظام تحكم في درجات الحرارة لمراقبة وتنظيم درجات الحرارة بدقة. يتميز كلا النظامين بتصميم وحداتي حيث يتم تصميم واختبار كل مكون بشكل مستقل. يتضمن التصميم وحدات ذاكرة مخصصة، عدادات، شاشات 7-segment لعرض النتائج، واجهات المستشعرات، وتعيينات Pin كاملة لبورد Altera Cyclone IV. جميع الوحدات تم اختبارها بدقة باستخدام Testbenches مكتوبة من الصفر. المشروع يظهر الكفاءة في لغات وصف الأجهزة، سير عمل تطوير FPGA، تصميم الدوائر الرقمية، أنظمة التحكم، ومنهجيات التحقق من الأجهزة. تم التطوير باستخدام Quartus Prime للتصنيع والمحاكاة.',
       tools: ['Verilog HDL', 'Quartus Prime', 'Altera Cyclone IV', 'FPGA', 'Digital Design', 'Control Systems', 'Tank Level Control', 'Temperature Control', 'Testbench', '7-Segment Display', 'Memory Design', 'Counters', 'Sensor Interfaces', 'Pin Assignment', 'Hardware Verification'],
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=600&q=80',
+      image: '/academicprojects/verilogcart.png',
       video: null,
       tags: ['Verilog HDL', 'FPGA', 'Digital Design'],
       gradient: 'from-violet-500 to-purple-500',
-      schematic: null,
+      schematic: '/academicprojects/alteracycloneive.png',
       videoSteps: language === 'en'
         ? ['Modular Design', 'Verilog Coding', 'Tank Level Control System', 'Temperature Control System', 'Sensor Interfaces', 'Memory Implementation', 'Counter Design', '7-Segment Integration', 'Pin Assignment', 'Testbench Writing', 'Simulation & Verification', 'FPGA Implementation']
         : ['التصميم الوحداتي', 'كتابة Verilog', 'نظام تحكم مستوى الخزانات', 'نظام تحكم درجات الحرارة', 'واجهات المستشعرات', 'تنفيذ الذاكرة', 'تصميم العدادات', 'تكامل 7-Segment', 'تعيين Pin', 'كتابة Testbench', 'المحاكاة والتحقق', 'التطبيق على FPGA']
@@ -708,7 +708,10 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
                 }`}
               >
                 <FaMicrochip className="text-sm" />
-                {language === 'en' ? 'Circuit Schematic' : 'المخطط الكهربائي'}
+                {project.category === 'fpga' 
+                  ? (language === 'en' ? 'FPGA Board' : 'بورد FPGA')
+                  : (language === 'en' ? 'Circuit Schematic' : 'المخطط الكهربائي')
+                }
               </button>
             )}
           </div>
@@ -742,7 +745,10 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
               <div>
                 <div className="mb-4">
                   <h3 className="text-lg font-semibold text-white mb-3">
-                    {language === 'en' ? 'Circuit Schematic Diagram' : 'مخطط الدائرة الكهربائية'}
+                    {project.category === 'fpga'
+                      ? (language === 'en' ? 'Altera Cyclone IV FPGA Board' : 'بورد Altera Cyclone IV FPGA')
+                      : (language === 'en' ? 'Circuit Schematic Diagram' : 'مخطط الدائرة الكهربائية')
+                    }
                   </h3>
                   <div className="bg-black/30 rounded-xl p-4 overflow-auto">
                     <img
