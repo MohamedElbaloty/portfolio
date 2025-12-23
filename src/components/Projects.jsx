@@ -60,7 +60,7 @@ const Projects = () => {
       video: '/academicprojects/smart house IOT.mp4',
       tags: ['Arduino', 'IoT', 'Home Automation'],
       gradient: 'from-orange-500 to-red-500',
-      schematic: null, // Schematic will be added later
+      schematic: '/academicprojects/smart iot home schematic.png',
       videoSteps: language === 'en'
         ? ['System Overview', 'Smart Lighting Control', 'Door Automation', 'Security Alerts', 'Smart Parking', 'Mobile App Control', 'Voice Commands']
         : ['نظرة عامة على النظام', 'التحكم في الإضاءة الذكية', 'أتمتة الأبواب', 'تنبيهات الأمان', 'الموقف الذكي', 'التحكم عبر التطبيق', 'الأوامر الصوتية']
@@ -100,7 +100,7 @@ const Projects = () => {
       video: null, // Video will be added later
       tags: ['Arduino', 'COVID-19', 'Robotics'],
       gradient: 'from-green-500 to-emerald-500',
-      schematic: null, // Schematic will be added later
+      schematic: '/academicprojects/social distance schematic robot.jpg',
       videoSteps: language === 'en'
         ? ['Distance Detection', 'Violation Alert', 'Line Following', 'Autonomous Navigation', 'Visual & Audio Warnings']
         : ['كشف المسافة', 'تنبيه الانتهاك', 'اتباع الخط', 'التنقل المستقل', 'تحذيرات بصرية وسمعية']
