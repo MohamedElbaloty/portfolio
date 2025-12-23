@@ -108,7 +108,72 @@ export const projectsData = {
       image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&h=600&q=80',
       video: null,
       link: null,
-      gradient: 'from-fuchsia-500 to-violet-500'
+      gradient: 'from-fuchsia-500 to-violet-500',
+      hasSubProjects: true,
+      subProjects: [
+        {
+          id: 'logo-animation',
+          title: 'Logo Animation | 2D & 3D',
+          description: 'Professional logo animation tailored for institutional and government entities, while maintaining full alignment with brand identity guidelines.',
+          fullDescription: 'Professional logo animation tailored for institutional and government entities, while maintaining full alignment with brand identity guidelines. The work focuses on clean motion design, precise timing, and balanced transitions to deliver a formal and refined visual presence. Includes logo reveals, intro and outro animations executed in both 2D and 3D depending on the brand requirements.',
+          tools: ['2D Motion Design', '3D Logo & Text Animation', 'Keyframe Animation', 'Smooth Easing & Timing', 'Brand-Oriented Motion'],
+          videos: [
+            '/logo animation/1.mp4',
+            '/logo animation/2.mp4',
+            '/logo animation/3.mp4',
+            '/logo animation/4.mp4',
+            '/logo animation/5.mp4',
+            '/logo animation/6.mp4'
+          ],
+          gradient: 'from-blue-500 to-cyan-500'
+        },
+        {
+          id: 'motion-graphics',
+          title: '2.5D & 3D Motion Graphics (Government Focus)',
+          description: 'Explainer and awareness videos designed specifically for governmental and institutional use, utilizing 2.5D and 3D animation.',
+          fullDescription: 'Explainer and awareness videos designed specifically for governmental and institutional use, utilizing 2.5D and 3D animation to communicate complex ideas clearly and elegantly. The work often includes simplified character animation, institutional environments, and subtle camera movement to create depth without visual overload. A significant part of the production is created using Cinema 4D, seamlessly integrated with After Effects for a polished final output.',
+          tools: ['2.5D Layered Animation', '3D Camera Animation', 'Character Animation', 'Cinema 4D Workflow', 'Institutional Visual Style'],
+          videos: [
+            '/2D3DAnimation/المنصة التطوعية.mp4',
+            '/2D3DAnimation/سابل.mp4',
+            '/2D3DAnimation/ملم.mp4',
+            '/2D3DAnimation/ناجز.mp4',
+            '/2D3DAnimation/هيئة كفاءة الانفاق.mp4',
+            '/2D3DAnimation/وزارة البلديات والاسكان.mp4',
+            '/2D3DAnimation/وزارة الطاقة.mp4',
+            '/2D3DAnimation/وزارة النقل والخدمات اللوجيستيه.mp4'
+          ],
+          gradient: 'from-purple-500 to-pink-500'
+        },
+        {
+          id: 'conference-motion',
+          title: 'Conference & Event Screen Motion',
+          description: 'Motion graphics designed for large-scale conference screens, exhibitions, and LED displays, with custom dimensions and formats.',
+          fullDescription: 'Motion graphics designed for large-scale conference screens, exhibitions, and LED displays, with custom dimensions and formats. The animation style is elegant, minimal, and formal, tailored to government and high-level institutional events. Special attention is given to readability from a distance, smooth pacing, and seamless loop animations where required.',
+          tools: ['Large Screen Motion Design', 'Custom Aspect Ratios', 'Elegant Transitions', 'Seamless Loop Animation', '3D Motion', 'Government Event Visuals'],
+          videos: [
+            '/conferenceeventscreenmotion/classeraeventvideo.mp4',
+            '/conferenceeventscreenmotion/أبشر اعمال reel جناح وزارة الداخلية.mp4',
+            '/conferenceeventscreenmotion/اعلان مسابقة منقية.mp4',
+            '/conferenceeventscreenmotion/الشركة السعوديه للكهرباء.mp4',
+            '/conferenceeventscreenmotion/ايفنت الامن البيئي.mp4'
+          ],
+          gradient: 'from-indigo-500 to-purple-500'
+        },
+        {
+          id: 'paper-animation',
+          title: 'Paper Style Animation | After Effects',
+          description: 'A handcrafted animation style inspired by paper cutouts and layered paper visuals.',
+          fullDescription: 'A handcrafted animation style inspired by paper cutouts and layered paper visuals. This approach relies on controlled frame-based animation, typically animated at 12 frames per second instead of 24, to achieve a softer, more organic motion feel. Produced entirely in After Effects, focusing on simplicity, rhythm, and visual clarity.',
+          tools: ['Paper Cut Animation', 'Frame-Based Motion', '12fps Animation', 'Shape Layers', 'Handcrafted Visual Style'],
+          videos: [
+            '/paperstyleanimation/اعلان سوشال ميديا شاورما جليلة.mp4',
+            '/paperstyleanimation/جمعية القران بالزلفى.mp4',
+            '/paperstyleanimation/هيئة فنون الطهي.mp4'
+          ],
+          gradient: 'from-pink-500 to-rose-500'
+        }
+      ]
     }
   ],
   ar: [
@@ -218,7 +283,72 @@ export const projectsData = {
       image: 'https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&h=600&q=80',
       video: null,
       link: null,
-      gradient: 'from-fuchsia-500 to-violet-500'
+      gradient: 'from-fuchsia-500 to-violet-500',
+      hasSubProjects: true,
+      subProjects: [
+        {
+          id: 'logo-animation',
+          title: 'أنيميشن الشعار | 2D & 3D',
+          description: 'أنيميشن شعار احترافي مصمم خصيصاً للكيانات المؤسسية والحكومية، مع الحفاظ على التوافق الكامل مع إرشادات الهوية البصرية.',
+          fullDescription: 'أنيميشن شعار احترافي مصمم خصيصاً للكيانات المؤسسية والحكومية، مع الحفاظ على التوافق الكامل مع إرشادات الهوية البصرية. يركز العمل على تصميم حركة نظيفة، توقيت دقيق، وانتقالات متوازنة لتقديم حضور بصري رسمي ومكرر. يتضمن كشف الشعار، أنيميشن المقدمة والخاتمة المنفذة في كل من 2D و 3D حسب متطلبات العلامة التجارية.',
+          tools: ['تصميم الحركة 2D', 'أنيميشن الشعار والنص 3D', 'أنيميشن الإطارات الرئيسية', 'تسهيل وتوقيت سلس', 'حركة موجهة للعلامة التجارية'],
+          videos: [
+            '/logo animation/1.mp4',
+            '/logo animation/2.mp4',
+            '/logo animation/3.mp4',
+            '/logo animation/4.mp4',
+            '/logo animation/5.mp4',
+            '/logo animation/6.mp4'
+          ],
+          gradient: 'from-blue-500 to-cyan-500'
+        },
+        {
+          id: 'motion-graphics',
+          title: 'موشن جرافيك 2.5D & 3D (تركيز حكومي)',
+          description: 'فيديوهات توضيحية وتوعوية مصممة خصيصاً للاستخدام الحكومي والمؤسسي، باستخدام أنيميشن 2.5D و 3D.',
+          fullDescription: 'فيديوهات توضيحية وتوعوية مصممة خصيصاً للاستخدام الحكومي والمؤسسي، باستخدام أنيميشن 2.5D و 3D لتوصيل الأفكار المعقدة بوضوح وأناقة. غالباً ما يتضمن العمل أنيميشن شخصيات مبسطة، بيئات مؤسسية، وحركة كاميرا خفيفة لخلق عمق بدون إرهاق بصري. جزء كبير من الإنتاج يتم إنشاؤه باستخدام Cinema 4D، متكامل بسلاسة مع After Effects لإنتاج نهائي مصقول.',
+          tools: ['أنيميشن طبقات 2.5D', 'أنيميشن الكاميرا 3D', 'أنيميشن الشخصيات', 'سير عمل Cinema 4D', 'الأسلوب البصري المؤسسي'],
+          videos: [
+            '/2D3DAnimation/المنصة التطوعية.mp4',
+            '/2D3DAnimation/سابل.mp4',
+            '/2D3DAnimation/ملم.mp4',
+            '/2D3DAnimation/ناجز.mp4',
+            '/2D3DAnimation/هيئة كفاءة الانفاق.mp4',
+            '/2D3DAnimation/وزارة البلديات والاسكان.mp4',
+            '/2D3DAnimation/وزارة الطاقة.mp4',
+            '/2D3DAnimation/وزارة النقل والخدمات اللوجيستيه.mp4'
+          ],
+          gradient: 'from-purple-500 to-pink-500'
+        },
+        {
+          id: 'conference-motion',
+          title: 'موشن جرافيك للمؤتمرات والشاشات',
+          description: 'موشن جرافيك مصمم لشاشات المؤتمرات الكبيرة، المعارض، وشاشات LED، بأبعاد وصيغ مخصصة.',
+          fullDescription: 'موشن جرافيك مصمم لشاشات المؤتمرات الكبيرة، المعارض، وشاشات LED، بأبعاد وصيغ مخصصة. أسلوب الأنيميشن أنيق، بسيط، ورسمي، مصمم خصيصاً للأحداث الحكومية والمؤسسية عالية المستوى. يتم إيلاء اهتمام خاص للقراءة من مسافة بعيدة، وتيرة سلسة، وأنيميشن حلقة سلسة عند الحاجة.',
+          tools: ['تصميم الحركة للشاشات الكبيرة', 'نسب العرض المخصصة', 'انتقالات أنيقة', 'أنيميشن حلقة سلس', 'حركة 3D', 'المرئيات الحكومية للأحداث'],
+          videos: [
+            '/conferenceeventscreenmotion/classeraeventvideo.mp4',
+            '/conferenceeventscreenmotion/أبشر اعمال reel جناح وزارة الداخلية.mp4',
+            '/conferenceeventscreenmotion/اعلان مسابقة منقية.mp4',
+            '/conferenceeventscreenmotion/الشركة السعوديه للكهرباء.mp4',
+            '/conferenceeventscreenmotion/ايفنت الامن البيئي.mp4'
+          ],
+          gradient: 'from-indigo-500 to-purple-500'
+        },
+        {
+          id: 'paper-animation',
+          title: 'أنيميشن أسلوب الورق | After Effects',
+          description: 'أسلوب أنيميشن يدوي مستوحى من قصاصات الورق والمرئيات الورقية الطبقات.',
+          fullDescription: 'أسلوب أنيميشن يدوي مستوحى من قصاصات الورق والمرئيات الورقية الطبقات. يعتمد هذا النهج على أنيميشن قائم على الإطارات المتحكم بها، عادة ما يتم تحريكه بمعدل 12 إطار في الثانية بدلاً من 24، لتحقيق إحساس حركة أكثر نعومة وعضوية. يتم إنتاجه بالكامل في After Effects، مع التركيز على البساطة، الإيقاع، والوضوح البصري.',
+          tools: ['أنيميشن قص الورق', 'حركة قائمة على الإطارات', 'أنيميشن 12 إطار/ثانية', 'طبقات الأشكال', 'الأسلوب البصري اليدوي'],
+          videos: [
+            '/paperstyleanimation/اعلان سوشال ميديا شاورما جليلة.mp4',
+            '/paperstyleanimation/جمعية القران بالزلفى.mp4',
+            '/paperstyleanimation/هيئة فنون الطهي.mp4'
+          ],
+          gradient: 'from-pink-500 to-rose-500'
+        }
+      ]
     }
   ]
 }

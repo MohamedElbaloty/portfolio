@@ -241,6 +241,7 @@ const Projects = () => {
                   onSelect={setSelectedProject}
                   t={t}
                   isMobile={isMobile}
+                  language={language}
                 />
               )
             })}
@@ -287,7 +288,7 @@ const Projects = () => {
   )
 }
 
-const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
+const ProjectCard = ({ project, index, onSelect, t, isMobile, language }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -350,25 +351,40 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 flex-wrap">
-              {project.video && (
+              {project.hasSubProjects && project.subProjects ? (
                 <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   whileHover={{ scale: 1.05 }}
-                  className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-red-500/80 backdrop-blur-md rounded-full border border-white/20"
+                  className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-purple-500/80 backdrop-blur-md rounded-full border border-white/20"
                 >
-                  <FaPlay className="text-white text-xs sm:text-sm" />
-                  <span className="text-white text-xs sm:text-sm font-medium">{t.projects.video}</span>
+                  <FaList className="text-white text-xs sm:text-sm" />
+                  <span className="text-white text-xs sm:text-sm font-medium">
+                    {project.subProjects.length} {language === 'en' ? 'Categories' : 'أقسام'}
+                  </span>
                 </motion.div>
-              )}
-              {project.link && (
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  whileHover={{ scale: 1.05 }}
-                  className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
-                >
-                  <FaExternalLinkAlt className="text-white text-xs sm:text-sm" />
-                  <span className="text-white text-xs sm:text-sm font-medium">{t.projects.viewSite}</span>
-                </motion.div>
+              ) : (
+                <>
+                  {project.video && (
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-red-500/80 backdrop-blur-md rounded-full border border-white/20"
+                    >
+                      <FaPlay className="text-white text-xs sm:text-sm" />
+                      <span className="text-white text-xs sm:text-sm font-medium">{t.projects.video}</span>
+                    </motion.div>
+                  )}
+                  {project.link && (
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20"
+                    >
+                      <FaExternalLinkAlt className="text-white text-xs sm:text-sm" />
+                      <span className="text-white text-xs sm:text-sm font-medium">{t.projects.viewSite}</span>
+                    </motion.div>
+                  )}
+                </>
               )}
             </div>
           </div>
@@ -417,6 +433,8 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile }) => {
 
 const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }) => {
   const [showVideo, setShowVideo] = useState(false)
+  const [selectedSubProject, setSelectedSubProject] = useState(null)
+  const [selectedVideoIndex, setSelectedVideoIndex] = useState(0)
   const marketMeta = {
     sa: { emoji: '🇸🇦', color: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30' },
     ma: { emoji: '🇲🇦', color: 'bg-red-500/15 text-red-300 border-red-500/30' },
@@ -424,6 +442,22 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
     kw: { emoji: '🇰🇼', color: 'bg-sky-500/15 text-sky-300 border-sky-500/30' },
   }
   const market = project?.marketKey ? marketMeta[project.marketKey] : null
+
+  // If project has sub-projects, show them instead of regular modal
+  if (project?.hasSubProjects && project?.subProjects) {
+    return (
+      <SubProjectsModal
+        project={project}
+        onClose={onClose}
+        t={t}
+        language={language}
+        selectedSubProject={selectedSubProject}
+        setSelectedSubProject={setSelectedSubProject}
+        selectedVideoIndex={selectedVideoIndex}
+        setSelectedVideoIndex={setSelectedVideoIndex}
+      />
+    )
+  }
 
   return (
     <motion.div
@@ -596,6 +630,237 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
                 {t.projects.video}
               </motion.button>
             )}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
+// Sub Projects Modal Component
+const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, setSelectedSubProject, selectedVideoIndex, setSelectedVideoIndex }) => {
+  const [showVideo, setShowVideo] = useState(false)
+
+  if (selectedSubProject) {
+    const currentVideo = selectedSubProject.videos[selectedVideoIndex]
+    return (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-sm overflow-y-auto"
+        onClick={onClose}
+      >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0, y: 50 }}
+          animate={{ scale: 1, opacity: 1, y: 0 }}
+          exit={{ scale: 0.8, opacity: 0, y: 50 }}
+          onClick={(e) => e.stopPropagation()}
+          className="glass backdrop-blur-xl border border-white/20 rounded-3xl max-w-6xl w-full max-h-[95vh] overflow-y-auto shadow-2xl my-8"
+        >
+          {/* Header */}
+          <div className="sticky top-0 z-20 bg-black/50 backdrop-blur-md border-b border-white/10 p-4 sm:p-6 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => setSelectedSubProject(null)}
+                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
+              >
+                ←
+              </button>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-text">{selectedSubProject.title}</h2>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-white text-lg sm:text-xl"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Video Player */}
+          <div className="p-4 sm:p-6">
+            <div className="relative w-full h-0 pb-[56.25%] bg-black rounded-xl overflow-hidden mb-6">
+              {showVideo && currentVideo ? (
+                <video
+                  src={currentVideo}
+                  controls
+                  autoPlay
+                  className="absolute top-0 left-0 w-full h-full"
+                  onError={(e) => {
+                    console.error('Video error:', e)
+                  }}
+                >
+                  Your browser does not support the video tag.
+                </video>
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                  <button
+                    onClick={() => setShowVideo(true)}
+                    className="w-20 h-20 rounded-full bg-red-500 flex items-center justify-center hover:scale-110 transition-transform shadow-lg"
+                  >
+                    <FaPlay className="text-white text-2xl ml-1" />
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Video Thumbnails Grid */}
+            {selectedSubProject.videos && selectedSubProject.videos.length > 1 && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-4">
+                  {language === 'en' ? 'All Videos' : 'جميع الفيديوهات'}
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+                  {selectedSubProject.videos.map((video, index) => (
+                    <motion.button
+                      key={index}
+                      onClick={() => {
+                        setSelectedVideoIndex(index)
+                        setShowVideo(true)
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all ${
+                        index === selectedVideoIndex
+                          ? 'border-purple-500 shadow-lg shadow-purple-500/50'
+                          : 'border-white/10 hover:border-white/30'
+                      }`}
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-br ${selectedSubProject.gradient} opacity-80`}></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <FaPlay className="text-white text-xl sm:text-2xl" />
+                      </div>
+                      <div className="absolute bottom-2 left-2 right-2">
+                        <span className="text-white text-xs font-medium bg-black/50 backdrop-blur-sm px-2 py-1 rounded">
+                          {language === 'en' ? `Video ${index + 1}` : `فيديو ${index + 1}`}
+                        </span>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Description */}
+            <div className="mb-6">
+              <h3 className="text-lg font-semibold text-white mb-3">
+                {language === 'en' ? 'Description' : 'الوصف'}
+              </h3>
+              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                {selectedSubProject.fullDescription || selectedSubProject.description}
+              </p>
+            </div>
+
+            {/* Tools */}
+            {selectedSubProject.tools && selectedSubProject.tools.length > 0 && (
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-white mb-3">
+                  {language === 'en' ? 'Techniques' : 'التقنيات'}
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {selectedSubProject.tools.map((tool, i) => (
+                    <span
+                      key={i}
+                      className="px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm rounded-full text-sm text-purple-300 border border-purple-500/30"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </motion.div>
+      </motion.div>
+    )
+  }
+
+  // Main sub-projects grid view
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/90 backdrop-blur-sm overflow-y-auto"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0, y: 50 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        exit={{ scale: 0.8, opacity: 0, y: 50 }}
+        onClick={(e) => e.stopPropagation()}
+        className="glass backdrop-blur-xl border border-white/20 rounded-3xl max-w-7xl w-full max-h-[95vh] overflow-y-auto shadow-2xl my-8"
+      >
+        {/* Header */}
+        <div className="sticky top-0 z-20 bg-black/50 backdrop-blur-md border-b border-white/10 p-4 sm:p-6 flex items-center justify-between">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text">{project.title}</h2>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 sm:w-12 sm:h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-black/70 transition-colors text-white text-lg sm:text-xl"
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Sub Projects Grid */}
+        <div className="p-4 sm:p-6">
+          <p className="text-gray-300 text-sm sm:text-base mb-6 leading-relaxed">
+            {project.fullDescription || project.description}
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {project.subProjects.map((subProject, index) => (
+              <motion.div
+                key={subProject.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                onClick={() => setSelectedSubProject(subProject)}
+                className="group relative cursor-pointer"
+              >
+                <div className={`absolute -inset-1 bg-gradient-to-r ${subProject.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
+                <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
+                  {/* Header with gradient */}
+                  <div className={`h-32 bg-gradient-to-br ${subProject.gradient} relative overflow-hidden`}>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <FaPlay className="text-white text-4xl sm:text-5xl opacity-50" />
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center gap-2">
+                        <span className="bg-black/50 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs sm:text-sm font-medium">
+                          {subProject.videos?.length || 0} {language === 'en' ? 'Videos' : 'فيديو'}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors">
+                      {subProject.title}
+                    </h3>
+                    <p className="text-gray-400 text-xs sm:text-sm mb-4 leading-relaxed line-clamp-3">
+                      {subProject.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {subProject.tools?.slice(0, 3).map((tool, i) => (
+                        <span
+                          key={i}
+                          className="bg-purple-500/20 backdrop-blur-sm rounded-full text-purple-300 border border-purple-500/30 px-2 py-1 text-[10px] sm:text-xs"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                      {subProject.tools?.length > 3 && (
+                        <span className="bg-purple-500/20 backdrop-blur-sm rounded-full text-purple-300 border border-purple-500/30 px-2 py-1 text-[10px] sm:text-xs">
+                          +{subProject.tools.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>
