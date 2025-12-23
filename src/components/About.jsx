@@ -16,46 +16,44 @@ const About = () => {
       left: 0,
       right: 0,
       bottom: 0,
-      opacity: 0.08,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       borderRadius: 'inherit',
       pointerEvents: 'none',
+      zIndex: 0,
     }
 
     switch(type) {
       case 'egypt':
-        // Egyptian flag: red, white, black horizontal stripes with golden eagle
+        // Egyptian flag: red, white, black horizontal stripes
         return {
           ...baseStyle,
-          background: `
-            linear-gradient(to bottom, 
-              rgba(206, 17, 38, 0.1) 0%, 
-              rgba(206, 17, 38, 0.1) 33.33%,
-              rgba(255, 255, 255, 0.1) 33.33%, 
-              rgba(255, 255, 255, 0.1) 66.66%,
-              rgba(0, 0, 0, 0.1) 66.66%, 
-              rgba(0, 0, 0, 0.1) 100%
-            )
-          `,
+          background: `linear-gradient(to bottom, 
+            #CE1126 0%, 
+            #CE1126 33.33%,
+            #FFFFFF 33.33%, 
+            #FFFFFF 66.66%,
+            #000000 66.66%, 
+            #000000 100%
+          )`,
+          opacity: 0.12,
         }
       case 'kuwait':
         // Kuwait flag: green, white, red, black horizontal stripes
         return {
           ...baseStyle,
-          background: `
-            linear-gradient(to bottom, 
-              rgba(0, 122, 61, 0.1) 0%, 
-              rgba(0, 122, 61, 0.1) 25%,
-              rgba(255, 255, 255, 0.1) 25%, 
-              rgba(255, 255, 255, 0.1) 50%,
-              rgba(206, 17, 38, 0.1) 50%, 
-              rgba(206, 17, 38, 0.1) 75%,
-              rgba(0, 0, 0, 0.1) 75%, 
-              rgba(0, 0, 0, 0.1) 100%
-            )
-          `,
+          background: `linear-gradient(to bottom, 
+            #007A3D 0%, 
+            #007A3D 25%,
+            #FFFFFF 25%, 
+            #FFFFFF 50%,
+            #CE1126 50%, 
+            #CE1126 75%,
+            #000000 75%, 
+            #000000 100%
+          )`,
+          opacity: 0.12,
         }
       case 'usa':
         // American flag pattern (simplified)
@@ -63,17 +61,18 @@ const About = () => {
           ...baseStyle,
           background: `
             repeating-linear-gradient(0deg,
-              rgba(186, 12, 47, 0.08) 0px,
-              rgba(186, 12, 47, 0.08) 7.69%,
-              rgba(255, 255, 255, 0.08) 7.69%,
-              rgba(255, 255, 255, 0.08) 15.38%
+              #BA0C2F 0px,
+              #BA0C2F 7.69%,
+              #FFFFFF 7.69%,
+              #FFFFFF 15.38%
             ),
             linear-gradient(90deg,
-              rgba(0, 38, 100, 0.1) 0%,
-              rgba(0, 38, 100, 0.1) 40%,
+              #002664 0%,
+              #002664 40%,
               transparent 40%
             )
           `,
+          opacity: 0.12,
         }
       case 'dubai':
         // UAE flag: red vertical stripe on left, green, white, black horizontal stripes on right
@@ -81,38 +80,41 @@ const About = () => {
           ...baseStyle,
           background: `
             linear-gradient(90deg,
-              rgba(255, 0, 0, 0.1) 0%,
-              rgba(255, 0, 0, 0.1) 25%,
+              #FF0000 0%,
+              #FF0000 25%,
               transparent 25%
             ),
             linear-gradient(to bottom,
-              rgba(0, 115, 47, 0.1) 0%,
-              rgba(0, 115, 47, 0.1) 33.33%,
-              rgba(255, 255, 255, 0.1) 33.33%,
-              rgba(255, 255, 255, 0.1) 66.66%,
-              rgba(0, 0, 0, 0.1) 66.66%,
-              rgba(0, 0, 0, 0.1) 100%
+              #00732F 0%,
+              #00732F 33.33%,
+              #FFFFFF 33.33%,
+              #FFFFFF 66.66%,
+              #000000 66.66%,
+              #000000 100%
             )
           `,
           backgroundPosition: 'left center, right center',
+          opacity: 0.12,
         }
       case 'freelancer':
-        // Multiple world flags pattern
+        // Multiple world flags pattern - small circles representing different flags
         return {
           ...baseStyle,
-          opacity: 0.06,
           background: `
-            radial-gradient(circle at 20% 20%, rgba(206, 17, 38, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 80% 30%, rgba(0, 122, 61, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 40% 60%, rgba(0, 38, 100, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 70% 70%, rgba(255, 0, 0, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 30% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 60% 40%, rgba(0, 115, 47, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 10% 70%, rgba(186, 12, 47, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 90% 60%, rgba(0, 0, 0, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 15%),
-            radial-gradient(circle at 15% 50%, rgba(0, 102, 204, 0.08) 0%, transparent 15%)
+            radial-gradient(circle at 15% 20%, #CE1126 0%, transparent 12%),
+            radial-gradient(circle at 85% 25%, #007A3D 0%, transparent 12%),
+            radial-gradient(circle at 35% 55%, #002664 0%, transparent 12%),
+            radial-gradient(circle at 75% 65%, #FF0000 0%, transparent 12%),
+            radial-gradient(circle at 25% 75%, #FFD700 0%, transparent 12%),
+            radial-gradient(circle at 65% 35%, #00732F 0%, transparent 12%),
+            radial-gradient(circle at 5% 65%, #BA0C2F 0%, transparent 12%),
+            radial-gradient(circle at 95% 55%, #000000 0%, transparent 12%),
+            radial-gradient(circle at 50% 15%, #FFFFFF 0%, transparent 12%),
+            radial-gradient(circle at 10% 45%, #0066CC 0%, transparent 12%),
+            radial-gradient(circle at 90% 80%, #FFCC00 0%, transparent 12%),
+            radial-gradient(circle at 45% 90%, #003366 0%, transparent 12%)
           `,
+          opacity: 0.1,
         }
       default:
         return baseStyle
