@@ -69,6 +69,28 @@ export const projectsData = {
       video: null,
       link: null,
       gradient: 'from-rose-500 to-pink-500',
+      hasSubProjects: true,
+      subProjects: [
+        {
+          id: 'ai-video-production',
+          title: 'AI Video Production',
+          description: 'High-quality promotional and marketing videos created using advanced AI video generation technology.',
+          fullDescription: 'I specialize in creating high-quality promotional and marketing videos for companies using advanced AI video generation technology. This service eliminates the need for expensive video production equipment, actors, and filming locations. Using AI tools, I can create professional videos with realistic avatars, voiceovers, animations, and visual effects. Services include product promotion videos, company introductions, social media content, and marketing campaigns.',
+          tools: ['AI Video Generation', 'Synthesia', 'D-ID', 'Runway ML', 'Adobe After Effects', 'Premiere Pro', 'AI Voice Synthesis', 'Motion Graphics'],
+          videos: [
+            '/aivideoproduction/1.mp4',
+            '/aivideoproduction/2.mp4',
+            '/aivideoproduction/3.mp4',
+            '/aivideoproduction/4.mp4',
+            '/aivideoproduction/5.mp4',
+            '/aivideoproduction/6.mp4',
+            '/aivideoproduction/7.mp4',
+            '/aivideoproduction/8.mp4',
+            '/aivideoproduction/9.mp4'
+          ],
+          gradient: 'from-rose-500 to-pink-500'
+        }
+      ],
       videoSteps: [
         'Client Consultation: Understanding video requirements and objectives',
         'Script Writing: Creating engaging scripts and storyboards',
@@ -244,6 +266,28 @@ export const projectsData = {
       video: null,
       link: null,
       gradient: 'from-rose-500 to-pink-500',
+      hasSubProjects: true,
+      subProjects: [
+        {
+          id: 'ai-video-production',
+          title: 'إنتاج فيديوهات دعائية بالذكاء الاصطناعي',
+          description: 'فيديوهات دعائية وتسويقية عالية الجودة تم إنشاؤها باستخدام تقنيات الذكاء الاصطناعي المتقدمة.',
+          fullDescription: 'أتخصص في إنشاء فيديوهات دعائية وتسويقية عالية الجودة للشركات باستخدام تقنيات الذكاء الاصطناعي المتقدمة. هذه الخدمة تلغي الحاجة لمعدات إنتاج فيديو باهظة الثمن، ممثلين، ومواقع تصوير. باستخدام أدوات الذكاء الاصطناعي، يمكنني إنشاء فيديوهات احترافية مع شخصيات واقعية، تعليق صوتي، رسوم متحركة، وتأثيرات بصرية. الخدمات تشمل فيديوهات ترويج المنتجات، تعريف بالشركات، محتوى وسائل التواصل الاجتماعي، وحملات تسويقية.',
+          tools: ['AI Video Generation', 'Synthesia', 'D-ID', 'Runway ML', 'Adobe After Effects', 'Premiere Pro', 'AI Voice Synthesis', 'Motion Graphics'],
+          videos: [
+            '/aivideoproduction/1.mp4',
+            '/aivideoproduction/2.mp4',
+            '/aivideoproduction/3.mp4',
+            '/aivideoproduction/4.mp4',
+            '/aivideoproduction/5.mp4',
+            '/aivideoproduction/6.mp4',
+            '/aivideoproduction/7.mp4',
+            '/aivideoproduction/8.mp4',
+            '/aivideoproduction/9.mp4'
+          ],
+          gradient: 'from-rose-500 to-pink-500'
+        }
+      ],
       videoSteps: [
         'استشارة العميل: فهم متطلبات وأهداف الفيديو',
         'كتابة السيناريو: إنشاء سيناريوهات وقصص مصورة جذابة',
