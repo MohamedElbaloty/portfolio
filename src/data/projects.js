@@ -111,6 +111,74 @@ export const projectsData = {
       video: null,
       link: null,
       gradient: 'from-cyan-500 to-blue-500',
+      hasSubProjects: true,
+      subProjects: [
+        {
+          id: 'crm-automation',
+          title: 'CRM Automation Workflow',
+          description: 'Automated CRM workflows for lead management, customer follow-ups, and data synchronization.',
+          fullDescription: 'Custom CRM automation workflows that streamline lead management, automate customer follow-ups, sync data between CRM systems, and trigger actions based on customer behavior. These workflows help businesses maintain consistent communication, reduce manual data entry, and improve customer relationship management efficiency.',
+          tools: ['n8n', 'Zapier', 'API Integration', 'Webhooks', 'CRM APIs', 'Database Automation'],
+          videos: [
+            '/businessautomation/crm-workflow-1.mp4',
+            '/businessautomation/crm-workflow-2.mp4',
+            '/businessautomation/crm-workflow-3.mp4'
+          ],
+          gradient: 'from-blue-500 to-cyan-500'
+        },
+        {
+          id: 'email-marketing',
+          title: 'Email Marketing Automation',
+          description: 'Automated email campaigns, segmentation, and personalized marketing workflows.',
+          fullDescription: 'Automated email marketing workflows that handle campaign management, customer segmentation, personalized content delivery, and automated follow-ups. These workflows integrate with email platforms, CRM systems, and analytics tools to create seamless marketing automation pipelines.',
+          tools: ['Make (Integromat)', 'Zapier', 'Email APIs', 'Marketing Automation', 'Data Segmentation', 'Analytics Integration'],
+          videos: [
+            '/businessautomation/email-marketing-1.mp4',
+            '/businessautomation/email-marketing-2.mp4',
+            '/businessautomation/email-marketing-3.mp4'
+          ],
+          gradient: 'from-purple-500 to-pink-500'
+        },
+        {
+          id: 'data-sync',
+          title: 'Data Synchronization Workflows',
+          description: 'Automated data synchronization between multiple systems and platforms.',
+          fullDescription: 'Workflows that automatically synchronize data between different systems, databases, and platforms. These solutions ensure data consistency across systems, handle real-time updates, manage data transformations, and maintain data integrity across multiple platforms.',
+          tools: ['n8n', 'Python', 'Node.js', 'Database Automation', 'API Integration', 'Data Transformation', 'ETL Processes'],
+          videos: [
+            '/businessautomation/data-sync-1.mp4',
+            '/businessautomation/data-sync-2.mp4',
+            '/businessautomation/data-sync-3.mp4'
+          ],
+          gradient: 'from-green-500 to-emerald-500'
+        },
+        {
+          id: 'automated-reporting',
+          title: 'Automated Reporting & Analytics',
+          description: 'Automated report generation, data aggregation, and analytics workflows.',
+          fullDescription: 'Automated reporting workflows that collect data from multiple sources, aggregate information, generate reports, and distribute them to stakeholders. These workflows handle scheduled reporting, real-time analytics, data visualization, and automated insights delivery.',
+          tools: ['Python', 'Node.js', 'Cloud Functions', 'Data Aggregation', 'Report Generation', 'Analytics APIs', 'Scheduled Tasks'],
+          videos: [
+            '/businessautomation/reporting-1.mp4',
+            '/businessautomation/reporting-2.mp4',
+            '/businessautomation/reporting-3.mp4'
+          ],
+          gradient: 'from-orange-500 to-red-500'
+        },
+        {
+          id: 'social-media',
+          title: 'Social Media Management Automation',
+          description: 'Automated social media posting, content scheduling, and engagement workflows.',
+          fullDescription: 'Automated social media management workflows that handle content scheduling, cross-platform posting, engagement tracking, and analytics. These workflows integrate with multiple social media platforms, content management systems, and analytics tools to streamline social media operations.',
+          tools: ['Zapier', 'Make (Integromat)', 'Social Media APIs', 'Content Scheduling', 'Analytics Integration', 'Multi-platform Management'],
+          videos: [
+            '/businessautomation/social-media-1.mp4',
+            '/businessautomation/social-media-2.mp4',
+            '/businessautomation/social-media-3.mp4'
+          ],
+          gradient: 'from-indigo-500 to-purple-500'
+        }
+      ],
       videoSteps: [
         'Business Analysis: Understanding current processes and pain points',
         'Automation Design: Planning automated workflows and integrations',
@@ -308,6 +376,74 @@ export const projectsData = {
       video: null,
       link: null,
       gradient: 'from-cyan-500 to-blue-500',
+      hasSubProjects: true,
+      subProjects: [
+        {
+          id: 'crm-automation',
+          title: 'أتمتة سير عمل CRM',
+          description: 'سير عمل أتمتة CRM لإدارة العملاء المحتملين، متابعة العملاء، ومزامنة البيانات.',
+          fullDescription: 'سير عمل أتمتة CRM مخصصة لتبسيط إدارة العملاء المحتملين، أتمتة متابعة العملاء، مزامنة البيانات بين أنظمة CRM، وتفعيل الإجراءات بناءً على سلوك العميل. هذه السير تساعد الشركات في الحفاظ على التواصل المستمر، تقليل إدخال البيانات اليدوي، وتحسين كفاءة إدارة علاقات العملاء.',
+          tools: ['n8n', 'Zapier', 'API Integration', 'Webhooks', 'CRM APIs', 'Database Automation'],
+          videos: [
+            '/businessautomation/crm-workflow-1.mp4',
+            '/businessautomation/crm-workflow-2.mp4',
+            '/businessautomation/crm-workflow-3.mp4'
+          ],
+          gradient: 'from-blue-500 to-cyan-500'
+        },
+        {
+          id: 'email-marketing',
+          title: 'أتمتة التسويق عبر البريد الإلكتروني',
+          description: 'حملات بريد إلكتروني آلية، التقسيم، وسير عمل التسويق المخصص.',
+          fullDescription: 'سير عمل أتمتة التسويق عبر البريد الإلكتروني التي تدير الحملات، تقسيم العملاء، توصيل المحتوى المخصص، والمتابعة الآلية. هذه السير تتكامل مع منصات البريد الإلكتروني، أنظمة CRM، وأدوات التحليلات لإنشاء خطوط تسويق آلي سلسة.',
+          tools: ['Make (Integromat)', 'Zapier', 'Email APIs', 'Marketing Automation', 'Data Segmentation', 'Analytics Integration'],
+          videos: [
+            '/businessautomation/email-marketing-1.mp4',
+            '/businessautomation/email-marketing-2.mp4',
+            '/businessautomation/email-marketing-3.mp4'
+          ],
+          gradient: 'from-purple-500 to-pink-500'
+        },
+        {
+          id: 'data-sync',
+          title: 'سير عمل مزامنة البيانات',
+          description: 'مزامنة بيانات آلية بين أنظمة ومنصات متعددة.',
+          fullDescription: 'سير عمل تقوم بمزامنة البيانات تلقائياً بين أنظمة، قواعد بيانات، ومنصات مختلفة. هذه الحلول تضمن اتساق البيانات عبر الأنظمة، تتعامل مع التحديثات الفورية، تدير تحويلات البيانات، وتحافظ على سلامة البيانات عبر منصات متعددة.',
+          tools: ['n8n', 'Python', 'Node.js', 'Database Automation', 'API Integration', 'Data Transformation', 'ETL Processes'],
+          videos: [
+            '/businessautomation/data-sync-1.mp4',
+            '/businessautomation/data-sync-2.mp4',
+            '/businessautomation/data-sync-3.mp4'
+          ],
+          gradient: 'from-green-500 to-emerald-500'
+        },
+        {
+          id: 'automated-reporting',
+          title: 'التقارير الآلية والتحليلات',
+          description: 'إنشاء تقارير آلية، تجميع البيانات، وسير عمل التحليلات.',
+          fullDescription: 'سير عمل التقارير الآلية التي تجمع البيانات من مصادر متعددة، تجمع المعلومات، تولد التقارير، وتوزعها على أصحاب المصلحة. هذه السير تتعامل مع التقارير المجدولة، التحليلات الفورية، تصور البيانات، وتوصيل الرؤى الآلية.',
+          tools: ['Python', 'Node.js', 'Cloud Functions', 'Data Aggregation', 'Report Generation', 'Analytics APIs', 'Scheduled Tasks'],
+          videos: [
+            '/businessautomation/reporting-1.mp4',
+            '/businessautomation/reporting-2.mp4',
+            '/businessautomation/reporting-3.mp4'
+          ],
+          gradient: 'from-orange-500 to-red-500'
+        },
+        {
+          id: 'social-media',
+          title: 'أتمتة إدارة وسائل التواصل الاجتماعي',
+          description: 'نشر وسائل التواصل الاجتماعي الآلي، جدولة المحتوى، وسير عمل التفاعل.',
+          fullDescription: 'سير عمل أتمتة إدارة وسائل التواصل الاجتماعي التي تدير جدولة المحتوى، النشر عبر المنصات، تتبع التفاعل، والتحليلات. هذه السير تتكامل مع منصات وسائل التواصل الاجتماعي المتعددة، أنظمة إدارة المحتوى، وأدوات التحليلات لتبسيط عمليات وسائل التواصل الاجتماعي.',
+          tools: ['Zapier', 'Make (Integromat)', 'Social Media APIs', 'Content Scheduling', 'Analytics Integration', 'Multi-platform Management'],
+          videos: [
+            '/businessautomation/social-media-1.mp4',
+            '/businessautomation/social-media-2.mp4',
+            '/businessautomation/social-media-3.mp4'
+          ],
+          gradient: 'from-indigo-500 to-purple-500'
+        }
+      ],
       videoSteps: [
         'تحليل الأعمال: فهم العمليات الحالية ونقاط الألم',
         'تصميم الأتمتة: تخطيط سير العمل الآلي والتكاملات',
