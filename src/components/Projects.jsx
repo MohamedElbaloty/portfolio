@@ -60,7 +60,7 @@ const Projects = () => {
       video: '/academicprojects/smart house IOT.mp4',
       tags: ['Arduino', 'IoT', 'Home Automation'],
       gradient: 'from-orange-500 to-red-500',
-      schematic: '/academicprojects/smart-home-arduino-schematic.png',
+      schematic: null, // Schematic will be added later
       videoSteps: language === 'en'
         ? ['System Overview', 'Smart Lighting Control', 'Door Automation', 'Security Alerts', 'Smart Parking', 'Mobile App Control', 'Voice Commands']
         : ['نظرة عامة على النظام', 'التحكم في الإضاءة الذكية', 'أتمتة الأبواب', 'تنبيهات الأمان', 'الموقف الذكي', 'التحكم عبر التطبيق', 'الأوامر الصوتية']
@@ -80,7 +80,7 @@ const Projects = () => {
       video: '/academicprojects/pharmacy robot.mp4',
       tags: ['Raspberry Pi', 'OpenCV', 'AI'],
       gradient: 'from-blue-500 to-indigo-500',
-      schematic: '/academicprojects/pharmacy-robot-raspberry-schematic.png',
+      schematic: '/academicprojects/rasbperry pi schematic.ppm',
       videoSteps: language === 'en'
         ? ['Face Recognition', 'Customer Identification', 'Medication Retrieval', 'Voice Guidance', 'Interactive Response']
         : ['التعرف على الوجوه', 'تحديد العميل', 'استرجاع الأدوية', 'الإرشاد الصوتي', 'الرد التفاعلي']
@@ -97,10 +97,10 @@ const Projects = () => {
         : 'روبوت مراقبة التباعد الاجتماعي تم تطويره خلال جائحة COVID-19 لمساعدة في فرض إرشادات التباعد الاجتماعي. يستخدم الروبوت الرؤية الحاسوبية والمستشعرات لاكتشاف الأفراد الذين لا يحافظون على التباعد الاجتماعي الصحيح، يوفر تنبيهات بصرية وسمعية، ويمكنه اتباع التنقل باتباع الخط. مبني باستخدام متحكم Arduino، مستشعرات المسافة فوق الصوتية، مؤشرات LED، تنبيهات صوتية، وإمكانيات اتباع الخط. الروبوت يقوم بدوريات مستقلة في المناطق ويضمن الامتثال لبروتوكولات التباعد الاجتماعي.',
       tools: ['Arduino', 'Ultrasonic Sensors', 'Line Following', 'Computer Vision', 'LED Indicators', 'Buzzer Alerts', 'C/C++'],
       image: '/academicprojects/social distance robot.jfif',
-      video: '/academicprojects/social-distance-robot-video.mp4',
+      video: null, // Video will be added later
       tags: ['Arduino', 'COVID-19', 'Robotics'],
       gradient: 'from-green-500 to-emerald-500',
-      schematic: '/academicprojects/social-distance-arduino-schematic.png',
+      schematic: null, // Schematic will be added later
       videoSteps: language === 'en'
         ? ['Distance Detection', 'Violation Alert', 'Line Following', 'Autonomous Navigation', 'Visual & Audio Warnings']
         : ['كشف المسافة', 'تنبيه الانتهاك', 'اتباع الخط', 'التنقل المستقل', 'تحذيرات بصرية وسمعية']
