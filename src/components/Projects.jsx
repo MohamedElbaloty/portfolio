@@ -47,37 +47,63 @@ const Projects = () => {
   const academicProjects = [
     {
       id: 5,
-      title: language === 'en' ? 'Task Management App' : 'تطبيق إدارة المهام',
-      category: 'mobile',
-      description: t.projects.projectDescriptions.taskApp,
-      fullDescription: language === 'en' 
-        ? 'A comprehensive task management application for Android and iOS platforms. Features include task creation, categorization, priority settings, deadline reminders, team collaboration, file attachments, and progress tracking.'
-        : 'تطبيق شامل لإدارة المهام لمنصات Android و iOS. يتضمن إنشاء المهام، التصنيف، إعدادات الأولوية، تذكيرات المواعيد النهائية، التعاون الجماعي، مرفقات الملفات، وتتبع التقدم.',
-      tools: ['React Native', 'Firebase', 'Redux', 'Expo', 'Push Notifications'],
-      image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_5',
-      tags: ['React Native', 'Firebase'],
-      gradient: 'from-purple-500 to-pink-500',
-      videoSteps: language === 'en' 
-        ? ['App Overview', 'Task Creation', 'Categories & Filters', 'Team Collaboration', 'Notifications']
-        : ['نظرة عامة على التطبيق', 'إنشاء المهام', 'الفئات والفلترة', 'التعاون الجماعي', 'الإشعارات']
+      title: language === 'en' ? 'Smart Home IoT System' : 'نظام المنزل الذكي IoT',
+      category: 'iot',
+      description: language === 'en' 
+        ? 'Complete smart home automation prototype with remote control, voice commands, and mobile app integration.'
+        : 'نموذج أولي كامل لأتمتة المنزل الذكي مع التحكم عن بعد، الأوامر الصوتية، وتكامل تطبيق الموبايل.',
+      fullDescription: language === 'en'
+        ? 'A comprehensive smart home IoT prototype providing complete home automation control. Features include smart lighting control, automatic door opening/closing with servo motors, fire and theft detection alerts, smart parking system with automatic car gate control, and a mobile application for remote control via voice commands or buttons. The system integrates Arduino microcontrollers with sensors, actuators, and wireless communication modules to create a complete home automation solution.'
+        : 'نموذج أولي شامل لنظام المنزل الذكي IoT يوفر تحكم كامل في أتمتة المنزل. يتضمن التحكم في الإضاءة الذكية، فتح وإغلاق الأبواب تلقائياً باستخدام محركات Servo، تنبيهات كشف الحريق والسرقة، نظام موقف سيارات ذكي مع فتح وإغلاق البوابة تلقائياً، وتطبيق موبايل للتحكم عن بعد عبر الأوامر الصوتية أو الأزرار. النظام يدمج متحكمات Arduino مع المستشعرات والمشغلات ووحدات الاتصال اللاسلكي لإنشاء حل أتمتة منزلية كامل.',
+      tools: ['Arduino', 'IoT', 'Servo Motors', 'Sensors', 'Mobile App', 'Voice Control', 'Bluetooth/WiFi', 'C/C++'],
+      image: '/academicprojects/smart house iot.jpeg',
+      video: '/academicprojects/smart house IOT.mp4',
+      tags: ['Arduino', 'IoT', 'Home Automation'],
+      gradient: 'from-orange-500 to-red-500',
+      schematic: '/academicprojects/smart-home-arduino-schematic.png',
+      videoSteps: language === 'en'
+        ? ['System Overview', 'Smart Lighting Control', 'Door Automation', 'Security Alerts', 'Smart Parking', 'Mobile App Control', 'Voice Commands']
+        : ['نظرة عامة على النظام', 'التحكم في الإضاءة الذكية', 'أتمتة الأبواب', 'تنبيهات الأمان', 'الموقف الذكي', 'التحكم عبر التطبيق', 'الأوامر الصوتية']
     },
     {
       id: 6,
-      title: language === 'en' ? 'Smart Weather App' : 'تطبيق الطقس الذكي',
-      category: 'mobile',
-      description: t.projects.projectDescriptions.weatherApp,
+      title: language === 'en' ? 'Pharmacy Robot Assistant' : 'روبوت مساعد الصيدلية',
+      category: 'iot',
+      description: language === 'en'
+        ? 'AI-powered pharmacy robot with face recognition, voice interaction, and medication guidance system.'
+        : 'روبوت صيدلية مدعوم بالذكاء الاصطناعي مع التعرف على الوجوه، التفاعل الصوتي، ونظام إرشاد الأدوية.',
       fullDescription: language === 'en'
-        ? 'A modern weather forecasting application with real-time updates, 7-day forecasts, weather maps, location-based services, and beautiful UI animations.'
-        : 'تطبيق تنبؤ بالطقس حديث مع تحديثات فورية، توقعات لـ 7 أيام، خرائط الطقس، خدمات قائمة على الموقع، وحركات واجهة جميلة.',
-      tools: ['Flutter', 'Dart', 'Weather API', 'Google Maps API', 'Location Services'],
-      image: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=800&h=600&fit=crop',
-      video: 'https://www.youtube.com/embed/YOUR_VIDEO_ID_6',
-      tags: ['Flutter', 'API Integration'],
-      gradient: 'from-cyan-500 to-blue-500',
+        ? 'An intelligent pharmacy robot assistant that recognizes faces and guides customers to their medications. The robot uses facial recognition to identify customers, retrieves their medication schedules and types, provides voice-guided directions, and interacts conversationally. Built with Raspberry Pi, OpenCV for computer vision, Python for AI processing, and voice synthesis/recognition modules. The robot can listen, respond, and provide personalized medication guidance to pharmacy visitors.'
+        : 'روبوت مساعد ذكي للصيدلية يتعرف على الوجوه ويرشد العملاء لأدويتهم. يستخدم الروبوت التعرف على الوجوه لتحديد العملاء، يسترجع جداول الأدوية وأنواعها، يوفر إرشادات صوتية، ويتفاعل بشكل محادثة. مبني باستخدام Raspberry Pi، OpenCV للرؤية الحاسوبية، Python لمعالجة الذكاء الاصطناعي، ووحدات توليد/تعرف الصوت. الروبوت يمكنه الاستماع والرد وتقديم إرشادات أدوية مخصصة لزوار الصيدلية.',
+      tools: ['Raspberry Pi', 'OpenCV', 'Python', 'Face Recognition', 'Voice Synthesis', 'Speech Recognition', 'AI/ML'],
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&h=600&q=80',
+      video: '/academicprojects/pharmacy robot.mp4',
+      tags: ['Raspberry Pi', 'OpenCV', 'AI'],
+      gradient: 'from-blue-500 to-indigo-500',
+      schematic: '/academicprojects/pharmacy-robot-raspberry-schematic.png',
       videoSteps: language === 'en'
-        ? ['Home Screen', 'Location Search', '7-Day Forecast', 'Weather Maps', 'Settings']
-        : ['الشاشة الرئيسية', 'بحث الموقع', 'توقعات 7 أيام', 'خرائط الطقس', 'الإعدادات']
+        ? ['Face Recognition', 'Customer Identification', 'Medication Retrieval', 'Voice Guidance', 'Interactive Response']
+        : ['التعرف على الوجوه', 'تحديد العميل', 'استرجاع الأدوية', 'الإرشاد الصوتي', 'الرد التفاعلي']
+    },
+    {
+      id: 7,
+      title: language === 'en' ? 'Social Distance Monitoring Robot' : 'روبوت مراقبة التباعد الاجتماعي',
+      category: 'iot',
+      description: language === 'en'
+        ? 'COVID-19 era robot that detects social distancing violations and alerts non-compliant individuals.'
+        : 'روبوت من عصر COVID-19 يكتشف انتهاكات التباعد الاجتماعي وينذر الأفراد غير الملتزمين.',
+      fullDescription: language === 'en'
+        ? 'A social distance monitoring robot developed during the COVID-19 pandemic to help enforce social distancing guidelines. The robot uses computer vision and sensors to detect individuals who are not maintaining proper social distance, provides visual and audio alerts, and can follow line-following navigation. Built with Arduino microcontroller, ultrasonic/distance sensors, LED indicators, buzzer alerts, and line-following capabilities. The robot autonomously patrols areas and ensures compliance with social distancing protocols.'
+        : 'روبوت مراقبة التباعد الاجتماعي تم تطويره خلال جائحة COVID-19 لمساعدة في فرض إرشادات التباعد الاجتماعي. يستخدم الروبوت الرؤية الحاسوبية والمستشعرات لاكتشاف الأفراد الذين لا يحافظون على التباعد الاجتماعي الصحيح، يوفر تنبيهات بصرية وسمعية، ويمكنه اتباع التنقل باتباع الخط. مبني باستخدام متحكم Arduino، مستشعرات المسافة فوق الصوتية، مؤشرات LED، تنبيهات صوتية، وإمكانيات اتباع الخط. الروبوت يقوم بدوريات مستقلة في المناطق ويضمن الامتثال لبروتوكولات التباعد الاجتماعي.',
+      tools: ['Arduino', 'Ultrasonic Sensors', 'Line Following', 'Computer Vision', 'LED Indicators', 'Buzzer Alerts', 'C/C++'],
+      image: '/academicprojects/social distance robot.jfif',
+      video: '/academicprojects/social-distance-robot-video.mp4',
+      tags: ['Arduino', 'COVID-19', 'Robotics'],
+      gradient: 'from-green-500 to-emerald-500',
+      schematic: '/academicprojects/social-distance-arduino-schematic.png',
+      videoSteps: language === 'en'
+        ? ['Distance Detection', 'Violation Alert', 'Line Following', 'Autonomous Navigation', 'Visual & Audio Warnings']
+        : ['كشف المسافة', 'تنبيه الانتهاك', 'اتباع الخط', 'التنقل المستقل', 'تحذيرات بصرية وسمعية']
     }
   ]
 
@@ -478,14 +504,28 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
         <div className="relative">
           {showVideo && project.video ? (
             <div className="relative w-full h-0 pb-[56.25%] bg-black">
-              <iframe
-                src={project.video}
-                className="absolute top-0 left-0 w-full h-full"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title={project.title}
-              ></iframe>
+              {project.video.startsWith('http') || project.video.startsWith('//') ? (
+                <iframe
+                  src={project.video}
+                  className="absolute top-0 left-0 w-full h-full"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title={project.title}
+                ></iframe>
+              ) : (
+                <video
+                  src={project.video}
+                  controls
+                  autoPlay
+                  className="absolute top-0 left-0 w-full h-full"
+                  onError={(e) => {
+                    console.error('Video error:', e)
+                  }}
+                >
+                  {language === 'en' ? 'Your browser does not support the video tag.' : 'المتصفح لا يدعم تشغيل الفيديو.'}
+                </video>
+              )}
             </div>
           ) : (
             <div className={`h-48 sm:h-64 bg-gradient-to-br ${project.gradient} relative`}>
@@ -558,6 +598,19 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
                 {language === 'en' ? 'Tools & Technologies' : 'الأدوات والتقنيات'}
               </button>
             )}
+            {project.schematic && (
+              <button
+                onClick={() => setActiveTab('schematic')}
+                className={`px-4 py-2 rounded-t-lg transition-all flex items-center gap-2 ${
+                  activeTab === 'schematic'
+                    ? 'bg-purple-500/20 text-purple-300 border-b-2 border-purple-500'
+                    : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                <FaMicrochip className="text-sm" />
+                {language === 'en' ? 'Circuit Schematic' : 'المخطط الكهربائي'}
+              </button>
+            )}
           </div>
 
           {/* Tab Content */}
@@ -581,6 +634,30 @@ const ProjectModal = ({ project, onClose, t, language, activeTab, setActiveTab }
                       {tool}
                     </span>
                   ))}
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'schematic' && project.schematic && (
+              <div>
+                <div className="mb-4">
+                  <h3 className="text-lg font-semibold text-white mb-3">
+                    {language === 'en' ? 'Circuit Schematic Diagram' : 'مخطط الدائرة الكهربائية'}
+                  </h3>
+                  <div className="bg-black/30 rounded-xl p-4 overflow-auto">
+                    <img
+                      src={project.schematic}
+                      alt={`${project.title} Schematic`}
+                      className="w-full h-auto rounded-lg"
+                      onError={(e) => {
+                        e.target.style.display = 'none'
+                        e.target.nextSibling.style.display = 'block'
+                      }}
+                    />
+                    <div className="hidden text-center text-gray-400 py-8">
+                      {language === 'en' ? 'Schematic diagram will be available soon' : 'مخطط الدائرة سيكون متاحاً قريباً'}
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
