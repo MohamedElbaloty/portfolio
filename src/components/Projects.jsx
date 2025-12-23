@@ -917,6 +917,93 @@ const VideoThumbnail = ({ videoSrc, gradient, isSelected, onClick }) => {
   )
 }
 
+// Sub Project Card Thumbnail Component - extracts thumbnail from first video
+const SubProjectThumbnail = ({ videos, gradient }) => {
+  const [thumbnail, setThumbnail] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  React.useEffect(() => {
+    if (!videos || videos.length === 0) {
+      setLoading(false)
+      return
+    }
+
+    const video = document.createElement('video')
+    video.preload = 'metadata'
+    video.muted = true
+    video.playsInline = true
+    video.crossOrigin = 'anonymous'
+    video.src = videos[0]
+    
+    const handleLoadedMetadata = () => {
+      try {
+        // Get frame at 1 second or at 10% of duration
+        const seekTime = Math.min(1, video.duration * 0.1)
+        video.currentTime = seekTime
+      } catch (e) {
+        setLoading(false)
+      }
+    }
+    
+    const handleSeeked = () => {
+      try {
+        const canvas = document.createElement('canvas')
+        canvas.width = video.videoWidth || 640
+        canvas.height = video.videoHeight || 360
+        const ctx = canvas.getContext('2d')
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+        setThumbnail(canvas.toDataURL('image/jpeg', 0.85))
+        setLoading(false)
+      } catch (e) {
+        console.error('Error generating sub-project thumbnail:', e)
+        setLoading(false)
+      }
+    }
+    
+    const handleError = () => {
+      setLoading(false)
+    }
+
+    video.addEventListener('loadedmetadata', handleLoadedMetadata)
+    video.addEventListener('seeked', handleSeeked)
+    video.addEventListener('error', handleError)
+    
+    // Load video
+    video.load()
+
+    return () => {
+      video.removeEventListener('loadedmetadata', handleLoadedMetadata)
+      video.removeEventListener('seeked', handleSeeked)
+      video.removeEventListener('error', handleError)
+    }
+  }, [videos])
+
+  if (thumbnail) {
+    return (
+      <>
+        <img
+          src={thumbnail}
+          alt="Project thumbnail"
+          className="w-full h-full object-cover"
+          onError={() => setThumbnail(null)}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-80`}></div>
+      {loading && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+        </div>
+      )}
+    </>
+  )
+}
+
 // Sub Projects Modal Component
 const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, setSelectedSubProject, selectedVideoIndex, setSelectedVideoIndex }) => {
   const [showVideo, setShowVideo] = useState(false)
@@ -1129,8 +1216,9 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
               >
                 <div className={`absolute -inset-1 bg-gradient-to-r ${subProject.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
                 <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
-                  {/* Header with image or gradient */}
+                  {/* Header with thumbnail from video or image or gradient */}
                   <div className={`h-32 bg-gradient-to-br ${subProject.gradient} relative overflow-hidden`}>
+                    {/* Priority: 1. Image (if exists), 2. Video thumbnail (if videos exist), 3. Gradient */}
                     {subProject.image ? (
                       <>
                         <img
@@ -1143,6 +1231,8 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                       </>
+                    ) : subProject.videos && subProject.videos.length > 0 ? (
+                      <SubProjectThumbnail videos={subProject.videos} gradient={subProject.gradient} />
                     ) : null}
                     <div className="absolute bottom-4 left-4 right-4">
                       <div className="flex items-center gap-2">
