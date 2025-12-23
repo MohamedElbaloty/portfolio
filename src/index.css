@@ -13,17 +13,32 @@ html, body {
   overscroll-behavior-x: none;
   overscroll-behavior-y: auto;
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 
 @media (max-width: 640px) {
-  body {
+  html, body {
     overscroll-behavior-x: none;
     overscroll-behavior-y: auto;
     position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
   }
   
   * {
     -webkit-tap-highlight-color: transparent;
+    max-width: 100%;
+  }
+  
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -36,6 +51,8 @@ html, body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
+  width: 100%;
+  max-width: 100vw;
 }
 
 .dark body::before {
@@ -61,6 +78,8 @@ html, body {
   color: #1a1a1a;
   overflow-x: hidden;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* RTL Support */
@@ -76,6 +95,9 @@ html, body {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Custom Scrollbar - Dark */
@@ -375,4 +397,42 @@ html {
   overflow: hidden;
   line-height: 1.25rem;
   min-height: calc(1.25rem * 2);
+}
+
+/* Prevent horizontal scroll on mobile */
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  #root {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  .relative {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Prevent any element from causing horizontal scroll */
+  * {
+    box-sizing: border-box;
+  }
+  
+  section, div, article, aside, header, footer, main, nav {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure containers don't overflow */
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
