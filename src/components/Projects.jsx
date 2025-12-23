@@ -110,20 +110,40 @@ const Projects = () => {
       title: language === 'en' ? 'Complete Verilog HDL FPGA Design' : 'تصميم FPGA كامل بـ Verilog HDL',
       category: 'fpga',
       description: language === 'en'
-        ? 'Full digital logic design from scratch using Verilog HDL, implemented on Altera Cyclone IV FPGA board with modular architecture, custom memory, and testbenches.'
-        : 'تصميم منطق رقمي كامل من البداية باستخدام Verilog HDL، مطبق على بورد Altera Cyclone IV مع تصميم وحداتي، ذاكرة مخصصة، واختبارات Testbench.',
+        ? 'Multiple FPGA control systems including tank level control and temperature monitoring, designed from scratch using Verilog HDL on Altera Cyclone IV board.'
+        : 'عدة أنظمة تحكم على FPGA تشمل نظام تحكم في مستوى الخزانات ونظام مراقبة درجات الحرارة، مصممة من الصفر باستخدام Verilog HDL على بورد Altera Cyclone IV.',
       fullDescription: language === 'en'
-        ? 'A comprehensive FPGA design project implementing complete digital logic from scratch using Verilog HDL. The project features a modular architecture where each component is designed and tested independently. The design includes custom memory modules built using counters, 7-segment displays for output visualization, and complete pin assignments for the Altera Cyclone IV board. All modules are thoroughly tested using Verilog testbenches written from scratch. The project demonstrates proficiency in hardware description languages, FPGA development workflows, digital circuit design, and hardware verification methodologies. Developed using Quartus Prime for synthesis and simulation.'
-        : 'مشروع تصميم FPGA شامل ينفذ منطق رقمي كامل من البداية باستخدام Verilog HDL. يتميز المشروع بتصميم وحداتي حيث يتم تصميم واختبار كل مكون بشكل مستقل. يتضمن التصميم وحدات ذاكرة مخصصة مصممة باستخدام العدادات (Counters)، شاشات 7-segment لعرض النتائج، وتعيينات Pin كاملة لبورد Altera Cyclone IV. جميع الوحدات تم اختبارها بدقة باستخدام Testbenches مكتوبة من الصفر. المشروع يظهر الكفاءة في لغات وصف الأجهزة، سير عمل تطوير FPGA، تصميم الدوائر الرقمية، ومنهجيات التحقق من الأجهزة. تم التطوير باستخدام Quartus Prime للتصنيع والمحاكاة.',
-      tools: ['Verilog HDL', 'Quartus Prime', 'Altera Cyclone IV', 'FPGA', 'Digital Design', 'Testbench', '7-Segment Display', 'Memory Design', 'Counters', 'Pin Assignment', 'Hardware Verification'],
+        ? 'A comprehensive FPGA design project implementing multiple control systems from scratch using Verilog HDL. The project includes a tank level control system for monitoring and managing liquid levels in storage tanks, and a temperature control system for precise temperature monitoring and regulation. Both systems feature modular architecture where each component is designed and tested independently. The designs include custom memory modules, counters, 7-segment displays for output visualization, sensor interfaces, and complete pin assignments for the Altera Cyclone IV board. All modules are thoroughly tested using Verilog testbenches written from scratch. The project demonstrates proficiency in hardware description languages, FPGA development workflows, digital circuit design, control systems, and hardware verification methodologies. Developed using Quartus Prime for synthesis and simulation.'
+        : 'مشروع تصميم FPGA شامل ينفذ عدة أنظمة تحكم من الصفر باستخدام Verilog HDL. يتضمن المشروع نظام تحكم في مستوى الخزانات لمراقبة وإدارة مستويات السوائل في خزانات التخزين، ونظام تحكم في درجات الحرارة لمراقبة وتنظيم درجات الحرارة بدقة. يتميز كلا النظامين بتصميم وحداتي حيث يتم تصميم واختبار كل مكون بشكل مستقل. يتضمن التصميم وحدات ذاكرة مخصصة، عدادات، شاشات 7-segment لعرض النتائج، واجهات المستشعرات، وتعيينات Pin كاملة لبورد Altera Cyclone IV. جميع الوحدات تم اختبارها بدقة باستخدام Testbenches مكتوبة من الصفر. المشروع يظهر الكفاءة في لغات وصف الأجهزة، سير عمل تطوير FPGA، تصميم الدوائر الرقمية، أنظمة التحكم، ومنهجيات التحقق من الأجهزة. تم التطوير باستخدام Quartus Prime للتصنيع والمحاكاة.',
+      tools: ['Verilog HDL', 'Quartus Prime', 'Altera Cyclone IV', 'FPGA', 'Digital Design', 'Control Systems', 'Tank Level Control', 'Temperature Control', 'Testbench', '7-Segment Display', 'Memory Design', 'Counters', 'Sensor Interfaces', 'Pin Assignment', 'Hardware Verification'],
       image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80',
       video: null,
       tags: ['Verilog HDL', 'FPGA', 'Digital Design'],
       gradient: 'from-violet-500 to-purple-500',
       schematic: null,
       videoSteps: language === 'en'
-        ? ['Modular Design', 'Verilog Coding', 'Memory Implementation', 'Counter Design', '7-Segment Integration', 'Pin Assignment', 'Testbench Writing', 'Simulation & Verification', 'FPGA Implementation']
-        : ['التصميم الوحداتي', 'كتابة Verilog', 'تنفيذ الذاكرة', 'تصميم العدادات', 'تكامل 7-Segment', 'تعيين Pin', 'كتابة Testbench', 'المحاكاة والتحقق', 'التطبيق على FPGA']
+        ? ['Modular Design', 'Verilog Coding', 'Tank Level Control System', 'Temperature Control System', 'Sensor Interfaces', 'Memory Implementation', 'Counter Design', '7-Segment Integration', 'Pin Assignment', 'Testbench Writing', 'Simulation & Verification', 'FPGA Implementation']
+        : ['التصميم الوحداتي', 'كتابة Verilog', 'نظام تحكم مستوى الخزانات', 'نظام تحكم درجات الحرارة', 'واجهات المستشعرات', 'تنفيذ الذاكرة', 'تصميم العدادات', 'تكامل 7-Segment', 'تعيين Pin', 'كتابة Testbench', 'المحاكاة والتحقق', 'التطبيق على FPGA']
+    },
+    {
+      id: 9,
+      title: language === 'en' ? 'Long-Range LoRa Emergency Communication System' : 'نظام اتصال طوارئ لاسلكي طويل المدى LoRa',
+      category: 'iot',
+      description: language === 'en'
+        ? 'Secure long-range wireless communication system using LoRa technology for emergency desert applications, featuring lightweight cryptography and low power consumption.'
+        : 'نظام اتصال لاسلكي آمن طويل المدى باستخدام تقنية LoRa لتطبيقات الطوارئ في الصحراء، يتميز بتشفير خفيف واستهلاك طاقة منخفض.',
+      fullDescription: language === 'en'
+        ? 'A comprehensive long-range wireless communication system designed for emergency applications in remote desert environments. The project implements secure data transmission between two nodes using LoRa (Long Range) technology, which utilizes Chirp Spread Spectrum (CSS) modulation for high interference resistance, multipath fading resistance, and jamming resistance. The system uses Arduino microcontrollers with LoRa shields (sender and receiver) to process functionality. Each node includes LCD display, microphone, and speaker for audio communication. The design focuses on achieving the lowest cost and power consumption while protecting messages through lightweight cryptography algorithms suitable for LoRa\'s limited data rate. The system operates on the unlicensed ISM (Industrial, Scientific, and Medical) radio spectrum band, making it cost-effective. Error detection is implemented using Cyclic Redundancy Check (CRC) algorithm, which adds control bits to transmitted messages for verification on the receiver side. The low data rate is acceptable as the main intention is to cover long distances, making it ideal for emergency communication in remote areas.',
+        : 'نظام اتصال لاسلكي شامل طويل المدى مصمم لتطبيقات الطوارئ في البيئات الصحراوية النائية. ينفذ المشروع إرسال بيانات آمن بين عقدتين باستخدام تقنية LoRa (Long Range)، التي تستخدم تعديل Chirp Spread Spectrum (CSS) لمقاومة عالية للتداخل، مقاومة التلاشي متعدد المسارات، ومقاومة التشويش. يستخدم النظام متحكمات Arduino مع LoRa shields (مرسل ومستقبل) لمعالجة الوظائف. تتضمن كل عقدة شاشة LCD، ميكروفون، وسماعة للاتصال الصوتي. يركز التصميم على تحقيق أقل تكلفة واستهلاك طاقة مع حماية الرسائل من خلال خوارزميات تشفير خفيفة مناسبة لمعدل البيانات المحدود لـ LoRa. يعمل النظام على نطاق ISM (Industrial, Scientific, and Medical) غير المرخص، مما يجعله فعالاً من حيث التكلفة. يتم تنفيذ كشف الأخطاء باستخدام خوارزمية Cyclic Redundancy Check (CRC)، التي تضيف بتات تحكم للرسائل المرسلة للتحقق على جانب المستقبل. معدل البيانات المنخفض مقبول لأن الهدف الرئيسي هو تغطية مسافات طويلة، مما يجعله مثالياً للاتصال في حالات الطوارئ في المناطق النائية.',
+      tools: ['Arduino', 'LoRa Shield', 'LoRa (Long Range)', 'CSS Modulation', 'Wireless Communication', 'ISM Band', 'Lightweight Cryptography', 'CRC Algorithm', 'LCD Display', 'Microphone', 'Speaker', 'Emergency Systems', 'Low Power Design', 'Long-Range Communication'],
+      image: '/academicprojects/rfresult.PNG',
+      video: null,
+      tags: ['LoRa', 'Arduino', 'Wireless Communication'],
+      gradient: 'from-red-500 to-rose-500',
+      schematic: '/academicprojects/rfschematic.png',
+      videoSteps: language === 'en'
+        ? ['System Design', 'LoRa Shield Integration', 'Arduino Programming', 'Sender Node Setup', 'Receiver Node Setup', 'LCD Interface', 'Audio System Integration', 'Cryptography Implementation', 'CRC Error Detection', 'Long-Range Testing', 'Power Consumption Optimization', 'Emergency Communication Protocol']
+        : ['تصميم النظام', 'تكامل LoRa Shield', 'برمجة Arduino', 'إعداد عقدة المرسل', 'إعداد عقدة المستقبل', 'واجهة LCD', 'تكامل النظام الصوتي', 'تنفيذ التشفير', 'كشف الأخطاء CRC', 'اختبار المدى الطويل', 'تحسين استهلاك الطاقة', 'بروتوكول اتصال الطوارئ']
     }
   ]
 
