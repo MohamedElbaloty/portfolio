@@ -37,6 +37,11 @@ export const coursesData = {
             name: 'Software Engineering',
             description: 'Comprehensive software engineering course covering requirements, design, testing, maintenance, and software development life cycle.',
             topics: ['Software Process Models', 'Requirements Engineering', 'System Design', 'Testing', 'Maintenance', 'Agile Methods', 'Project Management']
+          },
+          {
+            name: 'Linux',
+            description: 'Complete Linux course covering command line, file system, shell scripting, system administration, and server management.',
+            topics: ['Linux Commands', 'File System', 'Shell Scripting (Bash)', 'User & Group Management', 'Process Management', 'Package Management', 'System Administration', 'Server Configuration']
           }
         ]
       },
@@ -230,6 +235,11 @@ export const coursesData = {
             name: 'هندسة البرمجيات',
             description: 'دورة شاملة في هندسة البرمجيات تغطي المتطلبات، التصميم، الاختبار، الصيانة، ودورة حياة تطوير البرمجيات.',
             topics: ['نماذج عملية تطوير البرمجيات', 'هندسة المتطلبات', 'تصميم الأنظمة', 'الاختبار', 'الصيانة', 'الأساليب الرشيقة Agile', 'إدارة المشاريع البرمجية']
+          },
+          {
+            name: 'Linux',
+            description: 'دورة كاملة في Linux تغطي سطر الأوامر، نظام الملفات، برمجة Shell، إدارة النظام، وإدارة الخوادم.',
+            topics: ['أوامر Linux', 'نظام الملفات', 'برمجة Shell (Bash)', 'إدارة المستخدمين والمجموعات', 'إدارة العمليات', 'إدارة الحزم', 'إدارة النظام', 'تكوين الخوادم']
           }
         ]
       },
