@@ -161,7 +161,6 @@ const Projects = () => {
       video: '/academicprojects/plantdiseasesdetection.mp4',
       tags: ['Agriculture', 'AI', 'Computer Vision'],
       gradient: 'from-green-500 to-emerald-500',
-      schematic: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&h=800&q=80',
       videoSteps: language === 'en'
         ? ['Dataset Collection', 'Image Preprocessing', 'CNN Architecture Design', 'Model Training', 'Disease Classification', 'Image Upload Interface', 'Real-time Processing', 'Results Visualization', 'Treatment Recommendations', 'Knowledge Base Integration', 'Performance Evaluation', 'Deployment']
         : ['جمع مجموعة البيانات', 'المعالجة المسبقة للصور', 'تصميم بنية CNN', 'تدريب النموذج', 'تصنيف الأمراض', 'واجهة رفع الصور', 'المعالجة في الوقت الفعلي', 'تصور النتائج', 'توصيات العلاج', 'تكامل قاعدة المعرفة', 'تقييم الأداء', 'النشر']
@@ -181,7 +180,6 @@ const Projects = () => {
       video: null,
       tags: ['Chatbot', 'AI', 'NLP'],
       gradient: 'from-purple-500 to-pink-500',
-      schematic: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&h=800&q=80',
       videoSteps: language === 'en'
         ? ['Requirements Analysis', 'NLP Model Selection', 'Training Data Collection', 'Intent Classification Model', 'Entity Extraction Setup', 'Context Management System', 'Response Generation', 'Knowledge Base Integration', 'API Development', 'Web Interface Design', 'Testing & Validation', 'Deployment & Monitoring']
         : ['تحليل المتطلبات', 'اختيار نموذج NLP', 'جمع بيانات التدريب', 'نموذج تصنيف النية', 'إعداد استخراج الكيانات', 'نظام إدارة السياق', 'توليد الردود', 'تكامل قاعدة المعرفة', 'تطوير API', 'تصميم واجهة الويب', 'الاختبار والتحقق', 'النشر والمراقبة']
