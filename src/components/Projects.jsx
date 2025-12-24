@@ -77,7 +77,7 @@ const Projects = () => {
         ? 'An intelligent pharmacy robot assistant that recognizes faces and guides customers to their medications. The robot uses facial recognition to identify customers, retrieves their medication schedules and types, provides voice-guided directions, and interacts conversationally. Built with Raspberry Pi, OpenCV for computer vision, Python for AI processing, and voice synthesis/recognition modules. The robot can listen, respond, and provide personalized medication guidance to pharmacy visitors.'
         : 'روبوت مساعد ذكي للصيدلية يتعرف على الوجوه ويرشد العملاء لأدويتهم. يستخدم الروبوت التعرف على الوجوه لتحديد العملاء، يسترجع جداول الأدوية وأنواعها، يوفر إرشادات صوتية، ويتفاعل بشكل محادثة. مبني باستخدام Raspberry Pi، OpenCV للرؤية الحاسوبية، Python لمعالجة الذكاء الاصطناعي، ووحدات توليد/تعرف الصوت. الروبوت يمكنه الاستماع والرد وتقديم إرشادات أدوية مخصصة لزوار الصيدلية.',
       tools: ['Raspberry Pi', 'OpenCV', 'Python', 'Face Recognition', 'Voice Synthesis', 'Speech Recognition', 'AI/ML'],
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&h=600&q=80',
+      image: '/academicprojects/pharmacy robot thumbnail.png',
       video: '/academicprojects/pharmacy robot.mp4',
       tags: ['Raspberry Pi', 'OpenCV', 'AI'],
       gradient: 'from-blue-500 to-indigo-500',
