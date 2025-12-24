@@ -12,7 +12,7 @@ export const coursesData = {
             name: 'Data Structures',
             description: 'In-depth study of data structures including arrays, linked lists, stacks, queues, trees, graphs, and their implementations.',
             topics: ['Arrays & Lists', 'Stacks & Queues', 'Trees & Binary Trees', 'Graphs', 'Hash Tables', 'Sorting Algorithms', 'Search Algorithms'],
-            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop'
           },
           {
             name: 'Object-Oriented Programming (OOP)',
@@ -24,7 +24,7 @@ export const coursesData = {
             name: 'Algorithms',
             description: 'Algorithm design and analysis course covering complexity analysis, sorting, searching, dynamic programming, and graph algorithms.',
             topics: ['Algorithm Analysis', 'Sorting Algorithms', 'Search Algorithms', 'Dynamic Programming', 'Greedy Algorithms', 'Graph Algorithms', 'Complexity Theory'],
-            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
           },
           {
             name: 'Compiler Design',
@@ -48,7 +48,7 @@ export const coursesData = {
             name: 'Linux',
             description: 'Complete Linux course covering command line, file system, shell scripting, system administration, and server management.',
             topics: ['Linux Commands', 'File System', 'Shell Scripting (Bash)', 'User & Group Management', 'Process Management', 'Package Management', 'System Administration', 'Server Configuration'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -72,13 +72,13 @@ export const coursesData = {
             name: 'iOS Development',
             description: 'Comprehensive iOS app development course covering Swift, Xcode, UIKit, SwiftUI, and publishing apps to Apple App Store.',
             topics: ['Swift Programming', 'Xcode IDE', 'UIKit & SwiftUI', 'Core Data', 'Networking', 'App Store Publishing'],
-            image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop'
           },
           {
             name: 'Cross-Platform Mobile Development',
             description: 'Learn to build mobile apps for both Android and iOS using React Native or Flutter frameworks.',
             topics: ['React Native', 'Flutter', 'Dart Programming', 'State Management', 'Native Modules', 'App Deployment'],
-            image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -95,13 +95,13 @@ export const coursesData = {
             name: 'Raspberry Pi Projects',
             description: 'Comprehensive Raspberry Pi course covering Linux, Python programming, GPIO control, and building embedded systems.',
             topics: ['Raspberry Pi Setup', 'Linux Commands', 'Python Programming', 'GPIO Control', 'Camera Module', 'Home Automation', 'Robotics'],
-            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop'
           },
           {
             name: 'Embedded Systems Design',
             description: 'Advanced embedded systems course covering microcontroller architecture, real-time systems, and hardware-software integration.',
             topics: ['Microcontroller Architecture', 'Real-Time Systems', 'Interrupts & Timers', 'Communication Protocols', 'PCB Design', 'Firmware Development'],
-            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -124,7 +124,7 @@ export const coursesData = {
             name: 'Web Programming Fundamentals',
             description: 'Practical web programming course covering HTML, CSS, JavaScript, Bootstrap, and jQuery to build modern responsive websites.',
             topics: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'Responsive Design', 'Form Handling'],
-            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4dfb38?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -141,7 +141,7 @@ export const coursesData = {
             name: 'NoSQL Databases',
             description: 'Introduction to NoSQL databases including MongoDB, document stores, key-value stores, and their use cases.',
             topics: ['MongoDB', 'Document Stores', 'Key-Value Stores', 'Graph Databases', 'CAP Theorem', 'Data Modeling'],
-            image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -152,13 +152,13 @@ export const coursesData = {
             name: 'Computer Networks',
             description: 'Comprehensive networking course covering network protocols, TCP/IP, routing, switching, and network security.',
             topics: ['OSI Model', 'TCP/IP', 'Routing Protocols', 'Switching', 'Network Security', 'Wireless Networks', 'Network Administration'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop'
           },
           {
             name: 'Cisco Networks',
             description: 'Complete Cisco networking course covering CCNA topics, router and switch configuration, network design, and troubleshooting.',
             topics: ['CCNA Fundamentals', 'Router Configuration', 'Switch Configuration', 'VLANs & Trunking', 'OSPF & EIGRP', 'Network Troubleshooting', 'Cisco Packet Tracer'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=300&fit=crop'
           },
           {
             name: 'Network Security',
@@ -181,7 +181,7 @@ export const coursesData = {
             name: 'DevOps & Cloud Deployment',
             description: 'Learn DevOps practices, CI/CD pipelines, container orchestration, and cloud deployment automation.',
             topics: ['Docker & Kubernetes', 'CI/CD Pipelines', 'Infrastructure as Code', 'Monitoring & Logging', 'Cloud Automation', 'Microservices'],
-            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -210,7 +210,7 @@ export const coursesData = {
             name: 'Digital Design',
             description: 'Digital logic design course covering combinational and sequential circuits, Boolean algebra, and digital system design.',
             topics: ['Boolean Algebra', 'Logic Gates', 'Combinational Circuits', 'Sequential Circuits', 'Flip-Flops', 'Counters', 'State Machines'],
-            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
           },
           {
             name: 'ASIC Design',
@@ -222,7 +222,7 @@ export const coursesData = {
             name: 'Computer Architecture',
             description: 'Computer organization and architecture course covering CPU design, memory systems, I/O systems, and parallel processing.',
             topics: ['CPU Design', 'Memory Systems', 'Cache Memory', 'I/O Systems', 'Assembly Language', 'Parallel Processing', 'Pipelining'],
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=300&fit=crop'
           }
         ]
       }
@@ -239,7 +239,7 @@ export const coursesData = {
             name: 'هياكل البيانات',
             description: 'دراسة متعمقة لهياكل البيانات بما في ذلك المصفوفات، القوائم المرتبطة، المكدسات، الطوابير، الأشجار، الرسوم البيانية، وتنفيذها.',
             topics: ['المصفوفات والقوائم', 'المكدسات والطوابير', 'الأشجار', 'الرسوم البيانية', 'جداول التجزئة', 'خوارزميات الترتيب', 'خوارزميات البحث'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop'
           },
           {
             name: 'البرمجة الكائنية (OOP)',
@@ -251,7 +251,7 @@ export const coursesData = {
             name: 'الخوارزميات',
             description: 'دورة تصميم وتحليل الخوارزميات تغطي تحليل التعقيد، الترتيب، البحث، البرمجة الديناميكية، وخوارزميات الرسوم البيانية.',
             topics: ['تحليل الخوارزميات', 'خوارزميات الترتيب', 'خوارزميات البحث', 'البرمجة الديناميكية', 'الخوارزميات الجشعة', 'خوارزميات الرسوم البيانية', 'نظرية التعقيد'],
-            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
           },
           {
             name: 'تصميم المترجمات',
@@ -275,7 +275,7 @@ export const coursesData = {
             name: 'Linux',
             description: 'دورة كاملة في Linux تغطي سطر الأوامر، نظام الملفات، برمجة Shell، إدارة النظام، وإدارة الخوادم.',
             topics: ['أوامر Linux', 'نظام الملفات', 'برمجة Shell (Bash)', 'إدارة المستخدمين والمجموعات', 'إدارة العمليات', 'إدارة الحزم', 'إدارة النظام', 'تكوين الخوادم'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -299,13 +299,13 @@ export const coursesData = {
             name: 'تطوير iOS',
             description: 'دورة شاملة في تطوير تطبيقات iOS تغطي Swift، Xcode، UIKit، SwiftUI، ونشر التطبيقات على Apple App Store.',
             topics: ['برمجة Swift', 'Xcode IDE', 'UIKit & SwiftUI', 'Core Data', 'الشبكات', 'نشر App Store'],
-            image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop'
           },
           {
             name: 'تطوير التطبيقات متعددة المنصات',
             description: 'تعلم بناء تطبيقات موبايل لكل من Android و iOS باستخدام React Native أو Flutter.',
             topics: ['React Native', 'Flutter', 'برمجة Dart', 'إدارة الحالة', 'الوحدات الأصلية', 'نشر التطبيقات'],
-            image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -322,13 +322,13 @@ export const coursesData = {
             name: 'مشاريع Raspberry Pi',
             description: 'دورة شاملة في Raspberry Pi تغطي Linux، برمجة Python، التحكم بـ GPIO، وبناء الأنظمة المدمجة.',
             topics: ['إعداد Raspberry Pi', 'أوامر Linux', 'برمجة Python', 'التحكم بـ GPIO', 'وحدة الكاميرا', 'الأتمتة المنزلية', 'الروبوتات'],
-            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop'
           },
           {
             name: 'تصميم الأنظمة المدمجة',
             description: 'دورة متقدمة في الأنظمة المدمجة تغطي معمارية المتحكمات الدقيقة، الأنظمة في الوقت الفعلي، وتكامل الأجهزة والبرمجيات.',
             topics: ['معمارية المتحكمات الدقيقة', 'الأنظمة في الوقت الفعلي', 'المقاطعات والعدادات', 'بروتوكولات الاتصال', 'تصميم PCB', 'تطوير البرامج الثابتة'],
-            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -351,7 +351,7 @@ export const coursesData = {
             name: 'أساسيات برمجة الويب',
             description: 'دورة عملية في برمجة الويب تغطي HTML و CSS و JavaScript و Bootstrap و jQuery لبناء مواقع ويب عصرية ومتجاوبة.',
             topics: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'jQuery', 'تصميم متجاوب', 'التعامل مع النماذج'],
-            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4dfb38?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -379,13 +379,13 @@ export const coursesData = {
             name: 'شبكات الحاسوب',
             description: 'دورة شاملة في الشبكات تغطي بروتوكولات الشبكة، TCP/IP، التوجيه، التبديل، وأمن الشبكات.',
             topics: ['نموذج OSI', 'TCP/IP', 'بروتوكولات التوجيه', 'التبديل', 'أمن الشبكات', 'الشبكات اللاسلكية', 'إدارة الشبكات'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop'
           },
           {
             name: 'شبكات Cisco',
             description: 'دورة كاملة في شبكات Cisco تغطي مواضيع CCNA، تكوين الموجهات والمبدلات، تصميم الشبكات، واستكشاف الأخطاء.',
             topics: ['أساسيات CCNA', 'تكوين الموجهات', 'تكوين المبدلات', 'VLANs & Trunking', 'OSPF & EIGRP', 'استكشاف أخطاء الشبكة', 'Cisco Packet Tracer'],
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=300&fit=crop'
           },
           {
             name: 'أمن الشبكات',
@@ -408,7 +408,7 @@ export const coursesData = {
             name: 'DevOps والنشر السحابي',
             description: 'تعلم ممارسات DevOps، خطوط CI/CD، تنسيق الحاويات، وأتمتة النشر السحابي.',
             topics: ['Docker & Kubernetes', 'خطوط CI/CD', 'البنية التحتية كرمز', 'المراقبة والتسجيل', 'أتمتة السحابة', 'الخدمات الصغيرة'],
-            image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop'
           }
         ]
       },
@@ -437,19 +437,19 @@ export const coursesData = {
             name: 'التصميم الرقمي',
             description: 'دورة تصميم المنطق الرقمي تغطي الدوائر التوافقية والتسلسلية، الجبر البوليني، وتصميم الأنظمة الرقمية.',
             topics: ['الجبر البوليني', 'البوابات المنطقية', 'الدوائر التوافقية', 'الدوائر التسلسلية', 'Flip-Flops', 'العدادات', 'آلات الحالة'],
-            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
           },
           {
             name: 'تصميم ASIC',
             description: 'دورة تصميم الدوائر المتكاملة الخاصة بالتطبيقات تغطي VHDL/Verilog، التركيب، وتنفيذ ASIC.',
             topics: ['VHDL/Verilog', 'تصميم RTL', 'التركيب', 'Place & Route', 'تحليل التوقيت', 'تدفق ASIC', 'تنفيذ FPGA'],
-            image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop'
           },
           {
             name: 'معمارية الحاسوب',
             description: 'دورة تنظيم ومعمارية الحاسوب تغطي تصميم المعالج، أنظمة الذاكرة، أنظمة الإدخال/الإخراج، والمعالجة المتوازية.',
             topics: ['تصميم المعالج', 'أنظمة الذاكرة', 'ذاكرة التخزين المؤقت', 'أنظمة I/O', 'لغة التجميع', 'المعالجة المتوازية', 'Pipeline'],
-            image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=300&fit=crop'
+            image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400&h=300&fit=crop'
           }
         ]
       }
