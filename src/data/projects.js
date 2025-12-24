@@ -88,6 +88,7 @@ export const projectsData = {
             '/aivideoproduction/8.mp4',
             '/aivideoproduction/9.mp4'
           ],
+          thumbnail: '/aivideoproduction/thumbnail.png',
           gradient: 'from-rose-500 to-pink-500'
         }
       ],
@@ -382,6 +383,7 @@ export const projectsData = {
             '/aivideoproduction/8.mp4',
             '/aivideoproduction/9.mp4'
           ],
+          thumbnail: '/aivideoproduction/thumbnail.png',
           gradient: 'from-rose-500 to-pink-500'
         }
       ],
