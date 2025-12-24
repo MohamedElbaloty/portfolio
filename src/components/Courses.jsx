@@ -185,7 +185,7 @@ const Courses = () => {
                                 <img 
                                   src={course.image} 
                                   alt={course.name}
-                                  className="w-full sm:w-32 h-32 sm:h-32 object-cover rounded-lg border border-white/10"
+                                  className="w-full sm:w-32 h-32 sm:h-32 object-contain rounded-lg border border-white/10 bg-white/5"
                                   onError={(e) => {
                                     e.target.style.display = 'none'
                                   }}

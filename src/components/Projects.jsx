@@ -14,7 +14,8 @@ import {
   FaTools,
   FaList,
   FaBriefcase,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaGraduationCap
 } from 'react-icons/fa'
 import { useInView } from 'react-intersection-observer'
 import { useLanguage } from '../contexts/LanguageContext'
@@ -285,37 +286,84 @@ const Projects = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-4 mb-8 sm:mb-12"
+          className="flex justify-center gap-3 sm:gap-4 mb-8 sm:mb-12"
         >
           <motion.button
             onClick={() => {
               setSelectedCategory('production')
               setShowAllMobile(false)
             }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-base transition-all ${
+            className={`group relative px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 sm:gap-3 overflow-hidden ${
               selectedCategory === 'production' || selectedCategory === 'all'
-                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                : 'glass border border-white/10 text-gray-300 hover:border-purple-500/50'
+                ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50'
+                : 'glass backdrop-blur-xl border border-white/20 text-gray-300 hover:border-purple-500/50 hover:bg-white/5'
             }`}
           >
-            {t.projects.productionProjects}
+            {/* Animated background gradient for active state */}
+            {selectedCategory === 'production' || selectedCategory === 'all' ? (
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"
+                initial={{ x: '-100%' }}
+                animate={{ x: '100%' }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+                style={{ opacity: 0.3 }}
+              />
+            ) : null}
+            
+            <div className="relative z-10 flex items-center gap-2 sm:gap-3">
+              <FaBriefcase className={`text-base sm:text-lg transition-transform duration-300 ${
+                selectedCategory === 'production' || selectedCategory === 'all'
+                  ? 'text-white'
+                  : 'text-purple-400 group-hover:text-purple-300 group-hover:scale-110'
+              }`} />
+              <span className="relative z-10">{t.projects.productionProjects}</span>
+            </div>
+            
+            {/* Glow effect for active state */}
+            {selectedCategory === 'production' || selectedCategory === 'all' ? (
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-indigo-400/20 via-purple-400/20 to-pink-400/20 blur-xl -z-10"></div>
+            ) : null}
           </motion.button>
+          
           <motion.button
             onClick={() => {
               setSelectedCategory('academic')
               setShowAllMobile(false)
             }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-base transition-all ${
+            className={`group relative px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 sm:gap-3 overflow-hidden ${
               selectedCategory === 'academic'
-                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg'
-                : 'glass border border-white/10 text-gray-300 hover:border-purple-500/50'
+                ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/50'
+                : 'glass backdrop-blur-xl border border-white/20 text-gray-300 hover:border-blue-500/50 hover:bg-white/5'
             }`}
           >
-            {t.projects.academicProjects}
+            {/* Animated background gradient for active state */}
+            {selectedCategory === 'academic' ? (
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600"
+                initial={{ x: '-100%' }}
+                animate={{ x: '100%' }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+                style={{ opacity: 0.3 }}
+              />
+            ) : null}
+            
+            <div className="relative z-10 flex items-center gap-2 sm:gap-3">
+              <FaGraduationCap className={`text-base sm:text-lg transition-transform duration-300 ${
+                selectedCategory === 'academic'
+                  ? 'text-white'
+                  : 'text-blue-400 group-hover:text-blue-300 group-hover:scale-110'
+              }`} />
+              <span className="relative z-10">{t.projects.academicProjects}</span>
+            </div>
+            
+            {/* Glow effect for active state */}
+            {selectedCategory === 'academic' ? (
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 via-blue-400/20 to-indigo-400/20 blur-xl -z-10"></div>
+            ) : null}
           </motion.button>
         </motion.div>
 
