@@ -286,7 +286,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex justify-center gap-3 sm:gap-4 mb-8 sm:mb-12"
+          className="flex justify-center gap-4 sm:gap-6 mb-8 sm:mb-12"
         >
           <motion.button
             onClick={() => {
@@ -295,7 +295,7 @@ const Projects = () => {
             }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className={`group relative px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 sm:gap-3 overflow-hidden ${
+            className={`group relative px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-1.5 sm:gap-2 overflow-hidden ${
               selectedCategory === 'production' || selectedCategory === 'all'
                 ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white shadow-lg shadow-purple-500/50'
                 : 'glass backdrop-blur-xl border border-white/20 text-gray-300 hover:border-purple-500/50 hover:bg-white/5'
@@ -312,8 +312,8 @@ const Projects = () => {
               />
             ) : null}
             
-            <div className="relative z-10 flex items-center gap-2 sm:gap-3">
-              <FaBriefcase className={`text-base sm:text-lg transition-transform duration-300 ${
+            <div className="relative z-10 flex items-center gap-1.5 sm:gap-2">
+              <FaBriefcase className={`text-sm sm:text-base transition-transform duration-300 ${
                 selectedCategory === 'production' || selectedCategory === 'all'
                   ? 'text-white'
                   : 'text-purple-400 group-hover:text-purple-300 group-hover:scale-110'
@@ -334,7 +334,7 @@ const Projects = () => {
             }}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className={`group relative px-4 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 flex items-center gap-2 sm:gap-3 overflow-hidden ${
+            className={`group relative px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all duration-300 flex items-center gap-1.5 sm:gap-2 overflow-hidden ${
               selectedCategory === 'academic'
                 ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-lg shadow-blue-500/50'
                 : 'glass backdrop-blur-xl border border-white/20 text-gray-300 hover:border-blue-500/50 hover:bg-white/5'
@@ -351,8 +351,8 @@ const Projects = () => {
               />
             ) : null}
             
-            <div className="relative z-10 flex items-center gap-2 sm:gap-3">
-              <FaGraduationCap className={`text-base sm:text-lg transition-transform duration-300 ${
+            <div className="relative z-10 flex items-center gap-1.5 sm:gap-2">
+              <FaGraduationCap className={`text-sm sm:text-base transition-transform duration-300 ${
                 selectedCategory === 'academic'
                   ? 'text-white'
                   : 'text-blue-400 group-hover:text-blue-300 group-hover:scale-110'
