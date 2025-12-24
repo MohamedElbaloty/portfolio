@@ -108,7 +108,7 @@ const Projects = () => {
     },
     {
       id: 8,
-      title: language === 'en' ? 'LoRa Emergency Communication System' : 'نظام اتصال طوارئ LoRa',
+      title: language === 'en' ? 'LoRa Emergency System' : 'نظام طوارئ LoRa',
       category: 'iot',
       description: language === 'en'
         ? 'Secure long-range wireless communication system using LoRa technology for emergency desert applications, featuring lightweight cryptography and low power consumption.'
@@ -570,8 +570,8 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile, language }) => {
             const isMrRobot = isMobile && project.title === 'Mr Robot Academy'
             return (
               <h3
-                className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors ${
-                  isMrRobot ? 'text-base whitespace-nowrap' : ''
+                className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-white group-hover:text-purple-400 transition-colors line-clamp-2 ${
+                  isMrRobot ? 'text-base whitespace-nowrap line-clamp-none' : ''
                 }`}
               >
                 {project.title}
