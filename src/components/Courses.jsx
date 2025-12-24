@@ -179,27 +179,25 @@ const Courses = () => {
                           transition={{ delay: courseIndex * 0.1 }}
                           className="glass backdrop-blur-sm border border-white/5 rounded-xl p-4 sm:p-6 hover:border-purple-500/30 transition-all"
                         >
-                          <div className="flex flex-col sm:flex-row gap-4 mb-3 sm:mb-4">
-                            {course.image && (
-                              <div className="flex-shrink-0">
-                                <img 
-                                  src={course.image} 
-                                  alt={course.name}
-                                  className="w-full sm:w-32 h-32 sm:h-32 object-contain rounded-lg border border-white/10 bg-white/5"
-                                  onError={(e) => {
-                                    e.target.style.display = 'none'
-                                  }}
-                                />
-                              </div>
-                            )}
-                            <div className="flex-1">
-                              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
-                                {course.name}
-                              </h4>
-                              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-                                {course.description}
-                              </p>
+                          {course.image && (
+                            <div className="mb-4">
+                              <img 
+                                src={course.image} 
+                                alt={course.name}
+                                className="w-full h-48 sm:h-56 lg:h-64 object-contain rounded-lg border border-white/10 bg-white/5"
+                                onError={(e) => {
+                                  e.target.style.display = 'none'
+                                }}
+                              />
                             </div>
+                          )}
+                          <div>
+                            <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
+                              {course.name}
+                            </h4>
+                            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
+                              {course.description}
+                            </p>
                           </div>
                           <div>
                             <p className="text-purple-400 text-xs sm:text-sm font-semibold mb-2">
