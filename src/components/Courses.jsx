@@ -179,12 +179,28 @@ const Courses = () => {
                           transition={{ delay: courseIndex * 0.1 }}
                           className="glass backdrop-blur-sm border border-white/5 rounded-xl p-4 sm:p-6 hover:border-purple-500/30 transition-all"
                         >
-                          <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
-                            {course.name}
-                          </h4>
-                          <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4 leading-relaxed">
-                            {course.description}
-                          </p>
+                          <div className="flex flex-col sm:flex-row gap-4 mb-3 sm:mb-4">
+                            {course.image && (
+                              <div className="flex-shrink-0">
+                                <img 
+                                  src={course.image} 
+                                  alt={course.name}
+                                  className="w-full sm:w-32 h-32 sm:h-32 object-cover rounded-lg border border-white/10"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none'
+                                  }}
+                                />
+                              </div>
+                            )}
+                            <div className="flex-1">
+                              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
+                                {course.name}
+                              </h4>
+                              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                                {course.description}
+                              </p>
+                            </div>
+                          </div>
                           <div>
                             <p className="text-purple-400 text-xs sm:text-sm font-semibold mb-2">
                               {language === 'en' ? 'Topics Covered:' : 'المواضيع المشمولة:'}
