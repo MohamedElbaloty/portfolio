@@ -177,43 +177,87 @@ const Courses = () => {
                             x: isExpanded ? 0 : -20
                           }}
                           transition={{ delay: courseIndex * 0.1 }}
-                          className="glass backdrop-blur-sm border border-white/5 rounded-xl p-4 sm:p-6 hover:border-purple-500/30 transition-all"
+                          className="glass backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-purple-500/30 transition-all relative"
                         >
                           {course.image && (
-                            <div className="mb-4">
-                              <img 
-                                src={course.image} 
-                                alt={course.name}
-                                className="w-full h-48 sm:h-56 lg:h-64 object-contain rounded-lg border border-white/10 bg-white/5"
-                                onError={(e) => {
-                                  e.target.style.display = 'none'
-                                }}
-                              />
+                            <>
+                              {/* Background Image */}
+                              <div className="absolute inset-0">
+                                <img 
+                                  src={course.image} 
+                                  alt={course.name}
+                                  className="w-full h-full object-cover"
+                                  onError={(e) => {
+                                    e.target.parentElement.style.display = 'none'
+                                  }}
+                                />
+                                {/* Blur overlay on sides for small images - creates seamless extension */}
+                                <div 
+                                  className="absolute inset-0 pointer-events-none"
+                                  style={{
+                                    background: 'linear-gradient(to right, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.7) 10%, transparent 20%, transparent 80%, rgba(26,26,26,0.7) 90%, rgba(26,26,26,0.95) 100%)',
+                                    backdropFilter: 'blur(8px)'
+                                  }}
+                                ></div>
+                                {/* Additional gradient for better blending */}
+                                <div 
+                                  className="absolute inset-0 pointer-events-none"
+                                  style={{
+                                    background: 'radial-gradient(ellipse at center, transparent 0%, rgba(26,26,26,0.3) 100%)'
+                                  }}
+                                ></div>
+                              </div>
+                              {/* Content Overlay */}
+                              <div className="relative p-4 sm:p-6">
+                                <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">
+                                  {course.name}
+                                </h4>
+                                <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 drop-shadow-md">
+                                  {course.description}
+                                </p>
+                                <div>
+                                  <p className="text-purple-300 text-xs sm:text-sm font-semibold mb-2 drop-shadow-md">
+                                    {language === 'en' ? 'Topics Covered:' : 'المواضيع المشمولة:'}
+                                  </p>
+                                  <div className="flex flex-wrap gap-2">
+                                    {course.topics.map((topic, topicIndex) => (
+                                      <span
+                                        key={topicIndex}
+                                        className="px-3 py-1 bg-purple-500/30 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-200 border border-purple-400/40 drop-shadow-md"
+                                      >
+                                        {topic}
+                                      </span>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </>
+                          )}
+                          {!course.image && (
+                            <div className="p-4 sm:p-6">
+                              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
+                                {course.name}
+                              </h4>
+                              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
+                                {course.description}
+                              </p>
+                              <div>
+                                <p className="text-purple-400 text-xs sm:text-sm font-semibold mb-2">
+                                  {language === 'en' ? 'Topics Covered:' : 'المواضيع المشمولة:'}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                  {course.topics.map((topic, topicIndex) => (
+                                    <span
+                                      key={topicIndex}
+                                      className="px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
+                                    >
+                                      {topic}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
                             </div>
                           )}
-                          <div>
-                            <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
-                              {course.name}
-                            </h4>
-                            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">
-                              {course.description}
-                            </p>
-                          </div>
-                          <div>
-                            <p className="text-purple-400 text-xs sm:text-sm font-semibold mb-2">
-                              {language === 'en' ? 'Topics Covered:' : 'المواضيع المشمولة:'}
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {course.topics.map((topic, topicIndex) => (
-                                <span
-                                  key={topicIndex}
-                                  className="px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
-                                >
-                                  {topic}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
                         </motion.div>
                       ))}
                     </div>
