@@ -1216,10 +1216,23 @@ const SubProjectsModal = ({ project, onClose, t, language, selectedSubProject, s
               >
                 <div className={`absolute -inset-1 bg-gradient-to-r ${subProject.gradient} rounded-2xl blur opacity-0 group-hover:opacity-30 transition-opacity`}></div>
                 <div className="relative glass backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-all">
-                  {/* Header with thumbnail from video or image or gradient */}
+                  {/* Header with thumbnail from saved image or video or gradient */}
                   <div className={`h-32 bg-gradient-to-br ${subProject.gradient} relative overflow-hidden`}>
-                    {/* Priority: 1. Image (if exists), 2. Video thumbnail (if videos exist), 3. Gradient */}
-                    {subProject.image ? (
+                    {/* Priority: 1. Saved thumbnail, 2. Image (if exists), 3. Video thumbnail (if videos exist), 4. Gradient */}
+                    {subProject.thumbnail ? (
+                      <>
+                        <img
+                          src={subProject.thumbnail}
+                          alt={subProject.title}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to video thumbnail or gradient if saved thumbnail fails
+                            e.target.style.display = 'none'
+                          }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                      </>
+                    ) : subProject.image ? (
                       <>
                         <img
                           src={subProject.image}
