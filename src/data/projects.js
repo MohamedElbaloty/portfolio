@@ -334,7 +334,7 @@ export const projectsData = {
       description: 'منصة تعليم روبوتات وبرمجة مع تتبع وشهادات.',
       fullDescription: 'Mr Robot Academy هي منصة تعليمية شاملة متخصصة في تعليم الروبوتات والبرمجة. تقدم المنصة دورات منظمة مع دروس فيديو، تمارين برمجة تفاعلية، تتبع تقدم فوري، منتديات طلابية، تقديم الواجبات، نظام تصحيح تلقائي، وشهادات رقمية عند إتمام الدورة. تتضمن دورات للمبتدئين والمستوى المتقدم.',
       tools: ['React', 'Next.js', 'Express', 'PostgreSQL', 'Prisma', 'Stripe', 'AWS S3', 'Socket.io'],
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop',
       video: null,
       link: 'https://mrrobotacademy.com',
       gradient: 'from-indigo-500 to-purple-500',
