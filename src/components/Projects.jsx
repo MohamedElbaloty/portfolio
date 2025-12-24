@@ -108,7 +108,7 @@ const Projects = () => {
     },
     {
       id: 8,
-      title: language === 'en' ? 'Long-Range LoRa Emergency Communication System' : 'نظام اتصال طوارئ لاسلكي طويل المدى LoRa',
+      title: language === 'en' ? 'LoRa Emergency Communication System' : 'نظام اتصال طوارئ LoRa',
       category: 'iot',
       description: language === 'en'
         ? 'Secure long-range wireless communication system using LoRa technology for emergency desert applications, featuring lightweight cryptography and low power consumption.'
