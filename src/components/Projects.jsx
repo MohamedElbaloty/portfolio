@@ -505,7 +505,7 @@ const ProjectCard = ({ project, index, onSelect, t, isMobile, language }) => {
           <img
             src={project.image}
             alt={project.title}
-            className={`w-full h-full ${project.id === 9 ? 'object-contain' : 'object-cover'} transition-transform duration-700 group-hover:scale-110`}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             onError={(e) => {
               e.target.src = `https://via.placeholder.com/800x600/6366f1/ffffff?text=${encodeURIComponent(project.title)}`
             }}
