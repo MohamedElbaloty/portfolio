@@ -98,7 +98,7 @@ const Projects = () => {
         : 'روبوت مراقبة التباعد الاجتماعي تم تطويره خلال جائحة COVID-19 لمساعدة في فرض إرشادات التباعد الاجتماعي. يستخدم الروبوت الرؤية الحاسوبية والمستشعرات لاكتشاف الأفراد الذين لا يحافظون على التباعد الاجتماعي الصحيح، يوفر تنبيهات بصرية وسمعية، ويمكنه اتباع التنقل باتباع الخط. مبني باستخدام متحكم Arduino، مستشعرات المسافة فوق الصوتية، مؤشرات LED، تنبيهات صوتية، وإمكانيات اتباع الخط. الروبوت يقوم بدوريات مستقلة في المناطق ويضمن الامتثال لبروتوكولات التباعد الاجتماعي.',
       tools: ['Arduino', 'Ultrasonic Sensors', 'Line Following', 'Computer Vision', 'LED Indicators', 'Buzzer Alerts', 'C/C++'],
       image: '/academicprojects/social distance robot.jfif',
-      video: null, // Video will be added later
+      video: '/academicprojects/socialdistancerobotrobot.mp4',
       tags: ['Arduino', 'COVID-19', 'Robotics'],
       gradient: 'from-green-500 to-emerald-500',
       schematic: '/academicprojects/social distance schematic robot.jpg',
