@@ -366,6 +366,10 @@ const Projects = () => {
               if (isMobile && !showAllMobile && index >= 4) {
                 return null
               }
+              // Hide Business Automation & Workflow (id: 6) on desktop/tablet only
+              if (!isMobile && project.id === 6) {
+                return null
+              }
               return (
                 <ProjectCard
                   key={project.id}
