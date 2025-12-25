@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { 
   FaCode, 
@@ -26,6 +26,8 @@ const Courses = () => {
   const [expandedCategory, setExpandedCategory] = useState(null)
   const [showAllCourses, setShowAllCourses] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const categoryRefs = useRef({})
+  const previousExpandedRef = useRef(null)
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 640)
@@ -33,6 +35,25 @@ const Courses = () => {
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
   }, [])
+
+  // Handle scrolling to newly opened card on mobile
+  useEffect(() => {
+    if (isMobile && expandedCategory !== null && previousExpandedRef.current !== null && previousExpandedRef.current !== expandedCategory) {
+      // A new card was opened while another was already open
+      const cardElement = categoryRefs.current[expandedCategory]
+      if (cardElement) {
+        // Small delay to ensure the layout has updated
+        setTimeout(() => {
+          cardElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+          })
+        }, 100)
+      }
+    }
+    previousExpandedRef.current = expandedCategory
+  }, [expandedCategory, isMobile])
 
   const categoryIcons = {
     'Web & Mobile Development': FaLaptopCode,
@@ -119,6 +140,9 @@ const Courses = () => {
             return (
               <motion.div
                 key={categoryIndex}
+                ref={(el) => {
+                  if (el) categoryRefs.current[categoryIndex] = el
+                }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
