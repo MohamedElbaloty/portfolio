@@ -177,43 +177,71 @@ const Courses = () => {
                             x: isExpanded ? 0 : -20
                           }}
                           transition={{ delay: courseIndex * 0.1 }}
-                          className="glass backdrop-blur-sm border border-white/5 rounded-xl p-4 sm:p-6 hover:border-purple-500/30 transition-all"
+                          className="relative glass backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-purple-500/30 transition-all group"
                         >
-                          <div className="flex flex-col sm:flex-row gap-4 mb-3 sm:mb-4">
+                          {/* Background Image with Blur Effect */}
+                          {course.image && (
+                            <>
+                              <div 
+                                className="absolute inset-0 bg-cover bg-center"
+                                style={{ 
+                                  backgroundImage: `url(${course.image})`,
+                                  filter: 'blur(20px)',
+                                  transform: 'scale(1.1)',
+                                  opacity: 0.4
+                                }}
+                              ></div>
+                              {/* Gradient Overlay from image colors on sides */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
+                              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80"></div>
+                            </>
+                          )}
+                          
+                          {/* Content */}
+                          <div className="relative z-10 p-4 sm:p-6">
+                            {/* Course Image - Full Width */}
                             {course.image && (
-                              <div className="flex-shrink-0">
-                                <img 
-                                  src={course.image} 
-                                  alt={course.name}
-                                  className="w-full sm:w-32 h-32 sm:h-32 object-contain rounded-lg border border-white/10 bg-white/5"
-                                  onError={(e) => {
-                                    e.target.style.display = 'none'
-                                  }}
-                                />
+                              <div className="mb-4 relative">
+                                <div className="w-full h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden border border-white/20 bg-black/20 backdrop-blur-sm shadow-2xl">
+                                  <img 
+                                    src={course.image} 
+                                    alt={course.name}
+                                    className="w-full h-full object-contain"
+                                    onError={(e) => {
+                                      e.target.style.display = 'none'
+                                    }}
+                                  />
+                                </div>
+                                {/* Subtle shadow overlay for depth */}
+                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
                               </div>
                             )}
-                            <div className="flex-1">
-                              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">
+                            
+                            {/* Course Info */}
+                            <div className="backdrop-blur-md bg-black/30 rounded-lg p-4 border border-white/10">
+                              <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">
                                 {course.name}
                               </h4>
-                              <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
+                              <p className="text-gray-200 text-sm sm:text-base leading-relaxed mb-4 drop-shadow-md">
                                 {course.description}
                               </p>
-                            </div>
-                          </div>
-                          <div>
-                            <p className="text-purple-400 text-xs sm:text-sm font-semibold mb-2">
-                              {language === 'en' ? 'Topics Covered:' : 'المواضيع المشمولة:'}
-                            </p>
-                            <div className="flex flex-wrap gap-2">
-                              {course.topics.map((topic, topicIndex) => (
-                                <span
-                                  key={topicIndex}
-                                  className="px-3 py-1 bg-purple-500/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-300 border border-purple-500/30"
-                                >
-                                  {topic}
-                                </span>
-                              ))}
+                              
+                              {/* Topics */}
+                              <div>
+                                <p className="text-purple-300 text-xs sm:text-sm font-semibold mb-2 drop-shadow-sm">
+                                  {language === 'en' ? 'Topics Covered:' : 'المواضيع المشمولة:'}
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                  {course.topics.map((topic, topicIndex) => (
+                                    <span
+                                      key={topicIndex}
+                                      className="px-3 py-1 bg-purple-500/30 backdrop-blur-sm rounded-full text-xs sm:text-sm text-purple-200 border border-purple-400/40 drop-shadow-sm"
+                                    >
+                                      {topic}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </motion.div>
