@@ -87,7 +87,7 @@ const Courses = () => {
       
       <div className="container mx-auto relative z-10">
         {/* Courses Categories */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 gap-4 sm:gap-6">
           {/* Teaching Section - First Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
