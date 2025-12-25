@@ -164,19 +164,23 @@ const Courses = () => {
                       height: isExpanded ? 'auto' : 0,
                       opacity: isExpanded ? 1 : 0,
                     }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.25, ease: 'easeOut' }}
                     className="overflow-hidden"
                   >
                     <div className="p-4 sm:p-6 pt-0 space-y-4">
                       {category.courses.map((course, courseIndex) => (
                         <motion.div
                           key={courseIndex}
-                          initial={{ opacity: 0, x: -20 }}
+                          initial={{ opacity: 0, y: 10 }}
                           animate={{ 
                             opacity: isExpanded ? 1 : 0,
-                            x: isExpanded ? 0 : -20
+                            y: isExpanded ? 0 : 10
                           }}
-                          transition={{ delay: courseIndex * 0.1 }}
+                          transition={{ 
+                            duration: 0.2,
+                            delay: isExpanded ? courseIndex * 0.03 : 0,
+                            ease: 'easeOut'
+                          }}
                           className="relative glass backdrop-blur-sm border border-white/5 rounded-xl overflow-hidden hover:border-purple-500/30 transition-all group"
                         >
                           {/* Background Image with Blur Effect */}
