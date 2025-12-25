@@ -205,8 +205,8 @@ const Courses = () => {
                           <div className="relative z-10 p-4 sm:p-6">
                             {/* Course Image - Full Width */}
                             {course.image && (
-                              <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg border border-white/20 shadow-2xl" style={{ overflow: 'hidden' }}>
-                                {/* Blurred background using same image - fills all empty spaces */}
+                              <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg border border-white/20 shadow-2xl" style={{ overflow: 'visible' }}>
+                                {/* Blurred background using same image - extends beyond container for side blur effect */}
                                 <div 
                                   className="absolute"
                                   style={{ 
@@ -219,27 +219,29 @@ const Courses = () => {
                                     height: 'calc(100% + 40px)',
                                     left: '-20px',
                                     top: '-20px',
-                                    right: '-20px',
-                                    bottom: '-20px',
+                                    zIndex: 0,
                                   }}
                                 ></div>
-                                {/* Actual image centered */}
-                                <div className="absolute inset-0 flex items-center justify-center z-10" style={{ overflow: 'hidden' }}>
-                                  <img 
-                                    src={course.image} 
-                                    alt={course.name}
-                                    className="max-w-full max-h-full object-contain"
-                                    style={{ 
-                                      imageRendering: 'auto',
-                                      filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
-                                    }}
-                                    onError={(e) => {
-                                      e.target.style.display = 'none'
-                                    }}
-                                  />
+                                {/* Inner container with rounded corners and overflow hidden for actual image */}
+                                <div className="absolute inset-0 rounded-lg overflow-hidden z-10">
+                                  {/* Actual image centered */}
+                                  <div className="absolute inset-0 flex items-center justify-center">
+                                    <img 
+                                      src={course.image} 
+                                      alt={course.name}
+                                      className="max-w-full max-h-full object-contain"
+                                      style={{ 
+                                        imageRendering: 'auto',
+                                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+                                      }}
+                                      onError={(e) => {
+                                        e.target.style.display = 'none'
+                                      }}
+                                    />
+                                  </div>
+                                  {/* Subtle shadow overlay for depth */}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
                                 </div>
-                                {/* Subtle shadow overlay for depth */}
-                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-transparent pointer-events-none z-20"></div>
                               </div>
                             )}
                             
