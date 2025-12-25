@@ -366,8 +366,9 @@ const Projects = () => {
               if (isMobile && !showAllMobile && index >= 4) {
                 return null
               }
-              // Hide Business Automation & Workflow (id: 6) on desktop/tablet only
-              if (!isMobile && project.id === 6) {
+              // Hide Business Automation & Workflow (id: 6 in production) on desktop/tablet only
+              // Don't hide Pharmacy Robot (id: 6 in academic) - it has category 'iot'
+              if (!isMobile && project.id === 6 && project.category === 'production') {
                 return null
               }
               return (
