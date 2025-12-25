@@ -164,25 +164,6 @@ const Projects = () => {
       videoSteps: language === 'en'
         ? ['Dataset Collection', 'Image Preprocessing', 'CNN Architecture Design', 'Model Training', 'Disease Classification', 'Image Upload Interface', 'Real-time Processing', 'Results Visualization', 'Treatment Recommendations', 'Knowledge Base Integration', 'Performance Evaluation', 'Deployment']
         : ['جمع مجموعة البيانات', 'المعالجة المسبقة للصور', 'تصميم بنية CNN', 'تدريب النموذج', 'تصنيف الأمراض', 'واجهة رفع الصور', 'المعالجة في الوقت الفعلي', 'تصور النتائج', 'توصيات العلاج', 'تكامل قاعدة المعرفة', 'تقييم الأداء', 'النشر']
-    },
-    {
-      id: 11,
-      title: language === 'en' ? 'Intelligent Chatbot System' : 'نظام شات بوت ذكي',
-      category: 'ai',
-      description: language === 'en'
-        ? 'Advanced conversational AI chatbot system with natural language processing, context awareness, and multi-language support for various applications.'
-        : 'نظام شات بوت ذكي متقدم مع معالجة اللغة الطبيعية، الوعي السياقي، ودعم متعدد اللغات لتطبيقات متنوعة.',
-      fullDescription: language === 'en'
-        ? 'A sophisticated chatbot system designed to provide intelligent conversational experiences across multiple domains. The chatbot utilizes advanced natural language processing NLP techniques, machine learning models, and context-aware algorithms to understand user intent and generate appropriate responses. The system supports multiple languages, can handle complex queries, maintain conversation context, and learn from interactions. Features include intent recognition, entity extraction, sentiment analysis, multi-turn conversations, knowledge base integration, and API connectivity for real-time information retrieval. The chatbot can be deployed for customer service, educational assistance, healthcare support, e-commerce, and various other applications. Built using Python, NLP libraries like NLTK and spaCy, machine learning frameworks TensorFlow and PyTorch, and integrated with databases and APIs. The system includes a user-friendly web interface and can be extended with voice interaction capabilities.'
-        : 'نظام شات بوت متطور مصمم لتوفير تجارب محادثة ذكية عبر مجالات متعددة. يستخدم الشات بوت تقنيات معالجة اللغة الطبيعية NLP المتقدمة، نماذج التعلم الآلي، وخوارزميات واعية سياقياً لفهم نية المستخدم وتوليد ردود مناسبة. يدعم النظام عدة لغات، يمكنه التعامل مع الاستفسارات المعقدة، الحفاظ على سياق المحادثة، والتعلم من التفاعلات. المميزات تشمل التعرف على النية، استخراج الكيانات، تحليل المشاعر، محادثات متعددة الجولات، تكامل قاعدة المعرفة، واتصال API لاسترجاع المعلومات في الوقت الفعلي. يمكن نشر الشات بوت لخدمة العملاء، المساعدة التعليمية، الدعم الصحي، التجارة الإلكترونية، وتطبيقات متنوعة أخرى. مبني باستخدام Python، مكتبات NLP مثل NLTK و spaCy، أطر عمل التعلم الآلي TensorFlow و PyTorch، ومتكامل مع قواعد البيانات وAPIs. يتضمن النظام واجهة ويب سهلة الاستخدام ويمكن توسيعه بقدرات التفاعل الصوتي.',
-      tools: ['Python', 'Natural Language Processing (NLP)', 'Machine Learning', 'TensorFlow', 'PyTorch', 'NLTK', 'spaCy', 'Intent Recognition', 'Entity Extraction', 'Sentiment Analysis', 'Context Management', 'API Integration', 'Database Integration', 'Web Interface', 'RESTful API', 'Chatbot Framework'],
-      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&h=600&q=80',
-      video: null,
-      tags: ['Chatbot', 'AI', 'NLP'],
-      gradient: 'from-purple-500 to-pink-500',
-      videoSteps: language === 'en'
-        ? ['Requirements Analysis', 'NLP Model Selection', 'Training Data Collection', 'Intent Classification Model', 'Entity Extraction Setup', 'Context Management System', 'Response Generation', 'Knowledge Base Integration', 'API Development', 'Web Interface Design', 'Testing & Validation', 'Deployment & Monitoring']
-        : ['تحليل المتطلبات', 'اختيار نموذج NLP', 'جمع بيانات التدريب', 'نموذج تصنيف النية', 'إعداد استخراج الكيانات', 'نظام إدارة السياق', 'توليد الردود', 'تكامل قاعدة المعرفة', 'تطوير API', 'تصميم واجهة الويب', 'الاختبار والتحقق', 'النشر والمراقبة']
     }
   ]
 
