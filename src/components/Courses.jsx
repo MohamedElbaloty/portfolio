@@ -206,21 +206,31 @@ const Courses = () => {
                             {/* Course Image - Full Width */}
                             {course.image && (
                               <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden border border-white/20 shadow-2xl">
-                                {/* Blurred background using same image */}
+                                {/* Blurred background using same image - fills all empty spaces */}
                                 <div 
-                                  className="absolute inset-0 bg-cover bg-center"
+                                  className="absolute inset-0"
                                   style={{ 
                                     backgroundImage: `url(${course.image})`,
-                                    filter: 'blur(15px)',
-                                    transform: 'scale(1.1)',
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                    backgroundRepeat: 'no-repeat',
+                                    filter: 'blur(20px)',
+                                    transform: 'scale(1.2)',
+                                    width: '120%',
+                                    height: '120%',
+                                    left: '-10%',
+                                    top: '-10%',
                                   }}
                                 ></div>
                                 {/* Actual image centered */}
-                                <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="absolute inset-0 flex items-center justify-center z-10">
                                   <img 
                                     src={course.image} 
                                     alt={course.name}
-                                    className="max-w-full max-h-full object-contain relative z-10"
+                                    className="max-w-full max-h-full object-contain"
+                                    style={{ 
+                                      imageRendering: 'auto'
+                                    }}
                                     onError={(e) => {
                                       e.target.style.display = 'none'
                                     }}
