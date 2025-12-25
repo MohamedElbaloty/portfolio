@@ -205,19 +205,29 @@ const Courses = () => {
                           <div className="relative z-10 p-4 sm:p-6">
                             {/* Course Image - Full Width */}
                             {course.image && (
-                              <div className="mb-4 relative">
-                                <div className="w-full h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden border border-white/20 bg-black/20 backdrop-blur-sm shadow-2xl">
+                              <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden border border-white/20 shadow-2xl">
+                                {/* Blurred background using same image */}
+                                <div 
+                                  className="absolute inset-0 bg-cover bg-center"
+                                  style={{ 
+                                    backgroundImage: `url(${course.image})`,
+                                    filter: 'blur(15px)',
+                                    transform: 'scale(1.1)',
+                                  }}
+                                ></div>
+                                {/* Actual image centered */}
+                                <div className="absolute inset-0 flex items-center justify-center">
                                   <img 
                                     src={course.image} 
                                     alt={course.name}
-                                    className="w-full h-full object-contain"
+                                    className="max-w-full max-h-full object-contain relative z-10"
                                     onError={(e) => {
                                       e.target.style.display = 'none'
                                     }}
                                   />
                                 </div>
                                 {/* Subtle shadow overlay for depth */}
-                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/10 to-transparent pointer-events-none z-20"></div>
                               </div>
                             )}
                             
