@@ -205,31 +205,33 @@ const Courses = () => {
                           <div className="relative z-10 p-4 sm:p-6">
                             {/* Course Image - Full Width */}
                             {course.image && (
-                              <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg overflow-hidden border border-white/20 shadow-2xl">
+                              <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg border border-white/20 shadow-2xl" style={{ overflow: 'hidden' }}>
                                 {/* Blurred background using same image - fills all empty spaces */}
                                 <div 
-                                  className="absolute inset-0"
+                                  className="absolute"
                                   style={{ 
                                     backgroundImage: `url(${course.image})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat',
-                                    filter: 'blur(20px)',
-                                    transform: 'scale(1.2)',
-                                    width: '120%',
-                                    height: '120%',
-                                    left: '-10%',
-                                    top: '-10%',
+                                    filter: 'blur(30px)',
+                                    width: 'calc(100% + 40px)',
+                                    height: 'calc(100% + 40px)',
+                                    left: '-20px',
+                                    top: '-20px',
+                                    right: '-20px',
+                                    bottom: '-20px',
                                   }}
                                 ></div>
                                 {/* Actual image centered */}
-                                <div className="absolute inset-0 flex items-center justify-center z-10">
+                                <div className="absolute inset-0 flex items-center justify-center z-10" style={{ overflow: 'hidden' }}>
                                   <img 
                                     src={course.image} 
                                     alt={course.name}
                                     className="max-w-full max-h-full object-contain"
                                     style={{ 
-                                      imageRendering: 'auto'
+                                      imageRendering: 'auto',
+                                      filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
                                     }}
                                     onError={(e) => {
                                       e.target.style.display = 'none'
@@ -237,7 +239,7 @@ const Courses = () => {
                                   />
                                 </div>
                                 {/* Subtle shadow overlay for depth */}
-                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/10 to-transparent pointer-events-none z-20"></div>
+                                <div className="absolute inset-0 rounded-lg bg-gradient-to-t from-black/5 to-transparent pointer-events-none z-20"></div>
                               </div>
                             )}
                             
