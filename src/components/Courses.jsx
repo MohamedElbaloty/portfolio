@@ -221,8 +221,8 @@ const Courses = () => {
                               </div>
                             )}
                             
-                            {/* Course Info */}
-                            <div className="backdrop-blur-md bg-black/30 rounded-lg p-4 border border-white/10">
+                            {/* Course Info - Same Card */}
+                            <div>
                               <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 drop-shadow-lg">
                                 {course.name}
                               </h4>
