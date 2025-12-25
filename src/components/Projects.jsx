@@ -183,26 +183,6 @@ const Projects = () => {
       videoSteps: language === 'en'
         ? ['Requirements Analysis', 'NLP Model Selection', 'Training Data Collection', 'Intent Classification Model', 'Entity Extraction Setup', 'Context Management System', 'Response Generation', 'Knowledge Base Integration', 'API Development', 'Web Interface Design', 'Testing & Validation', 'Deployment & Monitoring']
         : ['تحليل المتطلبات', 'اختيار نموذج NLP', 'جمع بيانات التدريب', 'نموذج تصنيف النية', 'إعداد استخراج الكيانات', 'نظام إدارة السياق', 'توليد الردود', 'تكامل قاعدة المعرفة', 'تطوير API', 'تصميم واجهة الويب', 'الاختبار والتحقق', 'النشر والمراقبة']
-    },
-    {
-      id: 12,
-      title: language === 'en' ? 'Raspberry Pi Assistive Technology System' : 'نظام تقنيات مساعدة بـ Raspberry Pi للمكفوفين والصم والبكم',
-      category: 'iot',
-      description: language === 'en'
-        ? 'Comprehensive assistive technology system using Raspberry Pi to help visually impaired, deaf, and mute individuals with daily tasks and communication.'
-        : 'نظام تقنيات مساعدة شامل باستخدام Raspberry Pi لمساعدة المكفوفين والصم والبكم في المهام اليومية والتواصل.',
-      fullDescription: language === 'en'
-        ? 'An innovative assistive technology system built with Raspberry Pi to support individuals with visual, hearing, and speech impairments. The system integrates multiple modules including computer vision for object recognition and text-to-speech conversion for the visually impaired, speech recognition and visual alerts for the deaf, and text-to-speech and gesture recognition for mute individuals. The system uses cameras, microphones, speakers, LCD displays, and various sensors to create an inclusive communication and assistance platform. Features include real-time object detection, OCR for reading text aloud, sign language recognition, voice commands, and haptic feedback. The modular design allows customization based on individual needs, making it adaptable for different assistive scenarios. Developed using Python, OpenCV, TensorFlow, and various Raspberry Pi GPIO modules.'
-        : 'نظام تقنيات مساعدة مبتكر مبني باستخدام Raspberry Pi لدعم الأفراد ذوي الإعاقات البصرية والسمعية والنطقية. يدمج النظام عدة وحدات تشمل الرؤية الحاسوبية للتعرف على الأشياء وتحويل النص إلى كلام للمكفوفين، التعرف على الكلام والتنبيهات البصرية للصم، وتحويل النص إلى كلام والتعرف على الإيماءات للأبكم. يستخدم النظام كاميرات، ميكروفونات، مكبرات صوت، شاشات LCD، ومستشعرات متنوعة لإنشاء منصة تواصل ومساعدة شاملة. المميزات تشمل كشف الأشياء في الوقت الفعلي، OCR لقراءة النص بصوت عالٍ، التعرف على لغة الإشارة، الأوامر الصوتية، والتغذية الراجعة اللمسية. التصميم الوحداتي يسمح بالتخصيص حسب احتياجات الفرد، مما يجعله قابلاً للتكيف مع سيناريوهات مساعدة مختلفة. تم التطوير باستخدام Python، OpenCV، TensorFlow، ووحدات GPIO متنوعة لـ Raspberry Pi.',
-      tools: ['Raspberry Pi', 'Python', 'OpenCV', 'TensorFlow', 'Computer Vision', 'Text-to-Speech', 'Speech Recognition', 'OCR', 'Sign Language Recognition', 'GPIO', 'Camera Module', 'Microphone', 'Speaker', 'LCD Display', 'Haptic Feedback', 'Assistive Technology'],
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&h=600&q=80',
-      video: null,
-      tags: ['Raspberry Pi', 'Assistive Technology', 'AI'],
-      gradient: 'from-blue-500 to-indigo-500',
-      schematic: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1200&h=800&q=80',
-      videoSteps: language === 'en'
-        ? ['System Architecture Design', 'Raspberry Pi Setup', 'Camera Integration', 'Computer Vision Module', 'Text-to-Speech Implementation', 'Speech Recognition Setup', 'Sign Language Recognition', 'LCD Display Integration', 'Haptic Feedback System', 'User Interface Development', 'Testing with Users', 'Performance Optimization']
-        : ['تصميم بنية النظام', 'إعداد Raspberry Pi', 'تكامل الكاميرا', 'وحدة الرؤية الحاسوبية', 'تنفيذ تحويل النص إلى كلام', 'إعداد التعرف على الكلام', 'التعرف على لغة الإشارة', 'تكامل شاشة LCD', 'نظام التغذية الراجعة اللمسية', 'تطوير واجهة المستخدم', 'الاختبار مع المستخدمين', 'تحسين الأداء']
     }
   ]
 
