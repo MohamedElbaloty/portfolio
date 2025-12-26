@@ -228,46 +228,91 @@ const Courses = () => {
                           {/* Content */}
                           <div className="relative z-10 p-4 sm:p-6">
                             {/* Course Image - Full Width */}
-                            {course.image && (
-                              <div className="mb-4 relative w-full h-48 sm:h-56 lg:h-64 rounded-lg border border-white/20 shadow-2xl" style={{ overflow: 'visible' }}>
-                                {/* Blurred background using same image - extends beyond container for side blur effect */}
-                                <div 
-                                  className="absolute"
-                                  style={{ 
-                                    backgroundImage: `url(${course.image})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat',
-                                    filter: 'blur(30px)',
-                                    width: 'calc(100% + 40px)',
-                                    height: 'calc(100% + 40px)',
-                                    left: '-20px',
-                                    top: '-20px',
-                                    zIndex: 0,
-                                  }}
-                                ></div>
-                                {/* Inner container with rounded corners and overflow hidden for actual image */}
-                                <div className="absolute inset-0 rounded-lg overflow-hidden z-10">
-                                  {/* Actual image centered */}
-                                  <div className="absolute inset-0 flex items-center justify-center">
-                                    <img 
-                                      src={course.image} 
-                                      alt={course.name}
-                                      className="max-w-full max-h-full object-contain"
-                                      style={{ 
-                                        imageRendering: 'auto',
-                                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
-                                      }}
-                                      onError={(e) => {
-                                        e.target.style.display = 'none'
-                                      }}
-                                    />
+                            {course.image && (() => {
+                              // Check if this is Operating Systems course
+                              const isOperatingSystem = course.name === 'Operating Systems' || course.name === 'أنظمة التشغيل'
+                              
+                              // List of courses that should have bigger images on desktop
+                              const biggerImageCourses = [
+                                'Full Stack Development', 'تطوير Full Stack',
+                                'Android Development', 'تطوير Android',
+                                'iOS Development', 'تطوير iOS',
+                                'Cross-Platform Mobile Development', 'تطوير التطبيقات متعددة المنصات',
+                                'Arduino Programming', 'برمجة Arduino',
+                                'Raspberry Pi Projects', 'مشاريع Raspberry Pi',
+                                'Embedded Systems Design', 'تصميم الأنظمة المدمجة',
+                                'Web Programming Fundamentals', 'أساسيات برمجة الويب',
+                                'SQL Databases', 'قواعد البيانات SQL',
+                                'NoSQL Databases', 'قواعد البيانات NoSQL',
+                                'Computer Networks', 'شبكات الحاسوب',
+                                'Cisco Networks', 'شبكات Cisco',
+                                'Network Security', 'أمن الشبكات',
+                                'Cloud Solutions & Architecture', 'الحلول والبنية السحابية',
+                                'DevOps & Cloud Deployment', 'DevOps والنشر السحابي',
+                                'Cyber Security Fundamentals', 'أساسيات الأمن السيبراني',
+                                'Ethical Hacking & Penetration Testing', 'الاختراق الأخلاقي واختبار الاختراق',
+                                'Digital Design', 'التصميم الرقمي',
+                                'ASIC Design', 'تصميم ASIC',
+                                'Computer Architecture', 'معمارية الحاسوب'
+                              ]
+                              
+                              const shouldHaveBiggerImage = biggerImageCourses.includes(course.name)
+                              
+                              // For Operating Systems on desktop: full card height (much larger)
+                              // For other specified courses on desktop: bigger height
+                              const imageHeightClass = isOperatingSystem 
+                                ? 'h-48 sm:h-56 lg:h-[600px]' 
+                                : shouldHaveBiggerImage 
+                                  ? 'h-48 sm:h-56 lg:h-96'
+                                  : 'h-48 sm:h-56 lg:h-64'
+                              
+                              return (
+                                <div className={`mb-4 relative w-full ${imageHeightClass} rounded-lg border border-white/20 shadow-2xl`} style={{ overflow: 'visible' }}>
+                                  {/* Blurred background using same image - extends beyond container for edge blur effect matching image colors */}
+                                  <div 
+                                    className="absolute"
+                                    style={{ 
+                                      backgroundImage: `url(${course.image})`,
+                                      backgroundSize: 'cover',
+                                      backgroundPosition: 'center',
+                                      backgroundRepeat: 'no-repeat',
+                                      filter: 'blur(50px)',
+                                      width: 'calc(100% + 80px)',
+                                      height: 'calc(100% + 80px)',
+                                      left: '-40px',
+                                      top: '-40px',
+                                      zIndex: 0,
+                                    }}
+                                  ></div>
+                                  
+                                  {/* Inner container with rounded corners and overflow hidden for actual image */}
+                                  <div className="absolute inset-0 rounded-lg overflow-hidden z-10">
+                                    {/* Actual image */}
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                      <img 
+                                        src={course.image} 
+                                        alt={course.name}
+                                        className={isOperatingSystem 
+                                          ? 'max-w-full max-h-full object-contain lg:w-full lg:h-full lg:object-contain' 
+                                          : shouldHaveBiggerImage
+                                            ? 'max-w-full max-h-full object-contain lg:scale-125'
+                                            : 'max-w-full max-h-full object-contain'
+                                        }
+                                        style={{ 
+                                          imageRendering: 'auto',
+                                          filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+                                        }}
+                                        onError={(e) => {
+                                          e.target.style.display = 'none'
+                                        }}
+                                      />
+                                    </div>
+                                    {/* Subtle shadow overlay for depth */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
                                   </div>
-                                  {/* Subtle shadow overlay for depth */}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
                                 </div>
-                              </div>
-                            )}
+                              )
+                            })()}
                             
                             {/* Course Info - Same Card */}
                             <div>
