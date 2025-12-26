@@ -36,24 +36,10 @@ const Courses = () => {
     return () => window.removeEventListener('resize', check)
   }, [])
 
-  // Handle scrolling to newly opened card on mobile
+  // Track previous expanded category without scrolling
   useEffect(() => {
-    if (isMobile && expandedCategory !== null && previousExpandedRef.current !== null && previousExpandedRef.current !== expandedCategory) {
-      // A new card was opened while another was already open
-      const cardElement = categoryRefs.current[expandedCategory]
-      if (cardElement) {
-        // Small delay to ensure the layout has updated
-        setTimeout(() => {
-          cardElement.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'start',
-            inline: 'nearest'
-          })
-        }, 100)
-      }
-    }
     previousExpandedRef.current = expandedCategory
-  }, [expandedCategory, isMobile])
+  }, [expandedCategory])
 
   const categoryIcons = {
     'Web & Mobile Development': FaLaptopCode,
@@ -234,7 +220,6 @@ const Courses = () => {
                               
                               // List of courses that should have bigger images on desktop
                               const biggerImageCourses = [
-                                'Full Stack Development', 'تطوير Full Stack',
                                 'Android Development', 'تطوير Android',
                                 'iOS Development', 'تطوير iOS',
                                 'Cross-Platform Mobile Development', 'تطوير التطبيقات متعددة المنصات',

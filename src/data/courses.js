@@ -57,12 +57,6 @@ export const coursesData = {
         name: 'Web & Mobile Development',
         courses: [
           {
-            name: 'Full Stack Development',
-            description: 'Complete full-stack development course covering both client-side and server-side technologies for building modern web applications.',
-            topics: ['Frontend Frameworks', 'Backend Development', 'API Design', 'Authentication & Security', 'Database Management', 'Cloud Deployment'],
-            image: '/coursespics/full stack development.png'
-          },
-          {
             name: 'Android Development',
             description: 'Complete Android app development course covering Java/Kotlin, Android SDK, UI/UX design, and publishing apps to Google Play Store.',
             topics: ['Android Studio', 'Java/Kotlin', 'Activities & Fragments', 'Material Design', 'SQLite Database', 'REST APIs', 'Google Play Publishing'],
@@ -283,12 +277,6 @@ export const coursesData = {
         // دمج تطوير الويب والموبايل في كارت واحد
         name: 'تطوير الويب والموبايل',
         courses: [
-          {
-            name: 'تطوير Full Stack',
-            description: 'دورة كاملة في تطوير Full Stack تغطي تقنيات الواجهة الأمامية والخلفية لبناء تطبيقات الويب الحديثة.',
-            topics: ['أطر الواجهة الأمامية', 'تطوير الخلفية', 'تصميم API', 'المصادقة والأمان', 'إدارة قواعد البيانات', 'النشر السحابي'],
-            image: '/coursespics/full stack development.png'
-          },
           {
             name: 'تطوير Android',
             description: 'دورة كاملة في تطوير تطبيقات Android تغطي Java/Kotlin، Android SDK، تصميم UI/UX، ونشر التطبيقات على Google Play Store.',
