@@ -258,58 +258,51 @@ const Courses = () => {
                               
                               const shouldHaveBiggerImage = biggerImageCourses.includes(course.name)
                               
-                              // For Operating Systems on desktop: full card height (much larger)
-                              // For other specified courses on desktop: bigger height
-                              const imageHeightClass = isOperatingSystem 
-                                ? 'h-48 sm:h-56 lg:h-[600px]' 
+                              // Card size is FIXED - don't change it
+                              // For Operating Systems and bigger image courses: use larger scale on desktop
+                              // But keep the container height the same
+                              const imageHeightClass = 'h-48 sm:h-56 lg:h-64'
+                              
+                              // Scale factor for images on desktop
+                              const desktopScale = isOperatingSystem 
+                                ? 'lg:scale-150' 
                                 : shouldHaveBiggerImage 
-                                  ? 'h-48 sm:h-56 lg:h-96'
-                                  : 'h-48 sm:h-56 lg:h-64'
+                                  ? 'lg:scale-125'
+                                  : ''
                               
                               return (
-                                <div className={`mb-4 relative w-full ${imageHeightClass} rounded-lg border border-white/20 shadow-2xl`} style={{ overflow: 'visible' }}>
-                                  {/* Blurred background using same image - extends beyond container for edge blur effect matching image colors */}
+                                <div className={`mb-4 relative w-full ${imageHeightClass} rounded-lg border border-white/20 shadow-2xl overflow-hidden`}>
+                                  {/* Blurred background using same image - fills entire card to create edge blur effect matching image colors */}
                                   <div 
-                                    className="absolute"
+                                    className="absolute inset-0"
                                     style={{ 
                                       backgroundImage: `url(${course.image})`,
                                       backgroundSize: 'cover',
                                       backgroundPosition: 'center',
                                       backgroundRepeat: 'no-repeat',
-                                      filter: 'blur(50px)',
-                                      width: 'calc(100% + 80px)',
-                                      height: 'calc(100% + 80px)',
-                                      left: '-40px',
-                                      top: '-40px',
-                                      zIndex: 0,
+                                      filter: 'blur(60px)',
+                                      transform: 'scale(1.3)',
                                     }}
                                   ></div>
                                   
-                                  {/* Inner container with rounded corners and overflow hidden for actual image */}
-                                  <div className="absolute inset-0 rounded-lg overflow-hidden z-10">
-                                    {/* Actual image */}
-                                    <div className="absolute inset-0 flex items-center justify-center">
-                                      <img 
-                                        src={course.image} 
-                                        alt={course.name}
-                                        className={isOperatingSystem 
-                                          ? 'max-w-full max-h-full object-contain lg:w-full lg:h-full lg:object-contain' 
-                                          : shouldHaveBiggerImage
-                                            ? 'max-w-full max-h-full object-contain lg:scale-125'
-                                            : 'max-w-full max-h-full object-contain'
-                                        }
-                                        style={{ 
-                                          imageRendering: 'auto',
-                                          filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
-                                        }}
-                                        onError={(e) => {
-                                          e.target.style.display = 'none'
-                                        }}
-                                      />
-                                    </div>
-                                    {/* Subtle shadow overlay for depth */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none"></div>
+                                  {/* Actual image container - centered, scales up on desktop */}
+                                  <div className="absolute inset-0 flex items-center justify-center z-10">
+                                    <img 
+                                      src={course.image} 
+                                      alt={course.name}
+                                      className={`max-w-full max-h-full object-contain ${desktopScale} transition-transform duration-300`}
+                                      style={{ 
+                                        imageRendering: 'auto',
+                                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+                                      }}
+                                      onError={(e) => {
+                                        e.target.style.display = 'none'
+                                      }}
+                                    />
                                   </div>
+                                  
+                                  {/* Subtle shadow overlay for depth */}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none z-20"></div>
                                 </div>
                               )
                             })()}
