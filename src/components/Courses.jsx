@@ -259,8 +259,6 @@ const Courses = () => {
                               const shouldHaveBiggerImage = biggerImageCourses.includes(course.name)
                               
                               // Card size is FIXED - don't change it
-                              // For Operating Systems and bigger image courses: use larger scale on desktop
-                              // But keep the container height the same
                               const imageHeightClass = 'h-48 sm:h-56 lg:h-64'
                               
                               // Scale factor for images on desktop
@@ -268,11 +266,12 @@ const Courses = () => {
                                 ? 'lg:scale-150' 
                                 : shouldHaveBiggerImage 
                                   ? 'lg:scale-125'
-                                  : ''
+                                  : 'lg:scale-110' // Default scale for all other courses on desktop
                               
                               return (
                                 <div className={`mb-4 relative w-full ${imageHeightClass} rounded-lg border border-white/20 shadow-2xl overflow-hidden`}>
                                   {/* Blurred background using same image - fills entire card to create edge blur effect matching image colors */}
+                                  {/* This blur effect applies to ALL courses */}
                                   <div 
                                     className="absolute inset-0"
                                     style={{ 
@@ -280,8 +279,9 @@ const Courses = () => {
                                       backgroundSize: 'cover',
                                       backgroundPosition: 'center',
                                       backgroundRepeat: 'no-repeat',
-                                      filter: 'blur(60px)',
-                                      transform: 'scale(1.3)',
+                                      filter: 'blur(70px)',
+                                      transform: 'scale(1.4)',
+                                      opacity: 0.9,
                                     }}
                                   ></div>
                                   
