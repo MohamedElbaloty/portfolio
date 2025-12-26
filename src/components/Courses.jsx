@@ -273,20 +273,22 @@ const Courses = () => {
                                   {/* Blurred background using same image - fills entire card to create edge blur effect matching image colors */}
                                   {/* This blur effect applies to ALL courses - ensures edges are filled with blurred image */}
                                   <div 
-                                    className="absolute inset-0 z-0"
+                                    className="absolute inset-0"
                                     style={{ 
                                       backgroundImage: `url(${course.image})`,
                                       backgroundSize: 'cover',
                                       backgroundPosition: 'center',
                                       backgroundRepeat: 'no-repeat',
-                                      filter: 'blur(80px)',
-                                      transform: 'scale(1.5)',
+                                      filter: 'blur(100px)',
+                                      transform: 'scale(1.6)',
+                                      zIndex: 0,
                                       opacity: 1,
                                     }}
                                   ></div>
                                   
                                   {/* Actual image container - centered, scales up on desktop */}
-                                  <div className="absolute inset-0 flex items-center justify-center z-10 rounded-lg overflow-hidden">
+                                  {/* The image is smaller than container, so blurred background shows on edges */}
+                                  <div className="absolute inset-0 flex items-center justify-center z-10">
                                     <img 
                                       src={course.image} 
                                       alt={course.name}
@@ -301,8 +303,8 @@ const Courses = () => {
                                     />
                                   </div>
                                   
-                                  {/* Subtle shadow overlay for depth - reduced opacity to not hide blur effect */}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/3 to-transparent pointer-events-none z-20 rounded-lg"></div>
+                                  {/* Very subtle shadow overlay - minimal to not hide blur effect */}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/1 to-transparent pointer-events-none z-20"></div>
                                 </div>
                               )
                             })()}
