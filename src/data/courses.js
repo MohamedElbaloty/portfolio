@@ -54,7 +54,7 @@ export const coursesData = {
       },
       {
         // Merged Web + Mobile into one category
-        name: 'Web & Mobile Development',
+        name: 'Mobile Development',
         courses: [
           {
             name: 'Android Development',
@@ -275,7 +275,7 @@ export const coursesData = {
       },
       {
         // دمج تطوير الويب والموبايل في كارت واحد
-        name: 'تطوير الويب والموبايل',
+        name: 'تطوير الموبايل',
         courses: [
           {
             name: 'تطوير Android',

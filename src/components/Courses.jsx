@@ -42,8 +42,8 @@ const Courses = () => {
   }, [expandedCategory])
 
   const categoryIcons = {
-    'Web & Mobile Development': FaLaptopCode,
-    'تطوير الويب والموبايل': FaLaptopCode,
+    'Mobile Development': FaLaptopCode,
+    'تطوير الموبايل': FaLaptopCode,
     'IoT & Embedded Systems': FaMicrochip,
     'إنترنت الأشياء والأنظمة المدمجة': FaMicrochip,
     'Programming Languages': FaCode,
@@ -65,8 +65,8 @@ const Courses = () => {
   }
 
   const categoryGradients = {
-    'Web & Mobile Development': 'from-blue-500 to-cyan-500',
-    'تطوير الويب والموبايل': 'from-blue-500 to-cyan-500',
+    'Mobile Development': 'from-blue-500 to-cyan-500',
+    'تطوير الموبايل': 'from-blue-500 to-cyan-500',
     'IoT & Embedded Systems': 'from-green-500 to-emerald-500',
     'إنترنت الأشياء والأنظمة المدمجة': 'from-green-500 to-emerald-500',
     'Programming Languages': 'from-blue-500 to-cyan-500',
