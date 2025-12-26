@@ -88,23 +88,22 @@ const Projects = () => {
     },
     {
       id: 7,
-      title: language === 'en' ? 'Social Distance Monitoring Robot' : 'روبوت مراقبة التباعد الاجتماعي',
-      category: 'iot',
+      title: language === 'en' ? 'AI-Powered Plant Disease Detection System' : 'نظام كشف أمراض النباتات بالذكاء الاصطناعي',
+      category: 'ai',
       description: language === 'en'
-        ? 'COVID-19 era robot that detects social distancing violations and alerts non-compliant individuals.'
-        : 'روبوت من عصر COVID-19 يكتشف انتهاكات التباعد الاجتماعي وينذر الأفراد غير الملتزمين.',
+        ? 'Agricultural AI system that analyzes plant images to detect diseases and predict potential health issues, helping farmers improve crop management.'
+        : 'نظام ذكاء اصطناعي زراعي يحلل صور النباتات للكشف عن الأمراض والتنبؤ بالمشاكل الصحية المحتملة، يساعد المزارعين على تحسين إدارة المحاصيل.',
       fullDescription: language === 'en'
-        ? 'A social distance monitoring robot developed during the COVID-19 pandemic to help enforce social distancing guidelines. The robot uses computer vision and sensors to detect individuals who are not maintaining proper social distance, provides visual and audio alerts, and can follow line-following navigation. Built with Arduino microcontroller, ultrasonic/distance sensors, LED indicators, buzzer alerts, and line-following capabilities. The robot autonomously patrols areas and ensures compliance with social distancing protocols.'
-        : 'روبوت مراقبة التباعد الاجتماعي تم تطويره خلال جائحة COVID-19 لمساعدة في فرض إرشادات التباعد الاجتماعي. يستخدم الروبوت الرؤية الحاسوبية والمستشعرات لاكتشاف الأفراد الذين لا يحافظون على التباعد الاجتماعي الصحيح، يوفر تنبيهات بصرية وسمعية، ويمكنه اتباع التنقل باتباع الخط. مبني باستخدام متحكم Arduino، مستشعرات المسافة فوق الصوتية، مؤشرات LED، تنبيهات صوتية، وإمكانيات اتباع الخط. الروبوت يقوم بدوريات مستقلة في المناطق ويضمن الامتثال لبروتوكولات التباعد الاجتماعي.',
-      tools: ['Arduino', 'Ultrasonic Sensors', 'Line Following', 'Computer Vision', 'LED Indicators', 'Buzzer Alerts', 'C/C++'],
-      image: '/academicprojects/social distance robot.jfif',
-      video: '/academicprojects/socialdistancerobotrobot.mp4',
-      tags: ['Arduino', 'COVID-19', 'Robotics'],
+        ? 'An intelligent agricultural technology system that leverages computer vision and deep learning to identify plant diseases and predict potential health issues from leaf and plant images. The system allows farmers and agricultural professionals to upload images of plants through a web interface, and the AI model analyzes the images to detect various diseases, nutrient deficiencies, pest damage, and other health issues. The system provides detailed diagnosis reports, treatment recommendations, and preventive measures. Built using convolutional neural networks CNN trained on extensive datasets of healthy and diseased plant images, the system can identify multiple crop diseases across different plant species. Features include real-time image processing, disease classification, severity assessment, treatment suggestions, and historical tracking of plant health. The web application provides an intuitive interface for image upload, results visualization, and access to agricultural knowledge base. Developed using Python, TensorFlow and Keras for deep learning, OpenCV for image processing, Flask and FastAPI for backend, and modern web technologies for the frontend. The system helps reduce crop losses, optimize pesticide usage, and improve overall agricultural productivity.'
+        : 'نظام تقني زراعي ذكي يستفيد من الرؤية الحاسوبية والتعلم العميق لتحديد أمراض النباتات والتنبؤ بالمشاكل الصحية المحتملة من صور الأوراق والنباتات. يسمح النظام للمزارعين والمهنيين الزراعيين برفع صور النباتات عبر واجهة ويب، ويحلل نموذج الذكاء الاصطناعي الصور للكشف عن أمراض متنوعة، نقص العناصر الغذائية، أضرار الآفات، ومشاكل صحية أخرى. يوفر النظام تقارير تشخيص مفصلة، توصيات العلاج، وإجراءات وقائية. مبني باستخدام الشبكات العصبية التلافيفية CNN المدربة على مجموعات بيانات واسعة من صور النباتات الصحية والمريضة، يمكن للنظام تحديد أمراض محاصيل متعددة عبر أنواع نباتية مختلفة. المميزات تشمل معالجة الصور في الوقت الفعلي، تصنيف الأمراض، تقييم الشدة، اقتراحات العلاج، وتتبع تاريخي لصحة النبات. يوفر التطبيق الويب واجهة بديهية لرفع الصور، تصور النتائج، والوصول إلى قاعدة المعرفة الزراعية. تم التطوير باستخدام Python، TensorFlow و Keras للتعلم العميق، OpenCV لمعالجة الصور، Flask و FastAPI للواجهة الخلفية، وتقنيات ويب حديثة للواجهة الأمامية. يساعد النظام في تقليل خسائر المحاصيل، تحسين استخدام المبيدات، وتحسين الإنتاجية الزراعية بشكل عام.',
+      tools: ['Python', 'Deep Learning', 'Convolutional Neural Networks (CNN)', 'TensorFlow', 'Keras', 'OpenCV', 'Image Processing', 'Flask', 'FastAPI', 'Computer Vision', 'Agricultural AI', 'Disease Classification', 'Web Development', 'Image Classification', 'Machine Learning', 'Data Science'],
+      image: '/academicprojects/plantdiseasesdetectionthumbnail.png',
+      video: '/academicprojects/plantdiseasesdetection.mp4',
+      tags: ['Agriculture', 'AI', 'Computer Vision'],
       gradient: 'from-green-500 to-emerald-500',
-      schematic: '/academicprojects/social distance schematic robot.jpg',
       videoSteps: language === 'en'
-        ? ['Distance Detection', 'Violation Alert', 'Line Following', 'Autonomous Navigation', 'Visual & Audio Warnings']
-        : ['كشف المسافة', 'تنبيه الانتهاك', 'اتباع الخط', 'التنقل المستقل', 'تحذيرات بصرية وسمعية']
+        ? ['Dataset Collection', 'Image Preprocessing', 'CNN Architecture Design', 'Model Training', 'Disease Classification', 'Image Upload Interface', 'Real-time Processing', 'Results Visualization', 'Treatment Recommendations', 'Knowledge Base Integration', 'Performance Evaluation', 'Deployment']
+        : ['جمع مجموعة البيانات', 'المعالجة المسبقة للصور', 'تصميم بنية CNN', 'تدريب النموذج', 'تصنيف الأمراض', 'واجهة رفع الصور', 'المعالجة في الوقت الفعلي', 'تصور النتائج', 'توصيات العلاج', 'تكامل قاعدة المعرفة', 'تقييم الأداء', 'النشر']
     },
     {
       id: 8,
@@ -148,22 +147,23 @@ const Projects = () => {
     },
     {
       id: 10,
-      title: language === 'en' ? 'AI-Powered Plant Disease Detection System' : 'نظام كشف أمراض النباتات بالذكاء الاصطناعي',
-      category: 'ai',
+      title: language === 'en' ? 'Social Distance Monitoring Robot' : 'روبوت مراقبة التباعد الاجتماعي',
+      category: 'iot',
       description: language === 'en'
-        ? 'Agricultural AI system that analyzes plant images to detect diseases and predict potential health issues, helping farmers improve crop management.'
-        : 'نظام ذكاء اصطناعي زراعي يحلل صور النباتات للكشف عن الأمراض والتنبؤ بالمشاكل الصحية المحتملة، يساعد المزارعين على تحسين إدارة المحاصيل.',
+        ? 'COVID-19 era robot that detects social distancing violations and alerts non-compliant individuals.'
+        : 'روبوت من عصر COVID-19 يكتشف انتهاكات التباعد الاجتماعي وينذر الأفراد غير الملتزمين.',
       fullDescription: language === 'en'
-        ? 'An intelligent agricultural technology system that leverages computer vision and deep learning to identify plant diseases and predict potential health issues from leaf and plant images. The system allows farmers and agricultural professionals to upload images of plants through a web interface, and the AI model analyzes the images to detect various diseases, nutrient deficiencies, pest damage, and other health issues. The system provides detailed diagnosis reports, treatment recommendations, and preventive measures. Built using convolutional neural networks CNN trained on extensive datasets of healthy and diseased plant images, the system can identify multiple crop diseases across different plant species. Features include real-time image processing, disease classification, severity assessment, treatment suggestions, and historical tracking of plant health. The web application provides an intuitive interface for image upload, results visualization, and access to agricultural knowledge base. Developed using Python, TensorFlow and Keras for deep learning, OpenCV for image processing, Flask and FastAPI for backend, and modern web technologies for the frontend. The system helps reduce crop losses, optimize pesticide usage, and improve overall agricultural productivity.'
-        : 'نظام تقني زراعي ذكي يستفيد من الرؤية الحاسوبية والتعلم العميق لتحديد أمراض النباتات والتنبؤ بالمشاكل الصحية المحتملة من صور الأوراق والنباتات. يسمح النظام للمزارعين والمهنيين الزراعيين برفع صور النباتات عبر واجهة ويب، ويحلل نموذج الذكاء الاصطناعي الصور للكشف عن أمراض متنوعة، نقص العناصر الغذائية، أضرار الآفات، ومشاكل صحية أخرى. يوفر النظام تقارير تشخيص مفصلة، توصيات العلاج، وإجراءات وقائية. مبني باستخدام الشبكات العصبية التلافيفية CNN المدربة على مجموعات بيانات واسعة من صور النباتات الصحية والمريضة، يمكن للنظام تحديد أمراض محاصيل متعددة عبر أنواع نباتية مختلفة. المميزات تشمل معالجة الصور في الوقت الفعلي، تصنيف الأمراض، تقييم الشدة، اقتراحات العلاج، وتتبع تاريخي لصحة النبات. يوفر التطبيق الويب واجهة بديهية لرفع الصور، تصور النتائج، والوصول إلى قاعدة المعرفة الزراعية. تم التطوير باستخدام Python، TensorFlow و Keras للتعلم العميق، OpenCV لمعالجة الصور، Flask و FastAPI للواجهة الخلفية، وتقنيات ويب حديثة للواجهة الأمامية. يساعد النظام في تقليل خسائر المحاصيل، تحسين استخدام المبيدات، وتحسين الإنتاجية الزراعية بشكل عام.',
-      tools: ['Python', 'Deep Learning', 'Convolutional Neural Networks (CNN)', 'TensorFlow', 'Keras', 'OpenCV', 'Image Processing', 'Flask', 'FastAPI', 'Computer Vision', 'Agricultural AI', 'Disease Classification', 'Web Development', 'Image Classification', 'Machine Learning', 'Data Science'],
-      image: '/academicprojects/plantdiseasesdetectionthumbnail.png',
-      video: '/academicprojects/plantdiseasesdetection.mp4',
-      tags: ['Agriculture', 'AI', 'Computer Vision'],
+        ? 'A social distance monitoring robot developed during the COVID-19 pandemic to help enforce social distancing guidelines. The robot uses computer vision and sensors to detect individuals who are not maintaining proper social distance, provides visual and audio alerts, and can follow line-following navigation. Built with Arduino microcontroller, ultrasonic/distance sensors, LED indicators, buzzer alerts, and line-following capabilities. The robot autonomously patrols areas and ensures compliance with social distancing protocols.'
+        : 'روبوت مراقبة التباعد الاجتماعي تم تطويره خلال جائحة COVID-19 لمساعدة في فرض إرشادات التباعد الاجتماعي. يستخدم الروبوت الرؤية الحاسوبية والمستشعرات لاكتشاف الأفراد الذين لا يحافظون على التباعد الاجتماعي الصحيح، يوفر تنبيهات بصرية وسمعية، ويمكنه اتباع التنقل باتباع الخط. مبني باستخدام متحكم Arduino، مستشعرات المسافة فوق الصوتية، مؤشرات LED، تنبيهات صوتية، وإمكانيات اتباع الخط. الروبوت يقوم بدوريات مستقلة في المناطق ويضمن الامتثال لبروتوكولات التباعد الاجتماعي.',
+      tools: ['Arduino', 'Ultrasonic Sensors', 'Line Following', 'Computer Vision', 'LED Indicators', 'Buzzer Alerts', 'C/C++'],
+      image: '/academicprojects/social distance robot.jfif',
+      video: '/academicprojects/socialdistancerobotrobot.mp4',
+      tags: ['Arduino', 'COVID-19', 'Robotics'],
       gradient: 'from-green-500 to-emerald-500',
+      schematic: '/academicprojects/social distance schematic robot.jpg',
       videoSteps: language === 'en'
-        ? ['Dataset Collection', 'Image Preprocessing', 'CNN Architecture Design', 'Model Training', 'Disease Classification', 'Image Upload Interface', 'Real-time Processing', 'Results Visualization', 'Treatment Recommendations', 'Knowledge Base Integration', 'Performance Evaluation', 'Deployment']
-        : ['جمع مجموعة البيانات', 'المعالجة المسبقة للصور', 'تصميم بنية CNN', 'تدريب النموذج', 'تصنيف الأمراض', 'واجهة رفع الصور', 'المعالجة في الوقت الفعلي', 'تصور النتائج', 'توصيات العلاج', 'تكامل قاعدة المعرفة', 'تقييم الأداء', 'النشر']
+        ? ['Distance Detection', 'Violation Alert', 'Line Following', 'Autonomous Navigation', 'Visual & Audio Warnings']
+        : ['كشف المسافة', 'تنبيه الانتهاك', 'اتباع الخط', 'التنقل المستقل', 'تحذيرات بصرية وسمعية']
     }
   ]
 
