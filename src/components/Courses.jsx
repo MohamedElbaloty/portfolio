@@ -19,6 +19,108 @@ import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 import { coursesData } from '../data/courses'
 
+// Function to extract dominant color from image
+const extractDominantColor = (imageUrl, callback) => {
+  const img = new Image()
+  img.crossOrigin = 'anonymous'
+  img.onload = () => {
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    canvas.width = 50
+    canvas.height = 50
+    ctx.drawImage(img, 0, 0, 50, 50)
+    
+    const imageData = ctx.getImageData(0, 0, 50, 50)
+    const data = imageData.data
+    
+    let r = 0, g = 0, b = 0, count = 0
+    
+    for (let i = 0; i < data.length; i += 4) {
+      r += data[i]
+      g += data[i + 1]
+      b += data[i + 2]
+      count++
+    }
+    
+    r = Math.floor(r / count)
+    g = Math.floor(g / count)
+    b = Math.floor(b / count)
+    
+    callback(`rgb(${r}, ${g}, ${b})`)
+  }
+  img.onerror = () => {
+    callback('rgb(139, 92, 246)') // Default purple color
+  }
+  img.src = imageUrl
+}
+
+// Course Image Component with dominant color extraction
+const CourseImage = ({ imageUrl, courseName }) => {
+  const [dominantColor, setDominantColor] = useState('rgb(139, 92, 246)')
+  const [imageLoaded, setImageLoaded] = useState(false)
+  
+  useEffect(() => {
+    if (imageUrl) {
+      extractDominantColor(imageUrl, (color) => {
+        setDominantColor(color)
+      })
+    }
+  }, [imageUrl])
+  
+  if (!imageUrl) return null
+  
+  const imageHeightClass = 'h-48 sm:h-56 lg:h-64'
+  
+  return (
+    <div className={`mb-4 relative w-full ${imageHeightClass} rounded-lg border border-white/20 shadow-2xl overflow-hidden`}>
+      {/* Blurred background with dominant color - fills entire card */}
+      <div 
+        className="absolute inset-0"
+        style={{ 
+          backgroundImage: `url(${imageUrl})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(40px)',
+          transform: 'scale(1.2)',
+          zIndex: 0,
+          opacity: 0.6,
+        }}
+      ></div>
+      
+      {/* Dominant color overlay for seamless blend */}
+      <div 
+        className="absolute inset-0"
+        style={{ 
+          backgroundColor: dominantColor,
+          opacity: 0.3,
+          mixBlendMode: 'multiply',
+          zIndex: 5
+        }}
+      ></div>
+      
+      {/* Actual image - fills the card */}
+      <div className="absolute inset-0 z-10">
+        <img 
+          src={imageUrl} 
+          alt={courseName}
+          className="w-full h-full object-cover transition-transform duration-300"
+          style={{ 
+            imageRendering: 'auto',
+          }}
+          onLoad={() => setImageLoaded(true)}
+          onError={(e) => {
+            e.target.style.display = 'none'
+          }}
+        />
+      </div>
+      
+      {/* Subtle gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none z-20"></div>
+    </div>
+  )
+}
+
 const Courses = () => {
   const { language } = useLanguage()
   const t = translations[language]
@@ -214,85 +316,9 @@ const Courses = () => {
                           {/* Content */}
                           <div className="relative z-10 p-4 sm:p-6">
                             {/* Course Image - Full Width */}
-                            {course.image && (() => {
-                              // Check if this is Operating Systems course
-                              const isOperatingSystem = course.name === 'Operating Systems' || course.name === 'أنظمة التشغيل'
-                              
-                              // List of courses that should have bigger images on desktop
-                              const biggerImageCourses = [
-                                'Android Development', 'تطوير Android',
-                                'iOS Development', 'تطوير iOS',
-                                'Cross-Platform Mobile Development', 'تطوير التطبيقات متعددة المنصات',
-                                'Arduino Programming', 'برمجة Arduino',
-                                'Raspberry Pi Projects', 'مشاريع Raspberry Pi',
-                                'Embedded Systems Design', 'تصميم الأنظمة المدمجة',
-                                'Web Programming Fundamentals', 'أساسيات برمجة الويب',
-                                'SQL Databases', 'قواعد البيانات SQL',
-                                'NoSQL Databases', 'قواعد البيانات NoSQL',
-                                'Computer Networks', 'شبكات الحاسوب',
-                                'Cisco Networks', 'شبكات Cisco',
-                                'Network Security', 'أمن الشبكات',
-                                'Cloud Solutions & Architecture', 'الحلول والبنية السحابية',
-                                'DevOps & Cloud Deployment', 'DevOps والنشر السحابي',
-                                'Cyber Security Fundamentals', 'أساسيات الأمن السيبراني',
-                                'Ethical Hacking & Penetration Testing', 'الاختراق الأخلاقي واختبار الاختراق',
-                                'Digital Design', 'التصميم الرقمي',
-                                'ASIC Design', 'تصميم ASIC',
-                                'Computer Architecture', 'معمارية الحاسوب'
-                              ]
-                              
-                              const shouldHaveBiggerImage = biggerImageCourses.includes(course.name)
-                              
-                              // Card size is FIXED - don't change it
-                              const imageHeightClass = 'h-48 sm:h-56 lg:h-64'
-                              
-                              // Scale factor for images on desktop
-                              const desktopScale = isOperatingSystem 
-                                ? 'lg:scale-150' 
-                                : shouldHaveBiggerImage 
-                                  ? 'lg:scale-125'
-                                  : 'lg:scale-110' // Default scale for all other courses on desktop
-                              
-                              return (
-                                <div className={`mb-4 relative w-full ${imageHeightClass} rounded-lg border border-white/20 shadow-2xl overflow-hidden`}>
-                                  {/* Blurred background using same image - fills entire card to create edge blur effect matching image colors */}
-                                  {/* This blur effect applies to ALL courses - ensures edges are filled with blurred image */}
-                                  <div 
-                                    className="absolute inset-0"
-                                    style={{ 
-                                      backgroundImage: `url(${course.image})`,
-                                      backgroundSize: 'cover',
-                                      backgroundPosition: 'center',
-                                      backgroundRepeat: 'no-repeat',
-                                      filter: 'blur(100px)',
-                                      transform: 'scale(1.6)',
-                                      zIndex: 0,
-                                      opacity: 1,
-                                    }}
-                                  ></div>
-                                  
-                                  {/* Actual image container - centered, scales up on desktop */}
-                                  {/* The image is smaller than container, so blurred background shows on edges */}
-                                  <div className="absolute inset-0 flex items-center justify-center z-10">
-                                    <img 
-                                      src={course.image} 
-                                      alt={course.name}
-                                      className={`max-w-full max-h-full object-contain ${desktopScale} transition-transform duration-300`}
-                                      style={{ 
-                                        imageRendering: 'auto',
-                                        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
-                                      }}
-                                      onError={(e) => {
-                                        e.target.style.display = 'none'
-                                      }}
-                                    />
-                                  </div>
-                                  
-                                  {/* Very subtle shadow overlay - minimal to not hide blur effect */}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/1 to-transparent pointer-events-none z-20"></div>
-                                </div>
-                              )
-                            })()}
+                            {course.image && (
+                              <CourseImage imageUrl={course.image} courseName={course.name} />
+                            )}
                             
                             {/* Course Info - Same Card */}
                             <div>
